@@ -17,6 +17,11 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <script language="javascript" src="/resources/ion-tabs/js/vendor/jquery-1.10.2.min.js"></script>
+    <script language="javascript" src="/resources/ion-tabs/js/ion-tabs/ion.tabs.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.css">
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.skinBorderedCustom.css">
+
     <title>gWakeOnLan - Scarica</title>
   </head>
   <body>
@@ -63,142 +68,221 @@
             <a href="install.html">Installazione</a> per informazioni sulla
             loro installazione.</p>
           <ul>
-  
-    
-      
-            <li><strong>Versione 0.6.1</strong> in formato <strong>tar.gz</strong> con codice sorgente per installazione manuale<br />
-              MD5: 3B4D50F2B1FED2260F36DE492ED1E84F
-    
-              <ul>
-      
-        
-          
-                <li>Scarica da <a href="/resources/gwakeonlan/archive/0.6.1/gwakeonlan-0.6.1.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Scarica da <a href="https://github.com/muflone/gwakeonlan/releases/download/0.6.1/gwakeonlan-0.6.1.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-            </li>
-  
-    
-      
-            <li><strong>Versione 0.6.1</strong> in formato <strong>pkg.tar.xz</strong> per Arch Linux e derivate<br />
-              MD5: 339C0C49E7ED56EBF23F6C483FE562FB
-    
-              <ul>
-      
-        
-          
-                <li>Scarica da <a href="/resources/gwakeonlan/archive/0.6.1/gwakeonlan-0.6.1-1-any.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Scarica da <a href="https://github.com/muflone/gwakeonlan/releases/download/0.6.1/gwakeonlan-0.6.1-1-any.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-            </li>
-  
-    
-      
-            <li><strong>Versione 0.6</strong> in formato <strong>tar.gz</strong> con codice sorgente per installazione manuale<br />
-              MD5: 45308DC3DF2ACB26968F3BEDCC0C9A52
-    
-              <ul>
-      
-        
-          
-                <li>Scarica da <a href="/resources/gwakeonlan/archive/0.6/gwakeonlan-0.6.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Scarica da <a href="https://github.com/muflone/gwakeonlan/releases/download/0.6/gwakeonlan-0.6.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-            </li>
-  
-    
-      
-            <li><strong>Versione 0.6</strong> in formato <strong>pkg.tar.xz</strong> per Arch Linux e derivate<br />
-              MD5: E217BF6E30A899884E55972168FE52C8
-    
-              <ul>
-      
-        
-          
-                <li>Scarica da <a href="/resources/gwakeonlan/archive/0.6/gwakeonlan-0.6-2-any.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Scarica da <a href="https://github.com/muflone/gwakeonlan/releases/download/0.6/gwakeonlan-0.6-2-any.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-            </li>
-  
-    
-      
-            <li><strong>Versione 0.5.1</strong> in formato <strong>tar.gz</strong> con codice sorgente per installazione manuale<br />
-              MD5: 68BDE5820DB9C122EDF9E221797049FA
-    
-              <ul>
-      
-        
-          
-                <li>Scarica da <a href="/resources/gwakeonlan/archive/0.5.1/gwakeonlan-0.5.1.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Scarica da <a href="https://github.com/muflone/gwakeonlan/releases/download/0.5.1/gwakeonlan-0.5.1.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-            </li>
-  
-    
-      
-            <li><strong>Versione 0.5.1</strong> in formato <strong>deb</strong> per Debian, Ubuntu e derivate<br />
-              MD5: D267F4148769D66E5AF3D2CA93EEF8E2
-    
-              <ul>
-      
-        
-          
-                <li>Scarica da <a href="/resources/gwakeonlan/archive/0.5.1/gwakeonlan_0.5.1-1_all.deb">muflone.com</a></li>
-      
-        
-        
-                <li>Scarica da <a href="https://github.com/muflone/gwakeonlan/releases/download/0.5.1/gwakeonlan_0.5.1-1_all.deb">github.com</a></li>
-      
-              </ul>
-    
-            </li>
-  
-    
-      
-            <li><strong>Versione 0.5.1</strong> in formato <strong>pkg.tar.xz</strong> per Arch Linux e derivate<br />
-              MD5: 9A6FE2FDF58AA7C72A7B4ABFE9A9704A
-    
-              <ul>
-      
-        
-          
-                <li>Scarica da <a href="/resources/gwakeonlan/archive/0.5.1/gwakeonlan-0.5.1-3-any.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Scarica da <a href="https://github.com/muflone/gwakeonlan/releases/download/0.5.1/gwakeonlan-0.5.1-3-any.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-            </li>
-  
-          </ul>
 
+
+
+<script>
+  $(document).ready(function(){
+    $.ionTabs("#tabs_packages");
+  });
+</script>
+<div class="ionTabs" id="tabs_packages" data-name="Tabs_Group_name">
+    <ul class="ionTabs__head">
+  
+        <li class="ionTabs__tab" data-target="Tab_v061">0.6.1</li>
+  
+        <li class="ionTabs__tab" data-target="Tab_v060">0.6</li>
+  
+        <li class="ionTabs__tab" data-target="Tab_v051">0.5.1</li>
+  
+    </ul>
+    <div class="ionTabs__body">
+  
+        <div class="ionTabs__item" data-name="Tab_v061">
+          <table id="packages">
+            <thead>
+              <th>Tipo di pacchetto</th>
+              <th>Dimensione</th>
+              <th>MD5</th>
+              <th colspan="2">Scarica</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Codice sorgente</td>
+              <td class="size">83 kB</td>
+              <td class="md5sum">3B4D50F2B1FED2260F36DE492ED1E84F</td>
+        
+              <td><a href="/resources/gwakeonlan/archive/0.6.1/gwakeonlan-0.6.1.tar.gz"
+                title="Scarica da Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gwakeonlan/releases/download/0.6.1/gwakeonlan-0.6.1.tar.gz"
+                title="Scarica da GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux</td>
+              <td class="size">85 kB</td>
+              <td class="md5sum">339C0C49E7ED56EBF23F6C483FE562FB</td>
+        
+              <td><a href="/resources/gwakeonlan/archive/0.6.1/gwakeonlan-0.6.1-1-any.pkg.tar.xz"
+                title="Scarica da Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gwakeonlan/releases/download/0.6.1/gwakeonlan-0.6.1-1-any.pkg.tar.xz"
+                title="Scarica da GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/gwakeonlan/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/gwakeonlan-git/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__item" data-name="Tab_v060">
+          <table id="packages">
+            <thead>
+              <th>Tipo di pacchetto</th>
+              <th>Dimensione</th>
+              <th>MD5</th>
+              <th colspan="2">Scarica</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Codice sorgente</td>
+              <td class="size">83 kB</td>
+              <td class="md5sum">45308DC3DF2ACB26968F3BEDCC0C9A52</td>
+        
+              <td><a href="/resources/gwakeonlan/archive/0.6/gwakeonlan-0.6.tar.gz"
+                title="Scarica da Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gwakeonlan/releases/download/0.6/gwakeonlan-0.6.tar.gz"
+                title="Scarica da GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux</td>
+              <td class="size">85 kB</td>
+              <td class="md5sum">E217BF6E30A899884E55972168FE52C8</td>
+        
+              <td><a href="/resources/gwakeonlan/archive/0.6/gwakeonlan-0.6-2-any.pkg.tar.xz"
+                title="Scarica da Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gwakeonlan/releases/download/0.6/gwakeonlan-0.6-2-any.pkg.tar.xz"
+                title="Scarica da GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__item" data-name="Tab_v051">
+          <table id="packages">
+            <thead>
+              <th>Tipo di pacchetto</th>
+              <th>Dimensione</th>
+              <th>MD5</th>
+              <th colspan="2">Scarica</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Codice sorgente</td>
+              <td class="size">30 kB</td>
+              <td class="md5sum">68BDE5820DB9C122EDF9E221797049FA</td>
+        
+              <td><a href="/resources/gwakeonlan/archive/0.5.1/gwakeonlan-0.5.1.tar.gz"
+                title="Scarica da Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gwakeonlan/releases/download/0.5.1/gwakeonlan-0.5.1.tar.gz"
+                title="Scarica da GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/debian-32.png"> Debian/Ubuntu</td>
+              <td class="size">25 kB</td>
+              <td class="md5sum">D267F4148769D66E5AF3D2CA93EEF8E2</td>
+        
+              <td><a href="/resources/gwakeonlan/archive/0.5.1/gwakeonlan_0.5.1-1_all.deb"
+                title="Scarica da Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gwakeonlan/releases/download/0.5.1/gwakeonlan_0.5.1-1_all.deb"
+                title="Scarica da GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux</td>
+              <td class="size">27 kB</td>
+              <td class="md5sum">9A6FE2FDF58AA7C72A7B4ABFE9A9704A</td>
+        
+              <td><a href="/resources/gwakeonlan/archive/0.5.1/gwakeonlan-0.5.1-3-any.pkg.tar.xz"
+                title="Scarica da Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gwakeonlan/releases/download/0.5.1/gwakeonlan-0.5.1-3-any.pkg.tar.xz"
+                title="Scarica da GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__preloader"></div>
+    </div>
+</div>
 
 
         </section>

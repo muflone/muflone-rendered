@@ -17,6 +17,11 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <script language="javascript" src="/resources/ion-tabs/js/vendor/jquery-1.10.2.min.js"></script>
+    <script language="javascript" src="/resources/ion-tabs/js/ion-tabs/ion.tabs.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.css">
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.skinBorderedCustom.css">
+
     <title>gpTrace - Download</title>
   </head>
   <body>
@@ -60,45 +65,103 @@
             the page <a href="install.html">Installation</a> for information
             about their installation.</p>
           <ul>
-  
-    
-      
-            <li><strong>Versione 0.1.0</strong> in <strong>pkg.tar.xz</strong> format for Arch Linux and derivatives<br />
-              MD5: FCD4D301362F47B0EECD4A8FED7E3080
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/gptrace/archive/0.1.0/gptrace-0.1.0-1-any.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/gptrace/releases/download/0.1.0/gptrace-0.1.0-1-any.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 0.1.0</strong> in <strong>tar.gz</strong> format with source code for manual installation<br />
-              MD5: E58057D00E476E23847F875A730CFC98
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/gptrace/archive/0.1.0/gptrace-0.1.0.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/gptrace/releases/download/0.1.0/gptrace-0.1.0.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-  
-          </ul>
 
+
+
+<script>
+  $(document).ready(function(){
+    $.ionTabs("#tabs_packages");
+  });
+</script>
+<div class="ionTabs" id="tabs_packages" data-name="Tabs_Group_name">
+    <ul class="ionTabs__head">
+  
+        <li class="ionTabs__tab" data-target="Tab_v010">0.1.0</li>
+  
+    </ul>
+    <div class="ionTabs__body">
+  
+        <div class="ionTabs__item" data-name="Tab_v010">
+          <table id="packages">
+            <thead>
+              <th>Package type</th>
+              <th>Size</th>
+              <th>MD5</th>
+              <th colspan="2">Download</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Source code</td>
+              <td class="size">136 kB</td>
+              <td class="md5sum">E58057D00E476E23847F875A730CFC98</td>
+        
+              <td><a href="/resources/gptrace/archive/0.1.0/gptrace-0.1.0.tar.gz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gptrace/releases/download/0.1.0/gptrace-0.1.0.tar.gz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux</td>
+              <td class="size">142 kB</td>
+              <td class="md5sum">FCD4D301362F47B0EECD4A8FED7E3080</td>
+        
+              <td><a href="/resources/gptrace/archive/0.1.0/gptrace-0.1.0-1-any.pkg.tar.xz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gptrace/releases/download/0.1.0/gptrace-0.1.0-1-any.pkg.tar.xz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/gptrace/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/gptrace-git/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__preloader"></div>
+    </div>
+</div>
 
 
         </section>

@@ -17,6 +17,11 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <script language="javascript" src="/resources/ion-tabs/js/vendor/jquery-1.10.2.min.js"></script>
+    <script language="javascript" src="/resources/ion-tabs/js/ion-tabs/ion.tabs.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.css">
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.skinBorderedCustom.css">
+
     <title>CPUCompare - Download</title>
   </head>
   <body>
@@ -60,81 +65,153 @@
             the page <a href="install.html">Installation</a> for information
             about their installation.</p>
           <ul>
-  
-    
-      
-            <li><strong>Versione 0.6</strong> in <strong>pkg.tar.xz</strong> format for Arch Linux and derivatives<br />
-              MD5: 5803D45AD30EF75501680B939580864E
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/cpucompare/archive/0.6/cpucompare-0.6-1-any.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/cpucompare/releases/download/0.6/cpucompare-0.6-1-any.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 0.6</strong> in <strong>tar.gz</strong> format with source code for manual installation<br />
-              MD5: 34F5BC355A7A604991A1D96AD23C38E5
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/cpucompare/archive/0.6/cpucompare-0.6.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/cpucompare/releases/download/0.6/cpucompare-0.6.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 0.5</strong> in <strong>pkg.tar.xz</strong> format for Arch Linux and derivatives<br />
-              MD5: 75725661DF27EC13F1713FADE1C233E1
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/cpucompare/archive/0.5/cpucompare-0.5-3-any.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/cpucompare/releases/download/0.5/cpucompare-0.5-3-any.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 0.5</strong> in <strong>tar.gz</strong> format with source code for manual installation<br />
-              MD5: AC11B06E51B55155435D5AE5BB474878
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/cpucompare/archive/0.5/cpucompare-0.5.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/cpucompare/releases/download/0.5/cpucompare-0.5.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-  
-          </ul>
 
+
+
+<script>
+  $(document).ready(function(){
+    $.ionTabs("#tabs_packages");
+  });
+</script>
+<div class="ionTabs" id="tabs_packages" data-name="Tabs_Group_name">
+    <ul class="ionTabs__head">
+  
+        <li class="ionTabs__tab" data-target="Tab_v060">0.6</li>
+  
+        <li class="ionTabs__tab" data-target="Tab_v050">0.5</li>
+  
+    </ul>
+    <div class="ionTabs__body">
+  
+        <div class="ionTabs__item" data-name="Tab_v060">
+          <table id="packages">
+            <thead>
+              <th>Package type</th>
+              <th>Size</th>
+              <th>MD5</th>
+              <th colspan="2">Download</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Source code</td>
+              <td class="size">75 kB</td>
+              <td class="md5sum">34F5BC355A7A604991A1D96AD23C38E5</td>
+        
+              <td><a href="/resources/cpucompare/archive/0.6/cpucompare-0.6.tar.gz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/cpucompare/releases/download/0.6/cpucompare-0.6.tar.gz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux</td>
+              <td class="size">66 kB</td>
+              <td class="md5sum">5803D45AD30EF75501680B939580864E</td>
+        
+              <td><a href="/resources/cpucompare/archive/0.6/cpucompare-0.6-1-any.pkg.tar.xz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/cpucompare/releases/download/0.6/cpucompare-0.6-1-any.pkg.tar.xz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/cpucompare/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/cpucompare-git/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__item" data-name="Tab_v050">
+          <table id="packages">
+            <thead>
+              <th>Package type</th>
+              <th>Size</th>
+              <th>MD5</th>
+              <th colspan="2">Download</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Source code</td>
+              <td class="size">47 kB</td>
+              <td class="md5sum">AC11B06E51B55155435D5AE5BB474878</td>
+        
+              <td><a href="/resources/cpucompare/archive/0.5/cpucompare-0.5.tar.gz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/cpucompare/releases/download/0.5/cpucompare-0.5.tar.gz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux</td>
+              <td class="size">38 kB</td>
+              <td class="md5sum">75725661DF27EC13F1713FADE1C233E1</td>
+        
+              <td><a href="/resources/cpucompare/archive/0.5/cpucompare-0.5-3-any.pkg.tar.xz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/cpucompare/releases/download/0.5/cpucompare-0.5-3-any.pkg.tar.xz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__preloader"></div>
+    </div>
+</div>
 
 
         </section>

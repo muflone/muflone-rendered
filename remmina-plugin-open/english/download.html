@@ -17,6 +17,11 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <script language="javascript" src="/resources/ion-tabs/js/vendor/jquery-1.10.2.min.js"></script>
+    <script language="javascript" src="/resources/ion-tabs/js/ion-tabs/ion.tabs.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.css">
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.skinBorderedCustom.css">
+
     <title>Remmina Plugin Open - Download</title>
   </head>
   <body>
@@ -50,117 +55,174 @@
             the page <a href="install.html">Installation</a> for information
             about their installation.</p>
           <ul>
-  
-    
-      
-            <li><strong>Versione 1.0.0.1</strong> in <strong>pkg.tar.xz</strong> format for Arch Linux i686 (32 bits) and derivatives<br />
-              MD5: 7438064971C899CB1B9E3D2AEF871841
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/remmina-plugin-open/archive/1.0.0.1/remmina-plugin-open-1.0.0.1-2-i686.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/remmina-plugin-open/releases/download/1.0.0.1/remmina-plugin-open-1.0.0.1-2-i686.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 1.0.0.1</strong> in <strong>pkg.tar.xz</strong> format for Arch Linux x86_64 (64 bits) and derivatives<br />
-              MD5: 5EB9F2F18C6F073EBC6B7B617CC3849D
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/remmina-plugin-open/archive/1.0.0.1/remmina-plugin-open-1.0.0.1-2-x86_64.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/remmina-plugin-open/releases/download/1.0.0.1/remmina-plugin-open-1.0.0.1-2-x86_64.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 1.0.0.1</strong> in <strong>deb</strong> format for Debian i386 (32 bits), Ubuntu and derivatives<br />
-              MD5: 85A4A3B58BC9A77FDBD089BDD0289798
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/remmina-plugin-open/archive/1.0.0.1/remmina-plugin-open_1.0.0.1-1_i386.deb">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/remmina-plugin-open/releases/download/1.0.0.1/remmina-plugin-open_1.0.0.1-1_i386.deb">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-    
-            <li><strong>Versione 1.0.0.1</strong> in <strong>deb</strong> format for Debian amd64 (64 bits), Ubuntu and derivatives<br />
-              MD5: 85A4A3B58BC9A77FDBD089BDD0289798
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/remmina-plugin-open/archive/1.0.0.1/remmina-plugin-open_1.0.0.1-1_amd64.deb">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/remmina-plugin-open/releases/download/1.0.0.1/remmina-plugin-open_1.0.0.1-1_amd64.deb">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 1.0.0.1</strong> in <strong>tar.gz</strong> format with source code for manual installation<br />
-              MD5: C6B1D16D057790552D19C2B23C4DA9BF
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/remmina-plugin-open/archive/1.0.0.1/remmina-plugin-open-1.0.0.1.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/remmina-plugin-open/releases/download/1.0.0.1/remmina-plugin-open-1.0.0.1.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 1.0.0.0</strong> in <strong>tar.gz</strong> format with source code for manual installation<br />
-              MD5: 0259139B3DB94314FB765F4AE7FB920E
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/remmina-plugin-open/archive/1.0.0.0/remmina-plugin-open-1.0.0.0.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/remmina-plugin-open/releases/download/1.0.0.0/remmina-plugin-open-1.0.0.0.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-  
-          </ul>
 
+
+
+<script>
+  $(document).ready(function(){
+    $.ionTabs("#tabs_packages");
+  });
+</script>
+<div class="ionTabs" id="tabs_packages" data-name="Tabs_Group_name">
+    <ul class="ionTabs__head">
+  
+        <li class="ionTabs__tab" data-target="Tab_v1001">1.0.0.1</li>
+  
+        <li class="ionTabs__tab" data-target="Tab_v1000">1.0.0.0</li>
+  
+    </ul>
+    <div class="ionTabs__body">
+  
+        <div class="ionTabs__item" data-name="Tab_v1001">
+          <table id="packages">
+            <thead>
+              <th>Package type</th>
+              <th>Size</th>
+              <th>MD5</th>
+              <th colspan="2">Download</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Source code</td>
+              <td class="size">11 kB</td>
+              <td class="md5sum">C6B1D16D057790552D19C2B23C4DA9BF</td>
+        
+              <td><a href="/resources/remmina-plugin-open/archive/1.0.0.1/remmina-plugin-open-1.0.0.1.tar.gz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/remmina-plugin-open/releases/download/1.0.0.1/remmina-plugin-open-1.0.0.1.tar.gz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/debian-32.png"> Debian/Ubuntu i386 (32 bit)</td>
+              <td class="size">6 kB</td>
+              <td class="md5sum">85A4A3B58BC9A77FDBD089BDD0289798</td>
+        
+              <td><a href="/resources/remmina-plugin-open/archive/1.0.0.1/remmina-plugin-open_1.0.0.1-1_i386.deb"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/remmina-plugin-open/releases/download/1.0.0.1/remmina-plugin-open_1.0.0.1-1_i386.deb"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+        
+            <tr>
+              <td class="type"><img src="/resources/debian-32.png"> Debian/Ubuntu amd64 (64 bit)</td>
+              <td class="size">6 kB</td>
+              <td class="md5sum">85A4A3B58BC9A77FDBD089BDD0289798</td>
+        
+              <td><a href="/resources/remmina-plugin-open/archive/1.0.0.1/remmina-plugin-open_1.0.0.1-1_amd64.deb"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/remmina-plugin-open/releases/download/1.0.0.1/remmina-plugin-open_1.0.0.1-1_amd64.deb"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux i686 (32 bit)</td>
+              <td class="size">5 kB</td>
+              <td class="md5sum">7438064971C899CB1B9E3D2AEF871841</td>
+        
+              <td><a href="/resources/remmina-plugin-open/archive/1.0.0.1/remmina-plugin-open-1.0.0.1-2-i686.pkg.tar.xz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/remmina-plugin-open/releases/download/1.0.0.1/remmina-plugin-open-1.0.0.1-2-i686.pkg.tar.xz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux x86_64 (64 bit)</td>
+              <td class="size">5 kB</td>
+              <td class="md5sum">5EB9F2F18C6F073EBC6B7B617CC3849D</td>
+        
+              <td><a href="/resources/remmina-plugin-open/archive/1.0.0.1/remmina-plugin-open-1.0.0.1-2-x86_64.pkg.tar.xz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/remmina-plugin-open/releases/download/1.0.0.1/remmina-plugin-open-1.0.0.1-2-x86_64.pkg.tar.xz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/remmina-plugin-exec/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__item" data-name="Tab_v1000">
+          <table id="packages">
+            <thead>
+              <th>Package type</th>
+              <th>Size</th>
+              <th>MD5</th>
+              <th colspan="2">Download</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Source code</td>
+              <td class="size">10 kB</td>
+              <td class="md5sum">0259139B3DB94314FB765F4AE7FB920E</td>
+        
+              <td><a href="/resources/remmina-plugin-open/archive/1.0.0.0/remmina-plugin-open-1.0.0.0.tar.gz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/remmina-plugin-open/releases/download/1.0.0.0/remmina-plugin-open-1.0.0.0.tar.gz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__preloader"></div>
+    </div>
+</div>
 
 
         </section>

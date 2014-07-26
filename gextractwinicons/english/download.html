@@ -17,6 +17,11 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <script language="javascript" src="/resources/ion-tabs/js/vendor/jquery-1.10.2.min.js"></script>
+    <script language="javascript" src="/resources/ion-tabs/js/ion-tabs/ion.tabs.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.css">
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.skinBorderedCustom.css">
+
     <title>gExtractWinIcons - Download</title>
   </head>
   <body>
@@ -60,99 +65,171 @@
             the page <a href="install.html">Installation</a> for information
             about their installation.</p>
           <ul>
-  
-    
-      
-            <li><strong>Versione 0.4</strong> in <strong>tar.gz</strong> format with source code for manual installation<br />
-              MD5: E9A6A6CDC7FC6B10E821B3790CA58E39
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/gextractwinicons/archive/0.4/gextractwinicons-0.4.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/gextractwinicons/releases/download/0.4/gextractwinicons-0.4.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 0.4</strong> in <strong>pkg.tar.xz</strong> format for Arch Linux and derivatives<br />
-              MD5: 9654C8B8EF33F46F4C07EB5F0A88EB5A
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/gextractwinicons/archive/0.4/gextractwinicons-0.4-1-any.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/gextractwinicons/releases/download/0.4/gextractwinicons-0.4-1-any.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 0.3.1</strong> in <strong>tar.gz</strong> format with source code for manual installation<br />
-              MD5: 1598568B87D9FEA2DE96D79A87EE68C5
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/gextractwinicons/archive/0.3.1/gextractwinicons-0.3.1.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/gextractwinicons/releases/download/0.3.1/gextractwinicons-0.3.1.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 0.3.1</strong> in <strong>deb</strong> format for Debian, Ubuntu and derivatives<br />
-              MD5: 914D5713B9121FBC7A130231D254F34A
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/gextractwinicons/archive/0.3.1/gextractwinicons_0.3.1-1_all.deb">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/gextractwinicons/releases/download/0.3.1/gextractwinicons_0.3.1-1_all.deb">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 0.3.1</strong> in <strong>pkg.tar.xz</strong> format for Arch Linux and derivatives<br />
-              MD5: BC2243D00E9AD2A8141DBF1B5B126F62
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/gextractwinicons/archive/0.3.1/gextractwinicons-0.3.1-1-any.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/gextractwinicons/releases/download/0.3.1/gextractwinicons-0.3.1-1-any.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-  
-          </ul>
 
+
+
+<script>
+  $(document).ready(function(){
+    $.ionTabs("#tabs_packages");
+  });
+</script>
+<div class="ionTabs" id="tabs_packages" data-name="Tabs_Group_name">
+    <ul class="ionTabs__head">
+  
+        <li class="ionTabs__tab" data-target="Tab_v040">0.4</li>
+  
+        <li class="ionTabs__tab" data-target="Tab_v031">0.3.1</li>
+  
+    </ul>
+    <div class="ionTabs__body">
+  
+        <div class="ionTabs__item" data-name="Tab_v040">
+          <table id="packages">
+            <thead>
+              <th>Package type</th>
+              <th>Size</th>
+              <th>MD5</th>
+              <th colspan="2">Download</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Source code</td>
+              <td class="size">61 kB</td>
+              <td class="md5sum">E9A6A6CDC7FC6B10E821B3790CA58E39</td>
+        
+              <td><a href="/resources/gextractwinicons/archive/0.4/gextractwinicons-0.4.tar.gz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gextractwinicons/releases/download/0.4/gextractwinicons-0.4.tar.gz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux</td>
+              <td class="size">64 kB</td>
+              <td class="md5sum">9654C8B8EF33F46F4C07EB5F0A88EB5A</td>
+        
+              <td><a href="/resources/gextractwinicons/archive/0.4/gextractwinicons-0.4-1-any.pkg.tar.xz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gextractwinicons/releases/download/0.4/gextractwinicons-0.4-1-any.pkg.tar.xz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/gextractwinicons/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/gextractwinicons-git/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__item" data-name="Tab_v031">
+          <table id="packages">
+            <thead>
+              <th>Package type</th>
+              <th>Size</th>
+              <th>MD5</th>
+              <th colspan="2">Download</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Source code</td>
+              <td class="size">24 kB</td>
+              <td class="md5sum">1598568B87D9FEA2DE96D79A87EE68C5</td>
+        
+              <td><a href="/resources/gextractwinicons/archive/0.3.1/gextractwinicons-0.3.1.tar.gz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gextractwinicons/releases/download/0.3.1/gextractwinicons-0.3.1.tar.gz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/debian-32.png"> Debian/Ubuntu</td>
+              <td class="size">19 kB</td>
+              <td class="md5sum">914D5713B9121FBC7A130231D254F34A</td>
+        
+              <td><a href="/resources/gextractwinicons/archive/0.3.1/gextractwinicons_0.3.1-1_all.deb"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gextractwinicons/releases/download/0.3.1/gextractwinicons_0.3.1-1_all.deb"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux</td>
+              <td class="size">17 kB</td>
+              <td class="md5sum">BC2243D00E9AD2A8141DBF1B5B126F62</td>
+        
+              <td><a href="/resources/gextractwinicons/archive/0.3.1/gextractwinicons-0.3.1-1-any.pkg.tar.xz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gextractwinicons/releases/download/0.3.1/gextractwinicons-0.3.1-1-any.pkg.tar.xz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__preloader"></div>
+    </div>
+</div>
 
 
         </section>

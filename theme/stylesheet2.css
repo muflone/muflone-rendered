@@ -84,3 +84,30 @@ ol#requirements li:before {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
   font-size: 30px;
 }
+
+#packages thead th {
+  font-weight: bold;
+}
+
+#packages tr td {
+  padding: 5px;
+}
+
+#packages tr td.type {
+  text-align: left;
+  min-width: 150px;
+}
+
+#packages tr td.size {
+  text-align: center;
+  min-width: 70px;
+}
+
+#packages tr td.md5sum {
+  text-align: center;
+  min-width: 320px;
+}
+
+#packages tr td img {
+  vertical-align: middle;
+}

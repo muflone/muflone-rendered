@@ -17,6 +17,11 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <script language="javascript" src="/resources/ion-tabs/js/vendor/jquery-1.10.2.min.js"></script>
+    <script language="javascript" src="/resources/ion-tabs/js/ion-tabs/ion.tabs.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.css">
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.skinBorderedCustom.css">
+
     <title>Gespeaker - Download</title>
   </head>
   <body>
@@ -60,63 +65,121 @@
             the page <a href="install.html">Installation</a> for information
             about their installation.</p>
           <ul>
-  
-    
-      
-            <li><strong>Versione 0.8.2</strong> in <strong>deb</strong> format for Debian, Ubuntu and derivatives<br />
-              MD5: FAA3BEE358D295B84480C8F5ADEAD1AE
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/gespeaker/archive/0.8.2/gespeaker_0.8.2-1_all.deb">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/gespeaker/releases/download/0.8.2/gespeaker_0.8.2-1_all.deb">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 0.8.2</strong> in <strong>pkg.tar.xz</strong> format for Arch Linux and derivatives<br />
-              MD5: F24C87CE159946FBEFEFB0A2A854D88F
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/gespeaker/archive/0.8.2/gespeaker-0.8.2-1-any.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/gespeaker/releases/download/0.8.2/gespeaker-0.8.2-1-any.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-  
-    
-      
-            <li><strong>Versione 0.8.2</strong> in <strong>tar.gz</strong> format with source code for manual installation<br />
-              MD5: 12C74AB7858C818D0EA12CF0AD4A4FD8
-    
-              <ul>
-      
-        
-          
-                <li>Download from <a href="/resources/gespeaker/archive/0.8.2/gespeaker-0.8.2.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Download from <a href="https://github.com/muflone/gespeaker/releases/download/0.8.2/gespeaker-0.8.2.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-  
-          </ul>
 
+
+
+<script>
+  $(document).ready(function(){
+    $.ionTabs("#tabs_packages");
+  });
+</script>
+<div class="ionTabs" id="tabs_packages" data-name="Tabs_Group_name">
+    <ul class="ionTabs__head">
+  
+        <li class="ionTabs__tab" data-target="Tab_v082">0.8.2</li>
+  
+    </ul>
+    <div class="ionTabs__body">
+  
+        <div class="ionTabs__item" data-name="Tab_v082">
+          <table id="packages">
+            <thead>
+              <th>Package type</th>
+              <th>Size</th>
+              <th>MD5</th>
+              <th colspan="2">Download</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Source code</td>
+              <td class="size">142 kB</td>
+              <td class="md5sum">12C74AB7858C818D0EA12CF0AD4A4FD8</td>
+        
+              <td><a href="/resources/gespeaker/archive/0.8.2/gespeaker-0.8.2.tar.gz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gespeaker/releases/download/0.8.2/gespeaker-0.8.2.tar.gz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/debian-32.png"> Debian/Ubuntu</td>
+              <td class="size">140 kB</td>
+              <td class="md5sum">FAA3BEE358D295B84480C8F5ADEAD1AE</td>
+        
+              <td><a href="/resources/gespeaker/archive/0.8.2/gespeaker_0.8.2-1_all.deb"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gespeaker/releases/download/0.8.2/gespeaker_0.8.2-1_all.deb"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux</td>
+              <td class="size">116 kB</td>
+              <td class="md5sum">F24C87CE159946FBEFEFB0A2A854D88F</td>
+        
+              <td><a href="/resources/gespeaker/archive/0.8.2/gespeaker-0.8.2-1-any.pkg.tar.xz"
+                title="Download from Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/gespeaker/releases/download/0.8.2/gespeaker-0.8.2-1-any.pkg.tar.xz"
+                title="Download from GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/gespeaker/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/gespeaker-git/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__preloader"></div>
+    </div>
+</div>
 
 
         </section>

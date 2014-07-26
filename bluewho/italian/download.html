@@ -17,6 +17,11 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <script language="javascript" src="/resources/ion-tabs/js/vendor/jquery-1.10.2.min.js"></script>
+    <script language="javascript" src="/resources/ion-tabs/js/ion-tabs/ion.tabs.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.css">
+    <link rel="stylesheet" type="text/css" href="/resources/ion-tabs/css/ion.tabs.skinBorderedCustom.css">
+
     <title>BlueWho - Scarica</title>
   </head>
   <body>
@@ -63,104 +68,171 @@
             <a href="install.html">Installazione</a> per informazioni sulla
             loro installazione.</p>
           <ul>
-  
-    
-      
-            <li><strong>Versione 0.2</strong> in formato <strong>tar.gz</strong> con codice sorgente per installazione manuale<br />
-              MD5: 658C4431E652DE5B05296C5D42DB4525
-    
-              <ul>
-      
-        
-          
-                <li>Scarica da <a href="/resources/bluewho/archive/0.2/bluewho-0.2.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Scarica da <a href="https://github.com/muflone/bluewho/releases/download/0.2/bluewho-0.2.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-            </li>
-  
-    
-      
-            <li><strong>Versione 0.2</strong> in formato <strong>pkg.tar.xz</strong> per Arch Linux e derivate<br />
-              MD5: D1F9E42262E0E70C9E1457DBB5F03B64
-    
-              <ul>
-      
-        
-          
-                <li>Scarica da <a href="/resources/bluewho/archive/0.2/bluewho-0.2-1-any.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Scarica da <a href="https://github.com/muflone/bluewho/releases/download/0.2/bluewho-0.2-1-any.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-            </li>
-  
-    
-      
-            <li><strong>Versione 0.1</strong> in formato <strong>tar.gz</strong> con codice sorgente per installazione manuale<br />
-              MD5: E263D2C77B704514FA5C1C97984CFD9D
-    
-              <ul>
-      
-        
-          
-                <li>Scarica da <a href="/resources/bluewho/archive/0.1/bluewho-0.1.tar.gz">muflone.com</a></li>
-      
-        
-        
-                <li>Scarica da <a href="https://github.com/muflone/bluewho/releases/download/0.1/bluewho-0.1.tar.gz">github.com</a></li>
-      
-              </ul>
-    
-            </li>
-  
-    
-      
-            <li><strong>Versione 0.1</strong> in formato <strong>pkg.tar.xz</strong> per Arch Linux e derivate<br />
-              MD5: 3C01FE0ECA7D2EB6DD30F7AD1C1F4E3E
-    
-              <ul>
-      
-        
-          
-                <li>Scarica da <a href="/resources/bluewho/archive/0.1/bluewho-0.1-1-any.pkg.tar.xz">muflone.com</a></li>
-      
-        
-        
-                <li>Scarica da <a href="https://github.com/muflone/bluewho/releases/download/0.1/bluewho-0.1-1-any.pkg.tar.xz">github.com</a></li>
-      
-              </ul>
-    
-            </li>
-  
-    
-      
-            <li><strong>Versione 0.1</strong> in formato <strong>deb</strong> per Debian, Ubuntu e derivate<br />
-              MD5: A6F61F7B6E689F583988A56BD02663C1
-    
-              <ul>
-      
-        
-          
-                <li>Scarica da <a href="/resources/bluewho/archive/0.1/bluewho_0.1-1_all.deb">muflone.com</a></li>
-      
-        
-        
-                <li>Scarica da <a href="https://github.com/muflone/bluewho/releases/download/0.1/bluewho_0.1-1_all.deb">github.com</a></li>
-      
-              </ul>
-    
-            </li>
-  
-          </ul>
 
+
+
+<script>
+  $(document).ready(function(){
+    $.ionTabs("#tabs_packages");
+  });
+</script>
+<div class="ionTabs" id="tabs_packages" data-name="Tabs_Group_name">
+    <ul class="ionTabs__head">
+  
+        <li class="ionTabs__tab" data-target="Tab_v020">0.2</li>
+  
+        <li class="ionTabs__tab" data-target="Tab_v010">0.1</li>
+  
+    </ul>
+    <div class="ionTabs__body">
+  
+        <div class="ionTabs__item" data-name="Tab_v020">
+          <table id="packages">
+            <thead>
+              <th>Tipo di pacchetto</th>
+              <th>Dimensione</th>
+              <th>MD5</th>
+              <th colspan="2">Scarica</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Codice sorgente</td>
+              <td class="size">318 kB</td>
+              <td class="md5sum">658C4431E652DE5B05296C5D42DB4525</td>
+        
+              <td><a href="/resources/bluewho/archive/0.2/bluewho-0.2.tar.gz"
+                title="Scarica da Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/bluewho/releases/download/0.2/bluewho-0.2.tar.gz"
+                title="Scarica da GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux</td>
+              <td class="size">314 kB</td>
+              <td class="md5sum">D1F9E42262E0E70C9E1457DBB5F03B64</td>
+        
+              <td><a href="/resources/bluewho/archive/0.2/bluewho-0.2-1-any.pkg.tar.xz"
+                title="Scarica da Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/bluewho/releases/download/0.2/bluewho-0.2-1-any.pkg.tar.xz"
+                title="Scarica da GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/bluewho/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux AUR</td>
+              <td class="size">-</td>
+              <td class="md5sum">-</td>
+        
+              <td colspan="2"><a href="https://aur.archlinux.org/packages/bluewho-git/"
+                target="_blank">
+                <img src="/resources/archlinux-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__item" data-name="Tab_v010">
+          <table id="packages">
+            <thead>
+              <th>Tipo di pacchetto</th>
+              <th>Dimensione</th>
+              <th>MD5</th>
+              <th colspan="2">Scarica</th>
+            </thead>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/source-32.png"> Codice sorgente</td>
+              <td class="size">187 kB</td>
+              <td class="md5sum">E263D2C77B704514FA5C1C97984CFD9D</td>
+        
+              <td><a href="/resources/bluewho/archive/0.1/bluewho-0.1.tar.gz"
+                title="Scarica da Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/bluewho/releases/download/0.1/bluewho-0.1.tar.gz"
+                title="Scarica da GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/debian-32.png"> Debian/Ubuntu</td>
+              <td class="size">175 kB</td>
+              <td class="md5sum">A6F61F7B6E689F583988A56BD02663C1</td>
+        
+              <td><a href="/resources/bluewho/archive/0.1/bluewho_0.1-1_all.deb"
+                title="Scarica da Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/bluewho/releases/download/0.1/bluewho_0.1-1_all.deb"
+                title="Scarica da GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+        
+            
+            
+          
+            <tr>
+              <td class="type"><img src="/resources/archlinux-32.png"> ArchLinux</td>
+              <td class="size">164 kB</td>
+              <td class="md5sum">3C01FE0ECA7D2EB6DD30F7AD1C1F4E3E</td>
+        
+              <td><a href="/resources/bluewho/archive/0.1/bluewho-0.1-1-any.pkg.tar.xz"
+                title="Scarica da Muflone">
+                <img src="/resources/muflone-32.png"></a></td>
+              <td><a href="https://github.com/muflone/bluewho/releases/download/0.1/bluewho-0.1-1-any.pkg.tar.xz"
+                title="Scarica da GitHub">
+                <img src="/resources/github-32.png"></a></td>
+        
+            </tr>
+    
+          </table>
+        </div>
+  
+        <div class="ionTabs__preloader"></div>
+    </div>
+</div>
 
 
         </section>
