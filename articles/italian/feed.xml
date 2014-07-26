@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="text" xml:lang="en">Articoli</title>
+  <link type="application/atom+xml" href="http://www.muflone.com/articles/feed.xml" rel="self"/>
+  <link type="text" href="http://www.muflone.com/" rel="alternate"/>
+  <updated>2014-07-12T20:06:29+02:00</updated>
+  <id>Articoli</id>
+  <author>
+    <name>Muflone &lt;webreg@vbsimple.net&gt;</name>
+  </author>
+  <rights>Copyright (c) 2013-2014 Fabio Castelli (Muflone)</rights>
+
+
+
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>File di inclusione e passaggio di argomenti</title>
+    <link href="http://www.muflone.com/articles/italian/2014-07/file-inclusione-e-passaggio-argomenti.html"/>
+    <updated>2014-07-05T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2014-07/file-inclusione-e-passaggio-argomenti.html</id>
+    <summary type="html">File di inclusione e passaggio di argomenti.</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Pagine e post su Jekyll</title>
+    <link href="http://www.muflone.com/articles/italian/2014-07/pagine-e-post.html"/>
+    <updated>2014-07-01T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2014-07/pagine-e-post.html</id>
+    <summary type="html">Cosa sono le pagine e i post per Jekyll? Le differenze tra queste due entit&amp;agrave;.</summary>
+  </entry>
+      
+    
+  
+
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Benvenuto Jekyll</title>
+    <link href="http://www.muflone.com/articles/italian/2014-06/benvenuto-jekyll.html"/>
+    <updated>2014-06-30T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2014-06/benvenuto-jekyll.html</id>
+    <summary type="html">Introduzione a Jekyll, un generatore di siti statici con funzionalità di blog.</summary>
+  </entry>
+      
+    
+  
+
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Ciao mondo</title>
+    <link href="http://www.muflone.com/articles/italian/2014-06/hello-world-2.html"/>
+    <updated>2014-06-29T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2014-06/hello-world-2.html</id>
+    <summary type="html">Prima pagina in italiano.</summary>
+  </entry>
+      
+    
+  
+
+  
+
+
+</feed>

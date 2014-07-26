@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/resources/gespeaker/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/gespeaker/favicon.ico" type="image/x-icon">
+    <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
+    <link rel="stylesheet" type="text/css" href="/theme/architects-fonts.css" >
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet2.css" media="screen" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Gespeaker - Cambiamenti</title>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <a href="index.html"><img src="/resources/gespeaker/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
+        <h1>Gespeaker</h1>
+        <h2>Cambiamenti</h2>
+        <a href="https://github.com/muflone/gespeaker" class="button"><small>Guarda il progetto su</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+
+          <h1><a name="version08" class="anchor"></a>Versione 0.8 (13 Giugno 2010)</h1>
+          <ul>
+            <li>Spostati i traduttori dai files .po a doc/translators</li>
+            <li>Nuova traduzione polacca di Andrey J.</li>
+            <li>Nuova interfaccia DBUS per l'interazione da applicazioni esterne</li>
+            <li>Corretto il ritardo minimo delle parole da 5 a 0 nell'interfaccia
+              principale</li>
+          </ul>
+          <p><img src="/resources/gespeaker/archive/0.8/italian/about.png" alt="Gespeaker 0.8"></p>
+
+          <h1><a name="version07" class="anchor"></a>Versione 0.7 (13 Dicembre 2009)</h1>
+          <ul>
+            <li>Nuovo modulo handlepaths che riflette il cambiamento della 
+              struttura delle directory.</li>
+            <li>Nuovo setup.py per l'installazione distutils.</li>
+            <li>Nuova pacchettizzazione che segue le regole Debian.</li>
+          </ul>
+          <p><img src="/resources/gespeaker/archive/0.7/italian/about.png" alt="Gespeaker 0.7"></p>
+
+          <h1><a name="version06" class="anchor"></a>Versione 0.6 (18 Luglio 2009)</h1>
+          <ul>
+            <li>Corretta la stringa localizzata per la verifica audio.</li>
+            <li>Invece di ignorare l'errore, un messaggio di errore viene 
+              mostrato se il riproduttore audio non viene trovato.</li>
+            <li>Nuova traduzione spagnola fornita da David Prieto.</li>
+            <li>Nuovo supporto a MBROLA per voci pi&ugrave; realistiche.</li>
+            <li>Aggiunge le voci MBROLA all'elenco delle lingue.</li>
+            <li>Finestra di dialogo delle preferenze a schede col nuovo supporto
+              a MBROLA.</li>
+            <li>Spostati lingua, tipo di voce e varianti alle impostazioni di
+              base e intonazione, volume, velocit&agrave; e ritardo alle 
+              impostazioni avanzate dietro suggerimento frandavid100.</li>
+            <li>Aggiunta automaticamente estensione txt nel salvataggio del file
+              di testo.</li>
+            <li>Aggiunta automaticamente estensione wav nel salvataggio del file 
+              WAVE. Ci&ograve; causava strani rumori nella riproduzione della 
+              traccia registrata se il nome del file non terminava in .wav.</li>
+          </ul>
+          <p><img src="/resources/gespeaker/archive/0.6/italian/main.jpg" alt="Finestra principale di Gespeaker 0.6"></p>
+          <p><img src="/resources/gespeaker/archive/0.6/italian/mbrola.jpg" alt="Finestra delle preferenze per MBROLA in Gespeaker 0.6"></p>
+
+          <h1><a name="version05" class="anchor"></a>Versione 0.5 (30 Giugno 2009)</h1>
+          <ul>
+            <li>Aggiunto un separatore espansore per le impostazioni in modo da
+              massimizzare l'utilizzo della finestra col testo.</li>
+            <li>Aggiunti i filtri per le finestre di dialogo carica/salva testo.</li>
+            <li>Aggiunto il supporto per il salvataggio in wave della traccia audio.</li>
+            <li>Aggiunta una barra di stato per mostrare la modalit&agrave; di 
+              registrazione attiva.</li>
+            <li>Aggiunta la finestra delle preferenze.</li>
+            <li>Aggiunte le preferenze per salvare e ricaricare il messaggio di 
+              benvenuto, le dimensioni della finestra, le impostazioni della 
+              voce e lo stato dell'espansore.</li>
+            <li>Aggiunto il supporto per il frontend audio: <code>ALSA</code> 
+              (aplay), <code>PulseAudio</code> (paplay) e comando di riproduzione
+              personalizzato dall'utente, con comando di verifica dell'audio.</li>
+            <li>Aggiunte le varianti delle voci verificando la directory 
+              <code>/usr/share/espeak-data/voices/!v</code> per varianti extra 
+              della voce.</li>
+            <li>Sistemate le icone predefinite per <code>DialogFileOpenSave</code>.</li>
+          </ul>
+          <p><img src="/resources/gespeaker/archive/0.5/italian/main.png" alt="Finestra principale di Gespeaker 0.5"></p>
+          <p><img src="/resources/gespeaker/archive/0.5/italian/preferences.png" alt="Finestra delle preference per Gespeaker 0.5"></p>
+
+          <h1><a name="version04" class="anchor"></a>Versione 0.4 (20 Giugno 2009)</h1>
+          <ul>
+            <li>Aggiunto <code>SubprocessWrapper.Popen</code> per racchiudere 
+              subprocess.Popen in modo da supportare versioni di Python 
+              antecedenti alla 2.6 che non offrono l'argomento delete alla 
+              creazione dell'oggetto.</li>
+            <li>Aggiunto <code>TempfileWrapper.NamedTemporaryFile</code> per 
+            racchiudere l'oggetto Popen di tempfile in modo da supportare 
+            versioni di Python antecedenti alla 2.6 che non offrono i metodi 
+            terminate e send_signal. Attualmente non viene pi&ugrave; usato, 
+            rimasto per utilizzi futuri.</li>
+            <li>Adesso Gespeaker funziona con Python versioni 2.4 e 
+              successive.</li>
+            <li>Il file temporaneo per il testo da riprodurre viene creato 
+              all'avvio del programma cos&igrave; non verranno pi&ugrave; creati
+              files temporanei dopo ogni riproduzione.</li>
+            <li>Incluse le funzionalit&agrave; pausa e riprendi.</li>
+            <li>Nuove icona e logo, gentilmente forniti da MIX.</li>
+            <li>Nuova traduzione francese fornita da Emmanuel.</li>
+          </ul>
+          <p><img src="/resources/gespeaker/archive/0.4/italian/main.png" alt="Finestra principale di Gespeaker 0.4"></p>
+
+          <h1><a name="version03" class="anchor"></a>Versione 0.3 (18 Giugno 2009)</h1>
+          <ul>
+            <li>Usata soltanto per verifiche, mai rilasciata.</li>
+            <li>Aggiunto il supporto per il tipo di voce (maschile/femminile) 
+              con +12 per la voce femminile.</li>
+            <li>Rimossa la sostituzione del testo con un file temporaneo 
+              pi&ugrave; sicuro con il testo da riprodurre.</li>
+            <li>Sostituita la chiamata rediretta tramite shell con la pi&ugrave;
+              sicura redirezione attraverso subprocess.</li>
+            <li>Miglior controllo delle chiamate esterne, adesso sia l'esecuzione
+              di espeak e del riproduttore vengono controllati in caso di uscita
+              e terminati se richiesto.</li>
+            <li>Aggiunti parametri documentazione e artisti a 
+              <code>DialogAbout</code>.</li>
+          </ul>
+
+          <h1><a name="version02" class="anchor"></a>Versione 0.2 (14 Giugno 2009)</h1>
+          <ul>
+            <li>Cambiata l'interfaccia utente secondo le specifiche HIG di Gnome
+              http://library.gnome.org/devel/hig-book/stable/design-window.html.en</li>
+            <li>Corretto l'utilizzo dell'icona su 
+              <code>DialogAbout.set_icon_from_file</code>, che era stata 
+              erroneamente scritta nel codice.</li>
+            <li>Aggiunto collegamento simbolico del file di copyright a 
+              <code>/usr/share/doc/gespeaker/copyright</code></li>
+          </ul>
+          <p><img src="/resources/gespeaker/archive/0.2/italian/main.png" alt="Finestra principale di Gespeaker 0.2"></p>
+
+          <h1><a name="version01" class="anchor"></a>Versione 0.1 (13 Giugno 2009)</h1>
+          <ul>
+            <li>Rilascio iniziale.</li>
+          </ul>
+          <p><img src="/resources/gespeaker/archive/0.1/italian/main.jpg" alt="Finestra principale di Gespeaker 0.1"></p>
+
+        </section>
+        <aside id="sidebar">
+
+          <ul class="menu1">
+            <li class="menu1"><a href="index.html">Introduzione</a></li>
+            <li class="menu1"><a href="download.html">Scarica</a></li>
+            <li class="menu1"><a href="install.html">Installazione</a></li>
+            <li class="menu1"><a href="screenshots.html">Schermate</a></li>
+            <li class="menu1"><a href="languages.html">Lingue supportate</a></li>
+            <li class="menu1"><a href="mbrola.html">Motore MBROLA</a></li>
+            <li class="menu1"><a href="mbrola-availability.html">Voci MBROLA</a></li>
+            <ul class="menu2">
+              <li class="menu2"><a href="mbrola-ubuntu1004.html">Ubuntu 10.04</a></li>
+              <li class="menu2"><a href="mbrola-ubuntu1010.html">Ubuntu 10.10</a></li>
+              <li class="menu2"><a href="mbrola-ubuntu1104.html">Ubuntu 11.04</a></li>
+              <li class="menu2"><a href="mbrola-ubuntu1110.html">Ubuntu 11.10</a></li>
+              <li class="menu2"><a href="mbrola-ubuntu1204.html">Ubuntu 12.04</a></li>
+              <li class="menu2"><a href="mbrola-ubuntu1210.html">Ubuntu 12.10</a></li>
+              <li class="menu2"><a href="mbrola-ubuntu1304.html">Ubuntu 13.04</a></li>
+              <li class="menu2"><a href="mbrola-debian6.html">Debian 6</a></li>
+              <li class="menu2"><a href="mbrola-debian7.html">Debian 7</a></li>
+              <li class="menu2"><a href="mbrola-debian8.html">Debian 8</a></li>
+              <li class="menu2"><a href="mbrola-debiansid.html">Debian sid</a></li>
+              <li class="menu2"><a href="mbrola-opensuse11.html">openSUSE 11</a></li>
+              <li class="menu2"><a href="mbrola-opensuse12.html">openSUSE 12</a></li>
+              <li class="menu2"><a href="mbrola-opensuse13.html">openSUSE 13</a></li>
+              <li class="menu2"><a href="mbrola-archlinux.html">Arch Linux</a></li>
+            </ul>
+            <li class="menu1"><a href="demo.html">Voci dimostrative</a></li>
+            <li class="menu1"><a href="changelog.html">Cambiamenti</a></li>
+          </ul>
+
+
+  
+
+
+          <p class="repo-owner"><a href="https://github.com/muflone/gespeaker">Gespeaker</a> &egrave; sviluppato da Muflone.</p>
+          <p>Questa pagina usa il tema Architect di <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+
+
+    <div class="footer">
+
+  
+
+
+          <div id="icons">
+            <a href="/italian.html">
+              <img src="/resources/index/32-home.png" title="Home">
+            </a>
+  
+
+
+  
+    
+
+  
+            <a href="/contacts/italian/">
+              <img src="/resources/contacts/archive/latest/icon32.png" title="Muflone
+Contatti e risorse sull'autore.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/articles/italian/">
+              <img src="/resources/articles/archive/latest/icon32.png" title="Articles
+Articoli e guide.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gespeaker/italian/">
+              <img src="/resources/gespeaker/archive/latest/icon32.png" title="Gespeaker
+Ascolta il testo scritto in varie lingue con impostazioni per voce, intonazione, volume e velocit&agrave.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gwakeonlan/italian/">
+              <img src="/resources/gwakeonlan/archive/latest/icon32.png" title="gWakeOnLan
+Accende le tue macchine in rete locale oppure attraverso Internet usando il sistema Wake On LAN.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gextractwinicons/italian/">
+              <img src="/resources/gextractwinicons/archive/latest/icon32.png" title="gExtractWinIcons
+Estrai cursori, icone e immagini da file di risorse per Microsoft Windows (come .exe, .dll, .ocx e .cpl).">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/bluewho/italian/">
+              <img src="/resources/bluewho/archive/latest/icon32.png" title="BlueWho
+Ricerca dispositivi Bluetooth nelle vicinanze e ricevi le notifiche quando un nuovo dispositivo viene rilevato.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/cpucompare/italian/">
+              <img src="/resources/cpucompare/archive/latest/icon32.png" title="CPUCompare
+Esegui confronti tra numerosi modelli di CPU per trovare quelle di tuo interesse.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gptrace/italian/">
+              <img src="/resources/gptrace/archive/latest/icon32.png" title="gpTrace
+Traccia le attivita di un'applicazione esterna.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-builder/italian/">
+              <img src="/resources/remmina-plugin-builder/archive/latest/icon32.png" title="Remmina Plugin Builder
+Un pacchetto per semplificare lo sviluppo e la compilazione di plugin per Remmina.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-exec/italian/">
+              <img src="/resources/remmina-plugin-exec/archive/latest/icon32.png" title="Remmina Plugin Exec
+Un plugin di protocollo per Remmina per eseguire un processo esterno.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-folder/italian/">
+              <img src="/resources/remmina-plugin-folder/archive/latest/icon32.png" title="Remmina Plugin Folder
+Un plugin di protocollo per Remmina per aprire una cartella con un gestore di files esterno.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-open/italian/">
+              <img src="/resources/remmina-plugin-open/archive/latest/icon32.png" title="Remmina Plugin Open
+Un plugin di protocollo per Remmina per aprire un file o un documento utilizzando l'applicazione associata.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-rdesktop/italian/">
+              <img src="/resources/remmina-plugin-rdesktop/archive/latest/icon32.png" title="Remmina Plugin RDesktop
+Un plugin di protocollo per Remmina per stabilire connessioni RDP tramite RDesktop.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-teamviewer/italian/">
+              <img src="/resources/remmina-plugin-teamviewer/archive/latest/icon32.png" title="Remmina Plugin TeamViewer
+Un plugin di protocollo per Remmina per stabilire connessioni tramite TeamViewer.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-ultravnc/italian/">
+              <img src="/resources/remmina-plugin-ultravnc/archive/latest/icon32.png" title="Remmina Plugin UltraVNC
+Un plugin di protocollo per Remmina per stabilire connessioni tramite UltraVNC.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-url/italian/">
+              <img src="/resources/remmina-plugin-url/archive/latest/icon32.png" title="Remmina Plugin URL
+Un plugin di protocollo per Remmina per aprire pagine web tramite un browser web esterno.">
+            </a>
+    
+
+  
+  
+
+  
+            <a href="/remmina-plugin-webkit/italian/">
+              <img src="/resources/remmina-plugin-webkit/archive/latest/icon32.png" title="Remmina Plugin WebKit
+Un plugin di protocollo per Remmina per aprire pagine web tramite un browser web WebKit integrato.">
+            </a>
+    
+
+
+
+          </div>
+  
+
+      Copyright &copy; 2013-2014 <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+      <a href="/">Home</a> | 
+      <a href="/english.html"><img src="/resources/index/16-english.png"> English</a> |
+      <a href="/italian.html"><img src="/resources/index/16-italian.png"> Italian</a> |
+      <a href="/contacts/italian/">Contatti</a>
+    </div>
+  </body>
+</html>
+

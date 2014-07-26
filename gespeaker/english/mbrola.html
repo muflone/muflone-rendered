@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/resources/gespeaker/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/gespeaker/favicon.ico" type="image/x-icon">
+    <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
+    <link rel="stylesheet" type="text/css" href="/theme/architects-fonts.css" >
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet2.css" media="screen" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Gespeaker - MBROLA speech engine</title>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <a href="index.html"><img src="/resources/gespeaker/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
+        <h1>Gespeaker</h1>
+        <h2>MBROLA speech engine</h2>
+        <a href="https://github.com/muflone/gespeaker" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+
+          <h1><a name="introduction" class="anchor"></a>Introduction</h1>
+          <p>Gespeaker supports two different speech
+            engines: <strong>espeak</strong>, the default native and 
+            <a href="http://tcts.fpms.ac.be/synthesis/"><strong>MBROLA</strong></a>, 
+            an extra engine that offers more realistic voices.</p>
+          <p>It's possible to read the page <a href="demo.html">Demo voices</a> 
+            to listen some examples of both speech engines.</p>
+          <p>To use <strong>espeak</strong> no configuration is needed at all, 
+            Gespeaker will use it natively, just to select
+            the desired language and to set the voice settings.</p>
+
+          <h1><a name="install" class="anchor"></a>Installation of MBROLA</h1>
+          <p>To use MBROLA install the package <code>mbrola</code> first and 
+            then install at least one MBROLA voice like for example 
+            <code>mbrola-en1</code> or <code>mbrola-us3</code> (the exact 
+            package name to install depends from the distribution).</p>
+
+          <h1><a name="usage" class="anchor"></a>MBROLA usage</h1>
+          <p><img src="/resources/gespeaker/archive/latest/english/mbrola.png" alt="Preferences window for MBROLA"><br />
+            After installing the required packages check in the preferences 
+            window the MBROLA voices tab to verify that the path of the voices 
+            is that where they were installed and click the 
+            <strong>Refresh</strong> button to search the voices in the new path.
+            The default path for the MBROLA voices is <code>/usr/share/mbrola</code>.</p>
+          <p>After installing the MBROLA voices or after changing the voices 
+            path a restart of Gespeaker is needed to see 
+            the new voices.</p>
+
+        </section>
+        <aside id="sidebar">
+
+          <ul class="menu1">
+            <li class="menu1"><a href="index.html">Introduction</a></li>
+            <li class="menu1"><a href="download.html">Download</a></li>
+            <li class="menu1"><a href="install.html">Installation</a></li>
+            <li class="menu1"><a href="screenshots.html">Screenshots</a></li>
+            <li class="menu1"><a href="languages.html">Supported languages</a></li>
+            <li class="menu1"><a href="mbrola.html">MBROLA engine</a></li>
+            <li class="menu1"><a href="mbrola-availability.html">MBROLA voices</a></li>
+            <ul class="menu2">
+              <li class="menu2"><a href="mbrola-ubuntu1004.html">Ubuntu 10.04</a></li>
+              <li class="menu2"><a href="mbrola-ubuntu1010.html">Ubuntu 10.10</a></li>
+              <li class="menu2"><a href="mbrola-ubuntu1104.html">Ubuntu 11.04</a></li>
+              <li class="menu2"><a href="mbrola-ubuntu1110.html">Ubuntu 11.10</a></li>
+              <li class="menu2"><a href="mbrola-ubuntu1204.html">Ubuntu 12.04</a></li>
+              <li class="menu2"><a href="mbrola-ubuntu1210.html">Ubuntu 12.10</a></li>
+              <li class="menu2"><a href="mbrola-ubuntu1304.html">Ubuntu 13.04</a></li>
+              <li class="menu2"><a href="mbrola-debian6.html">Debian 6</a></li>
+              <li class="menu2"><a href="mbrola-debian7.html">Debian 7</a></li>
+              <li class="menu2"><a href="mbrola-debian8.html">Debian 8</a></li>
+              <li class="menu2"><a href="mbrola-debiansid.html">Debian sid</a></li>
+              <li class="menu2"><a href="mbrola-opensuse11.html">openSUSE 11</a></li>
+              <li class="menu2"><a href="mbrola-opensuse12.html">openSUSE 12</a></li>
+              <li class="menu2"><a href="mbrola-opensuse13.html">openSUSE 13</a></li>
+              <li class="menu2"><a href="mbrola-archlinux.html">Arch Linux</a></li>
+            </ul>
+            <li class="menu1"><a href="demo.html">Demo voices</a></li>
+            <li class="menu1"><a href="changelog.html">Changelog</a></li>
+          </ul>
+
+
+  
+
+
+          <p class="repo-owner"><a href="https://github.com/muflone/gespeaker">Gespeaker</a> is developed by Muflone.</p>
+          <p>This page uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+
+
+    <div class="footer">
+
+  
+
+
+          <div id="icons">
+            <a href="/english.html">
+              <img src="/resources/index/32-home.png" title="Home">
+            </a>
+  
+
+
+  
+    
+
+  
+            <a href="/contacts/english/">
+              <img src="/resources/contacts/archive/latest/icon32.png" title="Muflone
+Contacts and resources about the author.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/articles/english/">
+              <img src="/resources/articles/archive/latest/icon32.png" title="Articles
+Articles and guides.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gespeaker/english/">
+              <img src="/resources/gespeaker/archive/latest/icon32.png" title="Gespeaker
+Listen the written text in various languages with settings for voices, speech, volume and speed.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gwakeonlan/english/">
+              <img src="/resources/gwakeonlan/archive/latest/icon32.png" title="gWakeOnLan
+Turn on your machines in local network or through the Internet using the Wake On LAN system.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gextractwinicons/english/">
+              <img src="/resources/gextractwinicons/archive/latest/icon32.png" title="gExtractWinIcons
+Extract cursors, icons and images from MS Windows resources files (like .exe, .dll, .ocx and .cpl).">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/bluewho/english/">
+              <img src="/resources/bluewho/archive/latest/icon32.png" title="BlueWho
+Find Bluetooth devices near you and receive notifications when a new device is detected.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/cpucompare/english/">
+              <img src="/resources/cpucompare/archive/latest/icon32.png" title="CPUCompare
+Compare between a large number of CPU models to find those of your interest.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gptrace/english/">
+              <img src="/resources/gptrace/archive/latest/icon32.png" title="gpTrace
+Trace the activities of an external application.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-builder/english/">
+              <img src="/resources/remmina-plugin-builder/archive/latest/icon32.png" title="Remmina Plugin Builder
+A package to ease the development and the compilation of Remmina plugins.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-exec/english/">
+              <img src="/resources/remmina-plugin-exec/archive/latest/icon32.png" title="Remmina Plugin Exec
+A Remmina protocol plugin to execute an external process.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-folder/english/">
+              <img src="/resources/remmina-plugin-folder/archive/latest/icon32.png" title="Remmina Plugin Folder
+A Remmina protocol plugin to open a folder using an external file manager application.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-open/english/">
+              <img src="/resources/remmina-plugin-open/archive/latest/icon32.png" title="Remmina Plugin Open
+A Remmina protocol plugin to open a file or document using its associated application.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-rdesktop/english/">
+              <img src="/resources/remmina-plugin-rdesktop/archive/latest/icon32.png" title="Remmina Plugin RDesktop
+A Remmina protocol plugin to establish RDP connection through RDesktop.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-teamviewer/english/">
+              <img src="/resources/remmina-plugin-teamviewer/archive/latest/icon32.png" title="Remmina Plugin TeamViewer
+A Remmina protocol plugin to establish connections through TeamViewer.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-ultravnc/english/">
+              <img src="/resources/remmina-plugin-ultravnc/archive/latest/icon32.png" title="Remmina Plugin UltraVNC
+A Remmina protocol plugin to establish connections through UltraVNC.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-url/english/">
+              <img src="/resources/remmina-plugin-url/archive/latest/icon32.png" title="Remmina Plugin URL
+A Remmina protocol plugin to open web pages through an external web browser.">
+            </a>
+    
+
+  
+  
+
+  
+            <a href="/remmina-plugin-webkit/english/">
+              <img src="/resources/remmina-plugin-webkit/archive/latest/icon32.png" title="Remmina Plugin WebKit
+A Remmina protocol plugin to open web pages through an integrated WebKit web browser.">
+            </a>
+    
+
+
+
+          </div>
+  
+
+      Copyright &copy; 2013-2014 <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+      <a href="/">Home</a> | 
+      <a href="/english.html"><img src="/resources/index/16-english.png"> English</a> |
+      <a href="/italian.html"><img src="/resources/index/16-italian.png"> Italian</a> |
+      <a href="/contacts/english/">Contacts</a>
+    </div>
+  </body>
+</html>
+

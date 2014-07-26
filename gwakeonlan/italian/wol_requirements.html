@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/resources/gwakeonlan/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/gwakeonlan/favicon.ico" type="image/x-icon">
+    <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
+    <link rel="stylesheet" type="text/css" href="/theme/architects-fonts.css" >
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet2.css" media="screen" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>gWakeOnLan - Requisiti</title>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <a href="index.html"><img src="/resources/gwakeonlan/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
+        <h1>gWakeOnLan</h1>
+        <h2>Requisiti</h2>
+        <a href="https://github.com/muflone/gwakeonlan" class="button"><small>Guarda il progetto su</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+
+          <h1><a name="requirements" class="anchor"></a>Requisiti</h1>
+          <p>Per permettere a gWakeOnLan di accendere una macchina
+            <strong>tutti i seguenti requisiti</strong> devono essere soddisfatti.<br />
+            Ogni macchina da accendere deve:</p>
+          <ol id="requirements" class="requirements">
+            <li>avere una scheda di rete Ethernet integrata (oppure PCI/PCIE).</li>
+            <li>avere il cavo di rete sempre connesso.</li>
+            <li>avere il cavo di alimentazione sempre connesso.</li>
+            <li>supportare il Wake On LAN con 
+              <a href="http://en.wikipedia.org/wiki/Wake-on-LAN#Magic_packet">Magic Packet</a>.</li>
+            <li>avere il Wake On LAN <a href="wol_bios.html">abilitato nel BIOS</a>.</li>
+            <li>avere il Wake On LAN con Magic Packet 
+              <a href="wol_os.html">abilitato nel Sistema operativo</a>.</li>
+            <li>essere spenta dal Sistema operativo.</li>
+          </ol>
+
+          <p>Se uno o pi&ugrave; di questi requisiti non &egrave; soddisfatto
+            <strong>per tutto il tempo</strong>, il Wake On LAN non
+            funzioner&agrave;.</p>
+          <p>Non funzioner&agrave; se un requisito non &egrave; soddisfatto per un
+            certo tempo, <strong>anche dopo che la macchina &egrave; stata spenta</strong>, 
+            come ad esempio scollegare il cavo di alimentazione dalla macchina
+            e ricollegarlo successivamente.</p>
+
+          <h1><a name="additional" class="anchor"></a>Requisiti aggiuntivi per Internet</h1>
+          <p>Nel caso che il comando sia inviato attraverso Internet (e non in
+            broadcast locale) esistono dei requisiti aggiuntivi da soddisfare:</p>
+          <ol id="requirements">
+            <li><span class="requirements">La macchina da accendere deve essere
+              raggiungibile dalla rete.</span><br />
+              La macchina non deve essere collegata con un modem direttamente
+              connesso alla macchina, altrimenti i dati non saranno ricevuti se
+              la rete &egrave; scollegata.
+              Un <strong>router raggiungibile</strong> e connesso &egrave;
+              quindi raccomandato per poter ricevere i dati inviati da 
+              gWakeOnLan.</li>
+            <li><span class="requirements">I dati UDP inviati da
+              gWakeOnLan devono raggiungere la macchina di
+              destinazione.</span><br />
+              Il router deve supportare l'inoltro dei dati UDP dal numero di
+              porta specificato all'indirizzo IP di destinazione nella sua rete
+              locale.
+              Generalmente questo viene fatti nella configurazione del router
+              impostando un
+              <strong>Server Virtuale, Port forward oppure Port mapping</strong>.
+              Consulta la documentazione del router per sapere come configurarlo.</li>
+            <li><span class="requirements">Il router deve ricordare le macchine 
+              spente</span><br />
+              Molti router di casa dimenticano gli indirizzi MAC nella loro rete
+              locale dopo 2-5 minuti di inattivit&agrave;, quindi anche se una
+              macchina &egrave; stata correttamente spenta con tutti i precedenti
+              requisiti il router ricevente potrebbe non ricordare a quale
+              indirizzo MAC inoltrare i dati.<br />
+              La chiave di successo per ottenere questo &egrave; chiamata 
+              <a href="http://en.wikipedia.org/wiki/Address_Resolution_Protocol">cache ARP statica</a> 
+              che staticamente assegna un indirizzo MAC all'indirizzo IP da
+              inoltrare.
+              Consulta la documentazione del router per sapere come configurarlo.<br />
+              Se questo requisito non pu&ograve; essere soddisfatto
+              perch&egrave; il router non supporta una cache ARP statica in
+              alternativa &egrave; possibile configurare un computer sempre
+              acceso che agisca come gateway e configurare la cache ARP nel suo
+              sistema operativo.</li>
+          </ol>
+
+        </section>
+        <aside id="sidebar">
+
+          <ul class="menu1">
+            <li class="menu1"><a href="index.html">Introduzione</a></li>
+            <li class="menu1"><a href="download.html">Scarica</a></li>
+            <li class="menu1"><a href="install.html">Installazione</a></li>
+            <li class="menu1"><a href="screenshots.html">Schermate</a></li>
+            <li class="menu1"><a href="wol.html">Wake On LAN</a></li>
+            <ul class="menu2">
+              <li class="menu2"><a href="wol_requirements.html">Requisiti</a></li>
+              <li class="menu2"><a href="wol_bios.html">nel BIOS</a></li>
+              <li class="menu2"><a href="wol_os.html">nel Sistema Operativo</a></li>
+            </ul>
+            <li class="menu1"><a href="changelog.html">Cambiamenti</a></li>
+          </ul>
+
+
+  
+
+
+          <p class="repo-owner"><a href="https://github.com/muflone/gwakeonlan">gWakeOnLan</a> &egrave; sviluppato da Muflone.</p>
+          <p>Questa pagina usa il tema Architect di <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+
+
+    <div class="footer">
+
+  
+
+
+          <div id="icons">
+            <a href="/italian.html">
+              <img src="/resources/index/32-home.png" title="Home">
+            </a>
+  
+
+
+  
+    
+
+  
+            <a href="/contacts/italian/">
+              <img src="/resources/contacts/archive/latest/icon32.png" title="Muflone
+Contatti e risorse sull'autore.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/articles/italian/">
+              <img src="/resources/articles/archive/latest/icon32.png" title="Articles
+Articoli e guide.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gespeaker/italian/">
+              <img src="/resources/gespeaker/archive/latest/icon32.png" title="Gespeaker
+Ascolta il testo scritto in varie lingue con impostazioni per voce, intonazione, volume e velocit&agrave.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gwakeonlan/italian/">
+              <img src="/resources/gwakeonlan/archive/latest/icon32.png" title="gWakeOnLan
+Accende le tue macchine in rete locale oppure attraverso Internet usando il sistema Wake On LAN.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gextractwinicons/italian/">
+              <img src="/resources/gextractwinicons/archive/latest/icon32.png" title="gExtractWinIcons
+Estrai cursori, icone e immagini da file di risorse per Microsoft Windows (come .exe, .dll, .ocx e .cpl).">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/bluewho/italian/">
+              <img src="/resources/bluewho/archive/latest/icon32.png" title="BlueWho
+Ricerca dispositivi Bluetooth nelle vicinanze e ricevi le notifiche quando un nuovo dispositivo viene rilevato.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/cpucompare/italian/">
+              <img src="/resources/cpucompare/archive/latest/icon32.png" title="CPUCompare
+Esegui confronti tra numerosi modelli di CPU per trovare quelle di tuo interesse.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gptrace/italian/">
+              <img src="/resources/gptrace/archive/latest/icon32.png" title="gpTrace
+Traccia le attivita di un'applicazione esterna.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-builder/italian/">
+              <img src="/resources/remmina-plugin-builder/archive/latest/icon32.png" title="Remmina Plugin Builder
+Un pacchetto per semplificare lo sviluppo e la compilazione di plugin per Remmina.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-exec/italian/">
+              <img src="/resources/remmina-plugin-exec/archive/latest/icon32.png" title="Remmina Plugin Exec
+Un plugin di protocollo per Remmina per eseguire un processo esterno.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-folder/italian/">
+              <img src="/resources/remmina-plugin-folder/archive/latest/icon32.png" title="Remmina Plugin Folder
+Un plugin di protocollo per Remmina per aprire una cartella con un gestore di files esterno.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-open/italian/">
+              <img src="/resources/remmina-plugin-open/archive/latest/icon32.png" title="Remmina Plugin Open
+Un plugin di protocollo per Remmina per aprire un file o un documento utilizzando l'applicazione associata.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-rdesktop/italian/">
+              <img src="/resources/remmina-plugin-rdesktop/archive/latest/icon32.png" title="Remmina Plugin RDesktop
+Un plugin di protocollo per Remmina per stabilire connessioni RDP tramite RDesktop.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-teamviewer/italian/">
+              <img src="/resources/remmina-plugin-teamviewer/archive/latest/icon32.png" title="Remmina Plugin TeamViewer
+Un plugin di protocollo per Remmina per stabilire connessioni tramite TeamViewer.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-ultravnc/italian/">
+              <img src="/resources/remmina-plugin-ultravnc/archive/latest/icon32.png" title="Remmina Plugin UltraVNC
+Un plugin di protocollo per Remmina per stabilire connessioni tramite UltraVNC.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-url/italian/">
+              <img src="/resources/remmina-plugin-url/archive/latest/icon32.png" title="Remmina Plugin URL
+Un plugin di protocollo per Remmina per aprire pagine web tramite un browser web esterno.">
+            </a>
+    
+
+  
+  
+
+  
+            <a href="/remmina-plugin-webkit/italian/">
+              <img src="/resources/remmina-plugin-webkit/archive/latest/icon32.png" title="Remmina Plugin WebKit
+Un plugin di protocollo per Remmina per aprire pagine web tramite un browser web WebKit integrato.">
+            </a>
+    
+
+
+
+          </div>
+  
+
+      Copyright &copy; 2013-2014 <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+      <a href="/">Home</a> | 
+      <a href="/english.html"><img src="/resources/index/16-english.png"> English</a> |
+      <a href="/italian.html"><img src="/resources/index/16-italian.png"> Italian</a> |
+      <a href="/contacts/italian/">Contatti</a>
+    </div>
+  </body>
+</html>
+
