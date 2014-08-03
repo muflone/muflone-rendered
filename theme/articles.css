@@ -46,3 +46,10 @@
   display: block;
   font-weight: bold;
 }
+
+.title {
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+  font-size: 46px;
+  letter-spacing: -1px;
+  color: #474747;
+} 

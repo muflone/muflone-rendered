@@ -18,197 +18,160 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>Articoli</title>
+    <title>Benvenuto Jekyll</title>
   </head>
 
   <body>
     <header>
       <div class="inner">
-        <a href="/articles/italian"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
+        <a href="/articles/"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
         <h1>Muflone</h1>
-        <h2>Articoli</h2>
+        <h2>Benvenuto Jekyll</h2>
       </div>
     </header>
     <div id="content-wrapper">
       <div class="clearfix">
         <section id="main-content" class="article">
 
-<div class="big center"><a href="/articles">Everything</a>
-  <a href="/articles/feed.xml"><img src="/resources/index/24-rss.png"></a> | 
-  <a href="/articles/english">English language</a>
-  <a href="/articles/english/feed.xml"><img src="/resources/index/24-rss.png"></a> | 
-  <a href="/articles/italian">Italian language</a>
-  <a href="/articles/italian/feed.xml"><img src="/resources/index/24-rss.png"></a> | 
-  <br />&nbsp;</div>
+          <div class="title">Introduzione a Jekyll, un generatore di siti statici con funzionalità di blog.</div>
+          <hr />
 
-    <ul>
+<p>Sin dalla sua creazione questo sito web è stato prodotto utilizzando
+<a href="http://jekyllrb.com"><strong>Jekyll</strong></a>, un generatore di siti web statici con
+funzionalità di blog.</p>
 
+<p>Non spiegherò dettagliatamente come utilizzare Jekyll, è pieno di siti web e
+documentazione sul web.</p>
 
+<p>Fondamentalmente il necessario è installare prima <strong>Ruby</strong>, quindi installare un
+paio di <em>gemme</em> necessarie per eseguire Jekyll.</p>
 
-  
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">gem update
+<span class="c"># Updating installed gems</span>
+gem install jekyll therubyracer
+<span class="c"># Fetching: liquid-2.6.1.gem (100%)</span>
+<span class="c"># Successfully installed liquid-2.6.1</span>
+<span class="c"># Fetching: fast-stemmer-1.0.2.gem (100%)</span>
+<span class="c"># Building native extensions.  This could take a while...</span>
+<span class="c"># Successfully installed fast-stemmer-1.0.2</span>
+<span class="c"># Fetching: kramdown-1.4.0.gem (100%)</span>
+<span class="c"># Successfully installed kramdown-1.4.0</span>
+<span class="c"># ...</span>
+<span class="c"># 34 gems installed</span></code></pre></div>
 
-  
-    
-    
-      
-      <li>
-        
-        <img src="/resources/index/16-italian.png">
-        
-        <a href="/articles/italian/2014-07-27/aggiornamento-settimanale.html">Aggiornamento settimanale</a>
-        (27 Jul 2014)
-        <div class="entry">Aggiornamenti dal 21-07-2014 al 27-07-2014</div>
-      </li>
-      
-    
-  
+<p>Il primo comando aggiornerà qualunque gemma Ruby esistente, il secondo
+installerà jekyll, assieme a tutte le sue dipendenze.</p>
 
-  
+<p>Un sito web rapido può essere creato semplicemente eseguendo:</p>
 
-  
-    
-    
-      
-      <li>
-        
-        <img src="/resources/index/16-italian.png">
-        
-        <a href="/articles/italian/2014-07-20/aggiornamento-settimanale.html">Aggiornamento settimanale</a>
-        (20 Jul 2014)
-        <div class="entry">Aggiornamenti dal 14-07-2014 al 20-07-2014</div>
-      </li>
-      
-    
-  
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">jekyll new mywebsite
+<span class="c"># New jekyll site installed in /home/muflone/mywebsite.</span>
+<span class="nb">cd </span>mywebsite
+jekyll serve
+<span class="c"># Configuration file: /home/muflone/mywebsite/_config.yml</span>
+<span class="c">#             Source: /home/muflone/mywebsite</span>
+<span class="c">#        Destination: /home/muflone/mywebsite/_site</span>
+<span class="c">#       Generating... </span>
+<span class="c">#                     done.</span>
+<span class="c"># Configuration file: /home/muflone/mywebsite/_config.yml</span>
+<span class="c">#     Server address: http://0.0.0.0:4001/</span>
+<span class="c">#   Server running... press ctrl-c to stop.</span></code></pre></div>
 
-  
+<p>Quindi navigando all’URL <a href="http://localhost:4000/">http://localhost:4000/</a> 
+sarà mostrando il nuovo sito web creato da Jekyll.</p>
 
-  
-    
-    
-      
-      <li>
-        
-        <img src="/resources/index/16-italian.png">
-        
-        <a href="/articles/italian/2014-07-13/aggiornamento-settimanale.html">Aggiornamento settimanale</a>
-        (13 Jul 2014)
-        <div class="entry">Aggiornamenti dal 07-07-2014 al 13-07-2014</div>
-      </li>
-      
-    
-  
+<div class="warning-it">Se il comando <strong>jekyll</strong> non può essere
+trovato potrebbe essere necessario aggiungere la cartella gems
+(<strong>~/.gems/ruby/VERSION/bin</strong>) al percorso.</div>
 
-  
+<div>&nbsp;</div>
 
-  
-    
-    
-      
-      <li>
-        
-        <img src="/resources/index/16-italian.png">
-        
-        <a href="/articles/italian/2014-07-06/aggiornamento-settimanale.html">Aggiornamento settimanale</a>
-        (06 Jul 2014)
-        <div class="entry">Aggiornamenti dal 30-06-2014 al 06-07-2014</div>
-      </li>
-      
-    
-  
+<div class="tip-it">Un metodo alternativo (che preferisco) è quello di creare
+un alias bash:
 
-  
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span>jekyll ~/.gems/ruby/VERSION/bin/jekyll</code></pre></div>
 
-  
-    
-    
-      
-      <li>
-        
-        <img src="/resources/index/16-italian.png">
-        
-        <a href="/articles/italian/2014-07-05/file-inclusione-e-passaggio-argomenti.html">File di inclusione e passaggio di argomenti</a>
-        (05 Jul 2014)
-        <div class="entry">File di inclusione e passaggio di argomenti.</div>
-      </li>
-      
-    
-  
+</div>
 
-  
-    
-    
-      
-      <li>
-        
-        <img src="/resources/index/16-italian.png">
-        
-        <a href="/articles/italian/2014-07-01/pagine-e-post.html">Pagine e post su Jekyll</a>
-        (01 Jul 2014)
-        <div class="entry">Cosa sono le pagine e i post per Jekyll? Le differenze tra queste due entit&agrave;.</div>
-      </li>
-      
-    
-  
+<p>La struttura delle cartella automaticamente create sarà la seguente:</p>
 
-  
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">mywebsite
+├── about.md
+├── _config.yml
+├── css
+│   └── main.css
+├── feed.xml
+├── .gitignore
+├── _includes
+│   ├── footer.html
+│   ├── header.html
+│   └── head.html
+├── index.html
+├── _layouts
+│   ├── default.html
+│   ├── page.html
+│   └── post.html
+├── _posts
+│   └── 2014-06-29-welcome-to-jekyll.markdown
+└── _site</code></pre></div>
 
-  
-    
-    
-      
-      <li>
-        
-        <img src="/resources/index/16-italian.png">
-        
-        <a href="/articles/italian/2014-06-30/benvenuto-jekyll.html">Benvenuto Jekyll</a>
-        (30 Jun 2014)
-        <div class="entry">Introduzione a Jekyll, un generatore di siti statici con funzionalità di blog.</div>
-      </li>
-      
-    
-  
+<p>Il file <strong>_config.yml</strong> è il file di configurazione principale del sito e
+conterrà sia le variabili di sistema che quelle definite dall’utente per
+utilizzare all’interno di qualsiasi altra pagina web.</p>
 
-  
+<p>La cartella <strong>_includes</strong> conterrà il codice che si desidera includere
+all’interno di un altro utilizzando il tag include. Questo è utile per
+evitare di riscrivere lo stesso codice più volte per pagine o sezioni.
+Nel sito predefinito saranno forniti tre pezzetti di pagina chiamati footer,
+header ed head.</p>
 
-  
+<p>La cartella <strong>_layouts</strong> conterrà le impaginazioni per le pagine, una
+sorta di schema vuoto per altre pagine. E’ possibile avere un’impaginazione per
+la pagina iniziale e una differente per le altre pagine o un’impaginazione
+differente per gli articoli del blog e così via.
+Le impaginazioni sono la chiave per disegnare il sito web ed ospiteranno alcuni
+tag segnaposto che saranno sostituiti dal contenuto principale per ottenere
+una pagina web.</p>
 
-  
-    
-    
-      
-      <li>
-        
-        <img src="/resources/index/16-italian.png">
-        
-        <a href="/articles/italian/2014-06-29/hello-world-2.html">Ciao mondo</a>
-        (29 Jun 2014)
-        <div class="entry">Prima pagina in italiano.</div>
-      </li>
-      
-    
-  
+<p>La cartella <strong>_posts</strong> conterrà tutti gli articoli che successivamente
+produrranno le pagine web statiche.</p>
 
-  
-
-  
-    
-    
-      
-      <li>
-        
-        <img src="/resources/index/16-italian.png">
-        
-        <a href="/articles/italian/2014-06-29/aggiornamento-settimanale.html">Aggiornamento settimanale</a>
-        (29 Jun 2014)
-        <div class="entry">Aggiornamenti dal 23-06-2014 al 29-06-2014</div>
-      </li>
-      
-    
-  
+<p>La cartella <strong>_site</strong> conterrà il sito web prodotto dall’unione di tutte
+le parti ed è questo il contenuto da caricare sul server.
+Quando si navigherà il sito web locale all’indirizzo http://localhost:4000/
+sarà mostrato il contenuto della cartella <strong>_site</strong>, non sarà mostrato nessun
+file di jekyll, né alcun file delle cartelle _layouts, _include o _posts ma il
+sito risultante dalla combinazione di questi contenuti.</p>
 
 
-    </ul>
+  <!-- Google + -->
+<g:plusone size="medium"></g:plusone>
+ 
+<!-- Add this just before the closing body tag of your web page -->	
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+  <a href="https://twitter.com/share" class="twitter-share-button" >Tweet</a>
+ 
+<!-- Put this just before the closing body tag -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'muflone';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
         </section>

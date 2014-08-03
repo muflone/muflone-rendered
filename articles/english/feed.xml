@@ -3,7 +3,7 @@
   <title type="text" xml:lang="en">Articles</title>
   <link type="application/atom+xml" href="http://www.muflone.com/articles/feed.xml" rel="self"/>
   <link type="text" href="http://www.muflone.com/" rel="alternate"/>
-  <updated>2014-07-26T19:18:12+02:00</updated>
+  <updated>2014-08-03T20:26:58+02:00</updated>
   <id>Articles</id>
   <author>
     <name>Muflone &lt;webreg@vbsimple.net&gt;</name>
@@ -17,10 +17,78 @@
     
       
   <entry>
+    <title>Weekly updates</title>
+    <link href="http://www.muflone.com/articles/english/2014-07-27/weekly-updates.html"/>
+    <updated>2014-07-27T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/english/2014-07-27/weekly-updates.html</id>
+    <summary type="html">Updates from 2014-07-21 to 2014-07-27</summary>
+  </entry>
+      
+    
+  
+
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Weekly updates</title>
+    <link href="http://www.muflone.com/articles/english/2014-07-20/weekly-updates.html"/>
+    <updated>2014-07-20T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/english/2014-07-20/weekly-updates.html</id>
+    <summary type="html">Updates from 2014-07-14 to 2014-07-20</summary>
+  </entry>
+      
+    
+  
+
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Weekly updates</title>
+    <link href="http://www.muflone.com/articles/english/2014-07-13/weekly-updates.html"/>
+    <updated>2014-07-13T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/english/2014-07-13/weekly-updates.html</id>
+    <summary type="html">Updates from 2014-07-07 to 2014-07-13</summary>
+  </entry>
+      
+    
+  
+
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Weekly updates</title>
+    <link href="http://www.muflone.com/articles/english/2014-07-06/weekly-updates.html"/>
+    <updated>2014-07-06T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/english/2014-07-06/weekly-updates.html</id>
+    <summary type="html">Updates from 2014-06-30 to 2014-07-06</summary>
+  </entry>
+      
+    
+  
+
+  
+
+  
+    
+    
+      
+  <entry>
     <title>Inclusion files and arguments passing</title>
-    <link href="http://www.muflone.com/articles/english/2014-07/inclusion-files-and-arguments-passing.html"/>
+    <link href="http://www.muflone.com/articles/english/2014-07-05/inclusion-files-and-arguments-passing.html"/>
     <updated>2014-07-05T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-07/inclusion-files-and-arguments-passing.html</id>
+    <id>http://www.muflone.com/articles/english/2014-07-05/inclusion-files-and-arguments-passing.html</id>
     <summary type="html">Inclusion files and arguments passing.</summary>
   </entry>
       
@@ -37,9 +105,9 @@
       
   <entry>
     <title>Pages and posts in Jekyll</title>
-    <link href="http://www.muflone.com/articles/english/2014-06/pages-and-posts.html"/>
+    <link href="http://www.muflone.com/articles/english/2014-06-30/pages-and-posts.html"/>
     <updated>2014-06-30T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-06/pages-and-posts.html</id>
+    <id>http://www.muflone.com/articles/english/2014-06-30/pages-and-posts.html</id>
     <summary type="html">What are pages and posts for Jekyll? The differences between these two items.</summary>
   </entry>
       
@@ -54,10 +122,25 @@
       
   <entry>
     <title>Welcome Jekyll</title>
-    <link href="http://www.muflone.com/articles/english/2014-06/welcome-jekyll.html"/>
+    <link href="http://www.muflone.com/articles/english/2014-06-29/welcome-jekyll.html"/>
     <updated>2014-06-29T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-06/welcome-jekyll.html</id>
+    <id>http://www.muflone.com/articles/english/2014-06-29/welcome-jekyll.html</id>
     <summary type="html">Introduction to Jekyll, a static blog aware site generator.</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Weekly updates</title>
+    <link href="http://www.muflone.com/articles/english/2014-06-29/weekly-updates.html"/>
+    <updated>2014-06-29T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/english/2014-06-29/weekly-updates.html</id>
+    <summary type="html">Updates from 2014-06-23 to 2014-06-29</summary>
   </entry>
       
     
@@ -71,13 +154,15 @@
       
   <entry>
     <title>Hello world</title>
-    <link href="http://www.muflone.com/articles/english/2014-06/hello-world-1.html"/>
+    <link href="http://www.muflone.com/articles/english/2014-06-29/hello-world-1.html"/>
     <updated>2014-06-29T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-06/hello-world-1.html</id>
+    <id>http://www.muflone.com/articles/english/2014-06-29/hello-world-1.html</id>
     <summary type="html">First page in english.</summary>
   </entry>
       
     
+  
+
   
 
 

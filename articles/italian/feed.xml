@@ -3,7 +3,7 @@
   <title type="text" xml:lang="en">Articoli</title>
   <link type="application/atom+xml" href="http://www.muflone.com/articles/feed.xml" rel="self"/>
   <link type="text" href="http://www.muflone.com/" rel="alternate"/>
-  <updated>2014-07-26T19:18:12+02:00</updated>
+  <updated>2014-08-03T20:26:58+02:00</updated>
   <id>Articoli</id>
   <author>
     <name>Muflone &lt;webreg@vbsimple.net&gt;</name>
@@ -19,10 +19,78 @@
     
       
   <entry>
+    <title>Aggiornamento settimanale</title>
+    <link href="http://www.muflone.com/articles/italian/2014-07-27/aggiornamento-settimanale.html"/>
+    <updated>2014-07-27T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2014-07-27/aggiornamento-settimanale.html</id>
+    <summary type="html">Aggiornamenti dal 21-07-2014 al 27-07-2014</summary>
+  </entry>
+      
+    
+  
+
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Aggiornamento settimanale</title>
+    <link href="http://www.muflone.com/articles/italian/2014-07-20/aggiornamento-settimanale.html"/>
+    <updated>2014-07-20T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2014-07-20/aggiornamento-settimanale.html</id>
+    <summary type="html">Aggiornamenti dal 14-07-2014 al 20-07-2014</summary>
+  </entry>
+      
+    
+  
+
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Aggiornamento settimanale</title>
+    <link href="http://www.muflone.com/articles/italian/2014-07-13/aggiornamento-settimanale.html"/>
+    <updated>2014-07-13T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2014-07-13/aggiornamento-settimanale.html</id>
+    <summary type="html">Aggiornamenti dal 07-07-2014 al 13-07-2014</summary>
+  </entry>
+      
+    
+  
+
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Aggiornamento settimanale</title>
+    <link href="http://www.muflone.com/articles/italian/2014-07-06/aggiornamento-settimanale.html"/>
+    <updated>2014-07-06T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2014-07-06/aggiornamento-settimanale.html</id>
+    <summary type="html">Aggiornamenti dal 30-06-2014 al 06-07-2014</summary>
+  </entry>
+      
+    
+  
+
+  
+
+  
+    
+    
+      
+  <entry>
     <title>File di inclusione e passaggio di argomenti</title>
-    <link href="http://www.muflone.com/articles/italian/2014-07/file-inclusione-e-passaggio-argomenti.html"/>
+    <link href="http://www.muflone.com/articles/italian/2014-07-05/file-inclusione-e-passaggio-argomenti.html"/>
     <updated>2014-07-05T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-07/file-inclusione-e-passaggio-argomenti.html</id>
+    <id>http://www.muflone.com/articles/italian/2014-07-05/file-inclusione-e-passaggio-argomenti.html</id>
     <summary type="html">File di inclusione e passaggio di argomenti.</summary>
   </entry>
       
@@ -35,9 +103,9 @@
       
   <entry>
     <title>Pagine e post su Jekyll</title>
-    <link href="http://www.muflone.com/articles/italian/2014-07/pagine-e-post.html"/>
+    <link href="http://www.muflone.com/articles/italian/2014-07-01/pagine-e-post.html"/>
     <updated>2014-07-01T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-07/pagine-e-post.html</id>
+    <id>http://www.muflone.com/articles/italian/2014-07-01/pagine-e-post.html</id>
     <summary type="html">Cosa sono le pagine e i post per Jekyll? Le differenze tra queste due entit&amp;agrave;.</summary>
   </entry>
       
@@ -52,10 +120,29 @@
       
   <entry>
     <title>Benvenuto Jekyll</title>
-    <link href="http://www.muflone.com/articles/italian/2014-06/benvenuto-jekyll.html"/>
+    <link href="http://www.muflone.com/articles/italian/2014-06-30/benvenuto-jekyll.html"/>
     <updated>2014-06-30T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-06/benvenuto-jekyll.html</id>
+    <id>http://www.muflone.com/articles/italian/2014-06-30/benvenuto-jekyll.html</id>
     <summary type="html">Introduzione a Jekyll, un generatore di siti statici con funzionalità di blog.</summary>
+  </entry>
+      
+    
+  
+
+  
+
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Ciao mondo</title>
+    <link href="http://www.muflone.com/articles/italian/2014-06-29/hello-world-2.html"/>
+    <updated>2014-06-29T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2014-06-29/hello-world-2.html</id>
+    <summary type="html">Prima pagina in italiano.</summary>
   </entry>
       
     
@@ -68,16 +155,14 @@
     
       
   <entry>
-    <title>Ciao mondo</title>
-    <link href="http://www.muflone.com/articles/italian/2014-06/hello-world-2.html"/>
+    <title>Aggiornamento settimanale</title>
+    <link href="http://www.muflone.com/articles/italian/2014-06-29/aggiornamento-settimanale.html"/>
     <updated>2014-06-29T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-06/hello-world-2.html</id>
-    <summary type="html">Prima pagina in italiano.</summary>
+    <id>http://www.muflone.com/articles/italian/2014-06-29/aggiornamento-settimanale.html</id>
+    <summary type="html">Aggiornamenti dal 23-06-2014 al 29-06-2014</summary>
   </entry>
       
     
-  
-
   
 
 

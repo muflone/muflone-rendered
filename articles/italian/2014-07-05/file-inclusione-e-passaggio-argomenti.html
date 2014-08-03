@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/resources/contacts/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/contacts/favicon.ico" type="image/x-icon">
+    <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
+    <link rel="stylesheet" type="text/css" href="/theme/architects-fonts.css" >
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet2.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/articles.css" media="screen" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>File di inclusione e passaggio di argomenti</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <a href="/articles/"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
+        <h1>Muflone</h1>
+        <h2>File di inclusione e passaggio di argomenti</h2>
+      </div>
+    </header>
+    <div id="content-wrapper">
+      <div class="clearfix">
+        <section id="main-content" class="article">
+
+          <div class="title">File di inclusione e passaggio di argomenti.</div>
+          <hr />
+
+<p>Questa è la terza parte di una serie di articoli su 
+<a href="http://jekyllrb.com/"><strong>Jekyll</strong></a>, un generatore di siti web statici con
+funzionalità di blog.
+Durante la <a href="/articles/italian/2014-06-30/benvenuto-jekyll.html">prima parte</a> ho
+presentato l’avvio rapido per create un sito web autogenerato minimale
+utilizzando Jekyll mentre nella <a href="/articles/italian/2014-07-01/pagine-e-post.html">seconda parte</a>
+sono state mostrate le differenze tra pagine e post.</p>
+
+<p>Ovunque più pagine o post richiedessero parti comuni di codice, anche con lievi
+differenze nel loro utilizzo, un’ottima soluzione è quella di porre il codice
+comune all’interno di un file di inclusione.</p>
+
+<p>Ogni file salvato nella cartella <strong>_include</strong> potrà essere incluso all’interno
+di un’altra pagina o post utilizzando:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>% include nome_del_file %<span class="o">}</span></code></pre></div>
+
+<p>L’intero codice sarà copiato all’interno della pagina come se fosse stato
+scritto all’interno della pagina. Ovviamente il file incluso può avere a sua
+volta altre inclusioni oppure altri tag liquidi.</p>
+
+<p>Se osserviamo il contenuto del file <strong>_layouts/page.html</strong> possiamo vedere:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">---
+layout: default
+---
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;post-header&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>{{ page.title }}<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+
+  <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">&quot;post-content&quot;</span><span class="nt">&gt;</span>
+  {{ content }}
+  <span class="nt">&lt;/article&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<p>Il file predefinito <strong>_layouts/post.html</strong> invece contiene:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">---
+layout: default
+---
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;post-header&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>{{ page.title }}<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;meta&quot;</span><span class="nt">&gt;</span>{{ page.date | date: &quot;%b %-d, %Y&quot; }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+
+  <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">&quot;post-content&quot;</span><span class="nt">&gt;</span>
+  {{ content }}
+  <span class="nt">&lt;/article&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<p>I due file sono molto simili, eccetto una singola riga il loro contenuto è il
+medesimo. Questi due file sono degli ottimi candidati per utilizzare un tag di
+inclusione col vantaggio di avere una singola copia del codice ed evitare
+ridondanze e al contempo rendendo la manutenzione del codice più semplice ed
+uniforme a qualsiasi cambiamento del codice che potrebbe avvenire. Se si ha
+una singola copia del codice, un singolo cambiamento o una correzione saranno
+automaticamente applicate a tutte le pagine che usano lo stesso file incluso.</p>
+
+<p>Per gestire la riga differente tra i due file è possibile utilizzare un semplice
+controllo per escludere tale riga dalla pagina ottenuta, semplicemente passando
+un argomento al file incluso, quindi creiamo un nuovo file chiamato
+<strong>_include/post_content.html</strong>:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;post-header&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>{{ page.title }}<span class="nt">&lt;/h1&gt;</span>
+{% if include.meta_paragraph %}
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;meta&quot;</span><span class="nt">&gt;</span>{{ page.date | date: &quot;%b %-d, %Y&quot; }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}<span class="nt">&lt;/p&gt;</span>
+{% endif %}
+  <span class="nt">&lt;/header&gt;</span>
+
+  <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">&quot;post-content&quot;</span><span class="nt">&gt;</span>
+  {{ content }}
+  <span class="nt">&lt;/article&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<p>Il valore <strong>include.meta_paragraph</strong> sarà passato al file incluso e se tale
+valore sarà vero (<em>true</em>) allora il paragrafo sarà aggiunto alla pagina,
+altrimenti non sarà scritto affatto.</p>
+
+<p>Quindi cambiamo il contenuto del file <strong>_layouts/page.html</strong> in:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">---
+layout: default
+---
+{% include post_content.html meta_paragraph=false %}</code></pre></div>
+
+<p>All’interno del file incluso <strong>meta_paragraph</strong> diverrà <strong>include.meta_paragraph</strong>
+e sarà controllato per produrre od omettere il paragrafo non comune.</p>
+
+<p>Il file <strong>_layouts/post.html</strong> conterrà invece:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">---
+layout: default
+---
+{% include post_content.html meta_paragraph=true %}</code></pre></div>
+
+<p>Et voilà, entrambi i file adesso sono similari e basta una singola copia del
+codice per gestire entrambe le impaginazioni.</p>
+
+
+  <!-- Google + -->
+<g:plusone size="medium"></g:plusone>
+ 
+<!-- Add this just before the closing body tag of your web page -->	
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+  <a href="https://twitter.com/share" class="twitter-share-button" >Tweet</a>
+ 
+<!-- Put this just before the closing body tag -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'muflone';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+      </div>
+    </div>
+
+  
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+
+
+    <div class="footer">
+
+  
+
+
+          <div id="icons">
+            <a href="/italian.html">
+              <img src="/resources/index/32-home.png" title="Home">
+            </a>
+  
+
+
+  
+    
+
+  
+            <a href="/contacts/italian/">
+              <img src="/resources/contacts/archive/latest/icon32.png" title="Muflone
+Contatti e risorse sull'autore.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/articles/italian/">
+              <img src="/resources/articles/archive/latest/icon32.png" title="Articles
+Articoli e guide.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gespeaker/italian/">
+              <img src="/resources/gespeaker/archive/latest/icon32.png" title="Gespeaker
+Ascolta il testo scritto in varie lingue con impostazioni per voce, intonazione, volume e velocit&agrave.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gwakeonlan/italian/">
+              <img src="/resources/gwakeonlan/archive/latest/icon32.png" title="gWakeOnLan
+Accende le tue macchine in rete locale oppure attraverso Internet usando il sistema Wake On LAN.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gextractwinicons/italian/">
+              <img src="/resources/gextractwinicons/archive/latest/icon32.png" title="gExtractWinIcons
+Estrai cursori, icone e immagini da file di risorse per Microsoft Windows (come .exe, .dll, .ocx e .cpl).">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/bluewho/italian/">
+              <img src="/resources/bluewho/archive/latest/icon32.png" title="BlueWho
+Ricerca dispositivi Bluetooth nelle vicinanze e ricevi le notifiche quando un nuovo dispositivo viene rilevato.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/cpucompare/italian/">
+              <img src="/resources/cpucompare/archive/latest/icon32.png" title="CPUCompare
+Esegui confronti tra numerosi modelli di CPU per trovare quelle di tuo interesse.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gptrace/italian/">
+              <img src="/resources/gptrace/archive/latest/icon32.png" title="gpTrace
+Traccia le attivita di un'applicazione esterna.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-builder/italian/">
+              <img src="/resources/remmina-plugin-builder/archive/latest/icon32.png" title="Remmina Plugin Builder
+Un pacchetto per semplificare lo sviluppo e la compilazione di plugin per Remmina.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-exec/italian/">
+              <img src="/resources/remmina-plugin-exec/archive/latest/icon32.png" title="Remmina Plugin Exec
+Un plugin di protocollo per Remmina per eseguire un processo esterno.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-folder/italian/">
+              <img src="/resources/remmina-plugin-folder/archive/latest/icon32.png" title="Remmina Plugin Folder
+Un plugin di protocollo per Remmina per aprire una cartella con un gestore di files esterno.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-open/italian/">
+              <img src="/resources/remmina-plugin-open/archive/latest/icon32.png" title="Remmina Plugin Open
+Un plugin di protocollo per Remmina per aprire un file o un documento utilizzando l'applicazione associata.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-rdesktop/italian/">
+              <img src="/resources/remmina-plugin-rdesktop/archive/latest/icon32.png" title="Remmina Plugin RDesktop
+Un plugin di protocollo per Remmina per stabilire connessioni RDP tramite RDesktop.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-teamviewer/italian/">
+              <img src="/resources/remmina-plugin-teamviewer/archive/latest/icon32.png" title="Remmina Plugin TeamViewer
+Un plugin di protocollo per Remmina per stabilire connessioni tramite TeamViewer.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-ultravnc/italian/">
+              <img src="/resources/remmina-plugin-ultravnc/archive/latest/icon32.png" title="Remmina Plugin UltraVNC
+Un plugin di protocollo per Remmina per stabilire connessioni tramite UltraVNC.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-url/italian/">
+              <img src="/resources/remmina-plugin-url/archive/latest/icon32.png" title="Remmina Plugin URL
+Un plugin di protocollo per Remmina per aprire pagine web tramite un browser web esterno.">
+            </a>
+    
+
+  
+  
+
+  
+            <a href="/remmina-plugin-webkit/italian/">
+              <img src="/resources/remmina-plugin-webkit/archive/latest/icon32.png" title="Remmina Plugin WebKit
+Un plugin di protocollo per Remmina per aprire pagine web tramite un browser web WebKit integrato.">
+            </a>
+    
+
+
+
+          </div>
+  
+
+      Copyright &copy; 2013-2014 <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+      <a href="/">Home</a> | 
+      <a href="/english.html"><img src="/resources/index/16-english.png"> English</a> |
+      <a href="/italian.html"><img src="/resources/index/16-italian.png"> Italian</a> |
+      <a href="/contacts/italian/">Contatti</a>
+    </div>
+  </body>
+</html>
+
+  </body>
+</html>
