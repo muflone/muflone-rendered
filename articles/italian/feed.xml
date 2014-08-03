@@ -3,7 +3,7 @@
   <title type="text" xml:lang="en">Articoli</title>
   <link type="application/atom+xml" href="http://www.muflone.com/articles/feed.xml" rel="self"/>
   <link type="text" href="http://www.muflone.com/" rel="alternate"/>
-  <updated>2014-08-03T20:26:58+02:00</updated>
+  <updated>2014-08-03T21:00:17+02:00</updated>
   <id>Articoli</id>
   <author>
     <name>Muflone &lt;webreg@vbsimple.net&gt;</name>
@@ -11,6 +11,23 @@
   <rights>Copyright (c) 2013-2014 Fabio Castelli (Muflone)</rights>
 
 
+
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Aggiornamento settimanale</title>
+    <link href="http://www.muflone.com/articles/italian/2014-08-03/aggiornamento-settimanale.html"/>
+    <updated>2014-08-03T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2014-08-03/aggiornamento-settimanale.html</id>
+    <summary type="html">Aggiornamenti dal 28-07-2014 al 03-08-2014</summary>
+  </entry>
+      
+    
+  
 
   
 
