@@ -3,7 +3,7 @@
   <title type="text" xml:lang="en">Articles</title>
   <link type="application/atom+xml" href="http://www.muflone.com/articles/feed.xml" rel="self"/>
   <link type="text" href="http://www.muflone.com/" rel="alternate"/>
-  <updated>2014-09-07T00:47:47+02:00</updated>
+  <updated>2015-01-18T02:33:46+01:00</updated>
   <id>Articles</id>
   <author>
     <name>Muflone &lt;webreg@vbsimple.net&gt;</name>
@@ -18,10 +18,10 @@
       
   <entry>
     <title>Weekly updates</title>
-    <link href="http://www.muflone.com/articles/english/2014-08-03/weekly-updates.html"/>
-    <updated>2014-08-03T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-08-03/weekly-updates.html</id>
-    <summary type="html">Updates from 2014-07-28 to 2014-08-03</summary>
+    <link href="http://www.muflone.com/articles/english/updates/2015-01-18.html"/>
+    <updated>2015-01-18T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/english/updates/2015-01-18.html</id>
+    <summary type="html">Updates from 2015-01-12 to 2015-01-18</summary>
   </entry>
       
     
@@ -33,10 +33,10 @@
       
   <entry>
     <title>Aggiornamento settimanale</title>
-    <link href="http://www.muflone.com/articles/italian/2014-08-03/aggiornamento-settimanale.html"/>
-    <updated>2014-08-03T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-08-03/aggiornamento-settimanale.html</id>
-    <summary type="html">Aggiornamenti dal 28-07-2014 al 03-08-2014</summary>
+    <link href="http://www.muflone.com/articles/italian/updates/2015-01-18.html"/>
+    <updated>2015-01-18T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/italian/updates/2015-01-18.html</id>
+    <summary type="html">Aggiornamenti dal 12-01-2015 al 18-01-2015</summary>
   </entry>
       
     
@@ -48,10 +48,10 @@
       
   <entry>
     <title>Weekly updates</title>
-    <link href="http://www.muflone.com/articles/english/2014-07-27/weekly-updates.html"/>
-    <updated>2014-07-27T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-07-27/weekly-updates.html</id>
-    <summary type="html">Updates from 2014-07-21 to 2014-07-27</summary>
+    <link href="http://www.muflone.com/articles/english/updates/2015-01-11.html"/>
+    <updated>2015-01-11T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/english/updates/2015-01-11.html</id>
+    <summary type="html">Updates from 2015-01-05 to 2015-01-11</summary>
   </entry>
       
     
@@ -63,10 +63,10 @@
       
   <entry>
     <title>Aggiornamento settimanale</title>
-    <link href="http://www.muflone.com/articles/italian/2014-07-27/aggiornamento-settimanale.html"/>
-    <updated>2014-07-27T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-07-27/aggiornamento-settimanale.html</id>
-    <summary type="html">Aggiornamenti dal 21-07-2014 al 27-07-2014</summary>
+    <link href="http://www.muflone.com/articles/italian/updates/2015-01-11.html"/>
+    <updated>2015-01-11T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/italian/updates/2015-01-11.html</id>
+    <summary type="html">Aggiornamenti dal 05-01-2015 al 11-01-2015</summary>
   </entry>
       
     
@@ -78,10 +78,10 @@
       
   <entry>
     <title>Weekly updates</title>
-    <link href="http://www.muflone.com/articles/english/2014-07-20/weekly-updates.html"/>
-    <updated>2014-07-20T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-07-20/weekly-updates.html</id>
-    <summary type="html">Updates from 2014-07-14 to 2014-07-20</summary>
+    <link href="http://www.muflone.com/articles/english/updates/2015-01-04.html"/>
+    <updated>2015-01-04T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/english/updates/2015-01-04.html</id>
+    <summary type="html">Updates from 2014-12-29 to 2015-01-04</summary>
   </entry>
       
     
@@ -93,10 +93,10 @@
       
   <entry>
     <title>Aggiornamento settimanale</title>
-    <link href="http://www.muflone.com/articles/italian/2014-07-20/aggiornamento-settimanale.html"/>
-    <updated>2014-07-20T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-07-20/aggiornamento-settimanale.html</id>
-    <summary type="html">Aggiornamenti dal 14-07-2014 al 20-07-2014</summary>
+    <link href="http://www.muflone.com/articles/italian/updates/2015-01-04.html"/>
+    <updated>2015-01-04T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/italian/updates/2015-01-04.html</id>
+    <summary type="html">Aggiornamenti dal 29-12-2014 al 04-01-2015</summary>
   </entry>
       
     
@@ -108,10 +108,10 @@
       
   <entry>
     <title>Weekly updates</title>
-    <link href="http://www.muflone.com/articles/english/2014-07-13/weekly-updates.html"/>
-    <updated>2014-07-13T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-07-13/weekly-updates.html</id>
-    <summary type="html">Updates from 2014-07-07 to 2014-07-13</summary>
+    <link href="http://www.muflone.com/articles/english/updates/2014-12-28.html"/>
+    <updated>2014-12-28T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/english/updates/2014-12-28.html</id>
+    <summary type="html">Updates from 2014-12-22 to 2014-12-28</summary>
   </entry>
       
     
@@ -123,10 +123,10 @@
       
   <entry>
     <title>Aggiornamento settimanale</title>
-    <link href="http://www.muflone.com/articles/italian/2014-07-13/aggiornamento-settimanale.html"/>
-    <updated>2014-07-13T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-07-13/aggiornamento-settimanale.html</id>
-    <summary type="html">Aggiornamenti dal 07-07-2014 al 13-07-2014</summary>
+    <link href="http://www.muflone.com/articles/italian/updates/2014-12-28.html"/>
+    <updated>2014-12-28T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/italian/updates/2014-12-28.html</id>
+    <summary type="html">Aggiornamenti dal 22-12-2014 al 28-12-2014</summary>
   </entry>
       
     
@@ -138,10 +138,10 @@
       
   <entry>
     <title>Weekly updates</title>
-    <link href="http://www.muflone.com/articles/english/2014-07-06/weekly-updates.html"/>
-    <updated>2014-07-06T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-07-06/weekly-updates.html</id>
-    <summary type="html">Updates from 2014-06-30 to 2014-07-06</summary>
+    <link href="http://www.muflone.com/articles/english/updates/2014-12-14.html"/>
+    <updated>2014-12-14T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/english/updates/2014-12-14.html</id>
+    <summary type="html">Updates from 2014-12-08 to 2014-12-14</summary>
   </entry>
       
     
@@ -153,100 +153,10 @@
       
   <entry>
     <title>Aggiornamento settimanale</title>
-    <link href="http://www.muflone.com/articles/italian/2014-07-06/aggiornamento-settimanale.html"/>
-    <updated>2014-07-06T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-07-06/aggiornamento-settimanale.html</id>
-    <summary type="html">Aggiornamenti dal 30-06-2014 al 06-07-2014</summary>
-  </entry>
-      
-    
-  
-
-  
-    
-    
-      
-  <entry>
-    <title>Inclusion files and arguments passing</title>
-    <link href="http://www.muflone.com/articles/english/2014-07-05/inclusion-files-and-arguments-passing.html"/>
-    <updated>2014-07-05T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-07-05/inclusion-files-and-arguments-passing.html</id>
-    <summary type="html">Inclusion files and arguments passing.</summary>
-  </entry>
-      
-    
-  
-
-  
-    
-    
-      
-  <entry>
-    <title>File di inclusione e passaggio di argomenti</title>
-    <link href="http://www.muflone.com/articles/italian/2014-07-05/file-inclusione-e-passaggio-argomenti.html"/>
-    <updated>2014-07-05T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-07-05/file-inclusione-e-passaggio-argomenti.html</id>
-    <summary type="html">File di inclusione e passaggio di argomenti.</summary>
-  </entry>
-      
-    
-  
-
-  
-    
-    
-      
-  <entry>
-    <title>Pagine e post su Jekyll</title>
-    <link href="http://www.muflone.com/articles/italian/2014-07-01/pagine-e-post.html"/>
-    <updated>2014-07-01T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-07-01/pagine-e-post.html</id>
-    <summary type="html">Cosa sono le pagine e i post per Jekyll? Le differenze tra queste due entit&amp;agrave;.</summary>
-  </entry>
-      
-    
-  
-
-  
-    
-    
-      
-  <entry>
-    <title>Pages and posts in Jekyll</title>
-    <link href="http://www.muflone.com/articles/english/2014-06-30/pages-and-posts.html"/>
-    <updated>2014-06-30T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-06-30/pages-and-posts.html</id>
-    <summary type="html">What are pages and posts for Jekyll? The differences between these two items.</summary>
-  </entry>
-      
-    
-  
-
-  
-    
-    
-      
-  <entry>
-    <title>Benvenuto Jekyll</title>
-    <link href="http://www.muflone.com/articles/italian/2014-06-30/benvenuto-jekyll.html"/>
-    <updated>2014-06-30T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-06-30/benvenuto-jekyll.html</id>
-    <summary type="html">Introduzione a Jekyll, un generatore di siti statici con funzionalità di blog.</summary>
-  </entry>
-      
-    
-  
-
-  
-    
-    
-      
-  <entry>
-    <title>Welcome Jekyll</title>
-    <link href="http://www.muflone.com/articles/english/2014-06-29/welcome-jekyll.html"/>
-    <updated>2014-06-29T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-06-29/welcome-jekyll.html</id>
-    <summary type="html">Introduction to Jekyll, a static blog aware site generator.</summary>
+    <link href="http://www.muflone.com/articles/italian/updates/2014-12-14.html"/>
+    <updated>2014-12-14T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/italian/updates/2014-12-14.html</id>
+    <summary type="html">Aggiornamenti dal 08-12-2014 al 14-12-2014</summary>
   </entry>
       
     
@@ -258,40 +168,10 @@
       
   <entry>
     <title>Weekly updates</title>
-    <link href="http://www.muflone.com/articles/english/2014-06-29/weekly-updates.html"/>
-    <updated>2014-06-29T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-06-29/weekly-updates.html</id>
-    <summary type="html">Updates from 2014-06-23 to 2014-06-29</summary>
-  </entry>
-      
-    
-  
-
-  
-    
-    
-      
-  <entry>
-    <title>Ciao mondo</title>
-    <link href="http://www.muflone.com/articles/italian/2014-06-29/hello-world-2.html"/>
-    <updated>2014-06-29T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-06-29/hello-world-2.html</id>
-    <summary type="html">Prima pagina in italiano.</summary>
-  </entry>
-      
-    
-  
-
-  
-    
-    
-      
-  <entry>
-    <title>Hello world</title>
-    <link href="http://www.muflone.com/articles/english/2014-06-29/hello-world-1.html"/>
-    <updated>2014-06-29T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/english/2014-06-29/hello-world-1.html</id>
-    <summary type="html">First page in english.</summary>
+    <link href="http://www.muflone.com/articles/english/updates/2014-12-07.html"/>
+    <updated>2014-12-07T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/english/updates/2014-12-07.html</id>
+    <summary type="html">Updates from 2014-12-01 to 2014-12-07</summary>
   </entry>
       
     
@@ -303,12 +183,322 @@
       
   <entry>
     <title>Aggiornamento settimanale</title>
-    <link href="http://www.muflone.com/articles/italian/2014-06-29/aggiornamento-settimanale.html"/>
-    <updated>2014-06-29T00:00:00+02:00</updated>
-    <id>http://www.muflone.com/articles/italian/2014-06-29/aggiornamento-settimanale.html</id>
-    <summary type="html">Aggiornamenti dal 23-06-2014 al 29-06-2014</summary>
+    <link href="http://www.muflone.com/articles/italian/updates/2014-12-07.html"/>
+    <updated>2014-12-07T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/italian/updates/2014-12-07.html</id>
+    <summary type="html">Aggiornamenti dal 01-12-2014 al 07-12-2014</summary>
   </entry>
       
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Weekly updates</title>
+    <link href="http://www.muflone.com/articles/english/updates/2014-11-30.html"/>
+    <updated>2014-11-30T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/english/updates/2014-11-30.html</id>
+    <summary type="html">Updates from 2014-11-24 to 2014-11-30</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Aggiornamento settimanale</title>
+    <link href="http://www.muflone.com/articles/italian/updates/2014-11-30.html"/>
+    <updated>2014-11-30T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/italian/updates/2014-11-30.html</id>
+    <summary type="html">Aggiornamenti dal 24-11-2014 al 30-11-2014</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Weekly updates</title>
+    <link href="http://www.muflone.com/articles/english/updates/2014-11-23.html"/>
+    <updated>2014-11-23T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/english/updates/2014-11-23.html</id>
+    <summary type="html">Updates from 2014-11-17 to 2014-11-23</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Aggiornamento settimanale</title>
+    <link href="http://www.muflone.com/articles/italian/updates/2014-11-23.html"/>
+    <updated>2014-11-23T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/italian/updates/2014-11-23.html</id>
+    <summary type="html">Aggiornamenti dal 17-11-2014 al 23-11-2014</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Weekly updates</title>
+    <link href="http://www.muflone.com/articles/english/updates/2014-11-16.html"/>
+    <updated>2014-11-16T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/english/updates/2014-11-16.html</id>
+    <summary type="html">Updates from 2014-11-10 to 2014-11-16</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Aggiornamento settimanale</title>
+    <link href="http://www.muflone.com/articles/italian/updates/2014-11-16.html"/>
+    <updated>2014-11-16T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/italian/updates/2014-11-16.html</id>
+    <summary type="html">Aggiornamenti dal 10-11-2014 al 16-11-2014</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Weekly updates</title>
+    <link href="http://www.muflone.com/articles/english/updates/2014-11-09.html"/>
+    <updated>2014-11-09T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/english/updates/2014-11-09.html</id>
+    <summary type="html">Updates from 2014-11-03 to 2014-11-09</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Aggiornamento settimanale</title>
+    <link href="http://www.muflone.com/articles/italian/updates/2014-11-09.html"/>
+    <updated>2014-11-09T00:00:00+01:00</updated>
+    <id>http://www.muflone.com/articles/italian/updates/2014-11-09.html</id>
+    <summary type="html">Aggiornamenti dal 03-11-2014 al 09-11-2014</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+    
     
   
 
