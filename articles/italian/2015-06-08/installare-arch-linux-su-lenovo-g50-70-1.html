@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, uefi, secure boot">
+    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, uefi, secure boot, hybrid, boot, hashtool">
 
 
     <meta name="description" content="Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot">
@@ -26,7 +26,7 @@
     <![endif]-->
 
 
-    <title>Installare Arch Linux su Lenovo G50-70</title>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 1 - preparazione)</title>
   </head>
 
   <body>
@@ -34,7 +34,7 @@
       <div class="inner">
         <a href="/articles/"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
         <h1>Muflone</h1>
-        <h2>Installare Arch Linux su Lenovo G50-70</h2>
+        <h2>Installare Arch Linux su Lenovo G50-70 (parte 1 - preparazione)</h2>
       </div>
     </header>
     <div id="content-wrapper">
@@ -44,29 +44,119 @@
           <div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</div>
           <hr />
 
-<p class="center"><a href="/resources/articles/2015-06/lenovo-ideapad-g50-70.jpg"><img src="/resources/articles/2015-06/lenovo-ideapad-g50-70-thumb.png" alt="Lenovo IdeaPad G50-70" /></a></p>
+<h1 id="disattivazione-di-avvio-rapido--hybrid-boot">Disattivazione di Avvio rapido / Hybrid Boot</h1>
 
-<p>Ho recentemente acquistato un Lenovo IdeaPad G50-70, un computer portatile che
-includeva Microsoft Windows 8.1 preinstallato. Installare <strong>Arch Linux</strong> su
-questo computer è possibile ma non così immediato e richiede varie operazioni.</p>
+<p>Prima di procedere all’installazione di Arch Linux è importante che si disabiliti
+la funzione di avvio rapido (Hybrid Boot) di Windows 8.1 altrimenti i dati del
+sistema Windows potrebbero venire corrotti.</p>
 
-<p>Questo computer è dotato di <strong><a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">UEFI</a></strong> e tramite il suo firmware
-consente di emulare il classico BIOS, più lento in fase di avvio. Oltre UEFI,
-supporta anche il <strong><a href="https://msdn.microsoft.com/it-it/library/hh824987.aspx" target="_blank">Secure Boot</a></strong> un sistema atto ad impedire
-l’uso di sistemi operativi non autorizzati dall’EFI.</p>
+<p class="center"><img src="/resources/articles/2015-06/comportamento-pulsante-spegnimento.png" alt="comportamento-pulsante-spegnimento.png" /></p>
 
-<p>Questa guida spiegherà l’installazione di Arch Linux affiancato a Windows 8.1
-che quindi verrà lasciato al suo posto, dopo la naturale riduzione della partizione
-operativo, mantenendo Secure Boot e UEFI attivi.</p>
+<p>Accedendo al Pannello di controllo di Windows e ricercando <strong>comportamento
+pulsanti</strong> è possibile raggiungere la schermata di configurazione delle
+impostazioni di spegnimento del sistema.</p>
 
-<p>Il ridimensionamento della partizione di Windows per far posto alle nuove
-partizioni per Arch Linux non viene trattato in questa guida.</p>
+<p class="center"><img src="/resources/articles/2015-06/disattivazione-avvio-rapido.png" alt="disattivazione-avvio-rapido.png" /></p>
 
-<p>La procedura di installazione sarà spiegata in vari passaggi:</p>
+<p>Basterà togliere la spunta in fondo su <strong>Attiva avvio rapido (scelta consigliata)</strong>.
+Se l’impostazione dovesse risultare bloccata cliccare il collemento in alto
+<strong>Modifica le impostazioni attualmente non disponibili</strong>.</p>
 
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-08/installare-arch-linux-su-lenovo-g50-70-1.html">Preparazione del sistema</a>.</p>
-</blockquote>
+<hr />
+
+<h1 id="preparazione-di-arch-linux-su-usb">Preparazione di Arch Linux su USB</h1>
+
+<p>Per installare Arch Linux è necessario utilizzare un pendrive USB da almeno 1 GiB
+opportunamento preparato. <strong>Attenzione</strong> poiché tutti i dati nel dispositivo USB
+verranno irrimediabilmente cancellati.</p>
+
+<p>Scaricare innanzitutto l’immagine ISO di installazione di Arch Linux dal sito
+<a href="https://www.archlinux.org/download/" target="_blank">https://www.archlinux.org/download/</a> (ad oggi si tratta del
+file archlinux-2015.06.01-dual.iso).
+Scaricare anche lo strumento Rufus dal sito <a href="https://rufus.akeo.ie/" target="_blank">https://rufus.akeo.ie/</a>.
+Va bene anche la versione portable (ad oggi si tratta di rufus-2.2p.exe), che
+funziona su Windows anche senza installazione.</p>
+
+<p class="center"><img src="/resources/articles/2015-06/rufus.png" alt="rufus.png" /></p>
+
+<p>Inserire un dispositivo USB da almeno 1 GiB, avviare quindi Rufus, cliccare
+l’icona del lettore CD, scegliere il file ISO di Arch Linux scaricato in
+precedenza e avviare la scrittura del file ISO nel pendrive cliccando su <strong>Avvia</strong>.</p>
+
+<p class="center"><img src="/resources/articles/2015-06/rufus-conferma.png" alt="rufus-conferma.png" /></p>
+
+<p>Confermare la totale cancellazione di tutti i dati nel dispositivo USB e
+attendere il completamento della scrittura.</p>
+
+<hr />
+
+<h1 id="avviare-il-sistema-tramite-usb">Avviare il sistema tramite USB</h1>
+
+<p class="center"><img src="/resources/articles/2015-06/lenovo-laptop-g50-70-sx.png" alt="lenovo-laptop-g50-70-sx.png" /></p>
+
+<p>Spegnere (non riavviare) il sistema e una volta spento premere il pulsante
+<strong>OneKey</strong> posto sul lato sinistro del computer.</p>
+
+<p class="center"><img src="/resources/articles/2015-06/novo-button-menu.png" alt="novo-button-menu.png" /></p>
+
+<p>Dal menu che sarà mostrato scegliere la voce <strong>Boot Menu</strong>, confermare con invio,
+nella schermata del Boot Manager scegliere l’avvio da <strong>EFI USB Device (Generic
+USB Storage)</strong> o una voce similare che parli di USB e confermare con invio.</p>
+
+<hr />
+
+<h1 id="firmare-i-kernel-con-hashtool">Firmare i kernel con HashTool</h1>
+
+<p>Poiché in questa configurazione è attivo il <a href="https://msdn.microsoft.com/it-it/library/hh824987.aspx" target="_blank">Secure Boot</a> è
+necessario firmare tutti i sistemi operativi che si desidera eseguire,</p>
+
+<p class="center"><img src="/resources/articles/2015-06/hashtool-1.png" alt="hashtool-1.png" /></p>
+
+<p>Verrà immediatamente presentato un messaggio di errore riguardo il file
+<strong>loader.efi</strong> che non risulta firmato. Confermare con OK per accedere a
+<strong>HashTool</strong>, lo strumento che consente di firmare i sistemi operativi da avviare.</p>
+
+<p>La procedura è semplice e richiede la firma dei file <strong>loader.efi</strong> (il programma
+di avvio da USB di Arch Linux) e <strong>vmlinuz</strong> (il kernel Linux avviato da USB
+per l’installazione di Arch Linux).</p>
+
+<p>Questa procedura di firma è detta <strong>Enrolling</strong> e tramite HashTool consente di
+calcolare un valore detto Hash ed aggiungerlo al database delle chiavi macchina
+(MOK = Machine Owner Keys) autorizzate.</p>
+
+<p class="center"><img src="/resources/articles/2015-06/hashtool-2.png" alt="hashtool-2.png" /></p>
+
+<p>Selezionando <strong>Enroll Hash</strong> si procede a firmare i due file necessari.</p>
+
+<p class="center"><img src="/resources/articles/2015-06/hashtool-3.png" alt="hashtool-3.png" /></p>
+
+<p>Scegliere inizialmente il file <strong>loader.efi</strong> nella directory \EFI.</p>
+
+<p class="center"><img src="/resources/articles/2015-06/hashtool-4.png" alt="hashtool-4.png" /></p>
+
+<p>Confermare con Yes la firma del file selezionato.</p>
+
+<p class="center"><img src="/resources/articles/2015-06/hashtool-5.png" alt="hashtool-5.png" /></p>
+
+<p>Firmare successivamente il file <strong>vmlinuz</strong> nella directory \arch\boot\x86_64</p>
+
+<p class="center"><img src="/resources/articles/2015-06/hashtool-6.png" alt="hashtool-6.png" /></p>
+
+<p>Confermare la firma di questo secondo file e al termine uscire da HashTool
+scegliendo l’opzione <strong>Exit</strong>.</p>
+
+<p class="center"><img src="/resources/articles/2015-06/arch-linux-efi-menu.png" alt="arch-linux-efi-menu.png" /></p>
+
+<p>Dopo alcuni secondi sarà mostrato il menu di avvio dell’immagine di installazione
+di Arch Linux, scegliere la prima voce <strong>Arch Linux archiso x86_64 UEFI USB</strong> e
+avviare con invio.</p>
+
+<p>Se venissero mostrati errori riguardo software non firmati, assicurarsi di
+aver firmato entrambi i file loader.efi e vmlinuz.</p>
+
+<p>Effettuata questa operazione sarà avviata la procedura di installazione di
+Arch Linux, consultare la guida <a href="https://wiki.archlinux.org/index.php/Beginners%27_guide" target="_blank">Beginner’s guide</a> per
+ulteriori informazioni sul processo di installazione.</p>
 
 
 
