@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, uefi, secure boot">
+    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, uefi, secure boot, hashtool, enroll, hash, mok, utility, refind, validation">
 
 
     <meta name="description" content="Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot">
@@ -26,7 +26,7 @@
     <![endif]-->
 
 
-    <title>Installare Arch Linux su Lenovo G50-70</title>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 7 - primo avvio del sistema)</title>
   </head>
 
   <body>
@@ -34,7 +34,7 @@
       <div class="inner">
         <a href="/articles/"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
         <h1>Muflone</h1>
-        <h2>Installare Arch Linux su Lenovo G50-70</h2>
+        <h2>Installare Arch Linux su Lenovo G50-70 (parte 7 - primo avvio del sistema)</h2>
       </div>
     </header>
     <div id="content-wrapper">
@@ -44,47 +44,32 @@
           <div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</div>
           <hr />
 
-<p class="center"><a href="/resources/articles/2015-06/lenovo-ideapad-g50-70.jpg"><img src="/resources/articles/2015-06/lenovo-ideapad-g50-70-thumb.png" alt="Lenovo IdeaPad G50-70" /></a></p>
+<p class="center"><img src="/resources/articles/2015-06/refind.png" alt="refind.png" /></p>
 
-<p>Ho recentemente acquistato un Lenovo IdeaPad G50-70, un computer portatile che
-includeva Microsoft Windows 8.1 preinstallato. Installare <strong>Arch Linux</strong> su
-questo computer è possibile ma non così immediato e richiede varie operazioni.</p>
+<p>Avviando per la prima volta Arch Linux dal menu di rEFInd sarà mostrato un
+avviso riguardo un errore di Secure Boot per il kernel <strong>vmlinux-linux</strong>.</p>
 
-<p>Questo computer è dotato di <strong><a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">UEFI</a></strong> e tramite il suo firmware
-consente di emulare il classico BIOS, più lento in fase di avvio. Oltre UEFI,
-supporta anche il <strong><a href="https://msdn.microsoft.com/it-it/library/hh824987.aspx" target="_blank">Secure Boot</a></strong> un sistema atto ad impedire
-l’uso di sistemi operativi non autorizzati dall’EFI.</p>
+<p class="center"><img src="/resources/articles/2015-06/refind-secure-boot-failed.png" alt="refind-secure-boot-failed.png" /></p>
 
-<p>Questa guida spiegherà l’installazione di Arch Linux affiancato a Windows 8.1
-che quindi verrà lasciato al suo posto, dopo la naturale riduzione della partizione
-operativo, mantenendo Secure Boot e UEFI attivi.</p>
+<p class="center"><strong>Secure Boot validation failure loading vmlinuz-linux!</strong></p>
 
-<p>Il ridimensionamento della partizione di Windows per far posto alle nuove
-partizioni per Arch Linux non viene trattato in questa guida.</p>
+<p>Il messaggio di errore fornisce anche la soluzione, utilizzare l’utilità MOK per
+registrare il file vmlinuz-linux. Premendo un tasto qualsiasi si tornerà a rEFInd.</p>
 
-<p>La procedura di installazione sarà spiegata in vari passaggi:</p>
+<p class="center"><img src="/resources/articles/2015-06/refind/tool_mok_tool.png" alt="tool_mok_tool.png" /> <strong>Start MOK utility at EFI\refind\HashTool.efi on SYSTEM_DRV</strong></p>
 
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-08/installare-arch-linux-su-lenovo-g50-70-1.html">Preparazione del sistema</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-09/installare-arch-linux-su-lenovo-g50-70-2.html">Configurazione della connessione Wi-Fi</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-10/installare-arch-linux-su-lenovo-g50-70-3.html">Partizionamento del disco</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-15/installare-arch-linux-su-lenovo-g50-70-4.html">Installazione del sistema</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-5.html">Installazione del gestore di avvio</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-6.html">Funzionamento di rEFInd</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-7.html">Primo avvio del sistema</a>.</p>
-</blockquote>
+<p>Dalla seconda riga utilizzare l’icona per aggiungere un file al database MOK.</p>
+
+<p class="center"><img src="/resources/articles/2015-06/hashtool-2.png" alt="hashtool-2.png" /></p>
+
+<p>Sarà mostrato nuovamente il menu di <strong>HashTool</strong>, già visto durante la fase di
+<a href="/articles/italian/2015-06-08/installare-arch-linux-su-lenovo-g50-70-1.html">preparazione</a>.
+Scegliere quindi la voce dal menu <strong>Enroll Hash</strong> e selezionare il file
+<strong>vmlinuz-linux</strong> posto sulla radice della partizione. Quando richiesto 
+(<strong>Enroll this hash into MOK database?</strong>) rispondere confermando su <strong>Yes</strong> e al
+termine uscire dall’utilità scegliendo <strong>Exit</strong>.</p>
+
+<p>Ritornati al menu di rEFInd sarà adesso possibile avviare Arch Linux normalmente.</p>
 
 
 
