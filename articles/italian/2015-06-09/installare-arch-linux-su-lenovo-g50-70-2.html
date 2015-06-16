@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, uefi, secure boot">
+    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, rete, wifi, wlan, rfkill">
 
 
     <meta name="description" content="Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot">
@@ -26,7 +26,7 @@
     <![endif]-->
 
 
-    <title>Installare Arch Linux su Lenovo G50-70</title>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 2 - connessione Wi-Fi)</title>
   </head>
 
   <body>
@@ -34,7 +34,7 @@
       <div class="inner">
         <a href="/articles/"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
         <h1>Muflone</h1>
-        <h2>Installare Arch Linux su Lenovo G50-70</h2>
+        <h2>Installare Arch Linux su Lenovo G50-70 (parte 2 - connessione Wi-Fi)</h2>
       </div>
     </header>
     <div id="content-wrapper">
@@ -44,32 +44,61 @@
           <div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</div>
           <hr />
 
-<p class="center"><a href="/resources/articles/2015-06/lenovo-ideapad-g50-70.jpg"><img src="/resources/articles/2015-06/lenovo-ideapad-g50-70-thumb.png" alt="Lenovo IdeaPad G50-70" /></a></p>
+<p class="center"><img src="/resources/articles/2015-06/arch-linux-prompt.png" alt="arch-linux-prompt.png" /></p>
 
-<p>Ho recentemente acquistato un Lenovo IdeaPad G50-70, un computer portatile che
-includeva Microsoft Windows 8.1 preinstallato. Installare <strong>Arch Linux</strong> su
-questo computer è possibile ma non così immediato e richiede varie operazioni.</p>
+<p>Prima di procedere all’installazione del sistema operativo è necessario
+configurare la rete affinché possano essere scaricati i pacchetti di installazione,
+non presenti nell’immagine di installazione del sistema operativo.</p>
 
-<p>Questo computer è dotato di <strong><a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">UEFI</a></strong> e tramite il suo firmware
-consente di emulare il classico BIOS, più lento in fase di avvio. Oltre UEFI,
-supporta anche il <strong><a href="https://msdn.microsoft.com/it-it/library/hh824987.aspx" target="_blank">Secure Boot</a></strong> un sistema atto ad impedire
-l’uso di sistemi operativi non autorizzati dall’EFI.</p>
+<hr />
 
-<p>Questa guida spiegherà l’installazione di Arch Linux affiancato a Windows 8.1
-che quindi verrà lasciato al suo posto, dopo la naturale riduzione della partizione
-operativo, mantenendo Secure Boot e UEFI attivi.</p>
+<h1 id="attivazione-del-controller-wi-fi">Attivazione del controller Wi-Fi</h1>
 
-<p>Il ridimensionamento della partizione di Windows per far posto alle nuove
-partizioni per Arch Linux non viene trattato in questa guida.</p>
+<p>Inizialmente il controller Wi-Fi risulterà essere disattivato come confermato
+dal comando <strong>rfkill list wlan</strong></p>
 
-<p>La procedura di installazione sarà spiegata in vari passaggi:</p>
+<pre><code>root@archiso ~ # rfkill list wlan
+1: phy0: Wireless LAN
+  Soft blocked: yes
+  Hard blocked: no
+2: ideapad_wlan: Wireless LAN
+  Soft blocked: yes
+  Hard blocked: no
+</code></pre>
 
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-08/installare-arch-linux-su-lenovo-g50-70-1.html">Preparazione del sistema</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-09/installare-arch-linux-su-lenovo-g50-70-2.html">Configurazione della connessione Wi-Fi</a>.</p>
-</blockquote>
+<p>Prima di poter utilizzare l’interfaccia di rete sarà necessario sbloccarla col
+comando <strong>rfkill unblock wlan</strong></p>
+
+<pre><code>root@archiso ~ # rfkill unblock wlan
+</code></pre>
+
+<hr />
+
+<h1 id="configurazione-della-connessione-wi-fi">Configurazione della connessione Wi-Fi</h1>
+
+<p>Sarà quindi possibile eseguire la configurazione della rete Wi-Fi attraverso
+il comando <strong>wifi-menu</strong></p>
+
+<pre><code>root@archiso ~ # wifi-menu
+Scanning for networks... done
+</code></pre>
+
+<p class="center"><img src="/resources/articles/2015-06/wifi-menu-1.png" alt="wifi-menu-1.png" /></p>
+
+<p>Utilizzando le freccette scegliere la connessione Wi-Fi desiderata e confermare
+premendo invio.</p>
+
+<p class="center"><img src="/resources/articles/2015-06/wifi-menu-2.png" alt="wifi-menu-2.png" /></p>
+
+<p>Quando richiesto, specificare la password (WEP o WPA) per la connessione scelta
+e confermare con invio.</p>
+
+<p class="center"><img src="/resources/articles/2015-06/wifi-menu-3.png" alt="wifi-menu-3.png" /></p>
+
+<p>Salvare il profilo di rete appena configurato confermando con invio.</p>
+
+<p>La connessione sarà automaticamente avviata e si riceverà l’indirizzo IP di
+rete attraverso DHCP.</p>
 
 
 
