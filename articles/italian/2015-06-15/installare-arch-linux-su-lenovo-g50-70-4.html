@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, rete, wifi, wlan, rfkill, pacstrap, install, packages">
+
+
+    <meta name="description" content="Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot">
+
+    <meta name="author" content="Fabio Castelli">
+    <link rel="shortcut icon" href="/resources/contacts/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/contacts/favicon.ico" type="image/x-icon">
+    <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
+    <link rel="stylesheet" type="text/css" href="/theme/architects-fonts.css" >
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet2.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/articles.css" media="screen" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 4 - installazione del sistema)</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <a href="/articles/"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
+        <h1>Muflone</h1>
+        <h2>Installare Arch Linux su Lenovo G50-70 (parte 4 - installazione del sistema)</h2>
+      </div>
+    </header>
+    <div id="content-wrapper">
+      <div class="clearfix">
+        <section id="main-content" class="article">
+
+          <div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</div>
+          <hr />
+
+<p class="center"><img src="/resources/articles/2015-06/arch-linux-prompt.png" alt="arch-linux-prompt.png" /></p>
+
+<p>E’ adesso possibile procedere all’installazione del sistema di base, nelle
+partizioni montate in precedenza su <strong>/mnt</strong> e configurare il computer per
+l’avvio dal nuovo sistema.</p>
+
+<h2 id="installazione-dei-pacchetti-del-sistema-di-base">Installazione dei pacchetti del sistema di base</h2>
+
+<pre><code>root@archiso ~ # pacstrap /mnt base
+==&gt; Creating install root at /mnt
+==&gt; Installing packages to /mnt
+:: Synchronizing package databases...
+ core                             122.3 KiB   243K/s 00:01 [####################################] 100%
+ extra                           1738.6 KiB   227K/s 00:08 [####################################] 100%
+ community                          2.7 MiB   225K/s 00:12 [####################################] 100%
+:: There are 50 members in group base:
+:: Repository core
+   1) bash  2) bzip2  3) coreutils  4) cryptsetup  5) device-mapper  6) dhcpcd  7) diffutils  8) e2fsprogs
+   9) file  10) filesystem  11) findutils  12) gawk  13) gcc-libs  14) gettext  15) glibc  16) grep
+   17) gzip  18) inetutils  19) iproute2  20) iputils  21) jfsutils  22) less  23) licenses  24) linux
+   25) logrotate  26) lvm2  27) man-db  28) man-pages  29) mdadm  30) nano  31) netctl  32) pacman
+   33) pciutils  34) pcmciautils  35) perl  36) procps-ng  37) psmisc  38) reiserfsprogs  39) s-nail
+   40) sed  41) shadow  42) sysfsutils  43) systemd-sysvcompat  44) tar  45) texinfo  46) usbutils
+   47) util-linux  48) vi  49) which  50) xfsprogs
+
+Enter a selection (default=all): 
+resolving dependencies...
+looking for conflicting packages...
+warning: dependency cycle detected:
+warning: ncurses will be installed before its bash dependency
+
+Packages (123) acl-2.2.52-2  archlinux-keyring-20150605-1  attr-2.4.47-1  ca-certificates-20150402-1 
+               ca-certificates-cacert-20140824-2  ca-certificates-mozilla-3.19.1-1
+               ca-certificates-utils-20150402-1  cracklib-2.9.4-1  curl-7.42.1-1  db-5.3.28-2
+               dbus-1.8.18-1  expat-2.1.0-4  gdbm-1.11-1  glib2-2.44.1-1  gmp-6.0.0-2 gnupg-2.1.5-1
+               gnutls-3.4.1-1  gpgme-1.5.4-1  groff-1.22.3-3  hwids-20150129-1  iana-etc-2.30-5
+               iptables-1.4.21-3  kbd-2.0.2-1  keyutils-1.5.9-1  kmod-20-1  krb5-1.13.1-1
+               libaio-0.3.110-1  libarchive-3.1.2-8  libassuan-2.2.0-1  libcap-2.24-2  libdbus-1.8.18-1
+               libffi-3.2.1-1  libgcrypt-1.6.3-2  libgpg-error-1.19-1  libidn-1.30-1  libksba-1.3.3-1
+               libldap-2.4.40-2  libpipeline-1.4.0-1  libsasl-2.1.26-7  libseccomp-2.2.0-1
+               libssh2-1.5.0-1  libsystemd-219-6  libtasn1-4.5-1  libtirpc-0.3.1-1  libunistring-0.9.5-1
+               libusb-1.0.19-1  libutil-linux-2.26.2-1  linux-api-headers-4.0-1
+               linux-firmware-20150527.3161bfa-1  lz4-130-1  lzo-2.09-1  mkinitcpio-18-2
+               mkinitcpio-busybox-1.21.1-2  mpfr-3.1.2.p11-1  ncurses-5.9-7  nettle-3.1.1-1  npth-1.2-1
+               openresolv-3.7.0-1  openssl-1.0.2.c-1  p11-kit-0.23.1-2  pacman-mirrorlist-20150531-1
+               pam-1.2.0-1  pambase-20130928-1  pcre-8.37-2  pinentry-0.9.1-1  popt-1.16-7  pth-2.0.7-5
+               readline-6.3.008-1  systemd-219-6  thin-provisioning-tools-0.4.1-1  tzdata-2015d-1
+               xz-5.2.1-1  zlib-1.2.8-4  bash-4.3.039-1  bzip2-1.0.6-5  coreutils-8.23-2
+               cryptsetup-1.6.6-1  device-mapper-2.02.116-1  dhcpcd-6.9.0-1  diffutils-3.3-2
+               e2fsprogs-1.42.12-2  file-5.22-1  filesystem-2015.02-1  findutils-4.4.2-6  gawk-4.1.3-1
+               gcc-libs-5.1.0-4  gettext-0.19.4-1  glibc-2.21-4  grep-2.21-2  gzip-1.6-1
+               inetutils-1.9.3-1  iproute2-4.0.0-2  iputils-20140519.fad11dc-1  jfsutils-1.1.15-4
+               less-471-1  licenses-20140629-1  linux-4.0.5-1  logrotate-3.8.9-1  lvm2-2.02.116-1
+               man-db-2.7.1-1  man-pages-4.00-1  mdadm-3.3.2-2  nano-2.4.1-1  netctl-1.10-2
+               pacman-4.2.1-1  pciutils-3.3.1-1  pcmciautils-018-7  perl-5.20.2-1  procps-ng-3.3.10-2
+               psmisc-22.21-2  reiserfsprogs-3.6.24-1  s-nail-14.8.1-1  sed-4.2.2-3  shadow-4.2.1-3
+               sysfsutils-2.1.0-9  systemd-sysvcompat-219-6  tar-1.28-1  texinfo-5.2-3  usbutils-008-1
+               util-linux-2.26.2-1  vi-1:070224-1  which-2.21-1  xfsprogs-3.2.2-1
+
+Total Download Size:   166.57 MiB
+Total Installed Size:  512.80 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages ...
+ linux-api-headers-4.0-1-x86_64   757.5 KiB   229K/s 00:03 [####################################] 100%
+ tzdata-2015d-1-any               213.5 KiB   226K/s 00:01 [####################################] 100%
+  ...
+
+(123/123) checking keys in keyring                         [####################################] 100%
+(123/123) checking package integrity                       [####################################] 100%
+(123/123) loading package files                            [####################################] 100%
+(123/123) checking for file conflicts                      [####################################] 100%
+(123/123) checking available disk space                    [####################################] 100%
+(  1/123) installing linux-api-headers                     [####################################] 100%
+(  2/123) installing tzdata                                [####################################] 100%
+  ...
+(123/123) installing xfsprogs                              [####################################] 100%
+pacstrap /mnt base  21.48s user 1.69s system 80% cpu 28.886 total
+</code></pre>
+
+<h2 id="completare-linstallazione-di-base">Completare l’installazione di base</h2>
+
+<p>Per inizializzare il file <strong>/etc/fstab</strong> con i riferimenti alle nuove partizioni
+eseguire il comando <strong>genfstab</strong>.</p>
+
+<p>L’argomento <strong>-L</strong> è usato per utilizzare le etichette (Label) dei file system,
+usate durante la formattazione delle partizioni. In alternativa è possibile
+utilizzare l’argomento <strong>-U</strong> che identifica l’uso degli UUID (Universally
+Unique IDentifier).</p>
+
+<pre><code>root@archiso ~ # genfstab -L -p /mnt &gt;&gt; /mnt/etc/fstab 
+</code></pre>
+
+<h2 id="accedere-alla-nuova-root-e-configurare-il-sistema">Accedere alla nuova root e configurare il sistema</h2>
+
+<p>Sarà adesso possibile accedere alla nuova installazione prima del riavvio per
+completare alcune messe a punto iniziali.</p>
+
+<pre><code>root@archiso ~ # arch-chroot /mnt
+sh-4.3# 
+</code></pre>
+
+<h2 id="configurazione-del-nome-del-computer">Configurazione del nome del computer</h2>
+
+<p>Assegnare quindi un nome al computer, col quale il sistema sarà identificato
+all’interno della rete.</p>
+
+<pre><code>sh-4.3# echo arch-lenovo &gt; /etc/hostname
+</code></pre>
+
+<h2 id="impostazione-del-fuso-orario">Impostazione del fuso orario</h2>
+
+<p>Specificare quindi il fuso orario italiano, in questo caso <strong>Europe/Rome</strong>,
+utile per traslare l’orologio di sistema nell’orario corrente.</p>
+
+<pre><code>sh-4.3# ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
+</code></pre>
+
+<h2 id="configurazione-del-locale">Configurazione del locale</h2>
+
+<p>Il locale si occupa della traduzione dei programmi e di una serie di impostazioni
+linguistiche.</p>
+
+<p>All’interno del file <strong>/etc/locale.gen</strong> sono presenti tutti i locale disponibili,
+basterà modificare questo file (ad esempio con <strong>nano /etc/locale.gen</strong>)
+togliendo i simboli # per attivare un layout.</p>
+
+<p>L’istruzione sottostante attiva direttamente la lingua italiana senza dover
+modificare manualmente il file locale.gen.</p>
+
+<pre><code>sh-4.3# sed -i 's/^#it_IT.UTF-8/it_IT.UTF-8/' /etc/locale.gen
+
+sh-4.3# echo LANG=it_IT.UTF-8 &gt; /etc/locale.conf
+
+sh-4.3# locale-gen 
+Generating locales...
+  it_IT.UTF-8... done
+Generation complete.
+</code></pre>
+
+<h2 id="installazione-dei-pacchetti-per-la-configurazione-di-rete">Installazione dei pacchetti per la configurazione di rete</h2>
+
+<p>L’immagine di installazione del sistema operativo contiene al suo interno gli
+strumenti per la
+<a href="/articles/italian/2015-06-09/installare-arch-linux-su-lenovo-g50-70-2.html">configurazione della rete Wi-Fi</a>
+ma l’installazione minimale non include questi strumenti, per cui è necessario
+installarli esplicitamente.</p>
+
+<pre><code>sh-4.3# pacman -S dialog wpa_supplicant rfkill
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (4) libnl-3.2.25-1  dialog-1:1.2_20150528-1  rfkill-0.5-1  wpa_supplicant-1:2.3-1
+
+Total Download Size:   1.04 MiB
+Total Installed Size:  3.28 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages ...
+ dialog-1:1.2_20150528-1-x86_64   167.6 KiB   237K/s 00:01 [####################################] 100%
+ libnl-3.2.25-1-x86_64            262.1 KiB   226K/s 00:01 [####################################] 100%
+ wpa_supplicant-1:2.3-1-x86_64    625.7 KiB   224K/s 00:03 [####################################] 100%
+ rfkill-0.5-1-x86_64                6.5 KiB   922K/s 00:00 [####################################] 100%
+(4/4) checking keys in keyring                             [####################################] 100%
+(4/4) checking package integrity                           [####################################] 100%
+(4/4) loading package files                                [####################################] 100%
+(4/4) checking for file conflicts                          [####################################] 100%
+(4/4) checking available disk space                        [####################################] 100%
+(1/4) installing dialog                                    [####################################] 100%
+(2/4) installing libnl                                     [####################################] 100%
+(3/4) installing wpa_supplicant                            [####################################] 100%
+Optional dependencies for wpa_supplicant
+    wpa_supplicant_gui: wpa_gui program
+(4/4) installing rfkill
+</code></pre>
+
+<h2 id="impostazione-della-password-di-root">Impostazione della password di root</h2>
+
+<p>L’utente <strong>root</strong> fino a questo momento è rimasto senza password, è bene
+configurare da subito una password da assegnargli. Dopo il comando <strong>passwd</strong>
+scrivere la password desiderata e ripeterla. <strong>Non saranno mostrati asterischi</strong>
+durante la digitazione della password, è necessario scriverla alla cieca quando
+richiesta.</p>
+
+<pre><code>sh-4.3# passwd
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+</code></pre>
+
+
+
+  
+    <!-- Google + -->
+<g:plusone size="medium"></g:plusone>
+ 
+<!-- Add this just before the closing body tag of your web page -->	
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+    <a href="https://twitter.com/share" class="twitter-share-button" >Tweet</a>
+ 
+<!-- Put this just before the closing body tag -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'muflone';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
+        </section>
+      </div>
+    </div>
+
+  
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+
+
+    <div class="footer">
+
+  
+
+
+          <div id="icons">
+            <a href="/italian.html">
+              <img src="/resources/index/32-home.png" title="Home">
+            </a>
+  
+
+
+  
+    
+
+  
+            <a href="/contacts/italian/">
+              <img src="/resources/contacts/archive/latest/icon32.png" title="Muflone
+Contatti e risorse sull'autore.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/articles/italian/">
+              <img src="/resources/articles/archive/latest/icon32.png" title="Articles
+Articoli e guide.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gespeaker/italian/">
+              <img src="/resources/gespeaker/archive/latest/icon32.png" title="Gespeaker
+Ascolta il testo scritto in varie lingue con impostazioni per voce, intonazione, volume e velocit&agrave.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gwakeonlan/italian/">
+              <img src="/resources/gwakeonlan/archive/latest/icon32.png" title="gWakeOnLan
+Accende le tue macchine in rete locale oppure attraverso Internet usando il sistema Wake On LAN.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gextractwinicons/italian/">
+              <img src="/resources/gextractwinicons/archive/latest/icon32.png" title="gExtractWinIcons
+Estrai cursori, icone e immagini da file di risorse per Microsoft Windows (come .exe, .dll, .ocx e .cpl).">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/bluewho/italian/">
+              <img src="/resources/bluewho/archive/latest/icon32.png" title="BlueWho
+Ricerca dispositivi Bluetooth nelle vicinanze e ricevi le notifiche quando un nuovo dispositivo viene rilevato.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/cpucompare/italian/">
+              <img src="/resources/cpucompare/archive/latest/icon32.png" title="CPUCompare
+Esegui confronti tra numerosi modelli di CPU per trovare quelle di tuo interesse.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gptrace/italian/">
+              <img src="/resources/gptrace/archive/latest/icon32.png" title="gpTrace
+Traccia le attivita di un'applicazione esterna.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-builder/italian/">
+              <img src="/resources/remmina-plugin-builder/archive/latest/icon32.png" title="Remmina Plugin Builder
+Un pacchetto per semplificare lo sviluppo e la compilazione di plugin per Remmina.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-exec/italian/">
+              <img src="/resources/remmina-plugin-exec/archive/latest/icon32.png" title="Remmina Plugin Exec
+Un plugin di protocollo per Remmina per eseguire un processo esterno.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-folder/italian/">
+              <img src="/resources/remmina-plugin-folder/archive/latest/icon32.png" title="Remmina Plugin Folder
+Un plugin di protocollo per Remmina per aprire una cartella con un gestore di files esterno.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-open/italian/">
+              <img src="/resources/remmina-plugin-open/archive/latest/icon32.png" title="Remmina Plugin Open
+Un plugin di protocollo per Remmina per aprire un file o un documento utilizzando l'applicazione associata.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-rdesktop/italian/">
+              <img src="/resources/remmina-plugin-rdesktop/archive/latest/icon32.png" title="Remmina Plugin RDesktop
+Un plugin di protocollo per Remmina per stabilire connessioni RDP tramite RDesktop.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-teamviewer/italian/">
+              <img src="/resources/remmina-plugin-teamviewer/archive/latest/icon32.png" title="Remmina Plugin TeamViewer
+Un plugin di protocollo per Remmina per stabilire connessioni tramite TeamViewer.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-ultravnc/italian/">
+              <img src="/resources/remmina-plugin-ultravnc/archive/latest/icon32.png" title="Remmina Plugin UltraVNC
+Un plugin di protocollo per Remmina per stabilire connessioni tramite UltraVNC.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-url/italian/">
+              <img src="/resources/remmina-plugin-url/archive/latest/icon32.png" title="Remmina Plugin URL
+Un plugin di protocollo per Remmina per aprire pagine web tramite un browser web esterno.">
+            </a>
+    
+
+  
+  
+
+  
+            <a href="/remmina-plugin-webkit/italian/">
+              <img src="/resources/remmina-plugin-webkit/archive/latest/icon32.png" title="Remmina Plugin WebKit
+Un plugin di protocollo per Remmina per aprire pagine web tramite un browser web WebKit integrato.">
+            </a>
+    
+
+
+
+          </div>
+  
+
+      Copyright &copy; 2013-2014 <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+      <a href="/">Home</a> | 
+      <a href="/english.html"><img src="/resources/index/16-english.png"> English</a> |
+      <a href="/italian.html"><img src="/resources/index/16-italian.png"> Italian</a> |
+      <a href="/contacts/italian/">Contatti</a>
+    </div>
+  </body>
+</html>
+
+  </body>
+</html>
