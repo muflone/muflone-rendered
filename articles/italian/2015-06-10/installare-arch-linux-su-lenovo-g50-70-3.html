@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, partizionamento, disco, swap, ext4, file system, formattazione, parted, gdisk">
+
+
+    <meta name="description" content="Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot">
+
+    <meta name="author" content="Fabio Castelli">
+    <link rel="shortcut icon" href="/resources/contacts/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/contacts/favicon.ico" type="image/x-icon">
+    <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
+    <link rel="stylesheet" type="text/css" href="/theme/architects-fonts.css" >
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet2.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/articles.css" media="screen" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 3 - partizionamento del disco)</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <a href="/articles/"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
+        <h1>Muflone</h1>
+        <h2>Installare Arch Linux su Lenovo G50-70 (parte 3 - partizionamento del disco)</h2>
+      </div>
+    </header>
+    <div id="content-wrapper">
+      <div class="clearfix">
+        <section id="main-content" class="article">
+
+          <div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</div>
+          <hr />
+
+<p class="center"><img src="/resources/articles/2015-06/arch-linux-prompt.png" alt="arch-linux-prompt.png" /></p>
+
+<p>Il processo di installazione di Arch Linux è differente dal processo di installazione
+di altre distribuzioni GNU/Linux come Debian, Ubuntu, OpenSUSE o Fedora. Si
+tratta infatti di un’installazione manuale del sistema operativo minimale che
+richiede ogni singola messa a punto prima di fornire un sistema completo e
+usabile.</p>
+
+<p>Per ulteriori dettagli sul processo di installazione consultare la guida online
+<a href="https://wiki.archlinux.org/index.php/Beginners%27_guide" target="_blank">Beginner’s guide</a>.</p>
+
+<hr />
+
+<h1 id="partizionamento-iniziale">Partizionamento iniziale</h1>
+
+<p>Il ridimensionamento della partizione di Windows per far posto alle nuove
+partizioni per Arch Linux non viene trattato in questa guida e va eseguito prima
+di procedere all’installazione di Arch Linux.</p>
+
+<p>Personalmente ho utilizzato <strong><a href="http://gparted.org/" target="_blank">gParted</a></strong> per ridurre la
+dimensione di Windows 8 e spostarla alla fine del disco, dove le prestazioni
+del disco sono più lente rispetto la parte iniziale dello stesso disco.</p>
+
+<p>Se non vi è necessità di spostare la partizione di Windows ma soltanto di
+ridurla è possibile utilizzare la gestione disco di Windows.</p>
+
+<h2 id="partizionamento-iniziale-visto-da-gestione-disco">Partizionamento iniziale visto da Gestione disco</h2>
+
+<p class="center"><img src="/resources/articles/2015-06/windows-gestione-disco.png" alt="windows-gestione-disco.png" /></p>
+
+<h2 id="partizionamento-iniziale-visto-da-gdisk">Partizionamento iniziale visto da gdisk</h2>
+
+<pre><code>root@archiso ~ # gdisk -l /dev/sda
+GPT fdisk (gdisk) version 1.0.0
+
+Partition table scan:
+  MBR: protective
+  BSD: not present
+  APM: not present
+  GPT: present
+
+Found valid GPT with protective MBR; using GPT.
+Disk /dev/sda: 1953525168 sectors, 931.5 GiB
+Logical sector size: 512 bytes
+Disk identifier (GUID): D351D50F-EC1E-4048-9ED6-9A076FAA0298
+Partition table holds up to 128 entries
+First usable sector is 34, last usable sector is 1953525134
+Partitions will be aligned on 2048-sector boundaries
+Total free space is 1671431533 sectors (797.0 GiB)
+
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048         2050047   1000.0 MiB  2700  Basic data partition
+   2         2050048         2582527   260.0 MiB   EF00  EFI system partition
+   3         2582528         4630527   1000.0 MiB  ED01  Basic data partition
+   4         4630528         4892671   128.0 MiB   0C01  Microsoft reserved ...
+   5      1676320768      1840160767   78.1 GiB    0700  Basic data partition
+   6      1840160768      1922080767   39.1 GiB    0700  Basic data partition
+   7      1922080768      1953523711   15.0 GiB    2700  Basic data partition
+</code></pre>
+
+<h2 id="partizionamento-iniziale-visto-da-parted">Partizionamento iniziale visto da parted</h2>
+
+<pre><code>root@archiso ~ # parted -l /dev/sda
+Model: ATA WDC WD10JPCX-24U (scsi)
+Disk /dev/sda: 1000GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start   End     Size    File system     Name                          Flags
+ 1      1049kB  1050MB  1049MB  ntfs            Basic data partition          hidden, diag
+ 2      1050MB  1322MB  273MB   fat32           EFI system partition          boot, hidden, esp
+ 3      1322MB  2371MB  1049MB  fat32           Basic data partition          hidden
+ 4      2371MB  2505MB  134MB                   Microsoft reserved partition  msftres
+ 5      858GB   942GB   83.9GB  ntfs            Basic data partition          msftdata
+ 6      942GB   984GB   41.9GB  ntfs            Basic data partition          msftdata
+ 7      984GB   1000GB  16.1GB  ntfs            Basic data partition          hidden, diag
+</code></pre>
+
+<hr />
+
+<h1 id="aggiunta-delle-partizioni-necessarie">Aggiunta delle partizioni necessarie</h1>
+
+<p>Per il partizionamento del disco sarà utilizzato il comando parted</p>
+
+<pre><code>root@archiso ~ # parted /dev/sda
+GNU Parted 3.2
+Using /dev/sda
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+(parted)
+</code></pre>
+
+<h2 id="creazione-della-partizione-root">Creazione della partizione root</h2>
+
+<p>La <strong>partizione root</strong> conterrà tutti i dati del sistema operativo, i programmi,
+kernel, librerie e i dati variabili come log, liste dei pacchetti e altro.</p>
+
+<p>Sarà creata una partizione da <strong>30 GB</strong>, più che sufficiente per le normali
+esigenze.</p>
+
+<pre><code>(parted) mkpart
+Partition name?  []? 
+File system type?  [ext2]? ext4
+Start? 2505M
+End? 33225M
+
+(parted) print
+Model: ATA WDC WD10JPCX-24U (scsi)
+Disk /dev/sda: 1000GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start   End     Size    File system     Name                          Flags
+ 1      1049kB  1050MB  1049MB  ntfs            Basic data partition          hidden, diag
+ 2      1050MB  1322MB  273MB   fat32           EFI system partition          boot, hidden, esp
+ 3      1322MB  2371MB  1049MB  fat32           Basic data partition          hidden
+ 4      2371MB  2505MB  134MB                   Microsoft reserved partition  msftres
+ 8      2505MB  33.2GB  30.7GB  ext4
+ 5      858GB   942GB   83.9GB  ntfs            Basic data partition          msftdata
+ 6      942GB   984GB   41.9GB  ntfs            Basic data partition          msftdata
+ 7      984GB   1000GB  16.1GB  ntfs            Basic data partition          hidden, diag
+
+(parted) name 8 "Arch Linux root"
+</code></pre>
+
+<h2 id="creazione-della-partizione-home">Creazione della partizione home</h2>
+
+<p>La <strong>partizione home</strong> conterrà tutti i dati personali dell’utente, i file
+scaricati, le preferenze e tutto quanto non provenga direttamente
+dall’installazione dei pacchetti del software.</p>
+
+<p>Sarà creata una partizione di <strong>117 GB</strong>, l’esigenza reale dipende
+dall’utilizzatore.</p>
+
+<pre><code>(parted) mkpart
+Partition name?  []? 
+File system type?  [ext2]? ext4
+Start? 33.2G
+End? 150G
+
+(parted) print
+Model: ATA WDC WD10JPCX-24U (scsi)
+Disk /dev/sda: 1000GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start   End     Size    File system     Name                          Flags
+ 1      1049kB  1050MB  1049MB  ntfs            Basic data partition          hidden, diag
+ 2      1050MB  1322MB  273MB   fat32           EFI system partition          boot, hidden, esp
+ 3      1322MB  2371MB  1049MB  fat32           Basic data partition          hidden
+ 4      2371MB  2505MB  134MB                   Microsoft reserved partition  msftres
+ 8      2505MB  33.2GB  30.7GB  ext4            Arch Linux root
+ 9      33.2GB  150GB   117GB   ext4
+ 5      858GB   942GB   83.9GB  ntfs            Basic data partition          msftdata
+ 6      942GB   984GB   41.9GB  ntfs            Basic data partition          msftdata
+ 7      984GB   1000GB  16.1GB  ntfs            Basic data partition          hidden, diag
+
+(parted) name 9 "Home"
+</code></pre>
+
+<h2 id="creazione-della-partizione-swap">Creazione della partizione swap</h2>
+
+<p>La <strong>partizione swap</strong> fornisce un’area di memoria volatile aggiuntiva alla
+memoria RAM, per scaricare su disco parti di memoria inutilizzate e per offrire
+quindi una capacità di memoria di dimensioni superiori, naturalmente al costo
+delle prestazioni, essendo il disco rigido assai più lento della RAM.</p>
+
+<p>Verrà creata una partizione swap di <strong>6 GB</strong>, la stessa quantità di memoria
+della RAM, al fine di permettere la conservazione della RAM su swap, utile per
+l’operazione di sospensione (detta anche ibernazione).</p>
+
+<pre><code>(parted) mkpart                                                           
+Partition name?  []? 
+File system type?  [ext2]? linux-swap
+Start? 852G
+End? 858G
+
+(parted) print
+Model: ATA WDC WD10JPCX-24U (scsi)
+Disk /dev/sda: 1000GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start   End     Size    File system     Name                          Flags
+ 1      1049kB  1050MB  1049MB  ntfs            Basic data partition          hidden, diag
+ 2      1050MB  1322MB  273MB   fat32           EFI system partition          boot, hidden, esp
+ 3      1322MB  2371MB  1049MB  fat32           Basic data partition          hidden
+ 4      2371MB  2505MB  134MB                   Microsoft reserved partition  msftres
+ 8      2505MB  33.2GB  30.7GB  ext4            Arch Linux root
+ 9      33.2GB  150GB   117GB   ext4
+10      852GB   858GB   6276MB  linux-swap(v1)
+ 5      858GB   942GB   83.9GB  ntfs            Basic data partition          msftdata
+ 6      942GB   984GB   41.9GB  ntfs            Basic data partition          msftdata
+ 7      984GB   1000GB  16.1GB  ntfs            Basic data partition          hidden, diag
+
+(parted) name 10 "Swap 6 GB"
+</code></pre>
+
+<h2 id="verifica-del-partizionamento-con-parted">Verifica del partizionamento con parted</h2>
+
+<p>Al termine delle operazioni verificare il partizionamento ottenuto. Per ogni
+partizione creata eseguire il comando <strong>align-check optimal</strong> per verificare
+che la partizione sia allineata correttamente.</p>
+
+<p>Un errato allineamento delle partizioni può causare un forte degrado delle
+prestazioni, soprattutto in fase di scrittura dei dati. Per ulteriori informazioni:
+<a href="http://www.ibm.com/developerworks/linux/library/l-4kb-sector-disks/" target="_blank">Linux on 4KB-sector disks: Practical advice</a> e
+<a href="http://www.seagate.com/tech-insights/advanced-format-4k-sector-hard-drives-master-ti/" target="_blank">Transition to Advanced Format 4K Sector Hard Drives</a>.</p>
+
+<pre><code>(parted) print                                                            
+Model: ATA WDC WD10JPCX-24U (scsi)
+Disk /dev/sda: 1000GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start   End     Size    File system     Name                          Flags
+ 1      1049kB  1050MB  1049MB  ntfs            Basic data partition          hidden, diag
+ 2      1050MB  1322MB  273MB   fat32           EFI system partition          boot, hidden, esp
+ 3      1322MB  2371MB  1049MB  fat32           Basic data partition          hidden
+ 4      2371MB  2505MB  134MB                   Microsoft reserved partition  msftres
+ 8      2505MB  33.2GB  30.7GB                  Arch Linux root
+ 9      33.2GB  150GB   117GB                   Home
+10      852GB   858GB   6276MB  linux-swap(v1)  Swap 6 GB
+ 5      858GB   942GB   83.9GB  ntfs            Basic data partition          msftdata
+ 6      942GB   984GB   41.9GB  ntfs            Basic data partition          msftdata
+ 7      984GB   1000GB  16.1GB  ntfs            Basic data partition          hidden, diag
+
+(parted) align-check optimal 8
+8 aligned
+
+(parted) align-check optimal 9
+9 aligned
+
+(parted) align-check optimal 10
+10 aligned
+
+(parted) quit
+</code></pre>
+
+<h2 id="verifica-del-partizionamento-con-gdisk">Verifica del partizionamento con gdisk</h2>
+
+<p>Eseguire le stesse verifiche con gdisk confermerà che tutte le partizioni sono
+allineate correttamente.</p>
+
+<pre><code>root@archiso ~ # gdisk /dev/sda
+GPT fdisk (gdisk) version 1.0.0
+
+Partition table scan:
+  MBR: protective
+  BSD: not present
+  APM: not present
+  GPT: present
+
+Found valid GPT with protective MBR; using GPT.
+
+Command (? for help): p
+Disk /dev/sda: 1953525168 sectors, 931.5 GiB
+Logical sector size: 512 bytes
+Disk identifier (GUID): D351D50F-EC1E-4048-9ED6-9A076FAA0298
+Partition table holds up to 128 entries
+First usable sector is 34, last usable sector is 1953525134
+Partitions will be aligned on 2048-sector boundaries
+Total free space is 1375544685 sectors (655.9 GiB)
+
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048         2050047   1000.0 MiB  2700  Basic data partition
+   2         2050048         2582527   260.0 MiB   EF00  EFI system partition
+   3         2582528         4630527   1000.0 MiB  ED01  Basic data partition
+   4         4630528         4892671   128.0 MiB   0C01  Microsoft reserved ...
+   5      1676320768      1840160767   78.1 GiB    0700  Basic data partition
+   6      1840160768      1922080767   39.1 GiB    0700  Basic data partition
+   7      1922080768      1953523711   15.0 GiB    2700  Basic data partition
+   8         4892672        64892927   28.6 GiB    8300  Arch Linux root
+   9        64892928       292968447   108.8 GiB   8300  Home
+  10      1664063488      1676320767   5.8 GiB     8200  Swap 6 GB
+
+Command (? for help): v
+
+No problems found. 1371098477 free sectors (653.8 GiB) available in 3
+segments, the largest of which is 1371095040 (653.8 GiB) in size.
+
+Command (? for help): q
+</code></pre>
+
+<hr />
+
+<h1 id="formattazione-delle-nuove-partizioni">Formattazione delle nuove partizioni</h1>
+
+<p>Dopo il partizionamento è necessario formattare le nuove partizioni come segue:</p>
+
+<h2 id="formattazione-della-partizione-root">Formattazione della partizione root</h2>
+
+<p>Per la partizione root sarà riservato l’1% dello spazio (<strong>-m 1</strong>) all’utente
+root, ciò per evitare che un uso errato di un log possa riempire completamente
+la partizione.</p>
+
+<pre><code>root@archiso ~ # mke2fs -L Root -m 1 /dev/sda8 
+mke2fs 1.42.12 (29-Aug-2014)
+Creating filesystem with 7500032 4k blocks and 1875968 inodes
+Filesystem UUID: 2cce8139-2aa7-415a-811a-0830dd16614b
+Superblock backups stored on blocks: 
+  32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+  4096000
+
+Allocating group tables: done
+Writing inode tables: done
+Writing superblocks and filesystem accounting information: done
+</code></pre>
+
+<h2 id="formattazione-della-partizione-home">Formattazione della partizione home</h2>
+
+<p>Per la partizione home non sarà necessario riservare spazio all’utente root,
+pertanto verrà indicata la percentuale dello 0% (<strong>-m 0</strong>).</p>
+
+<pre><code>root@archiso ~ # mke2fs -L Home -m 0 /dev/sda9
+mke2fs 1.42.12 (29-Aug-2014)
+Creating filesystem with 28509440 4k blocks and 7135232 inodes
+Filesystem UUID: d96414ef-54eb-42e6-acab-612a9689c7b4
+Superblock backups stored on blocks: 
+  32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+  4096000, 7962624, 11239424, 20480000, 23887872
+
+Allocating group tables: done
+Writing inode tables: done
+Writing superblocks and filesystem accounting information: done
+</code></pre>
+
+<h2 id="formattazione-della-partizione-swap">Formattazione della partizione swap</h2>
+
+<pre><code>root@archiso ~ # mkswap -L "Swap_6_GB" /dev/sda10
+Setting up swapspace version 1, size = 5.9 GiB (6275723264 bytes)
+LABEL=Swap_6_GB, UUID=6290142a-f101-4e39-acbd-71dc33d259eb
+</code></pre>
+
+<hr />
+
+<h1 id="montaggio-delle-nuove-partizioni">Montaggio delle nuove partizioni</h1>
+
+<p>Prima di procedere al montaggio effettivo delle partizioni è necessario conoscere
+quale sia la partizione contenente i file di avvio di Windows, la cosiddetta
+<strong>EFI System Partition</strong> (<a href="https://en.wikipedia.org/wiki/EFI_System_partition" target="_blank">ESP</a>).</p>
+
+<p>Utilizzare il comando <strong>blkid</strong> per conoscere l’elenco delle partizioni
+disponibili, con alcuni dettagli:</p>
+
+<pre><code>root@archiso ~ # blkid
+/dev/sda1: LABEL="WINRE_DRV" UUID="12D02132D0211E0B" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="c714930a-c127-4c77-af04-c6039c287a09"
+/dev/sda2: LABEL="SYSTEM_DRV" UUID="2223-7318" TYPE="vfat" PARTLABEL="EFI system partition" PARTUUID="9ec6d731-187b-49bc-9c96-0ac6b5c1ff39"
+/dev/sda3: LABEL="LRS_ESP" UUID="7627-2E57" TYPE="vfat" PARTLABEL="Basic data partition" PARTUUID="3b3d4cf2-708b-404b-9efb-6e3c36eb5138"
+/dev/sda4: PARTLABEL="Microsoft reserved partition" PARTUUID="c00b39af-21fe-4e8b-bd6e-3f273e495df9"
+/dev/sda5: LABEL="Windows8_OS" UUID="FC9459FD522A6F69" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="9e2ce587-2013-44b4-ae94-d47e68644c6d"
+/dev/sda6: LABEL="LENOVO" UUID="02986FF1986FE1A1" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="260417ff-f9bc-4891-9eba-767261b7b911"
+/dev/sda7: LABEL="PBR_DRV" UUID="A26E2E086E2DD637" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="363328b1-2ac2-498a-89f0-6ecf748eba13"
+/dev/sda8: LABEL="Root" UUID="2cce8139-2aa7-415a-811a-0830dd16614b" TYPE="ext2" PARTLABEL="Arch Linux root" PARTUUID="c373fa58-8231-41ed-a8df-18e146c34b74"
+/dev/sda9: LABEL="Home" UUID="d96414ef-54eb-42e6-acab-612a9689c7b4" TYPE="ext2" PARTLABEL="Home" PARTUUID="f8c71f05-6f81-49bd-89f4-922e71981068"
+/dev/sda10: LABEL="Swap_6_GB" UUID="6290142a-f101-4e39-acbd-71dc33d259eb" TYPE="swap" PARTLABEL="Swap 6 GiB" PARTUUID="5eb12670-289d-4ab2-98d6-fad7317b4e02"
+/dev/sdb1: LABEL="ARCH_201506" UUID="B2C1-A2B9" TYPE="vfat" PARTUUID="001381f5-01"
+/dev/loop0: TYPE="squashfs"
+/dev/loop1: UUID="a0b8124e-507a-4c5a-bfc9-79e306898aa2" TYPE="ext4"
+/dev/mapper/arch_airootfs: UUID="a0b8124e-507a-4c5a-bfc9-79e306898aa2" TYPE="ext4"
+</code></pre>
+
+<p>L’ESP predefinita in questo computer è la partizione /dev/sda2, mentre la
+partizione /dev/sda3 contiene i file di avvio del sistema di ripristino di Lenovo
+(LRS_ESP = Lenovo Recovery System ESP).</p>
+
+<p>Per ulteriori dettagli sul significato delle varie partizioni consultare la
+pagina <a href="http://www.lionhack.com/2013/12/25/lenovo-yoga-2-pro-partitions/" target="_blank">Lenovo Yoga Pro 2 Partition Cleanup</a>.</p>
+
+<p>E’ infine possibile montare le nuove partizioni root, boot e home.</p>
+
+<pre><code>root@archiso ~ # mount /dev/sda8 /mnt
+root@archiso ~ # mkdir /mnt/boot
+root@archiso ~ # mount /dev/sda2 /mnt/boot 
+root@archiso ~ # mkdir /mnt/home          
+root@archiso ~ # mount /dev/sda9 /mnt/home 
+</code></pre>
+
+
+
+  
+    <!-- Google + -->
+<g:plusone size="medium"></g:plusone>
+ 
+<!-- Add this just before the closing body tag of your web page -->	
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+    <a href="https://twitter.com/share" class="twitter-share-button" >Tweet</a>
+ 
+<!-- Put this just before the closing body tag -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'muflone';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
+        </section>
+      </div>
+    </div>
+
+  
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+
+
+    <div class="footer">
+
+  
+
+
+          <div id="icons">
+            <a href="/italian.html">
+              <img src="/resources/index/32-home.png" title="Home">
+            </a>
+  
+
+
+  
+    
+
+  
+            <a href="/contacts/italian/">
+              <img src="/resources/contacts/archive/latest/icon32.png" title="Muflone
+Contatti e risorse sull'autore.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/articles/italian/">
+              <img src="/resources/articles/archive/latest/icon32.png" title="Articles
+Articoli e guide.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gespeaker/italian/">
+              <img src="/resources/gespeaker/archive/latest/icon32.png" title="Gespeaker
+Ascolta il testo scritto in varie lingue con impostazioni per voce, intonazione, volume e velocit&agrave.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gwakeonlan/italian/">
+              <img src="/resources/gwakeonlan/archive/latest/icon32.png" title="gWakeOnLan
+Accende le tue macchine in rete locale oppure attraverso Internet usando il sistema Wake On LAN.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gextractwinicons/italian/">
+              <img src="/resources/gextractwinicons/archive/latest/icon32.png" title="gExtractWinIcons
+Estrai cursori, icone e immagini da file di risorse per Microsoft Windows (come .exe, .dll, .ocx e .cpl).">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/bluewho/italian/">
+              <img src="/resources/bluewho/archive/latest/icon32.png" title="BlueWho
+Ricerca dispositivi Bluetooth nelle vicinanze e ricevi le notifiche quando un nuovo dispositivo viene rilevato.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/cpucompare/italian/">
+              <img src="/resources/cpucompare/archive/latest/icon32.png" title="CPUCompare
+Esegui confronti tra numerosi modelli di CPU per trovare quelle di tuo interesse.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gptrace/italian/">
+              <img src="/resources/gptrace/archive/latest/icon32.png" title="gpTrace
+Traccia le attivita di un'applicazione esterna.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-builder/italian/">
+              <img src="/resources/remmina-plugin-builder/archive/latest/icon32.png" title="Remmina Plugin Builder
+Un pacchetto per semplificare lo sviluppo e la compilazione di plugin per Remmina.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-exec/italian/">
+              <img src="/resources/remmina-plugin-exec/archive/latest/icon32.png" title="Remmina Plugin Exec
+Un plugin di protocollo per Remmina per eseguire un processo esterno.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-folder/italian/">
+              <img src="/resources/remmina-plugin-folder/archive/latest/icon32.png" title="Remmina Plugin Folder
+Un plugin di protocollo per Remmina per aprire una cartella con un gestore di files esterno.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-open/italian/">
+              <img src="/resources/remmina-plugin-open/archive/latest/icon32.png" title="Remmina Plugin Open
+Un plugin di protocollo per Remmina per aprire un file o un documento utilizzando l'applicazione associata.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-rdesktop/italian/">
+              <img src="/resources/remmina-plugin-rdesktop/archive/latest/icon32.png" title="Remmina Plugin RDesktop
+Un plugin di protocollo per Remmina per stabilire connessioni RDP tramite RDesktop.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-teamviewer/italian/">
+              <img src="/resources/remmina-plugin-teamviewer/archive/latest/icon32.png" title="Remmina Plugin TeamViewer
+Un plugin di protocollo per Remmina per stabilire connessioni tramite TeamViewer.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-ultravnc/italian/">
+              <img src="/resources/remmina-plugin-ultravnc/archive/latest/icon32.png" title="Remmina Plugin UltraVNC
+Un plugin di protocollo per Remmina per stabilire connessioni tramite UltraVNC.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-url/italian/">
+              <img src="/resources/remmina-plugin-url/archive/latest/icon32.png" title="Remmina Plugin URL
+Un plugin di protocollo per Remmina per aprire pagine web tramite un browser web esterno.">
+            </a>
+    
+
+  
+  
+
+  
+            <a href="/remmina-plugin-webkit/italian/">
+              <img src="/resources/remmina-plugin-webkit/archive/latest/icon32.png" title="Remmina Plugin WebKit
+Un plugin di protocollo per Remmina per aprire pagine web tramite un browser web WebKit integrato.">
+            </a>
+    
+
+
+
+          </div>
+  
+
+      Copyright &copy; 2013-2014 <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+      <a href="/">Home</a> | 
+      <a href="/english.html"><img src="/resources/index/16-english.png"> English</a> |
+      <a href="/italian.html"><img src="/resources/index/16-italian.png"> Italian</a> |
+      <a href="/contacts/italian/">Contatti</a>
+    </div>
+  </body>
+</html>
+
+  </body>
+</html>
