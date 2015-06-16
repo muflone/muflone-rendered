@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, uefi, secure boot">
+    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, uefi, secure boot, efibootmgr, loader, refind, prebootloader">
 
 
     <meta name="description" content="Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot">
@@ -26,7 +26,7 @@
     <![endif]-->
 
 
-    <title>Installare Arch Linux su Lenovo G50-70</title>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 6 - funzionamento di rEFInd)</title>
   </head>
 
   <body>
@@ -34,7 +34,7 @@
       <div class="inner">
         <a href="/articles/"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
         <h1>Muflone</h1>
-        <h2>Installare Arch Linux su Lenovo G50-70</h2>
+        <h2>Installare Arch Linux su Lenovo G50-70 (parte 6 - funzionamento di rEFInd)</h2>
       </div>
     </header>
     <div id="content-wrapper">
@@ -44,44 +44,150 @@
           <div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</div>
           <hr />
 
-<p class="center"><a href="/resources/articles/2015-06/lenovo-ideapad-g50-70.jpg"><img src="/resources/articles/2015-06/lenovo-ideapad-g50-70-thumb.png" alt="Lenovo IdeaPad G50-70" /></a></p>
+<p class="center"><img src="/resources/articles/2015-06/refind.png" alt="refind.png" /></p>
 
-<p>Ho recentemente acquistato un Lenovo IdeaPad G50-70, un computer portatile che
-includeva Microsoft Windows 8.1 preinstallato. Installare <strong>Arch Linux</strong> su
-questo computer è possibile ma non così immediato e richiede varie operazioni.</p>
+<p>Il gestore di avvio rEFInd offre numerose possibilità e con molta semplicità
+permette l’avvio di sistemi operativi differenti.</p>
 
-<p>Questo computer è dotato di <strong><a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">UEFI</a></strong> e tramite il suo firmware
-consente di emulare il classico BIOS, più lento in fase di avvio. Oltre UEFI,
-supporta anche il <strong><a href="https://msdn.microsoft.com/it-it/library/hh824987.aspx" target="_blank">Secure Boot</a></strong> un sistema atto ad impedire
-l’uso di sistemi operativi non autorizzati dall’EFI.</p>
+<p>Il suo funzionamento è assai semplice e generalmente basta spostarsi con le
+freccette e confermare la scelta premendo Invio.</p>
 
-<p>Questa guida spiegherà l’installazione di Arch Linux affiancato a Windows 8.1
-che quindi verrà lasciato al suo posto, dopo la naturale riduzione della partizione
-operativo, mantenendo Secure Boot e UEFI attivi.</p>
+<p>Nella finestra di rEFInd sono visibili varie icone.</p>
 
-<p>Il ridimensionamento della partizione di Windows per far posto alle nuove
-partizioni per Arch Linux non viene trattato in questa guida.</p>
+<h2 id="icone-dei-sistemi-avviabili">Icone dei sistemi avviabili</h2>
 
-<p>La procedura di installazione sarà spiegata in vari passaggi:</p>
+<p>La prima fila di icone rappresenta un sistema operativo avviabile.</p>
 
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-08/installare-arch-linux-su-lenovo-g50-70-1.html">Preparazione del sistema</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-09/installare-arch-linux-su-lenovo-g50-70-2.html">Configurazione della connessione Wi-Fi</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-10/installare-arch-linux-su-lenovo-g50-70-3.html">Partizionamento del disco</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-15/installare-arch-linux-su-lenovo-g50-70-4.html">Installazione del sistema</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-5.html">Installazione del gestore di avvio</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-6.html">Funzionamento di rEFInd</a>.</p>
-</blockquote>
+<table>
+  <thead>
+    <tr>
+      <th><strong>Icona</strong></th>
+      <th style="text-align: left"><strong>Significato</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/os_arch.png" alt="os_arch.png" /></td>
+      <td style="text-align: left">Indica l’avvio di un sistema Arch Linux</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/os_linux.png" alt="os_linux.png" /></td>
+      <td style="text-align: left">Indica l’avvio di un generico sistema GNU/Linux</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/os_win.png" alt="os_win.png" /></td>
+      <td style="text-align: left">Indica l’avvio di un sistema Microsoft Windows</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/os_win8.png" alt="os_win8.png" /></td>
+      <td style="text-align: left">Indica l’avvio di un sistema Microsoft Windows 8</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/os_unknown.png" alt="os_unknown.png" /></td>
+      <td style="text-align: left">Indica l’avvio di un sistema operativo generico</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/arrow_right.png" alt="arrow_right.png" /></td>
+      <td style="text-align: left">Scorre l’elenco dei sistemi verso destra</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/arrow_left.png" alt="arrow_left.png" /></td>
+      <td style="text-align: left">Scorre l’elenco dei sistemi verso sinistra</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>L’elenco delle icone dei sistemi operativi non si esaurisce qui ma ne esistono
+anche tante altre disponibili nella directory icons di rEFInd.</p>
+
+<p>Premendo <strong>F2</strong> sopra un sistema avviabile saranno mostrate opzioni aggiuntive
+riguardo l’avvio, come la modalità single.</p>
+
+<p>Premendo <strong>ESC</strong> in qualsiasi parte viene aggiornato l’elenco dei sistemi rilevati.</p>
+
+<h2 id="icone-aggiuntive-dei-sistemi-avviabili">Icone aggiuntive dei sistemi avviabili</h2>
+
+<p>Nell’angolo destro di ogni icona di un sistema avviabile è presente un’icona
+aggiuntiva che indica dove si trovi il sistema operativo da avviare.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Icona</strong></th>
+      <th style="text-align: left"><strong>Significato</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/vol_internal.png" alt="vol_internal.png" /></td>
+      <td style="text-align: left">Indica un sistema avviato da un disco interno</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/vol_optical.png" alt="vol_optical.png" /></td>
+      <td style="text-align: left">Indica un sistema avviato da un’unità ottica</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/vol_external.png" alt="vol_external.png" /></td>
+      <td style="text-align: left">Indica un sistema avviato da un disco esterno</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/vol_net.png" alt="vol_net.png" /></td>
+      <td style="text-align: left">Indica un sistema avviato da rete</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="icone-delle-utilit-aggiuntive">Icone delle utilità aggiuntive</h2>
+
+<p>La fila di icone in basso rappresenta una serie di utilità aggiuntive. Quelle
+non supportate o non disponibili non saranno mostrate.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Icona</strong></th>
+      <th style="text-align: left"><strong>Significato</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/tool_windows_rescue.png" alt="tool_windows_rescue.png" /></td>
+      <td style="text-align: left">Avvia la partizione di ripristino di Windows</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/tool_mok_tool.png" alt="tool_mok_tool.png" /></td>
+      <td style="text-align: left">Avvia uno degli strumenti di firma di PreLoader</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/tool_memtest.png" alt="tool_memtest.png" /></td>
+      <td style="text-align: left">Avvia l’utilità di controllo della memoria RAM</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/tool_shell.png" alt="tool_shell.png" /></td>
+      <td style="text-align: left">Avvia una shell EFI</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/func_about.png" alt="func_about.png" /></td>
+      <td style="text-align: left">Mostra le informazioni sulla versione di rEFInd</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/func_shutdown.png" alt="func_shutdown.png" /></td>
+      <td style="text-align: left">Spegne il computer</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/func_reset.png" alt="func_reset.png" /></td>
+      <td style="text-align: left">Riavvia il computer</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/func_exit.png" alt="func_exit.png" /></td>
+      <td style="text-align: left">Esce da rEFInd e torna alla Shell EFI</td>
+    </tr>
+    <tr>
+      <td><img src="/resources/articles/2015-06/refind/func_firmware.png" alt="func_firmware.png" /></td>
+      <td style="text-align: left">Avvia l’utilità di configurazione di UEFI</td>
+    </tr>
+  </tbody>
+</table>
 
 
 
