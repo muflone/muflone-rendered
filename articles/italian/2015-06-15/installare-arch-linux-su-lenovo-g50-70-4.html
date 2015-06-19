@@ -200,14 +200,14 @@ strumenti per la
 ma l’installazione minimale non include questi strumenti, per cui è necessario
 installarli esplicitamente.</p>
 
-<pre><code>sh-4.3# pacman -S dialog wpa_supplicant rfkill
+<pre><code>sh-4.3# pacman -S dialog wpa_supplicant rfkill iw
 resolving dependencies...
 looking for conflicting packages...
 
-Packages (4) libnl-3.2.25-1  dialog-1:1.2_20150528-1  rfkill-0.5-1  wpa_supplicant-1:2.3-1
+Packages (5) libnl-3.2.25-1  dialog-1:1.2_20150528-1  rfkill-0.5-1  wpa_supplicant-1:2.3-1  iw-3.17-1
 
-Total Download Size:   1.04 MiB
-Total Installed Size:  3.28 MiB
+Total Download Size:   1.09 MiB
+Total Installed Size:  3.42 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages ...
@@ -215,17 +215,19 @@ Total Installed Size:  3.28 MiB
  libnl-3.2.25-1-x86_64            262.1 KiB   226K/s 00:01 [####################################] 100%
  wpa_supplicant-1:2.3-1-x86_64    625.7 KiB   224K/s 00:03 [####################################] 100%
  rfkill-0.5-1-x86_64                6.5 KiB   922K/s 00:00 [####################################] 100%
-(4/4) checking keys in keyring                             [####################################] 100%
-(4/4) checking package integrity                           [####################################] 100%
-(4/4) loading package files                                [####################################] 100%
-(4/4) checking for file conflicts                          [####################################] 100%
-(4/4) checking available disk space                        [####################################] 100%
-(1/4) installing dialog                                    [####################################] 100%
-(2/4) installing libnl                                     [####################################] 100%
-(3/4) installing wpa_supplicant                            [####################################] 100%
+ iw-3.17-1-x86_64                  52.4 KiB   257K/s 00:00 [####################################] 100%
+(5/5) checking keys in keyring                             [####################################] 100%
+(5/5) checking package integrity                           [####################################] 100%
+(5/5) loading package files                                [####################################] 100%
+(5/5) checking for file conflicts                          [####################################] 100%
+(5/5) checking available disk space                        [####################################] 100%
+(1/5) installing dialog                                    [####################################] 100%
+(2/5) installing libnl                                     [####################################] 100%
+(3/5) installing wpa_supplicant                            [####################################] 100%
 Optional dependencies for wpa_supplicant
     wpa_supplicant_gui: wpa_gui program
-(4/4) installing rfkill
+(4/5) installing rfkill
+(5/5) installing iw
 </code></pre>
 
 <h2 id="impostazione-della-password-di-root">Impostazione della password di root</h2>
