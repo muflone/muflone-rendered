@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, uefi, secure boot">
+    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, microcode, intel">
 
 
     <meta name="description" content="Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot">
@@ -26,7 +26,7 @@
     <![endif]-->
 
 
-    <title>Installare Arch Linux su Lenovo G50-70</title>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 9 - aggiornamento del Microcode)</title>
   </head>
 
   <body>
@@ -34,7 +34,7 @@
       <div class="inner">
         <a href="/articles/"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
         <h1>Muflone</h1>
-        <h2>Installare Arch Linux su Lenovo G50-70</h2>
+        <h2>Installare Arch Linux su Lenovo G50-70 (parte 9 - aggiornamento del Microcode)</h2>
       </div>
     </header>
     <div id="content-wrapper">
@@ -44,53 +44,87 @@
           <div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</div>
           <hr />
 
-<p class="center"><a href="/resources/articles/2015-06/lenovo-ideapad-g50-70.jpg"><img src="/resources/articles/2015-06/lenovo-ideapad-g50-70-thumb.png" alt="Lenovo IdeaPad G50-70" /></a></p>
+<p>Un’operazione preliminare da eseguire è l’installazione del software del
+<strong><a href="https://wiki.archlinux.org/index.php/Microcode">Microcode</a></strong> del processore, una sorta di aggiornamento software del codice
+del firmware del processore.</p>
 
-<p>Ho recentemente acquistato un Lenovo IdeaPad G50-70, un computer portatile che
-includeva Microsoft Windows 8.1 preinstallato. Installare <strong>Arch Linux</strong> su
-questo computer è possibile ma non così immediato e richiede varie operazioni.</p>
+<p>Il processo di aggiornamento è puramente software e non permanente, ovvero ad
+ogni riavvio verrà nuovamente applicato.</p>
 
-<p>Questo computer è dotato di <strong><a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">UEFI</a></strong> e tramite il suo firmware
-consente di emulare il classico BIOS, più lento in fase di avvio. Oltre UEFI,
-supporta anche il <strong><a href="https://msdn.microsoft.com/it-it/library/hh824987.aspx" target="_blank">Secure Boot</a></strong> un sistema atto ad impedire
-l’uso di sistemi operativi non autorizzati dall’EFI.</p>
+<h2 id="installazione-del-microcode-intel">Installazione del Microcode Intel</h2>
 
-<p>Questa guida spiegherà l’installazione di Arch Linux affiancato a Windows 8.1
-che quindi verrà lasciato al suo posto, dopo la naturale riduzione della partizione
-operativo, mantenendo Secure Boot e UEFI attivi.</p>
+<p>Per installare l’aggiornamento del Microcode del processore Intel di questo
+computer installare il pacchetto <strong>intel-ucode</strong></p>
 
-<p>Il ridimensionamento della partizione di Windows per far posto alle nuove
-partizioni per Arch Linux non viene trattato in questa guida.</p>
+<pre><code>[root@arch-lenovo ~]# pacman -S intel-ucode
+risoluzione delle dipendenze in corso...
+ricerca dei pacchetti in conflitto in corso...
 
-<p>La procedura di installazione sarà spiegata in vari passaggi:</p>
+Pacchetti (1) intel-ucode-20150121-1
 
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-08/installare-arch-linux-su-lenovo-g50-70-1.html">Preparazione del sistema</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-09/installare-arch-linux-su-lenovo-g50-70-2.html">Configurazione della connessione Wi-Fi</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-10/installare-arch-linux-su-lenovo-g50-70-3.html">Partizionamento del disco</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-15/installare-arch-linux-su-lenovo-g50-70-4.html">Installazione del sistema</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-5.html">Installazione del gestore di avvio</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-6.html">Funzionamento di rEFInd</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-7.html">Primo avvio del sistema</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-17/installare-arch-linux-su-lenovo-g50-70-8.html">Riconfigurazione della rete Wi-Fi</a>.</p>
-</blockquote>
-<blockquote class="big">
-  <p><a href="/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-9.html">Aggiornamento del microcode</a>.</p>
-</blockquote>
+Dimensione totale dei pacchetti da scaricare:   0,50 MiB
+Dimensione totale dei pacchetti da installare:  0,64 MiB
+
+:: Vuoi procedere con l'installazione? [S/n] 
+:: Download dei pacchetti in corso...
+ intel-ucode-20150121-1-any       509,5 KiB   227K/s 00:02 [####################################] 100%
+(1/1) verifica delle chiavi presenti nel portachiavi       [####################################] 100%
+(1/1) verifica dell'integrità dei pacchetti                [####################################] 100%
+(1/1) caricamento dei file dei pacchetti                   [####################################] 100%
+(1/1) controllo dei conflitti in corso                     [####################################] 100%
+(1/1) controllo dello spazio disponibile sul disco         [####################################] 100%
+(1/1) installazione in corso di intel-ucode                [####################################] 100%
+</code></pre>
+
+<h2 id="attivazione-del-microcode-intel">Attivazione del Microcode Intel</h2>
+
+<p>Per attivare il nuovo Microcode è necessario modificare il file di avvio del
+kernel Linux usato da rEFInd. Si tratta del file <strong>/boot/refind_linux.conf</strong>.</p>
+
+<pre><code>[root@arch-lenovo ~]# nano /boot/refind_linux.conf
+</code></pre>
+
+<p>Non modificare il valore dopo UUID (qui indicato con xxx), mantenendo quello
+proposto automaticamente e modificare soltanto la prima riga aggiungendo al
+termine <strong>initrd=intel-ucode.img initrd=initramfs-linux.img</strong> come segue:</p>
+
+<pre><code>"Boot with standard options"  "ro root=UUID=xxx   initrd=/intel-ucode.img initrd=/initramfs-linux.img"
+"Boot to single-user mode"    "ro root=UUID=xxx   single"
+"Boot with minimal options"   "ro root=UUID=xxx"
+</code></pre>
+
+<p>Salvare il file premendo <strong>&lt;Control&gt;+O</strong>, confermare con invio e <strong>&lt;Control&gt;+X</strong>
+per uscire dall’editor di testo.</p>
+
+<h2 id="verifica-del-microcode-in-uso">Verifica del Microcode in uso</h2>
+
+<pre><code>[root@arch-lenovo ~]# dmesg | grep microcode
+[    0.419461] microcode: CPU0 sig=0x40651, pf=0x40, revision=0x17
+[    0.419467] microcode: CPU1 sig=0x40651, pf=0x40, revision=0x17
+[    0.419474] microcode: CPU2 sig=0x40651, pf=0x40, revision=0x17
+[    0.419482] microcode: CPU3 sig=0x40651, pf=0x40, revision=0x17
+[    0.419526] microcode: Microcode Update Driver: v2.00 &lt;tigran@aivazian.fsnet.co.uk&gt;, Peter Oruba
+</code></pre>
+
+<p>Riavviare il sistema con la nuova impostazione</p>
+
+<pre><code>[root@arch-lenovo ~]# systemctl reboot
+</code></pre>
+
+<p>Verificare nuovamente la versione di Microcode in uso:</p>
+
+<pre><code>[root@arch-lenovo ~]# dmesg | grep microcode
+[    0.000000] CPU0 microcode updated early to revision 0x1c, date = 2014-07-03
+[    0.143357] CPU2 microcode updated early to revision 0x1c, date = 2014-07-03
+[    0.414865] microcode: CPU0 sig=0x40651, pf=0x40, revision=0x1c
+[    0.414871] microcode: CPU1 sig=0x40651, pf=0x40, revision=0x1c
+[    0.414878] microcode: CPU2 sig=0x40651, pf=0x40, revision=0x1c
+[    0.414886] microcode: CPU3 sig=0x40651, pf=0x40, revision=0x1c
+[    0.414931] microcode: Microcode Update Driver: v2.00 &lt;tigran@aivazian.fsnet.co.uk&gt;, Peter Oruba
+</code></pre>
+
+<p>Come si può notare la versione del Microcode è stata aggiornata dalla <strong>revisione
+0x17</strong> (ovvero 23) alla <strong>revisione 0x1c</strong> (ovvero 28).</p>
 
 
 
