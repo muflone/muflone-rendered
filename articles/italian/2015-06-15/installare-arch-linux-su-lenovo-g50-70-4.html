@@ -184,6 +184,14 @@ Generating locales...
 Generation complete.
 </code></pre>
 
+<h2 id="configurazione-della-tastiera-italiana">Configurazione della tastiera italiana</h2>
+
+<p>Affinché venga caricata la tastiera lingua italiana ad ogni riavvio è necessario
+indicare il layout di tastiera nel file <strong>/etc/vconsole.conf</strong>.</p>
+
+<pre><code>sh-4.3# echo KEYMAP=it &gt; /etc/vconsole.conf
+</code></pre>
+
 <h2 id="installazione-dei-pacchetti-per-la-configurazione-di-rete">Installazione dei pacchetti per la configurazione di rete</h2>
 
 <p>L’immagine di installazione del sistema operativo contiene al suo interno gli
