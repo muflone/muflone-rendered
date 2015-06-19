@@ -3,7 +3,7 @@
   <title type="text" xml:lang="en">Articles</title>
   <link type="application/atom+xml" href="http://www.muflone.com/articles/feed.xml" rel="self"/>
   <link type="text" href="http://www.muflone.com/" rel="alternate"/>
-  <updated>2015-06-16T21:30:34+02:00</updated>
+  <updated>2015-06-19T20:00:38+02:00</updated>
   <id>Articles</id>
   <author>
     <name>Muflone &lt;webreg@vbsimple.net&gt;</name>
@@ -11,6 +11,36 @@
   <rights>Copyright (c) 2013-2014 Fabio Castelli (Muflone)</rights>
 
 
+
+  
+    
+    
+      
+  <entry>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 9 - aggiornamento del Microcode)</title>
+    <link href="http://www.muflone.com/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-9.html"/>
+    <updated>2015-06-19T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-9.html</id>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 8 - riconfigurazione della Wi-Fi)</title>
+    <link href="http://www.muflone.com/articles/italian/2015-06-17/installare-arch-linux-su-lenovo-g50-70-8.html"/>
+    <updated>2015-06-17T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2015-06-17/installare-arch-linux-su-lenovo-g50-70-8.html</id>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</summary>
+  </entry>
+      
+    
+  
 
   
     
@@ -285,30 +315,10 @@
   
     
     
-      
-  <entry>
-    <title>Weekly updates</title>
-    <link href="http://www.muflone.com/articles/english/updates/2014-12-07.html"/>
-    <updated>2014-12-07T00:00:00+01:00</updated>
-    <id>http://www.muflone.com/articles/english/updates/2014-12-07.html</id>
-    <summary type="html">Updates from 2014-12-01 to 2014-12-07</summary>
-  </entry>
-      
-    
   
 
   
     
-    
-      
-  <entry>
-    <title>Aggiornamento settimanale</title>
-    <link href="http://www.muflone.com/articles/italian/updates/2014-12-07.html"/>
-    <updated>2014-12-07T00:00:00+01:00</updated>
-    <id>http://www.muflone.com/articles/italian/updates/2014-12-07.html</id>
-    <summary type="html">Aggiornamenti dal 01-12-2014 al 07-12-2014</summary>
-  </entry>
-      
     
   
 
