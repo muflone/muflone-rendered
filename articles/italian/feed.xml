@@ -3,7 +3,7 @@
   <title type="text" xml:lang="en">Articoli</title>
   <link type="application/atom+xml" href="http://www.muflone.com/articles/feed.xml" rel="self"/>
   <link type="text" href="http://www.muflone.com/" rel="alternate"/>
-  <updated>2015-06-19T20:00:38+02:00</updated>
+  <updated>2015-06-21T23:37:37+02:00</updated>
   <id>Articoli</id>
   <author>
     <name>Muflone &lt;webreg@vbsimple.net&gt;</name>
@@ -21,7 +21,52 @@
     <link href="http://www.muflone.com/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-9.html"/>
     <updated>2015-06-19T00:00:00+02:00</updated>
     <id>http://www.muflone.com/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-9.html</id>
-    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</summary>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 9 - Aggiornamento del microcode)</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 12 - accesso SSH)</title>
+    <link href="http://www.muflone.com/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-12.html"/>
+    <updated>2015-06-19T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-12.html</id>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 12 - Accesso tramite SSH)</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 11 - systemd)</title>
+    <link href="http://www.muflone.com/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-11.html"/>
+    <updated>2015-06-19T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-11.html</id>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 11 - Il sistema di avvio systemd)</summary>
+  </entry>
+      
+    
+  
+
+  
+    
+    
+      
+  <entry>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 10 - pacman)</title>
+    <link href="http://www.muflone.com/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-10.html"/>
+    <updated>2015-06-19T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-10.html</id>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 10 - Il gestore di pacchetti pacman)</summary>
   </entry>
       
     
@@ -36,7 +81,7 @@
     <link href="http://www.muflone.com/articles/italian/2015-06-17/installare-arch-linux-su-lenovo-g50-70-8.html"/>
     <updated>2015-06-17T00:00:00+02:00</updated>
     <id>http://www.muflone.com/articles/italian/2015-06-17/installare-arch-linux-su-lenovo-g50-70-8.html</id>
-    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</summary>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 8 - Riconfigurazione della connessione Wi-Fi)</summary>
   </entry>
       
     
@@ -51,7 +96,7 @@
     <link href="http://www.muflone.com/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-7.html"/>
     <updated>2015-06-16T00:00:00+02:00</updated>
     <id>http://www.muflone.com/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-7.html</id>
-    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</summary>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 7 - Primo avvio del sistema)</summary>
   </entry>
       
     
@@ -66,7 +111,7 @@
     <link href="http://www.muflone.com/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-6.html"/>
     <updated>2015-06-16T00:00:00+02:00</updated>
     <id>http://www.muflone.com/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-6.html</id>
-    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</summary>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 6 - Funzionamento di rEFInd)</summary>
   </entry>
       
     
@@ -81,7 +126,7 @@
     <link href="http://www.muflone.com/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-5.html"/>
     <updated>2015-06-16T00:00:00+02:00</updated>
     <id>http://www.muflone.com/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-5.html</id>
-    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</summary>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 5 - Installazione del gestore di avvio)</summary>
   </entry>
       
     
@@ -96,7 +141,7 @@
     <link href="http://www.muflone.com/articles/italian/2015-06-15/installare-arch-linux-su-lenovo-g50-70-4.html"/>
     <updated>2015-06-15T00:00:00+02:00</updated>
     <id>http://www.muflone.com/articles/italian/2015-06-15/installare-arch-linux-su-lenovo-g50-70-4.html</id>
-    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</summary>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 4 - Installazione del sistema)</summary>
   </entry>
       
     
@@ -111,7 +156,7 @@
     <link href="http://www.muflone.com/articles/italian/2015-06-10/installare-arch-linux-su-lenovo-g50-70-3.html"/>
     <updated>2015-06-10T00:00:00+02:00</updated>
     <id>http://www.muflone.com/articles/italian/2015-06-10/installare-arch-linux-su-lenovo-g50-70-3.html</id>
-    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</summary>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 3 - Partizionamento del disco)</summary>
   </entry>
       
     
@@ -126,7 +171,7 @@
     <link href="http://www.muflone.com/articles/italian/2015-06-09/installare-arch-linux-su-lenovo-g50-70-2.html"/>
     <updated>2015-06-09T00:00:00+02:00</updated>
     <id>http://www.muflone.com/articles/italian/2015-06-09/installare-arch-linux-su-lenovo-g50-70-2.html</id>
-    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</summary>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 2 - Configurazione della connessione Wi-Fi)</summary>
   </entry>
       
     
@@ -141,7 +186,7 @@
     <link href="http://www.muflone.com/articles/italian/2015-06-08/installare-arch-linux-su-lenovo-g50-70-1.html"/>
     <updated>2015-06-08T00:00:00+02:00</updated>
     <id>http://www.muflone.com/articles/italian/2015-06-08/installare-arch-linux-su-lenovo-g50-70-1.html</id>
-    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</summary>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 1 - Preparazione del sistema)</summary>
   </entry>
       
     
@@ -286,16 +331,6 @@
   
     
     
-      
-  <entry>
-    <title>Aggiornamento settimanale</title>
-    <link href="http://www.muflone.com/articles/italian/updates/2014-11-23.html"/>
-    <updated>2014-11-23T00:00:00+01:00</updated>
-    <id>http://www.muflone.com/articles/italian/updates/2014-11-23.html</id>
-    <summary type="html">Aggiornamenti dal 17-11-2014 al 23-11-2014</summary>
-  </entry>
-      
-    
   
 
   
@@ -303,32 +338,12 @@
   
     
     
-      
-  <entry>
-    <title>Aggiornamento settimanale</title>
-    <link href="http://www.muflone.com/articles/italian/updates/2014-11-16.html"/>
-    <updated>2014-11-16T00:00:00+01:00</updated>
-    <id>http://www.muflone.com/articles/italian/updates/2014-11-16.html</id>
-    <summary type="html">Aggiornamenti dal 10-11-2014 al 16-11-2014</summary>
-  </entry>
-      
-    
   
 
   
 
   
     
-    
-      
-  <entry>
-    <title>Aggiornamento settimanale</title>
-    <link href="http://www.muflone.com/articles/italian/updates/2014-11-09.html"/>
-    <updated>2014-11-09T00:00:00+01:00</updated>
-    <id>http://www.muflone.com/articles/italian/updates/2014-11-09.html</id>
-    <summary type="html">Aggiornamenti dal 03-11-2014 al 09-11-2014</summary>
-  </entry>
-      
     
   
 
