@@ -3,7 +3,7 @@
   <title type="text" xml:lang="en">Articles</title>
   <link type="application/atom+xml" href="http://www.muflone.com/articles/feed.xml" rel="self"/>
   <link type="text" href="http://www.muflone.com/" rel="alternate"/>
-  <updated>2015-06-21T23:58:17+02:00</updated>
+  <updated>2015-06-25T01:16:20+02:00</updated>
   <id>Articles</id>
   <author>
     <name>Muflone &lt;webreg@vbsimple.net&gt;</name>
@@ -11,6 +11,21 @@
   <rights>Copyright (c) 2013-2014 Fabio Castelli (Muflone)</rights>
 
 
+
+  
+    
+    
+      
+  <entry>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 11 - systemd)</title>
+    <link href="http://www.muflone.com/articles/italian/2015-06-24/installare-arch-linux-su-lenovo-g50-70-11.html"/>
+    <updated>2015-06-24T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2015-06-24/installare-arch-linux-su-lenovo-g50-70-11.html</id>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 11 - Il sistema di avvio systemd)</summary>
+  </entry>
+      
+    
+  
 
   
     
@@ -299,16 +314,6 @@
 
   
     
-    
-      
-  <entry>
-    <title>Weekly updates</title>
-    <link href="http://www.muflone.com/articles/english/updates/2014-12-14.html"/>
-    <updated>2014-12-14T00:00:00+01:00</updated>
-    <id>http://www.muflone.com/articles/english/updates/2014-12-14.html</id>
-    <summary type="html">Updates from 2014-12-08 to 2014-12-14</summary>
-  </entry>
-      
     
   
 
