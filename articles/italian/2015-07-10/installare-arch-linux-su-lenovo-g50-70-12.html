@@ -5,10 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, uefi, secure boot">
+    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, ssh, openssh, server, accesso, remoto, shell">
 
 
-    <meta name="description" content="Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot">
+    <meta name="description" content="Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 12 - Accesso tramite SSH)">
 
     <meta name="author" content="Fabio Castelli">
     <link rel="shortcut icon" href="/resources/contacts/favicon.ico" type="image/x-icon">
@@ -43,7 +43,7 @@
 <script type="text/javascript" src="/resources/cookieconsent2-1.0.4/cookieconsent.js"></script>
 <!-- End Cookie Consent plugin -->
 
-    <title>Installare Arch Linux su Lenovo G50-70</title>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 12 - accesso SSH)</title>
 
     <link rel="stylesheet" type="text/css" href="/theme/articles.css" media="screen" />
   </head>
@@ -53,14 +53,14 @@
       <div class="inner">
         <a href="/articles/"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
         <h1>Muflone</h1>
-        <h2>Installare Arch Linux su Lenovo G50-70</h2>
+        <h2>Installare Arch Linux su Lenovo G50-70 (parte 12 - accesso SSH)</h2>
       </div>
     </header>
     <div id="content-wrapper">
       <div class="clearfix">
         <section id="main-content" class="article">
 
-          <div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot</div>
+          <div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 12 - Accesso tramite SSH)</div>
           <hr />
 
 <p class="center"><a href="/articles/italian/2015-06-07/installare-arch-linux-su-lenovo-g50-70.html" title="Indice">Indice</a>
@@ -77,43 +77,194 @@
 | <a href="/articles/italian/2015-06-24/installare-arch-linux-su-lenovo-g50-70-11.html" title="Il sistema di avvio systemd">Parte 11</a>
 | <a href="/articles/italian/2015-07-10/installare-arch-linux-su-lenovo-g50-70-12.html" title="Accesso tramite SSH">Parte 12</a></p>
 
-<p class="center"><a href="/resources/articles/2015-06/lenovo-ideapad-g50-70.jpg"><img src="/resources/articles/2015-06/lenovo-ideapad-g50-70-thumb.png" alt="Lenovo IdeaPad G50-70" /></a></p>
+<p>Se si utilizza un altro dispositivo, sia esso dotato di sistema operativo
+GNU/Linux oppure Microsoft Windows o anche Apple OS X e perfino sistemi mobili
+come Android o iOS, è possibile accedere alla propria installazione tramite
+la rete utilizzando il protocollo <strong><a href="https://wiki.archlinux.org/index.php/Secure_Shell">Secure Shell</a></strong> (SSH).</p>
 
-<p>Ho recentemente acquistato un Lenovo IdeaPad G50-70, un computer portatile che
-includeva Microsoft Windows 8.1 preinstallato. Installare <strong>Arch Linux</strong> su
-questo computer è possibile ma non così immediato e richiede varie operazioni.</p>
+<h2 id="installazione-del-servizio-ssh">Installazione del servizio SSH</h2>
 
-<p>Questo computer è dotato di <strong><a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">UEFI</a></strong> e tramite il suo firmware
-consente di emulare il classico BIOS, più lento in fase di avvio. Oltre UEFI,
-supporta anche il <strong><a href="https://msdn.microsoft.com/it-it/library/hh824987.aspx" target="_blank">Secure Boot</a></strong> un sistema atto ad impedire
-l’uso di sistemi operativi non autorizzati dall’EFI.</p>
+<p>Per installare il servizio SSH è necessario installare il pacchetto <strong>openssh</strong></p>
 
-<p>Questa guida spiegherà l’installazione di Arch Linux affiancato a Windows 8.1
-che quindi verrà lasciato al suo posto, dopo la naturale riduzione della partizione
-operativo, mantenendo Secure Boot e UEFI attivi.</p>
+<pre><code>[root@arch-lenovo ~]# pacman -S openssh
+risoluzione delle dipendenze in corso...
+ricerca dei pacchetti in conflitto in corso...
 
-<p>Il ridimensionamento della partizione di Windows per far posto alle nuove
-partizioni per Arch Linux non viene trattato in questa guida.</p>
+Pacchetti (4) dnssec-anchors-20150403-1  ldns-1.6.17-2  libedit-20150325_3.1-1  openssh-6.8p1-3
 
-<p>La procedura di installazione sarà spiegata in vari parti:</p>
+Dimensione totale dei pacchetti da scaricare:   1,20 MiB
+Dimensione totale dei pacchetti da installare:  6,25 MiB
 
-<blockquote class="big">
+:: Vuoi procedere con l'installazione? [S/n] 
+:: Download dei pacchetti in corso...
+ libedit-20150325_3.1-1-x86_64       92,8 KiB   248K/s 00:00 [####################################] 100%
+ dnssec-anchors-20150403-1-x86_64  1460,0   B  0,00B/s 00:00 [####################################] 100%
+ ldns-1.6.17-2-x86_64               429,6 KiB   223K/s 00:02 [####################################] 100%
+ openssh-6.8p1-3-x86_64             703,0 KiB   222K/s 00:03 [####################################] 100%
+(4/4) verifica delle chiavi presenti nel portachiavi         [####################################] 100%
+(4/4) verifica dell'integrità dei pacchetti                  [####################################] 100%
+(4/4) caricamento dei file dei pacchetti                     [####################################] 100%
+(4/4) controllo dei conflitti in corso                       [####################################] 100%
+(4/4) controllo dello spazio disponibile sul disco           [####################################] 100%
 
-  <ul>
-    <li><a href="/articles/italian/2015-06-08/installare-arch-linux-su-lenovo-g50-70-1.html">Preparazione del sistema</a>.</li>
-    <li><a href="/articles/italian/2015-06-09/installare-arch-linux-su-lenovo-g50-70-2.html">Configurazione della connessione Wi-Fi</a>.</li>
-    <li><a href="/articles/italian/2015-06-10/installare-arch-linux-su-lenovo-g50-70-3.html">Partizionamento del disco</a>.</li>
-    <li><a href="/articles/italian/2015-06-15/installare-arch-linux-su-lenovo-g50-70-4.html">Installazione del sistema</a>.</li>
-    <li><a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-5.html">Installazione del gestore di avvio</a>.</li>
-    <li><a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-6.html">Funzionamento di rEFInd</a>.</li>
-    <li><a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-7.html">Primo avvio del sistema</a>.</li>
-    <li><a href="/articles/italian/2015-06-17/installare-arch-linux-su-lenovo-g50-70-8.html">Riconfigurazione della connessione Wi-Fi</a>.</li>
-    <li><a href="/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-9.html">Aggiornamento del microcode</a>.</li>
-    <li><a href="/articles/italian/2015-06-20/installare-arch-linux-su-lenovo-g50-70-10.html">Il gestore di pacchetti pacman</a>.</li>
-    <li><a href="/articles/italian/2015-06-24/installare-arch-linux-su-lenovo-g50-70-11.html">Il sistema di avvio systemd</a>.</li>
-    <li><a href="/articles/italian/2015-07-10/installare-arch-linux-su-lenovo-g50-70-12.html">Accesso tramite SSH</a>.</li>
-  </ul>
-</blockquote>
+(1/4) installazione di libedit in corso...                   [####################################] 100%
+(1/4) installazione di dnssec-anchors in corso...            [####################################] 100%
+(3/4) installazione di ldns in corso...                      [####################################] 100%
+Dipendenze opzionali di ldns
+    libpcap: ldns-dpa tool
+(4/4) installazione di openssh in corso...                   [####################################] 100%
+Dipendenze opzionali di openssh
+    xorg-xauth: X11 forwarding
+    x11-ssh-askpass: input passphrase in X
+</code></pre>
+
+<h2 id="attivazione-del-servizio-ssh">Attivazione del servizio SSH</h2>
+
+<p>Il servizio appena installato non sarà automaticamente avviato né subito né
+dopo il riavvio del sistema.</p>
+
+<p>Per avviare manualmente il servizio SSH è possibile utilizzare
+<a href="/articles/italian/2015-06-24/installare-arch-linux-su-lenovo-g50-70-11.html">systemd</a>
+e in particolare il comando <em>systemctl start sshd.service</em></p>
+
+<pre><code>[root@arch-lenovo ~]# systemctl start sshd.service
+</code></pre>
+
+<p>Per avviare automaticamente il servizio SSH dopo ogni avvio del sistema utilizzando
+<strong>systemctl enable sshd.service</strong></p>
+
+<pre><code>[root@arch-lenovo ~]# systemctl enable sshd.service
+Created symlink from /etc/systemd/system/multi-user.target.wants/sshd.service to /usr/lib/systemd/sshd.service.
+</code></pre>
+
+<p>Dopo l’avvio del servizio SSH, da un’altra postazione, indipendentemente dal
+suo sistema operativo sarà possibile connettersi al nostro sistema Arch Linux
+utilizzando un qualsiasi <a href="https://en.wikipedia.org/wiki/Comparison_of_SSH_clients" target="_blank">client SSH</a>.</p>
+
+<h3 id="client-ssh-per-microsoft-windows">Client SSH per Microsoft Windows:</h3>
+
+<ul>
+  <li><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank">Putty</a></li>
+  <li><a href="http://www.bitvise.com/ssh-client" target="_blank">Bitvise SSH Client</a></li>
+  <li><a href="https://www.vandyke.com/products/securecrt/index.html" target="_blank">SecureCRT</a></li>
+  <li><a href="http://www.emtec.com/zoc/" target="_blank">ZOC</a></li>
+  <li><a href="http://choung.net/token2shell/" target="_blank">Token2Shell</a></li>
+</ul>
+
+<h3 id="client-ssh-per-gnulinux">Client SSH per GNU/Linux</h3>
+
+<ul>
+  <li><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank">Putty</a></li>
+  <li><a href="https://sourceforge.net/projects/pacmanager/" target="_blank">PAC Manager</a></li>
+  <li><a href="https://www.vandyke.com/products/securecrt/index.html" target="_blank">SecureCRT</a></li>
+  <li>OpenSSH (solo a riga di comando)</li>
+</ul>
+
+<h3 id="client-ssh-per-apple-os-x">Client SSH per Apple OS X</h3>
+
+<ul>
+  <li><a href="https://www.vandyke.com/products/securecrt/index.html" target="_blank">SecureCRT</a></li>
+  <li><a href="http://www.emtec.com/zoc/" target="_blank">ZOC</a></li>
+</ul>
+
+<h3 id="client-ssh-per-ios">Client SSH per iOS</h3>
+
+<ul>
+  <li><a href="https://www.vandyke.com/products/securecrt/index.html" target="_blank">SecureCRT</a></li>
+</ul>
+
+<h3 id="client-ssh-per-android">Client SSH per Android</h3>
+
+<ul>
+  <li><a href="https://connectbot.org/" target="_blank">ConnectBot</a></li>
+  <li><a href="https://juicessh.com/" target="_blank">JuiceSSH</a></li>
+</ul>
+
+<h3 id="client-ssh-per-windows-phone">Client SSH per Windows Phone</h3>
+
+<ul>
+  <li><a href="http://choung.net/token2shell/" target="_blank">Token2Shell</a></li>
+</ul>
+
+<h2 id="recuperare-lindirizzo-ip-della-connessione-di-rete">Recuperare l’indirizzo IP della connessione di rete</h2>
+
+<p>Prima di poter accedere al proprio sistema è necessario conoscere l’indirizzo
+IP che l’installazione di Arch Linux ha ricevuto tramite rete WiFi.</p>
+
+<p>Per conoscere il proprio indirizzo IP utilizzare il comando <strong>ip addr</strong>:</p>
+
+<pre><code>[root@arch-lenovo ~]# ip addr
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp1s0: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 28:d2:44:cd:25:b7 brd ff:ff:ff:ff:ff:ff
+3: wlp2s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether b0:10:41:a2:ab:87 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.66/24 brd 192.168.1.255 scope global wlp2s0
+       valid_lft forever preferred_lft forever
+    inet6 fda6:d284:bb8b:0:b210:41ff:fea2:ab87/64 scope global mngtmpaddr dynamic 
+       valid_lft 7185sec preferred_lft 1785sec
+    inet6 fe80::b210:41ff:fea2:ab87/64 scope link 
+       valid_lft forever preferred_lft forever
+</code></pre>
+
+<p>Saranno mostrati tutti gli indirizzi di tutte le interfacce di rete. Per vedere
+l’indirizzo della sola interfaccia WiFi utilizzare il comando <strong>ip -4 addr show dev wlp2s0</strong></p>
+
+<pre><code>[root@arch-lenovo ~]# ip -4 addr show dev wlp2s0
+3: wlp2s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
+    inet 192.168.1.66/24 brd 192.168.1.255 scope global wlp2s0
+       valid_lft forever preferred_lft forever
+</code></pre>
+
+<p>La risposta mostrerà l’indirizzo che la scheda WiFi sta utilizzando, in questo
+caso si tratta di <strong>192.168.1.66</strong>.</p>
+
+<h2 id="accedere-al-proprio-lenovo-utilizzando-la-riga-di-comando">Accedere al proprio Lenovo utilizzando la riga di comando</h2>
+
+<p>E’ possibile accedere al proprio sistema Lenovo utilizzando un’altra distribuzione
+GNU/Linux utilizzando la riga di comando con un semplice comando:</p>
+
+<pre><code>[muflone@archbox ~]$ ssh root@192.168.1.66
+
+The authenticity of host '192.168.1.66 (192.168.1.66)' can't be established.
+ECDSA key fingerprint is SHA256:deuxH032JgG+OSkTjL+7pY6V3pJCGErcthsG7yxrgQc.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.1.66' (ECDSA) to the list of known hosts.
+root@192.168.1.66's password: 
+
+[root@arch-lenovo ~]# 
+</code></pre>
+
+<h2 id="accedere-al-proprio-lenovo-utilizzando-putty">Accedere al proprio Lenovo utilizzando Putty</h2>
+
+<p>Viene mostrato un esempio di accesso al proprio notebook Lenovo utilizzando
+<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank">Putty</a> ma il procedimento è analogo a qualsiasi altro
+applicativo si decidesse di utilizzare.</p>
+
+<p class="center"><img src="/resources/articles/2015-07/putty-1.png" alt="putty-1.png" /></p>
+
+<p>Quando richiesto inserire nel campo <strong>Host Name (or IP Address)</strong> l’indirizzo della
+macchina, nel nostro esempio 192.168.1.66 e cliccare su Open per instaurare
+la connessione.</p>
+
+<p class="center"><img src="/resources/articles/2015-07/putty-2.png" alt="putty-2.png" /></p>
+
+<p>Verrà richiesto di verificare l’identità del server cui ci si connette, cliccare
+su <strong>Accept</strong>.</p>
+
+<p class="center"><img src="/resources/articles/2015-07/putty-3.png" alt="putty-3.png" /></p>
+
+<p>Infine quando verrà richiesto, inserire il nome utente <strong>root</strong> e la password
+decisa in fase di installazione.</p>
+
+<p>Tramite questa sessione di terminale sarà possibile impartire qualsiasi comando
+(non grafico) tramite un’altra postazione di lavoro e eseguire la manutenzione
+del sistema Lenovo attraverso un’altra postazione.</p>
 
 
 
