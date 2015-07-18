@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, xorg, x11, ambiente, grafico, server, intel, video, driver, twm, xclock, xterm, synaptics, touchpad">
+
+
+    <meta name="description" content="Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 14 - Installare l'ambiente grafico)">
+
+    <meta name="author" content="Fabio Castelli">
+    <link rel="shortcut icon" href="/resources/contacts/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/contacts/favicon.ico" type="image/x-icon">
+    <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
+    <link rel="stylesheet" type="text/css" href="/theme/architects-fonts.css" >
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/theme/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet2.css" media="screen" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<script type="text/javascript">
+    window.cookieconsent_options = {"message":"Questo sito web utilizza i cookie per semplificare e personalizzare l'esperienza di navigazione. I cookie memorizzano informazioni utili sul computer per aiutarci a migliorare l'efficienza e la rilevanza del nostro sito. In alcuni casi sono essenziali per il corretto funzionamento del sito. L'accesso a questo sito implica il consenso all'utilizzo dei cookie.","dismiss":"Nascondi","learnMore":"Leggi l'informativa completa","link":"https://www.iubenda.com/privacy-policy/939201","theme":"dark-top"};
+</script>
+
+<script type="text/javascript" src="/resources/cookieconsent2-1.0.4/cookieconsent.js"></script>
+<!-- End Cookie Consent plugin -->
+
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 14 - installare l'ambiente grafico)</title>
+
+    <link rel="stylesheet" type="text/css" href="/theme/articles.css" media="screen" />
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <a href="/articles/"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
+        <h1>Muflone</h1>
+        <h2>Installare Arch Linux su Lenovo G50-70 (parte 14 - installare l'ambiente grafico)</h2>
+      </div>
+    </header>
+    <div id="content-wrapper">
+      <div class="clearfix">
+        <section id="main-content" class="article">
+
+          <div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 14 - Installare l'ambiente grafico)</div>
+          <hr />
+
+<p class="center"><a href="/articles/italian/2015-06-07/installare-arch-linux-su-lenovo-g50-70.html" title="Indice">Indice</a>
+| <a href="/articles/italian/2015-06-08/installare-arch-linux-su-lenovo-g50-70-1.html" title="Preparazione del sistema">Parte 1</a>
+| <a href="/articles/italian/2015-06-09/installare-arch-linux-su-lenovo-g50-70-2.html" title="Configurazione della connessione Wi-Fi">Parte 2</a>
+| <a href="/articles/italian/2015-06-10/installare-arch-linux-su-lenovo-g50-70-3.html" title="Partizionamento del disco">Parte 3</a>
+| <a href="/articles/italian/2015-06-15/installare-arch-linux-su-lenovo-g50-70-4.html" title="Installazione del sistema">Parte 4</a>
+| <a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-5.html" title="Installazione del gestore di avvio">Parte 5</a>
+| <a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-6.html" title="Funzionamento di rEFInd">Parte 6</a>
+| <a href="/articles/italian/2015-06-16/installare-arch-linux-su-lenovo-g50-70-7.html" title="Primo avvio del sistema">Parte 7</a>
+| <a href="/articles/italian/2015-06-17/installare-arch-linux-su-lenovo-g50-70-8.html" title="Riconfigurazione della connessione Wi-Fi">Parte 8</a>
+| <a href="/articles/italian/2015-06-19/installare-arch-linux-su-lenovo-g50-70-9.html" title="Aggiornamento del microcode">Parte 9</a>
+| <a href="/articles/italian/2015-06-20/installare-arch-linux-su-lenovo-g50-70-10.html" title="Il gestore di pacchetti pacman">Parte 10</a>
+| <a href="/articles/italian/2015-06-24/installare-arch-linux-su-lenovo-g50-70-11.html" title="Il sistema di avvio systemd">Parte 11</a>
+| <a href="/articles/italian/2015-07-10/installare-arch-linux-su-lenovo-g50-70-12.html" title="Accesso tramite SSH">Parte 12</a>
+| <a href="/articles/italian/2015-07-11/installare-arch-linux-su-lenovo-g50-70-13.html" title="Abilitare lo scorrimento del testo nella console">Parte 13</a>
+| <a href="/articles/italian/2015-07-18/installare-arch-linux-su-lenovo-g50-70-14.html" title="Installare l'ambiente grafico">Parte 14</a></p>
+
+<p>Fino ad ora ci siamo limitati all’uso del nuovo sistema operativo soltanto da
+riga di comando e comandi di terminale. E’ il momento di iniziare ad installare
+un sistema grafico di base, composto unicamente del server grafico
+<strong>Xorg X Server</strong>, dei driver video per la scheda integrata Intel, dei driver
+per il touchpad Synaptics e delle applicazioni di base.</p>
+
+<h2 id="installazione-del-server-grafico">Installazione del server grafico</h2>
+
+<p>Il primo dei pacchetti da installare è il server grafico <a href="https://wiki.archlinux.org/index.php/Xorg" target="_blank">Xorg</a>
+contenuto in <strong>xserver-xorg</strong>.</p>
+
+<pre><code>[root@arch-lenovo ~]# pacman -S xorg-server
+risoluzione delle dipendenze in corso...
+:: Ci sono 4 provider disponibili per libgl:
+:: Repository extra
+   1) mesa-libgl  2) nvidia-304xx-libgl  3) nvidia-340xx-libgl  4) nvidia-libgl
+
+Digita un numero (default=1): 
+ricerca dei pacchetti in conflitto in corso...
+attenzione: è stato individuato un ciclo di dipendenza:
+attenzione: harfbuzz sarà installato prima della sua dipendenza freetype2
+
+Pacchetti (53) damageproto-1.2.1-3  elfutils-0.163-1  fixesproto-5.0-3  fontconfig-2.11.1-1  fontsproto-2.1.3-1
+               freetype2-2.6-1  graphite-1:1.2.4-1  harfbuzz-0.9.41-1  kbproto-1.0.7-1  libdrm-2.4.62-1
+               libepoxy-1.2-2  libevdev-1.4.3-1  libfontenc-1.1.3-1  libomxil-bellagio-0.9.3-1
+               libpciaccess-0.13.4-1  libpng-1.6.16-1  libtxc_dxtn-1.0.1-6  libunwind-1.1-2  libx11-1.6.3-1
+               libxau-1.0.8-2  libxcb-1.11-1  libxdamage-1.1.4-2  libxdmcp-1.1.2-1  libxext-1.3.3-1
+               libxfixes-5.0.1-1  libxfont-1.5.1-1  libxkbfile-1.0.9-1  libxshmfence-1.2-1  libxxf86vm-1.1.4-1
+               llvm-libs-3.6.2-1  mesa-10.6.2-1  mesa-libgl-10.6.2-1  mtdev-1.1.5-1  pixman-0.32.6-1
+               wayland-1.8.1-1  xcb-proto-1.11-1  xextproto-7.3.0-1  xf86-input-evdev-2.9.2-1
+               xf86vidmodeproto-2.3.1-3  xkeyboard-config-2.15-1  xorg-bdftopcf-1.0.5-1  xorg-font-util-1.3.1-1
+               xorg-font-utils-7.6-4  xorg-fonts-alias-1.0.3-1  xorg-fonts-encodings-1.0.4-4
+               xorg-fonts-misc-1.0.3-4  xorg-mkfontdir-1.0.7-2  xorg-mkfontscale-1.1.2-1
+               xorg-server-common-1.17.2-4  xorg-setxkbmap-1.3.1-1  xorg-xkbcomp-1.3.0-1  xproto-7.0.28-1
+               xorg-server-1.17.2-4
+
+Dimensione totale dei pacchetti da scaricare:    30,85 MiB
+Dimensione totale dei pacchetti da installare:  121,21 MiB
+
+:: Vuoi procedere con l'installazione? [S/n] 
+:: Download dei pacchetti in corso...
+ libepoxy-1.2-2-x86_64              237,0 KiB   210K/s 00:01 [####################################] 100%
+ xproto-7.0.28-1-any                142,3 KiB   240K/s 00:01 [####################################] 100%
+  ...
+(53/53) verifica delle chiavi presenti nel portachiavi       [####################################] 100%
+(53/53) verifica dell'integrità dei pacchetti                [####################################] 100%
+(53/53) caricamento dei file dei pacchetti                   [####################################] 100%
+(53/53) controllo dei conflitti in corso                     [####################################] 100%
+(53/53) controllo dello spazio disponibile sul disco         [####################################] 100%
+( 1/53) installazione in corso di libepoxy                   [####################################] 100%
+( 2/53) installazione in corso di xproto                     [####################################] 100%
+  ...
+(53/53) installazione in corso di xorg-server                [####################################] 100%
+&gt;&gt;&gt; xorg-server has now the ability to run without root rights with
+    the help of systemd-logind. xserver will fail to run if not launched
+    from the same virtual terminal as was used to log in.
+    Without root rights, log files will be in ~/.local/share/xorg/ directory.
+
+    Old behavior can be restored through Xorg.wrap config file.
+    See Xorg.wrap man page (man xorg.wrap).
+</code></pre>
+
+<h2 id="installazione-dei-driver-video-intel">Installazione dei driver video Intel</h2>
+
+<p>Installato il server grafico di base sarà necessario installare i
+<a href="https://wiki.archlinux.org/index.php/Intel_graphics" target="_blank">driver Intel</a> per la scheda video integrata, contenuti nel
+pacchetto <strong>xf86-video-intel</strong></p>
+
+<pre><code>[root@arch-lenovo ~]# pacman -S xf86-video-intel
+risoluzione delle dipendenze in corso...
+ricerca dei pacchetti in conflitto in corso...
+
+Pacchetti (5) libxv-1.0.10-1  libxvmc-1.0.9-1  videoproto-2.3.2-1  xcb-util-0.4.0-1
+xf86-video-intel-1:2.99.917+364+gb24e758-1
+
+Dimensione totale dei pacchetti da scaricare:   0,71 MiB
+Dimensione totale dei pacchetti da installare:  2,42 MiB
+
+:: Vuoi procedere con l'installazione? [S/n] 
+:: Download dei pacchetti in corso...
+ videoproto-2.3.2-1-any              12,6 KiB  2,05M/s 00:00 [####################################] 100%
+ libxv-1.0.10-1-x86_64               33,5 KiB   266K/s 00:00 [####################################] 100%
+ libxvmc-1.0.9-1-x86_64              20,2 KiB   288K/s 00:00 [####################################] 100%
+ xcb-util-0.4.0-1-x86_64             10,3 KiB   258K/s 00:00 [####################################] 100%
+ xf86-video-intel-1:2.99...-x86_64  654,7 KiB   238K/s 00:03 [####################################] 100%
+(5/5) verifica delle chiavi presenti nel portachiavi         [####################################] 100%
+(5/5) verifica dell'integrità dei pacchetti                  [####################################] 100%
+(5/5) caricamento dei file dei pacchetti                     [####################################] 100%
+(5/5) controllo dei conflitti in corso                       [####################################] 100%
+(5/5) controllo dello spazio disponibile sul disco           [####################################] 100%
+(1/5) installazione in corso di videoproto                   [####################################] 100%
+(2/5) installazione in corso di libxv                        [####################################] 100%
+(3/5) installazione in corso di libxvmc                      [####################################] 100%
+(4/5) installazione in corso di xcb-util                     [####################################] 100%
+(5/5) installazione in corso di xf86-video-intel             [####################################] 100%
+&gt;&gt;&gt; This driver uses SNA as the default acceleration method. You can try
+    falling back to UXA if you run into trouble. To do so, save a file with
+    the following content as /etc/X11/xorg.conf.d/20-intel.conf :
+      Section "Device"
+        Identifier  "Intel Graphics"
+        Driver      "intel"
+        Option      "AccelMethod"  "uxa"
+        #Option      "AccelMethod"  "sna"
+      EndSection
+Dipendenze opzionali di xf86-video-intel
+    libxrandr: for intel-virtual-output
+    libxinerama: for intel-virtual-output
+    libxcursor: for intel-virtual-output
+    libxtst: for intel-virtual-output
+</code></pre>
+
+<h2 id="installazione-dei-driver-per-il-touchpad">Installazione dei driver per il touchpad</h2>
+
+<p>Se si utilizza il touchpad <a href="https://wiki.archlinux.org/index.php/Touchpad_Synaptics" target="_blank">Synaptics</a> integrato nel portatile
+è necessario installare i driver per comandarlo, contenuti nel pacchetto
+<strong>xf86-input-synaptics</strong></p>
+
+<pre><code>[root@arch-lenovo ~]# pacman -S xf86-input-synaptics
+risoluzione delle dipendenze in corso...
+ricerca dei pacchetti in conflitto in corso...
+
+Pacchetti (5) inputproto-2.3.1-1  libxi-1.7.4-1  libxtst-1.2.2-1  recordproto-1.14.2-2
+              xf86-input-synaptics-1.8.2-2
+
+Dimensione totale dei pacchetti da scaricare:   0,31 MiB
+Dimensione totale dei pacchetti da installare:  1,41 MiB
+
+:: Vuoi procedere con l'installazione? [S/n] 
+:: Download dei pacchetti in corso...
+ inputproto-2.3.1-1-any              76,9 KiB   245K/s 00:00 [####################################] 100%
+ libxi-1.7.4-1-x86_64               143,5 KiB   214K/s 00:01 [####################################] 100%
+ recordproto-1.14.2-2-any            14,6 KiB  1461K/s 00:00 [####################################] 100%
+ libxtst-1.2.2-1-x86_64              26,8 KiB   363K/s 00:00 [####################################] 100%
+ xf86-input-synaptics-1.8.2-2-x86_64 52,4 KiB   257K/s 00:00 [####################################] 100%
+(5/5) verifica delle chiavi presenti nel portachiavi         [####################################] 100%
+(5/5) verifica dell'integrità dei pacchetti                  [####################################] 100%
+(5/5) caricamento dei file dei pacchetti                     [####################################] 100%
+(5/5) controllo dei conflitti in corso                       [####################################] 100%
+(5/5) controllo dello spazio disponibile sul disco           [####################################] 100%
+(1/5) installazione in corso di inputproto                   [####################################] 100%
+(2/5) installazione in corso di libxi                        [####################################] 100%
+(3/5) installazione in corso di recordproto                  [####################################] 100%
+(4/5) installazione in corso di libxtst                      [####################################] 100%
+(5/5) installazione in corso di xf86-input-synaptics         [####################################] 100%
+</code></pre>
+
+<h2 id="installazione-dei-programmi-di-base-dellambiente-grafico">Installazione dei programmi di base dell’ambiente grafico</h2>
+
+<p>Per poter avviare l’ambiente grafico minimale è necessario installare qualche
+programma grafico che permetta l’avvio e qualcosa da mostrare al suo interno,
+pertanto installeremo il pacchetto <strong>xorg-xinit</strong> che contiene il comando
+<strong>startx</strong> per avviare manualmente l’ambiente grafico e il pacchetto <strong>xterm</strong>
+che contiene un emulatore di terminale molto basilare.</p>
+
+<pre><code>[root@arch-lenovo ~]# pacman -S xorg-xinit xterm 
+risoluzione delle dipendenze in corso...
+ricerca dei pacchetti in conflitto in corso...
+
+Pacchetti (15) libice-1.0.9-1  libsm-1.2.2-2  libutempter-1.1.6-2  libxaw-1.0.13-1  libxft-2.3.2-1  libxmu-1.1.2-1
+               libxpm-3.5.11-1  libxrender-0.9.9-1  libxt-1.1.5-1  renderproto-0.11.1-3  xbitmaps-1.1.1-3
+               xorg-luit-1.1.1-2  xorg-xauth-1.0.9-1  xorg-xinit-1.3.4-2  xterm-318-1
+
+Dimensione totale dei pacchetti da scaricare:   0,99 MiB
+Dimensione totale dei pacchetti da installare:  6,62 MiB
+
+:: Vuoi procedere con l'installazione? [S/n] 
+:: Download dei pacchetti in corso...
+ libice-1.0.9-1-x86_64               73,5 KiB   230K/s 00:00 [####################################] 100%
+ libsm-1.2.2-2-x86_64                42,0 KiB   307K/s 00:00 [####################################] 100%
+ libxmu-1.1.2-1-x86_64               70,9 KiB   213K/s 00:00 [####################################] 100%
+ xorg-xauth-1.0.9-1-x86_64           20,5 KiB   199K/s 00:00 [####################################] 100%
+ xorg-xinit-1.3.4-2-x86_64           15,7 KiB   249K/s 00:00 [####################################] 100%
+ renderproto-0.11.1-3-any            15,8 KiB   236K/s 00:00 [####################################] 100%
+ libxrender-0.9.9-1-x86_64           22,7 KiB   212K/s 00:00 [####################################] 100%
+ libxft-2.3.2-1-x86_64               44,2 KiB  87,2K/s 00:01 [####################################] 100%
+ libxpm-3.5.11-1-x86_64              48,6 KiB   270K/s 00:00 [####################################] 100%
+ libxaw-1.0.13-1-x86_64             332,5 KiB   216K/s 00:02 [####################################] 100%
+ xorg-luit-1.1.1-2-x86_64            19,1 KiB   289K/s 00:00 [####################################] 100%
+ xbitmaps-1.1.1-3-any                24,2 KiB   327K/s 00:00 [####################################] 100%
+ libutempter-1.1.6-2-x86_64           7,3 KiB   171K/s 00:00 [####################################] 100%
+ xterm-318-1-x86_64                 276,9 KiB   210K/s 00:01 [####################################] 100%
+(15/15) verifica delle chiavi presenti nel portachiavi       [####################################] 100%
+(15/15) verifica dell'integrità dei pacchetti                [####################################] 100%
+(15/15) caricamento dei file dei pacchetti                   [####################################] 100%
+(15/15) controllo dei conflitti in corso                     [####################################] 100%
+(15/15) controllo dello spazio disponibile sul disco         [####################################] 100%
+( 1/15) installazione in corso di libice                     [####################################] 100%
+( 2/15) installazione in corso di libsm                      [####################################] 100%
+( 3/15) installazione in corso di libxt                      [####################################] 100%
+( 4/15) installazione in corso di libxmu                     [####################################] 100%
+( 5/15) installazione in corso di xorg-xauth                 [####################################] 100%
+( 6/15) installazione in corso di xorg-xinit                 [####################################] 100%
+Dipendenze opzionali di xorg-xinit
+    xorg-twm
+    xterm[in attesa]
+( 7/15) installazione in corso di renderproto                [####################################] 100%
+( 8/15) installazione in corso di libxrender                 [####################################] 100%
+( 9/15) installazione in corso di libxft                     [####################################] 100%
+(10/15) installazione in corso di libxpm                     [####################################] 100%
+(11/15) installazione in corso di libxaw                     [####################################] 100%
+(12/15) installazione in corso di xorg-luit                  [####################################] 100%
+(13/15) installazione in corso di xbitmaps                   [####################################] 100%
+(14/15) installazione in corso di libutempter                [####################################] 100%
+(15/15) installazione in corso di xterm                      [####################################] 100%
+</code></pre>
+
+<h2 id="avvio-del-server-grafico-minimale">Avvio del server grafico minimale</h2>
+
+<p>Sarà adesso possibile avviare il server grafico in maniera minimale semplicemente
+eseguendo il comando <strong>startx</strong></p>
+
+<p class="center"><img src="/resources/articles/2015-07/xorg-minimal.png" alt="xorg-minimal.png" /></p>
+
+<p>Sarà mostrato uno schermo nero con tre finestre di terminale. In questo ambiente
+minimale è possibile provare il touchpad e la tastiera ed eseguire comandi
+nelle tre finestre di terminale.</p>
+
+<p>Per chiudere questo ambiente grafico minimale basterà chiudere il terminale
+a sinistra eseguendo il comando <strong>exit</strong>.</p>
+
+<h2 id="installazione-di-qualche-programma-grafico-aggiuntivo">Installazione di qualche programma grafico aggiuntivo</h2>
+
+<p>Alla chiusura dell’ambiente grafico si potranno vedere tra i tanti messaggi i
+due seguenti:</p>
+
+<pre><code>/etc/X11/xinit/xinitrc: riga 51: twm: comando non trovato
+/etc/X11/xinit/xinitrc: riga 52: xclock: comando non trovato
+</code></pre>
+
+<p>Lo script di avvio (xinitrc) ha provato a richiamare due comandi non ancora
+installati: <strong>twm</strong> (contenuto nel pacchetto xorg-twm) e <strong>xclock</strong> (contenuto
+nel pacchetto xorg-xclock). Si tratta fondamentalmente di un gestore di finestre
+che permetterà di spostare le finestre di terminale e un orologio.</p>
+
+<p>Installiamo i due pacchetti sopra descritti con:</p>
+
+<pre><code>[root@arch-lenovo ~]# pacman -S xorg-twm xorg-xclock
+risoluzione delle dipendenze in corso...
+ricerca dei pacchetti in conflitto in corso...
+
+Pacchetti (2) xorg-twm-1.0.9-1  xorg-xclock-1.0.7-1
+
+Dimensione totale dei pacchetti da scaricare:   0,11 MiB
+Dimensione totale dei pacchetti da installare:  0,32 MiB
+
+:: Vuoi procedere con l'installazione? [S/n] 
+:: Download dei pacchetti in corso...
+ xorg-twm-1.0.9-1-x86_64             92,0 KiB   208K/s 00:00 [####################################] 100%
+ xorg-xclock-1.0.7-1-x86_64          25,0 KiB   374K/s 00:00 [####################################] 100%
+(2/2) verifica delle chiavi presenti nel portachiavi         [####################################] 100%
+(2/2) verifica dell'integrità dei pacchetti                  [####################################] 100%
+(2/2) caricamento dei file dei pacchetti                     [####################################] 100%
+(2/2) controllo dei conflitti in corso                       [####################################] 100%
+(2/2) controllo dello spazio disponibile sul disco           [####################################] 100%
+(1/2) installazione in corso di xorg-twm                     [####################################] 100%
+(2/2) installazione in corso di xorg-xclock                  [####################################] 100%
+</code></pre>
+
+<p>Riavviando il server grafico con <strong>startx</strong> si potrà mostrare una situazione
+leggermente diversa dalla precedente.</p>
+
+<p class="center"><img src="/resources/articles/2015-07/xorg-minimal-2.png" alt="xorg-minimal-2.png" /></p>
+
+<p>Sarà mostrato nell’angolo in alto a destra un minuscolo orologio e sopra ogni
+finestra sarà presente la decorazione che permette di trascinare e ridimensionare
+ogni finestra. Cliccando col tasto sinistro del mouse su un’area libera saranno
+mostrate anche alcune opzioni proprie del gestore finestre <a href="https://wiki.archlinux.org/index.php/Twm" target="_blank">Twm</a>,
+sicuramente scarno e brutto a vedersi ma è uno dei numerosi
+<a href="https://wiki.archlinux.org/index.php/Window_manager" target="_blank">Window manager</a> presenti su Arch Linux e che possono essere
+installati per controllare le finestre nell’ambiente grafico.</p>
+
+
+
+  
+    <!-- Google + -->
+<g:plusone size="medium"></g:plusone>
+ 
+<!-- Add this just before the closing body tag of your web page -->	
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+    <a href="https://twitter.com/share" class="twitter-share-button" >Tweet</a>
+ 
+<!-- Put this just before the closing body tag -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'muflone';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
+        </section>
+      </div>
+    </div>
+
+  
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+
+
+    <div class="footer">
+
+  
+
+
+          <div id="icons">
+            <a href="/italian.html">
+              <img src="/resources/index/32-home.png" title="Home">
+            </a>
+  
+
+
+  
+    
+
+  
+            <a href="/contacts/italian/">
+              <img src="/resources/contacts/archive/latest/icon32.png" title="Muflone
+Contatti e informazioni sull'autore.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/articles/italian/">
+              <img src="/resources/articles/archive/latest/icon32.png" title="Articles
+Articoli e guide.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gespeaker/italian/">
+              <img src="/resources/gespeaker/archive/latest/icon32.png" title="Gespeaker
+Ascolta il testo scritto in varie lingue con impostazioni per voce, intonazione, volume e velocit&agrave.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gwakeonlan/italian/">
+              <img src="/resources/gwakeonlan/archive/latest/icon32.png" title="gWakeOnLan
+Accende le tue macchine in rete locale oppure attraverso Internet usando il sistema Wake On LAN.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gextractwinicons/italian/">
+              <img src="/resources/gextractwinicons/archive/latest/icon32.png" title="gExtractWinIcons
+Estrai cursori, icone e immagini da file di risorse per Microsoft Windows (come .exe, .dll, .ocx e .cpl).">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/bluewho/italian/">
+              <img src="/resources/bluewho/archive/latest/icon32.png" title="BlueWho
+Ricerca dispositivi Bluetooth nelle vicinanze e ricevi le notifiche quando un nuovo dispositivo viene rilevato.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/cpucompare/italian/">
+              <img src="/resources/cpucompare/archive/latest/icon32.png" title="CPUCompare
+Esegui confronti tra numerosi modelli di CPU per trovare quelle di tuo interesse.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/gptrace/italian/">
+              <img src="/resources/gptrace/archive/latest/icon32.png" title="gpTrace
+Traccia le attivita di un'applicazione esterna.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-builder/italian/">
+              <img src="/resources/remmina-plugin-builder/archive/latest/icon32.png" title="Remmina Plugin Builder
+Un pacchetto per semplificare lo sviluppo e la compilazione di plugin per Remmina.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-exec/italian/">
+              <img src="/resources/remmina-plugin-exec/archive/latest/icon32.png" title="Remmina Plugin Exec
+Un plugin di protocollo per Remmina per eseguire un processo esterno.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-folder/italian/">
+              <img src="/resources/remmina-plugin-folder/archive/latest/icon32.png" title="Remmina Plugin Folder
+Un plugin di protocollo per Remmina per aprire una cartella con un gestore di files esterno.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-open/italian/">
+              <img src="/resources/remmina-plugin-open/archive/latest/icon32.png" title="Remmina Plugin Open
+Un plugin di protocollo per Remmina per aprire un file o un documento utilizzando l'applicazione associata.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-rdesktop/italian/">
+              <img src="/resources/remmina-plugin-rdesktop/archive/latest/icon32.png" title="Remmina Plugin RDesktop
+Un plugin di protocollo per Remmina per stabilire connessioni RDP tramite RDesktop.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-teamviewer/italian/">
+              <img src="/resources/remmina-plugin-teamviewer/archive/latest/icon32.png" title="Remmina Plugin TeamViewer
+Un plugin di protocollo per Remmina per stabilire connessioni tramite TeamViewer.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-ultravnc/italian/">
+              <img src="/resources/remmina-plugin-ultravnc/archive/latest/icon32.png" title="Remmina Plugin UltraVNC
+Un plugin di protocollo per Remmina per stabilire connessioni tramite UltraVNC.">
+            </a>
+    
+
+  
+    
+
+  
+            <a href="/remmina-plugin-url/italian/">
+              <img src="/resources/remmina-plugin-url/archive/latest/icon32.png" title="Remmina Plugin URL
+Un plugin di protocollo per Remmina per aprire pagine web tramite un browser web esterno.">
+            </a>
+    
+
+  
+  
+
+  
+            <a href="/remmina-plugin-webkit/italian/">
+              <img src="/resources/remmina-plugin-webkit/archive/latest/icon32.png" title="Remmina Plugin WebKit
+Un plugin di protocollo per Remmina per aprire pagine web tramite un browser web WebKit integrato.">
+            </a>
+    
+
+
+
+          </div>
+  
+
+      Copyright &copy; 2013-2014 <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+      <a href="/">Home</a> | 
+      <a href="/english.html"><img src="/resources/index/16-english.png"> English</a> |
+      <a href="/italian.html"><img src="/resources/index/16-italian.png"> Italian</a> |
+      <a href="/contacts/italian/">Contatti</a> |
+
+  
+
+
+
+
+<a href="//www.iubenda.com/privacy-policy/939201" target="_blank" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+
+
+    </div>
+  </body>
+</html>
+
