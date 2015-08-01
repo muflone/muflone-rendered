@@ -5,10 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, scroll, backward, forward, text, buffer, scrollback, pageup, pagedown, keycode, loadkeys">
+    <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, user, utente, groups, gruppo, getent, limitato, root, permessi">
 
 
-    <meta name="description" content="Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 13 - Abilitare lo scorrimento del testo nella console)">
+    <meta name="description" content="Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 16 - Utenti e gruppi di utenti)">
 
     <meta name="author" content="Fabio Castelli">
     <link rel="shortcut icon" href="/resources/contacts/favicon.ico" type="image/x-icon">
@@ -43,7 +43,7 @@
 <script type="text/javascript" src="/resources/cookieconsent2-1.0.4/cookieconsent.js"></script>
 <!-- End Cookie Consent plugin -->
 
-    <title>Installare Arch Linux su Lenovo G50-70 (parte 13 - scorrimento della console)</title>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 16 - utenti e gruppi)</title>
 
     <link rel="stylesheet" type="text/css" href="/theme/articles.css" media="screen" />
   </head>
@@ -53,14 +53,14 @@
       <div class="inner">
         <a href="/articles/"><img src="/resources/articles/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
         <h1>Muflone</h1>
-        <h2>Installare Arch Linux su Lenovo G50-70 (parte 13 - scorrimento della console)</h2>
+        <h2>Installare Arch Linux su Lenovo G50-70 (parte 16 - utenti e gruppi)</h2>
       </div>
     </header>
     <div id="content-wrapper">
       <div class="clearfix">
         <section id="main-content" class="article">
 
-          <div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 13 - Abilitare lo scorrimento del testo nella console)</div>
+          <div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 16 - Utenti e gruppi di utenti)</div>
           <hr />
 
 <p class="center"><a href="/articles/italian/2015-06-07/installare-arch-linux-su-lenovo-g50-70.html" title="Indice">Indice</a>
@@ -81,121 +81,155 @@
 | <a href="/articles/italian/2015-07-19/installare-arch-linux-su-lenovo-g50-70-15.html" title="Installazione di GNOME">Parte 15</a>
 | <a href="/articles/italian/2015-08-01/installare-arch-linux-su-lenovo-g50-70-16.html" title="Utenti e gruppi di utenti">Parte 16</a></p>
 
-<p>Questo notebook è dotato di tastierino numerico ma manca dei tasti diretti per
-<kbd>Pagina Su</kbd> e <kbd>Pagina Giù</kbd>.</p>
+<p>Tutte le operazioni fino ad ora svolte sono state eseguite utilizzando l’utente
+principale <strong>root</strong> con tutti i permessi sull’intero sistema.</p>
 
-<p>Sebbene questi due tasti esistano integrati nel tastierino numerico, quando il
-tastierino numerico è spento dal pulsante <strong>Num Lock</strong>, all’interno della console
-locale di GNU/Linux, il normale scorrimento del testo (il cosiddetto 
-<a href="https://wiki.archlinux.org/index.php/Scrollback_buffer" target="_blank">Scrollback buffer</a>) con <kbd>Maiusc</kbd>+<kbd>Pagina Su</kbd> e
-<kbd>Maiusc</kbd>+<kbd>Pagina Giù</kbd> non funziona utilizzando il tastierino
-numerico, né acceso né spento.</p>
+<p>Tuttavia, per l’utilizzo quotidiano del sistema, è sempre raccomandato l’uso di
+un altro utente, di permessi limitati che possa agire esclusivamente nella
+propria directory <em>home</em>, ovvero nella directory che contiene tutti i dati
+personali dell’utente.</p>
 
-<p>Se si è seguito il passaggio di
-<a href="/articles/italian/2015-06-15/installare-arch-linux-su-lenovo-g50-70-4.html#configurazione-della-tastiera-italiana">configurazione della tastiera italiana</a>
-e si è configurata la tastiera italiana utilizzando il file vconsole.conf,
-basterà decomprimere il file della mappatura italiana, copiare il file da
-un’altra parte, aggiungere i due tasti per lo scorrimento del testo nella console
-e far puntare il file vconsole.conf al nuovo file.</p>
+<p>Ciascun utente avrà un identificativo di utente (UID = User ID) e un identificativo
+di gruppo (GID = Group ID). I gruppi di utenti consentono di raggruppare permessi
+a più utenti.</p>
 
-<h2 id="configurazione-della-nuova-mappatura-della-tastiera">Configurazione della nuova mappatura della tastiera</h2>
+<h2 id="gruppi-di-utenti">Gruppi di utenti</h2>
 
-<p>Il primo passaggio consiste nell’estrarre il contenuto dal file della mappatura
-utilizzata, nel caso della lingua italiana è possibile eseguire:</p>
+<p>Per conoscere l’elenco dei gruppi ai quali aggiungere gli utenti è possibile
+utilizzare il comando <strong>getent group</strong>.</p>
 
-<pre><code>[root@arch-lenovo ~]# gunzip -k -c /usr/share/kbd/keymaps/i386/qwerty/it.map.gz &gt; /etc/keymap
+<pre><code>[root@arch-lenovo ~]# getent group
+root:x:0:root
+bin:x:1:root,bin,daemon
+...
 </code></pre>
 
-<p>Il file <strong>/etc/keymap</strong> conterrà una copia decompressa della mappatura della
-tastiera italiana standard. A questa mappatura andrà aggiunta la mappatura dei
-tasti <kbd>Maiusc</kbd>+<kbd>Pagina Su</kbd> e <kbd>Maiusc</kbd>+<kbd>Pagina Giù</kbd>.</p>
+<p>La maggior parte dei gruppi di utenti sono ad uso del sistema mentre alcuni
+gruppi aggiuntivi sono specifici per l’aggiunta di permessi agli utenti extra,
+come i seguenti:</p>
 
-<p>Per conoscere i codici dei tasti <kbd>Pagina Su</kbd> e <kbd>Pagina Giù</kbd>
-basterà eseguire dalla console il comando <strong>showkey</strong>.</p>
+<ul>
+  <li><strong>root</strong> consente ai membri accesso totale a tutte le parti del sistema</li>
+  <li><strong>adm</strong> fornisce l’accesso a molti strumenti amministrativi</li>
+  <li><strong>tty</strong> fornisce l’accesso ai dispositivi console come /dev/tty*</li>
+  <li><strong>disk</strong> fornisce l’accesso alle periferiche disco, come dischi e partizioni</li>
+  <li><strong>lp</strong> fornisce l’accesso alle periferiche di stampa</li>
+  <li><strong>wheel</strong> consente agli utenti di diventare utente root col comando sudo</li>
+  <li><strong>uucp</strong> fornisce l’accesso alle periferiche seriali come /dev/ttyS*</li>
+  <li><strong>locate</strong> permette l’uso del comando updatedb (dal pacchetto mlocate)</li>
+  <li><strong>rfkill</strong> permette di comandare l’accensione e lo spegnimento di periferiche
+WiFi o Bluetooth</li>
+  <li><strong>proc</strong> consente di leggere le informazioni contenute nel file system /proc</li>
+  <li><strong>network</strong> consente di controllare le connessioni di rete</li>
+  <li><strong>video</strong> fornisce l’accesso alle periferiche video</li>
+  <li><strong>audio</strong> fornisce l’accesso alle periferiche audio</li>
+  <li><strong>optical</strong> fornisce l’accesso alle periferiche ottiche</li>
+  <li><strong>floppy</strong> fornisce l’accesso alle periferiche floppy</li>
+  <li><strong>storage</strong> fornisce l’accesso alle periferiche disco rimovibili</li>
+  <li><strong>scanner</strong> fornisce l’accesso alle periferiche scanner</li>
+  <li><strong>input</strong> fornisce l’accesso alle periferiche di input</li>
+  <li><strong>power</strong> permette il controllo dell’alimentazione o della sospensione</li>
+  <li><strong>users</strong> include i permessi standard per gli utenti limitati</li>
+  <li><strong>systemd-journal</strong> consente l’accesso ai log di systemd</li>
+</ul>
 
-<pre><code>[root@arch-lenovo ~]# showkey
-kb mode was UNICODE
-[ if you are trying this under X, it might not work
-since the X server is also reading /dev/console ]
+<h2 id="aggiungere-un-nuovo-utente-al-sistema">Aggiungere un nuovo utente al sistema</h2>
 
-press any key (program terminates 10s after last keypress)...
+<p>Per aggiungere un nuovo utente è possibile utilizzare il comando <strong>useradd</strong> in
+questa maniera:</p>
+
+<pre><code>[root@arch-lenovo ~]# useradd -m -g users muflone
 </code></pre>
 
-<p>Mentre il programma showkey è in esecuzione premere e rilasciare il tasto 9 del
-tastierino numerico (corrispondente a <kbd>Pagina Su</kbd>) e verranno stampati i
-valori di questo tasto.</p>
+<p>L’ultimo argomento <strong>muflone</strong> rappresenta il nome del nuovo utente da creare,
+mentre l’argomento <strong>-m</strong> indica di creare una nuova directory home col nome
+/home/muflone, infine l’argomento <strong>-g users</strong> indica il gruppo predefinito cui
+l’utente appartiene, in questo caso <strong>users</strong>.</p>
 
-<pre><code>keycode  73 press
-keycode  73 release
+<p>E’ possibile specificare gruppi di utenti aggiuntivi con l’argomento <strong>-G</strong>,
+ad esempio con:</p>
+
+<pre><code>[root@arch-lenovo ~]# useradd -m -g users -G rfkill,systemd-journal muflone
 </code></pre>
 
-<p>Facendo la stessa operazione utilizzando il tasto 3 del tastierino numerico
-(corrispondente a <kbd>Pagina Giù</kbd>) verranno stampati del tasto.</p>
+<p>L’utente muflone sarà automaticamente membro del gruppo <strong>users</strong> e dei gruppi
+aggiuntivi <strong>rfkill</strong> (per l’uso del comando rfkill) e <strong>systemd-journal</strong> (per
+la lettura del log di sistema col comando journalctl).</p>
 
-<pre><code>keycode  81 press
-keycode  81 release
+<p>E’ anche possibile aggiungere in un secondo momento un utente ad un gruppo
+utilizzando il comando <strong>gpasswd --add UTENTE GRUPPO</strong>.</p>
+
+<pre><code>[root@arch-lenovo ~]# gpasswd --add muflone rfkill
+Aggiunta dell'utente muflone al gruppo rfkill
+
+[root@arch-lenovo ~]# gpasswd --add muflone systemd-journal
+Aggiunta dell'utente muflone al gruppo systemd-journal
 </code></pre>
 
-<p>Dopo 10 secondi dall’ultima battuta il programma showkey terminerà automaticamente.</p>
+<p>Un utente per il sistema viene sempre identificato attraverso il suo UID,
+sebbene molti programmi (come gpasswd ad esempio) richiedono l’uso del suo nome.
+Alcuni strumenti (come i gestori grafici di login) visualizzano il nome completo
+dell’utente, una sorta di descrizione associata a ciascun utente.</p>
 
-<p>Questa operazione mostrerà che i codici (keycode) per i tasti 9 e 3 del tastierino
-numerico corrispondono a 73 e 81.</p>
+<p>Per cambiare il nome completo dell’utente è possibile utilizzare il comando
+<strong>chfn --full-name “NOME COMPLETO” UTENTE</strong> come ad esempio.</p>
 
-<p>Basterà pertanto aggiunge al file della mappatura della tastiera /etc/keymap
-creato in precedenza due nuovi valori per lo scorrimento all’indietro e in
-avanti del testo della console.</p>
+<pre><code>[root@arch-lenovo ~]# chfn --full-name "Muflone Ovinis" muflone
+Modifica delle informazioni finger per muflone in corso.
 
-<p>Per assegnare alla combinazione di tasti la funzione di scorrimento basterà
-utilizzare:</p>
-
-<pre><code>[root@arch-lenovo ~]# echo "shift keycode 73 = Scroll_Backward" &gt;&gt; /etc/keymap
-[root@arch-lenovo ~]# echo "shift keycode 81 = Scroll_Forward" &gt;&gt; /etc/keymap
+Le informazioni finger sono state modificate.
 </code></pre>
 
-<h2 id="utilizzo-della-nuova-mappatura-di-tastiera">Utilizzo della nuova mappatura di tastiera</h2>
+<h2 id="verifica-di-un-utente">Verifica di un utente</h2>
 
-<p>Per provare subito la nuova mappatura di tastiera è possibile eseguire il comando:</p>
+<p>Per verificare l’operazione appena eseguita è possibile utilizzare il comando
+<strong>id UTENTE</strong>.</p>
 
-<pre><code>[root@arch-lenovo ~]# loadkeys /etc/keymap
+<pre><code>[root@arch-lenovo ~]# id muflone
+uid=1000(muflone) gid=100(users) gruppi=100(users),24(rfkill),190(systemd-journal)
 </code></pre>
 
-<p>Mentre per rendere definitiva questa mappatura di tastiera basterà semplicemente
-modificare il file /etc/vconsole per puntare al nuovo file:</p>
+<p>L’utente muflone avrà un identificativo personale (uid) 1000, un identificativo
+di gruppo (gid) 100 e sarà presente nei gruppi 100 (users), 24 (rfkill) e 190
+(systemd-journal).</p>
 
-<pre><code>[root@arch-lenovo ~]# echo "KEYMAP=/etc/keymap" &gt; /etc/vconsole.conf 
+<p>Per verificare i gruppi cui un utente appartiene è possibile utilizzare il
+comando <strong>groups UTENTE</strong>.</p>
+
+<pre><code>[root@arch-lenovo ~]# groups muflone
+rfkill systemd-journal users
 </code></pre>
 
-<p>Fatto ciò sarà possibile scorrere il testo della console utilizzando la
-combinazione di tasti <kbd>Maiusc</kbd>+<kbd>Pagina Su</kbd> e
-<kbd>Maiusc</kbd>+<kbd>Pagina Giù</kbd>.</p>
+<h2 id="cambiare-la-password-di-accesso-di-un-utente">Cambiare la password di accesso di un utente</h2>
 
-<h2 id="configurare-la-dimensione-del-buffer-di-testo-scorrevole">Configurare la dimensione del buffer di testo scorrevole</h2>
+<p>Senza una password di accesso, normalmente non è permesso l’accesso al sistema.</p>
 
-<p>Per impostazione predefinita il buffer di testo scorrevole è di 32 KiB e permette
-lo scorrimento di circa 4 pagine di testo. Per estendere a 1 MiB la dimensione del
-buffer di scorrimento è necessario aggiungere al file dei parametri da passare
-al kernel, ovvero al file /boot/refind_linux.conf il parametro <strong>fbcon=scrollback:1024k</strong>.</p>
+<p>Per assegnare una password di accesso al nuovo utente appena creato si potrà
+utilizzare il comando <strong>passwd UTENTE</strong>.</p>
 
-<p>Per modificare il file con i parametri di avvio del kernel è possibile utilizzare:</p>
-
-<pre><code>[root@arch-lenovo ~]# nano /boot/refind_linux.conf
+<pre><code>[root@arch-lenovo ~]# passwd muflone
+Immettere nuova password UNIX: 
+Reimmettere la nuova password UNIX: 
+passwd: password aggiornata correttamente
 </code></pre>
 
-<p>Ad esempio il file conterrà</p>
+<p>Quando richiesto, digitare la nuova password da assegnare all’utente. <strong>Non
+saranno mostrati asterischi</strong> o altri simboli durante la digitazione per non
+lasciare traccia della lunghezza della password. Limitarsi a digitare la
+password, confermarla con invio e ridigitarla quando richiesto.</p>
 
-<pre><code>"Boot with standard options"  "ro root=UUID=xxx   initrd=/intel-ucode.img initrd=/initramfs-linux.img fbcon=scrollback:1024k"
-"Boot to single-user mode"    "ro root=UUID=xxx   single"
-"Boot with minimal options"   "ro root=UUID=xxx"
+<h2 id="eliminazione-di-un-utente">Eliminazione di un utente</h2>
+
+<p>Per completezza di informazione è possibile eliminare un utente preesistente
+utilizzando il comando <strong>userdel</strong>.</p>
+
+<pre><code>[root@arch-lenovo ~]# userdel -r muflone
+userdel: muflone mail spool (/var/spool/mail/muflone) not found
 </code></pre>
 
-<p>Salvare il file premendo <kbd>Control</kbd>+<kbd>O</kbd>, confermare con invio
-e <kbd>Control</kbd>+<kbd>X</kbd> per uscire dall’editor di testo. Al termine
-riavviare il sistema per ampliare da subito la dimensione del buffer di scorrimento.</p>
-
-<p>Sarà possibile ad esempio eseguire il comando <strong>dmesg</strong> e scorrere l’intero
-testo utilizzando i tasti <kbd>Maiusc</kbd>+<kbd>Pagina Su</kbd> e
-<kbd>Maiusc</kbd>+<kbd>Pagina Giù</kbd>.</p>
-
+<p>L’argomento <strong>-r</strong> indica l’eliminazione di tutti i dati personali nella
+directory home dell’utente da eliminare. Senza l’argomento -r la directory
+personale non verrà eliminata.</p>
 
 
   
