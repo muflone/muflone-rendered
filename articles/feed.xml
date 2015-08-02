@@ -3,7 +3,7 @@
   <title type="text" xml:lang="en">Articles</title>
   <link type="application/atom+xml" href="http://www.muflone.com/articles/feed.xml" rel="self"/>
   <link type="text" href="http://www.muflone.com/" rel="alternate"/>
-  <updated>2015-08-02T00:18:45+02:00</updated>
+  <updated>2015-08-02T17:56:54+02:00</updated>
   <id>Articles</id>
   <author>
     <name>Muflone &lt;webreg@vbsimple.net&gt;</name>
@@ -11,6 +11,21 @@
   <rights>Copyright (c) 2013-2014 Fabio Castelli (Muflone)</rights>
 
 
+
+  
+    
+    
+      
+  <entry>
+    <title>Installare Arch Linux su Lenovo G50-70 (parte 17 - accesso amministrativo con su e sudo)</title>
+    <link href="http://www.muflone.com/articles/italian/2015-08-02/installare-arch-linux-su-lenovo-g50-70-17.html"/>
+    <updated>2015-08-02T00:00:00+02:00</updated>
+    <id>http://www.muflone.com/articles/italian/2015-08-02/installare-arch-linux-su-lenovo-g50-70-17.html</id>
+    <summary type="html">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 17 - Accesso amministrativo con su e sudo)</summary>
+  </entry>
+      
+    
+  
 
   
     
@@ -299,16 +314,6 @@
 
   
     
-    
-      
-  <entry>
-    <title>Weekly updates</title>
-    <link href="http://www.muflone.com/articles/english/updates/2015-01-11.html"/>
-    <updated>2015-01-11T00:00:00+01:00</updated>
-    <id>http://www.muflone.com/articles/english/updates/2015-01-11.html</id>
-    <summary type="html">Updates from 2015-01-05 to 2015-01-11</summary>
-  </entry>
-      
     
   
 
