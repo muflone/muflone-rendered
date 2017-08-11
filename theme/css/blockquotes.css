@@ -1,0 +1,78 @@
+blockquote {
+  border-left: 10px solid #F0F2F4;
+}
+
+blockquote p {
+  font-size: 1.1rem;
+  color: #999;
+}
+
+blockquote cite {
+  display: block;
+  text-align: right;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+blockquote {
+  position: relative;
+}
+
+blockquote blockquote {
+  position: static;
+}
+
+blockquote > blockquote > blockquote {
+  margin: 0;
+}
+
+blockquote > blockquote > blockquote p {
+  padding: 15px;
+  display: block;
+  font-size: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  color: #666;
+  outline: solid 1px #cccccc;
+}
+
+blockquote > blockquote > blockquote p:first-child:before {
+  position: absolute;
+  left: -5px;
+  top: 2px;
+  color: #fff;
+  font-family: FontAwesome;
+  content: '';
+}
+
+blockquote > blockquote > blockquote p:first-child:after {
+  position: absolute;
+  top: 2px;
+  left: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+
+blockquote > blockquote > blockquote > p {
+  margin-left: -71px;
+  border-top: 30px solid #F0B37E;
+  background: #FFF2DB;
+}
+
+blockquote > blockquote > blockquote > blockquote > p {
+  margin-left: -91px;
+  border-top: 30px solid rgba(217, 83, 79, 0.8);
+  background: #FAE2E2;
+}
+
+blockquote > blockquote > blockquote > blockquote > blockquote > p {
+  margin-left: -111px;
+  border-top: 30px solid #6AB0DE;
+  background: #E7F2FA;
+}
+
+blockquote > blockquote > blockquote > blockquote > blockquote > blockquote > p {
+  margin-left: -131px;
+  border-top: 30px solid rgba(92, 184, 92, 0.8);
+  background: #E6F9E6;
+}

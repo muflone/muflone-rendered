@@ -1,0 +1,15 @@
+blockquote > blockquote > blockquote p:first-child:after {
+  content: 'Attenzione';
+}
+
+blockquote > blockquote > blockquote > blockquote > p:first-child:after {
+  content: 'Errore';
+}
+
+blockquote > blockquote > blockquote > blockquote > blockquote > p:first-child:after {
+  content: 'Nota';
+}
+
+blockquote > blockquote > blockquote > blockquote > blockquote > blockquote > p:first-child:after {
+  content: 'Suggerimento';
+}

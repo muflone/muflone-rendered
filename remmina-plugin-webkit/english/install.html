@@ -1,54 +1,53 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="english">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-    <meta name="author" content="Fabio Castelli">
-    <link rel="shortcut icon" href="/resources/remmina-plugin-webkit/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/resources/remmina-plugin-webkit/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
-    <link rel="stylesheet" type="text/css" href="/theme/architects-fonts.css" >
-    <link rel="stylesheet" type="text/css" href="/theme/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/theme/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/theme/print.css" media="print" />
-    <link rel="stylesheet" type="text/css" href="/theme/stylesheet2.css" media="screen" />
+    <title>Remmina Plugin WebKit | Installation</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/remmina-plugin-webkit/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/remmina-plugin-webkit/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/remmina-plugin-webkit/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/remmina-plugin-webkit/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/remmina-plugin-webkit/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/remmina-plugin-webkit/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/remmina-plugin-webkit/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/remmina-plugin-webkit/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/remmina-plugin-webkit/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/remmina-plugin-webkit/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/remmina-plugin-webkit/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/remmina-plugin-webkit/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/remmina-plugin-webkit/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/remmina-plugin-webkit/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/remmina-plugin-webkit/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/font-architects.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-english.css">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-
-
-
-  
 
 
 
 
 
 
-
-<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {"message":"This website uses cookies to make your browsing experience more convenient and personal. Cookies store useful information on your computer to help us improve the efficiency and relevance of our site for you. In some cases, they are essential to making the site work properly. By accessing this site, you consent to the use of cookies.","dismiss":"Hide","learnMore":"More info","link":"https://www.iubenda.com/privacy-policy/721463","theme":"dark-top"};
-</script>
-
-<script type="text/javascript" src="/resources/cookieconsent2-1.0.4/cookieconsent.js"></script>
-<!-- End Cookie Consent plugin -->
-
-    <title>Remmina Plugin WebKit - Installation</title>
 
   </head>
   <body>
     <header>
       <div class="inner">
-        <a href="index.html"><img src="/resources/remmina-plugin-webkit/archive/latest/icon128.png" style="width: 128px; height: 128px; padding-right: 20px;" align="left"></a>
+        <a href="/remmina-plugin-webkit/english">
+          <img src="/resources/remmina-plugin-webkit/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
         <h1>Remmina Plugin WebKit</h1>
         <h2>Installation</h2>
-        <a href="https://github.com/muflone/remmina-plugin-webkit" class="button"><small>View project on</small>GitHub</a>
+        <a href="https://github.com/muflone/remmina-plugin-webkit" target="_blank" class="button">
+          <small>View project on</small>
+          GitHub
+        </a>
       </div>
     </header>
 
@@ -56,60 +55,84 @@
       <div class="inner clearfix">
         <section id="main-content">
 
+<p><!-- Installation type for Debian and Ubuntu --></p>
+<h1>Installation on Debian, Ubuntu and derivatives</h1>
+<p>It's possible to download the <strong>deb</strong> package from the <a href="download">Download page</a> and install it using:
+</p>
+<pre class="highlight"><code>cd "~/folder with the downloaded file"
+sudo dpkg -i "file name.deb"
+</code></pre>
 
-  
-          <h1><a name="source" class="anchor"></a>Installation from source code</h1>
-          <p>To build Remmina Plugin WebKit from the source code you will
-            need also <a href="/remmina-plugin-builder">Remmina Plugin Builder</a>,
-            a minimal development environment to build plugins for Remmina.</p>
-          <p>Download Remmina Plugin Builder from the
-            <a href="/remmina-plugin-builder/english">Project page</a>
-            and refer to the
-            <a href="/remmina-plugin-builder/english/install.html">Installation page</a>.</p>
+<!-- Installation type for Arch Linux -->
+<h1>Installation on Arch Linux and derivatives</h1>
 
-          <p>The building process simply needs the extraction of both
-            Remmina Plugin Builder and 
-            Remmina Plugin WebKit source code using:</p>
-          <div><code>cd "~/folder with the downloaded files"</code></div>
-          <div><code>tar xzf remmina-plugin-builder-*.tar.gz</code></div>
-          <div><code>tar xzf remmina-plugin-webkit-*.tar.gz</code></div>
-          <p>Next you will need to compile the plugin using:</p>
-          <div><code>mkdir build</code></div>
-          <div><code>cp -r remmina-plugin-builder-*/* build</code></div>
-          <div><code>cp -r remmina-plugin-webkit-*/* build/remmina-plugin-to-build</code></div>
-          <div><code>cd build</code></div>
-          <div><code>cmake -DCMAKE_INSTALL_PREFIX=/usr .</code></div>
-          <div><code>make</code></div>
-          <div><code>sudo make install</code></div>
-          <div><code>sudo gtk-update-icon-cache -q /usr/share/icons/hicolor/</code></div>
-          <div><code>cd ..</code></div>
-          <p>After the installation, if no errors were reported the folder
-            build can be removed and the same for the downloaded source package.</p>
-          <p><strong>Warning!</strong> After executing the manual installation
-            from source code an automatic software uninstall will not be 
-            possibile but you will have to manually delete all the installed
-            files that were reported during the last installation step.</p>
-  
+<!-- Installation type for AUR package -->
+<p>In the AUR you can find the latest available version, it can be downloaded and built using yaourt (or a similar AUR helper) using <code>yaourt -S remmina-plugin-webkit</code> and then following the AUR helper instructions.
+</p>
+
+<!-- Installation type for downloadable .tar.xz -->
+<p>It's possible to download the <strong>tar.xz</strong> package from the <a href="download">Download page</a> and install it using:
+</p>
+<pre class="highlight"><code>cd "~/folder with the downloaded file"
+sudo pacman -U "remmina-plugin-webkit-version.tar.xz"
+</code></pre>
+
+<!-- Installation type for source code using Remmina Plugin Builder -->
+<h1>Installation from source code</h1>
+<p>To build Remmina Plugin WebKit from the source code you will need also <strong>Remmina Plugin Builder</strong>, a minimal development environment to build plugins for Remmina.
+</p>
+<p>Download Remmina Plugin Builder from the <a href="../../remmina-plugin-builder/index">Project page</a> and refer to the <a href="../../remmina-plugin-builder/english/install">Installation page</a>.
+</p>
+<p>The building process simply needs the extraction of both Remmina Plugin Builder and Remmina Plugin WebKit source code using:
+</p>
+<pre class="highlight"><code>cd "~/folder with the downloaded files"
+tar xzf remmina-plugin-builder-*.tar.gz
+tar xzf remmina-plugin-webkit-*.tar.gz
+</code></pre>
+
+<p>Next you will need to compile the plugin using:
+</p>
+<pre class="highlight"><code>mkdir build
+cp -r remmina-plugin-builder-*/* build
+cp -r remmina-plugin-webkit-*/* build/remmina-plugin-to-build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=/usr .
+make
+sudo make install
+sudo gtk-update-icon-cache -q /usr/share/icons/hicolor/
+cd ..
+</code></pre>
+<p>After the installation, if no errors were reported the folder build can be removed from root or via <code>sudo rm -rf "build"</code> and the same for the downloaded source package.
+</p>
+<blockquote><blockquote><blockquote><p>
+  After executing the manual installation from source code an automatic software uninstall will not be possibile but you will have to manually delete all the installed files that were reported during the last installation step.
+
+  </p></blockquote></blockquote></blockquote>
 
 
         </section>
         <aside id="sidebar">
-
+          <!-- Build sidebar depth 1 -->
           <ul class="menu1">
-            <li class="menu1"><a href="index.html">Introduction</a></li>
-            <li class="menu1"><a href="download.html">Download</a></li>
-            <li class="menu1"><a href="install.html">Installation</a></li>
-            <li class="menu1"><a href="settings.html">Settings</a></li>
-            <li class="menu1"><a href="screenshots.html">Screenshots</a></li>
-            <li class="menu1"><a href="changelog.html">Changelog</a></li>
+            <li class="menu1"><a href="/remmina-plugin-webkit/english/index">Introduction</a></li>
+            <li class="menu1"><a href="/remmina-plugin-webkit/english/download">Download</a></li>
+            <li class="menu1"><a href="/remmina-plugin-webkit/english/install">Installation</a></li>
+            <li class="menu1"><a href="/remmina-plugin-webkit/english/settings">Settings</a></li>
+            <li class="menu1"><a href="/remmina-plugin-webkit/english/screenshots">Screenshots</a></li>
+            <li class="menu1"><a href="/remmina-plugin-webkit/english/changelog">Changelog</a></li>
           </ul>
+          <!-- End of sidebar depth 1 -->
 
+          <div class="repo-owner">
 
-  
+            <div>
+              <a href="https://github.com/muflone/remmina-plugin-webkit" target="_blank">Remmina Plugin WebKit</a>
+              is developed by 
+              <a href="https://github.com/muflone" target="_blank">Muflone</a>.
+            </div>
 
-
-          <p class="repo-owner"><a href="https://github.com/muflone/remmina-plugin-webkit">Remmina Plugin WebKit</a> is developed by Muflone.</p>
-          <p>This page uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+            <div>This page uses the Architect theme by <a href="https://twitter.com/jasonlong" target="_blank">Jason Long</a>.</div>
+          </div>
         </aside>
       </div>
     </div>
@@ -124,219 +147,102 @@
       ga('send', 'pageview');
     </script>
 
-
     <div class="footer">
+      <div id="icons">
+        <a href="/" title="Home">
+          <img src="/resources/home/icons/android-icon-48x48.png">
+        </a>
 
-  
+        <a href="/contacts" title="Muflone">
+          <img src="/resources/contacts/icons/android-icon-48x48.png">
+        </a>
 
+        <a href="/gespeaker" title="Gespeaker">
+          <img src="/resources/gespeaker/icons/android-icon-48x48.png">
+        </a>
 
-          <div id="icons">
-            <a href="/english.html">
-              <img src="/resources/index/32-home.png" title="Home">
-            </a>
-  
+        <a href="/gwakeonlan" title="gWakeOnLAN">
+          <img src="/resources/gwakeonlan/icons/android-icon-48x48.png">
+        </a>
 
+        <a href="/gextractwinicons" title="gExtractWinIcons">
+          <img src="/resources/gextractwinicons/icons/android-icon-48x48.png">
+        </a>
 
-  
-    
+        <a href="/bluewho" title="BlueWho">
+          <img src="/resources/bluewho/icons/android-icon-48x48.png">
+        </a>
 
-  
-            <a href="/contacts/english/">
-              <img src="/resources/contacts/archive/latest/icon32.png" title="Muflone
-Contacts and information about the author.">
-            </a>
-    
+        <a href="/cpucompare" title="CPUCompare">
+          <img src="/resources/cpucompare/icons/android-icon-48x48.png">
+        </a>
 
-  
-    
+        <a href="/gptrace" title="gpTrace">
+          <img src="/resources/gptrace/icons/android-icon-48x48.png">
+        </a>
 
-  
-            <a href="/articles/english/">
-              <img src="/resources/articles/archive/latest/icon32.png" title="Articles
-Articles and guides.">
-            </a>
-    
+        <a href="/gnome-appfolders-manager" title="GNOME AppFolders Manager">
+          <img src="/resources/gnome-appfolders-manager/icons/android-icon-48x48.png">
+        </a>
 
-  
-    
+        <a href="/gtransmemory" title="gTransMemory">
+          <img src="/resources/gtransmemory/icons/android-icon-48x48.png">
+        </a>
 
-  
-            <a href="/gespeaker/english/">
-              <img src="/resources/gespeaker/archive/latest/icon32.png" title="Gespeaker
-Listen the written text in various languages with settings for voices, speech, volume and speed.">
-            </a>
-    
+        <a href="/remmina-plugin-builder" title="Remmina Plugin Builder">
+          <img src="/resources/remmina-plugin-builder/icons/android-icon-48x48.png">
+        </a>
 
-  
-    
+        <a href="/remmina-plugin-exec" title="Remmina Plugin Exec">
+          <img src="/resources/remmina-plugin-exec/icons/android-icon-48x48.png">
+        </a>
 
-  
-            <a href="/gwakeonlan/english/">
-              <img src="/resources/gwakeonlan/archive/latest/icon32.png" title="gWakeOnLan
-Turn on your machines in local network or through the Internet using the Wake On LAN system.">
-            </a>
-    
+        <a href="/remmina-plugin-folder" title="Remmina Plugin Folder">
+          <img src="/resources/remmina-plugin-folder/icons/android-icon-48x48.png">
+        </a>
 
-  
-    
+        <a href="/remmina-plugin-open" title="Remmina Plugin Open">
+          <img src="/resources/remmina-plugin-open/icons/android-icon-48x48.png">
+        </a>
 
-  
-            <a href="/gextractwinicons/english/">
-              <img src="/resources/gextractwinicons/archive/latest/icon32.png" title="gExtractWinIcons
-Extract cursors, icons and images from MS Windows resources files (like .exe, .dll, .ocx and .cpl).">
-            </a>
-    
+        <a href="/remmina-plugin-rdesktop" title="Remmina Plugin RDesktop">
+          <img src="/resources/remmina-plugin-rdesktop/icons/android-icon-48x48.png">
+        </a>
 
-  
-    
+        <a href="/remmina-plugin-teamviewer" title="Remmina Plugin TeamViewer">
+          <img src="/resources/remmina-plugin-teamviewer/icons/android-icon-48x48.png">
+        </a>
 
-  
-            <a href="/bluewho/english/">
-              <img src="/resources/bluewho/archive/latest/icon32.png" title="BlueWho
-Find Bluetooth devices near you and receive notifications when a new device is detected.">
-            </a>
-    
+        <a href="/remmina-plugin-ultravnc" title="Remmina Plugin UltraVNC">
+          <img src="/resources/remmina-plugin-ultravnc/icons/android-icon-48x48.png">
+        </a>
 
-  
-    
+        <a href="/remmina-plugin-url" title="Remmina Plugin URL">
+          <img src="/resources/remmina-plugin-url/icons/android-icon-48x48.png">
+        </a>
 
-  
-            <a href="/cpucompare/english/">
-              <img src="/resources/cpucompare/archive/latest/icon32.png" title="CPUCompare
-Compare between a large number of CPU models to find those of your interest.">
-            </a>
-    
+        <a href="/remmina-plugin-webkit" title="Remmina Plugin WebKit">
+          <img src="/resources/remmina-plugin-webkit/icons/android-icon-48x48.png">
+        </a>
 
-  
-    
-
-  
-            <a href="/gptrace/english/">
-              <img src="/resources/gptrace/archive/latest/icon32.png" title="gpTrace
-Trace the activities of an external application.">
-            </a>
-    
-
-  
-    
-
-  
-            <a href="/gnome-appfolders-manager/english/">
-              <img src="/resources/gnome-appfolders-manager/archive/latest/icon32.png" title="GNOME AppFolders Manager
-Create and edit applications folders (AppFolders) for GNOME Shell.">
-            </a>
-    
-
-  
-    
-
-  
-            <a href="/remmina-plugin-builder/english/">
-              <img src="/resources/remmina-plugin-builder/archive/latest/icon32.png" title="Remmina Plugin Builder
-A package to ease the development and the compilation of Remmina plugins.">
-            </a>
-    
-
-  
-    
-
-  
-            <a href="/remmina-plugin-exec/english/">
-              <img src="/resources/remmina-plugin-exec/archive/latest/icon32.png" title="Remmina Plugin Exec
-A Remmina protocol plugin to execute an external process.">
-            </a>
-    
-
-  
-    
-
-  
-            <a href="/remmina-plugin-folder/english/">
-              <img src="/resources/remmina-plugin-folder/archive/latest/icon32.png" title="Remmina Plugin Folder
-A Remmina protocol plugin to open a folder using an external file manager application.">
-            </a>
-    
-
-  
-    
-
-  
-            <a href="/remmina-plugin-open/english/">
-              <img src="/resources/remmina-plugin-open/archive/latest/icon32.png" title="Remmina Plugin Open
-A Remmina protocol plugin to open a file or document using its associated application.">
-            </a>
-    
-
-  
-    
-
-  
-            <a href="/remmina-plugin-rdesktop/english/">
-              <img src="/resources/remmina-plugin-rdesktop/archive/latest/icon32.png" title="Remmina Plugin RDesktop
-A Remmina protocol plugin to establish RDP connection through RDesktop.">
-            </a>
-    
-
-  
-    
-
-  
-            <a href="/remmina-plugin-teamviewer/english/">
-              <img src="/resources/remmina-plugin-teamviewer/archive/latest/icon32.png" title="Remmina Plugin TeamViewer
-A Remmina protocol plugin to establish connections through TeamViewer.">
-            </a>
-    
-
-  
-    
-
-  
-            <a href="/remmina-plugin-ultravnc/english/">
-              <img src="/resources/remmina-plugin-ultravnc/archive/latest/icon32.png" title="Remmina Plugin UltraVNC
-A Remmina protocol plugin to establish connections through UltraVNC.">
-            </a>
-    
-
-  
-    
-
-  
-            <a href="/remmina-plugin-url/english/">
-              <img src="/resources/remmina-plugin-url/archive/latest/icon32.png" title="Remmina Plugin URL
-A Remmina protocol plugin to open web pages through an external web browser.">
-            </a>
-    
-
-  
-  
-
-  
-            <a href="/remmina-plugin-webkit/english/">
-              <img src="/resources/remmina-plugin-webkit/archive/latest/icon32.png" title="Remmina Plugin WebKit
-A Remmina protocol plugin to open web pages through an integrated WebKit web browser.">
-            </a>
-    
-
-
-
-          </div>
-  
-
-      Copyright &copy; 2013-2014 <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
-      <a href="/">Home</a> | 
-      <a href="/english.html"><img src="/resources/index/16-english.png"> English</a> |
-      <a href="/italian.html"><img src="/resources/index/16-italian.png"> Italian</a> |
-      <a href="/contacts/english/">Contacts</a> |
-
-  
-
-
-
-
-<a href="//www.iubenda.com/privacy-policy/721463" target="_blank" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a>
-
-
+      </div>
+      <div>Copyright &copy; 2013-2017
+        <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+        <a href="/" title="Home">Home</a> | 
+        <a href="/english" title="English">
+          <img src="/theme/images/flag-en-16.png">
+          English
+        </a> |
+        <a href="/italian" title="Italian">
+          <img src="/theme/images/flag-it-16.png">
+          Italian
+        </a> |
+        <a href="/contacts" title="Contacts">
+          Contacts
+        </a> |
+        <a href="//www.iubenda.com/privacy-policy/721463"
+          target="_blank" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+      </div>
     </div>
   </body>
 </html>
-

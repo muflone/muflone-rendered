@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="italian">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
+    <title>gWakeOnLAN | Requisiti</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/gwakeonlan/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/gwakeonlan/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/gwakeonlan/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/gwakeonlan/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/gwakeonlan/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/gwakeonlan/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/gwakeonlan/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/gwakeonlan/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/gwakeonlan/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/gwakeonlan/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/gwakeonlan/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/gwakeonlan/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/gwakeonlan/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/gwakeonlan/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/gwakeonlan/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/font-architects.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <a href="/gwakeonlan/italian">
+          <img src="/resources/gwakeonlan/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
+        <h1>gWakeOnLAN</h1>
+        <h2>Requisiti</h2>
+        <a href="https://github.com/muflone/gwakeonlan" target="_blank" class="button">
+          <small>Vedi il progetto su</small>
+          GitHub
+        </a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+<h1 id="requisiti">Requisiti</h1>
+
+<p>Per permettere a gWakeOnLAN di accendere una macchina
+<strong>tutti i seguenti requisiti</strong> devono essere soddisfatti.</p>
+
+<p>Ogni macchina da accendere deve:</p>
+
+<ul>
+  <li>avere una scheda di rete Ethernet integrata (oppure PCI/PCIE).</li>
+  <li>avere il cavo di rete sempre connesso.</li>
+  <li>avere il cavo di alimentazione sempre connesso.</li>
+  <li>supportare il Wake On LAN con <a href="https://en.wikipedia.org/wiki/Wake-on-LAN#Magic_packet" target="_blank">Magic Packet</a>.</li>
+  <li>avere il Wake On LAN 
+<a href="/gwakeonlan/italian/wol/bios">abilitato nel BIOS</a>.</li>
+  <li>avere il Wake On LAN con Magic Packet 
+<a href="/gwakeonlan/italian/wol/os">abilitato nel sistema operativo</a>.</li>
+  <li>essere spenta dal Sistema operativo.</li>
+</ul>
+
+<p>Se uno o più di questi requisiti non è soddisfatto <strong>per tutto il tempo</strong>,
+il Wake On LAN non funzionerà.</p>
+
+<p>Non funzionerà se un requisito non è soddisfatto per un certo tempo,
+<strong>anche dopo che la macchina è stata spenta</strong>, come ad esempio scollegare il
+cavo di alimentazione dalla macchina e ricollegarlo successivamente.</p>
+
+<h1 id="requisiti-aggiuntivi-per-internet">Requisiti aggiuntivi per Internet</h1>
+
+<p>Nel caso che il comando sia inviato attraverso Internet (e non in broadcast
+locale) esistono dei requisiti aggiuntivi da soddisfare:</p>
+
+<ul>
+  <li>La macchina da accendere deve essere raggiungibile dalla rete</li>
+  <li>I dati UDP inviati da gWakeOnLAN devono raggiungere la macchina di destinazione</li>
+  <li>Il router deve ricordare le macchine spente</li>
+</ul>
+
+<h2 id="la-macchina-da-accendere-deve-essere-raggiungibile-dalla-rete">La macchina da accendere deve essere raggiungibile dalla rete</h2>
+
+<p>La macchina non deve essere collegata con un modem direttamente connesso alla
+macchina, altrimenti i dati non saranno ricevuti se la rete è scollegata.</p>
+
+<p>Un <strong>router raggiungibile</strong> e connesso è quindi raccomandato per poter
+ricevere i dati inviati da  gWakeOnLAN.</p>
+
+<h2 id="i-dati-udp-inviati-da-gwakeonlan-devono-raggiungere-la-macchina-di-destinazione">I dati UDP inviati da gWakeOnLAN devono raggiungere la macchina di destinazione</h2>
+
+<p>Il router deve supportare l’inoltro dei dati UDP dal numero di porta specificato
+all’indirizzo IP di destinazione nella sua rete locale.</p>
+
+<p>Generalmente questo viene fatti nella configurazione del router impostando un
+<strong>Server Virtuale, Port forward oppure Port mapping</strong>.</p>
+
+<p>Consulta la documentazione del router per sapere come configurarlo.</p>
+
+<h2 id="il-router-deve-ricordare-le-macchine-spente">Il router deve ricordare le macchine spente</h2>
+
+<p>Molti router di casa dimenticano gli indirizzi MAC nella loro rete locale dopo
+2-5 minuti di inattività, quindi anche se una macchina è stata correttamente
+spenta con tutti i precedenti requisiti il router ricevente potrebbe non
+ricordare a quale indirizzo MAC inoltrare i dati.</p>
+
+<p>La chiave di successo per ottenere questo è chiamata
+<a href="https://en.wikipedia.org/wiki/Address_Resolution_Protocol" target="_blank">cache ARP statica</a>
+che staticamente assegna un indirizzo MAC all’indirizzo IP da inoltrare.</p>
+
+<p>Consulta la documentazione del router per sapere come configurarlo.</p>
+
+<p>Se questo requisito non può essere soddisfatto perchè il router non supporta
+una cache ARP statica in alternativa è possibile configurare un computer sempre
+acceso che agisca come gateway e configurare la cache ARP nel suo sistema
+operativo.</p>
+
+
+        </section>
+        <aside id="sidebar">
+          <!-- Build sidebar depth 1 -->
+          <ul class="menu1">
+            <li class="menu1"><a href="/gwakeonlan/italian/index">Introduzione</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/download">Scarica</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/install">Installazione</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/screenshots">Schermate</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/languages">Lingue supportate</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/wol/index">Wake On LAN</a></li>
+            
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+          
+              <li class="menu2"><a href="/gwakeonlan/italian/wol/requirements">Requisiti</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/wol/bios">Nel BIOS</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/wol/os">Nel sistema operativo</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+          
+            <li class="menu1"><a href="/gwakeonlan/italian/changelog">Cambiamenti</a></li>
+          </ul>
+          <!-- End of sidebar depth 1 -->
+
+          <div class="repo-owner">
+
+            <div>
+              <a href="https://github.com/muflone/gwakeonlan" target="_blank">gWakeOnLAN</a>
+              è sviluppato da 
+              <a href="https://github.com/muflone" target="_blank">Muflone</a>.
+            </div>
+
+            <div>Questa pagina usa il tema Architect di <a href="https://twitter.com/jasonlong" target="_blank">Jason Long</a>.</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+
+    <div class="footer">
+      <div id="icons">
+        <a href="/" title="Home">
+          <img src="/resources/home/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/contacts" title="Muflone">
+          <img src="/resources/contacts/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gespeaker" title="Gespeaker">
+          <img src="/resources/gespeaker/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gwakeonlan" title="gWakeOnLAN">
+          <img src="/resources/gwakeonlan/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gextractwinicons" title="gExtractWinIcons">
+          <img src="/resources/gextractwinicons/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/bluewho" title="BlueWho">
+          <img src="/resources/bluewho/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/cpucompare" title="CPUCompare">
+          <img src="/resources/cpucompare/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gptrace" title="gpTrace">
+          <img src="/resources/gptrace/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gnome-appfolders-manager" title="GNOME AppFolders Manager">
+          <img src="/resources/gnome-appfolders-manager/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gtransmemory" title="gTransMemory">
+          <img src="/resources/gtransmemory/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-builder" title="Remmina Plugin Builder">
+          <img src="/resources/remmina-plugin-builder/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-exec" title="Remmina Plugin Exec">
+          <img src="/resources/remmina-plugin-exec/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-folder" title="Remmina Plugin Folder">
+          <img src="/resources/remmina-plugin-folder/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-open" title="Remmina Plugin Open">
+          <img src="/resources/remmina-plugin-open/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-rdesktop" title="Remmina Plugin RDesktop">
+          <img src="/resources/remmina-plugin-rdesktop/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-teamviewer" title="Remmina Plugin TeamViewer">
+          <img src="/resources/remmina-plugin-teamviewer/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-ultravnc" title="Remmina Plugin UltraVNC">
+          <img src="/resources/remmina-plugin-ultravnc/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-url" title="Remmina Plugin URL">
+          <img src="/resources/remmina-plugin-url/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-webkit" title="Remmina Plugin WebKit">
+          <img src="/resources/remmina-plugin-webkit/icons/android-icon-48x48.png">
+        </a>
+
+      </div>
+      <div>Copyright &copy; 2013-2017
+        <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+        <a href="/" title="Home">Home</a> | 
+        <a href="/english" title="Inglese">
+          <img src="/theme/images/flag-en-16.png">
+          Inglese
+        </a> |
+        <a href="/italian" title="Italiano">
+          <img src="/theme/images/flag-it-16.png">
+          Italiano
+        </a> |
+        <a href="/contacts" title="Contatti">
+          Contatti
+        </a> |
+        <a href="//www.iubenda.com/privacy-policy/939201"
+          target="_blank" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+      </div>
+    </div>
+  </body>
+</html>

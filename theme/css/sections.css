@@ -1,0 +1,40 @@
+.full-width {
+  width: 100%;
+}
+
+.product-column {
+  width: 300px;
+  height: 290px;
+}
+
+.product {
+  float: left;
+  min-height: 1px;
+}
+
+.products-table>.product>div {
+  padding-top: 16px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 16px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.products-table>.product>div>a img,
+.products-table>.product>div>span img {
+  display: inline-block;
+  *display: inline;
+  height: 144px;
+  width: 144px;
+  *zoom: 1;
+  margin-bottom: 6px;
+}
+.products-table>.product>div>a h4 {
+  margin: 4px 0 12px;
+}
+
+.product-name {
+  margin: 0px;
+  font-size: 18px;
+}

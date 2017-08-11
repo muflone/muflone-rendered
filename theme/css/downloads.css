@@ -1,0 +1,35 @@
+#packages tr td {
+  padding: 5px;
+}
+
+#packages tr td.type {
+  text-align: left;
+  width: 25%;
+}
+
+#packages tr td.name {
+  white-space: nowrap;
+  text-align: center;
+  width: 25%;
+}
+
+#packages tr td.size {
+  white-space: nowrap;
+  text-align: center;
+  width: 5%;
+}
+
+#packages tr td.md5sum {
+  text-align: center;
+  width: 30%;
+}
+
+#packages tr td.downloads {
+  overflow: hidden;
+  text-align: left;
+  width: 15%;
+}
+
+#packages tr td img {
+  vertical-align: middle;
+}

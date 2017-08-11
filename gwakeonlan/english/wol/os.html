@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
+    <title>gWakeOnLAN | In the operating system</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/gwakeonlan/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/gwakeonlan/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/gwakeonlan/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/gwakeonlan/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/gwakeonlan/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/gwakeonlan/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/gwakeonlan/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/gwakeonlan/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/gwakeonlan/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/gwakeonlan/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/gwakeonlan/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/gwakeonlan/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/gwakeonlan/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/gwakeonlan/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/gwakeonlan/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/font-architects.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-english.css">
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <a href="/gwakeonlan/english">
+          <img src="/resources/gwakeonlan/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
+        <h1>gWakeOnLAN</h1>
+        <h2>In the operating system</h2>
+        <a href="https://github.com/muflone/gwakeonlan" target="_blank" class="button">
+          <small>View project on</small>
+          GitHub
+        </a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+<h1 id="introduction">Introduction</h1>
+
+<p>After <a href="/gwakeonlan/english/wol/bios">enabling the Wake on LAN in the BIOS</a>
+the operating system must be informed to enable it before the shutdown otherwise
+the machine will not turn on even if everything else is done properly.</p>
+
+<h1 id="gnulinux">GNU/Linux</h1>
+
+<p>To check if the network card supports the Wake On LAN then the following command
+can be used:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code># ethtool eth0
+Settings for eth0:
+        ....
+        Supports Wake-on: pumbg
+        Wake-on: d
+        .....
+</code></pre>
+</div>
+
+<p>If the <strong>Supports Wake-on</strong> field contains <strong>g</strong> then the Wake On LAN by
+magic-packet can be used:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code># ethtool -s eth0 wol g
+# ethtool eth0
+Settings for eth0:
+        ....
+        Wake-on: g
+        .....
+</code></pre>
+</div>
+
+<p>The command must be performed before the machine shutdown.</p>
+
+<h1 id="apple-os-x">Apple OS X</h1>
+<p>In the Apple OS X systems the Wake On LAN setting can be found in the
+<strong>System Preferences</strong> under the section <strong>Energy Saver</strong>.</p>
+
+<p><a href="/resources/gwakeonlan/wol_os/osx-1.png"><img src="/resources/gwakeonlan/wol_os/osx-1-thumb.png" alt="" /></a></p>
+
+<h1 id="microsoft-windows">Microsoft Windows</h1>
+
+<p>On major Microsoft Windows OS the Wake On LAN is enabled by default so generally
+nothing to be done is needed.
+If the machine still doesn’t turn itself on then you should check if the
+operating system has the Wake On LAN enabled with the <strong>Magic Packet</strong>.</p>
+
+<p>The following specifications can be different, they depends from the used driver.</p>
+
+<h2 id="microsoft-windows-xp">Microsoft Windows XP</h2>
+
+<p><a href="/resources/gwakeonlan/wol_os/windows_xp-1.jpg"><img src="/resources/gwakeonlan/wol_os/windows_xp-1-thumb.jpg" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_os/windows_xp-2.jpg"><img src="/resources/gwakeonlan/wol_os/windows_xp-2-thumb.jpg" alt="" /></a></p>
+
+<h2 id="microsoft-windows-20002003-server">Microsoft Windows 2000/2003 Server</h2>
+
+<p><a href="/resources/gwakeonlan/wol_os/windows_2000-1.jpg"><img src="/resources/gwakeonlan/wol_os/windows_2000-1-thumb.jpg" alt="" /></a></p>
+
+<h2 id="microsoft-windows-vista7820082012-server">Microsoft Windows Vista/7/8/2008/2012 Server</h2>
+
+<p><a href="/resources/gwakeonlan/wol_os/windows_vista-1.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-1-thumb.png" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_os/windows_vista-2.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-2-thumb.png" alt="" /></a></p>
+
+<p><a href="/resources/gwakeonlan/wol_os/windows_vista-3.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-3-thumb.png" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_os/windows_vista-4.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-4-thumb.png" alt="" /></a></p>
+
+<p><a href="/resources/gwakeonlan/wol_os/windows_vista-5.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-5-thumb.png" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_os/windows_vista-6.jpg"><img src="/resources/gwakeonlan/wol_os/windows_vista-6-thumb.jpg" alt="" /></a></p>
+
+<p><a href="/resources/gwakeonlan/wol_os/windows_vista-7.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-7-thumb.png" alt="" /></a></p>
+
+        </section>
+        <aside id="sidebar">
+          <!-- Build sidebar depth 1 -->
+          <ul class="menu1">
+            <li class="menu1"><a href="/gwakeonlan/english/index">Introduction</a></li>
+            <li class="menu1"><a href="/gwakeonlan/english/download">Download</a></li>
+            <li class="menu1"><a href="/gwakeonlan/english/install">Installation</a></li>
+            <li class="menu1"><a href="/gwakeonlan/english/screenshots">Screenshots</a></li>
+            <li class="menu1"><a href="/gwakeonlan/english/languages">Supported languages</a></li>
+            <li class="menu1"><a href="/gwakeonlan/english/wol/index">Wake On LAN</a></li>
+            
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+          
+              <li class="menu2"><a href="/gwakeonlan/english/wol/requirements">Requirements</a></li>
+              <li class="menu2"><a href="/gwakeonlan/english/wol/bios">In the BIOS</a></li>
+              <li class="menu2"><a href="/gwakeonlan/english/wol/os">In the operating system</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+          
+            <li class="menu1"><a href="/gwakeonlan/english/changelog">Changelog</a></li>
+          </ul>
+          <!-- End of sidebar depth 1 -->
+
+          <div class="repo-owner">
+
+            <div>
+              <a href="https://github.com/muflone/gwakeonlan" target="_blank">gWakeOnLAN</a>
+              is developed by 
+              <a href="https://github.com/muflone" target="_blank">Muflone</a>.
+            </div>
+
+            <div>This page uses the Architect theme by <a href="https://twitter.com/jasonlong" target="_blank">Jason Long</a>.</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+
+    <div class="footer">
+      <div id="icons">
+        <a href="/" title="Home">
+          <img src="/resources/home/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/contacts" title="Muflone">
+          <img src="/resources/contacts/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gespeaker" title="Gespeaker">
+          <img src="/resources/gespeaker/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gwakeonlan" title="gWakeOnLAN">
+          <img src="/resources/gwakeonlan/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gextractwinicons" title="gExtractWinIcons">
+          <img src="/resources/gextractwinicons/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/bluewho" title="BlueWho">
+          <img src="/resources/bluewho/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/cpucompare" title="CPUCompare">
+          <img src="/resources/cpucompare/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gptrace" title="gpTrace">
+          <img src="/resources/gptrace/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gnome-appfolders-manager" title="GNOME AppFolders Manager">
+          <img src="/resources/gnome-appfolders-manager/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gtransmemory" title="gTransMemory">
+          <img src="/resources/gtransmemory/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-builder" title="Remmina Plugin Builder">
+          <img src="/resources/remmina-plugin-builder/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-exec" title="Remmina Plugin Exec">
+          <img src="/resources/remmina-plugin-exec/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-folder" title="Remmina Plugin Folder">
+          <img src="/resources/remmina-plugin-folder/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-open" title="Remmina Plugin Open">
+          <img src="/resources/remmina-plugin-open/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-rdesktop" title="Remmina Plugin RDesktop">
+          <img src="/resources/remmina-plugin-rdesktop/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-teamviewer" title="Remmina Plugin TeamViewer">
+          <img src="/resources/remmina-plugin-teamviewer/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-ultravnc" title="Remmina Plugin UltraVNC">
+          <img src="/resources/remmina-plugin-ultravnc/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-url" title="Remmina Plugin URL">
+          <img src="/resources/remmina-plugin-url/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-webkit" title="Remmina Plugin WebKit">
+          <img src="/resources/remmina-plugin-webkit/icons/android-icon-48x48.png">
+        </a>
+
+      </div>
+      <div>Copyright &copy; 2013-2017
+        <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+        <a href="/" title="Home">Home</a> | 
+        <a href="/english" title="English">
+          <img src="/theme/images/flag-en-16.png">
+          English
+        </a> |
+        <a href="/italian" title="Italian">
+          <img src="/theme/images/flag-it-16.png">
+          Italian
+        </a> |
+        <a href="/contacts" title="Contacts">
+          Contacts
+        </a> |
+        <a href="//www.iubenda.com/privacy-policy/721463"
+          target="_blank" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+      </div>
+    </div>
+  </body>
+</html>

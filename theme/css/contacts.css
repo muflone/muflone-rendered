@@ -1,0 +1,75 @@
+#main-content hr {
+  clear: both;
+  border: 1;
+  color: #ffffff;
+  background: url(../images/hr.png) repeat-x bottom;
+}
+
+#main-content hr + p {
+  width: 100%;
+  float: left;
+  font-size: 3em;
+  color: #000000;
+  overflow:hidden;
+  margin-bottom: 0px;
+}
+
+#main-content ul {
+  display: block;
+  list-style: none;
+  margin: 0px;
+}
+
+#main-content ul li {
+  list-style: none;
+  padding: 10px;
+  float: left;
+  width: 400px;
+}
+
+#main-content ul li img {
+  float: left;
+}
+
+#main-content ul li a {
+  color: #666666;
+  outline: none;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  height: 40px;
+  line-height: 1;
+}
+
+#main-content ul li a strong {
+  font-size: 14px;
+  color: #000000;
+  display: block;
+}
+
+#main-content ul li a img {
+  margin-left: 10px;
+  border: 0;
+  float: left;
+  margin: 0 10px;
+  width: 32px;
+  height: 32px;
+}
+
+#main-content hr+p {
+  margin-left: 10px;
+}
+
+body {
+  background: #dfe2e4 url(../images/contacts-bg.jpg) repeat top left; 
+}
+
+#content-wrapper {
+  padding-top: 0px;
+}
+
+#main-content {
+  background: #eeeeee;
+  padding-left: 10px;
+  padding-right: 10px;
+}

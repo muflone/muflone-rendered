@@ -1,0 +1,17 @@
+.flags {
+  text-align: center;
+  border: 0px;
+  width: 100%;
+  height: 300px;
+}
+
+.flags td {
+  border: 0px;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.flags td img {
+  width: 128px;
+  height: 102px;
+}
