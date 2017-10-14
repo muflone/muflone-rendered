@@ -299,6 +299,13 @@ ul li {
   max-width: 100%;
 }
 
+#main-content div.articles_pages {
+  font-size: 23px;
+  font-weight: bold;
+  padding-bottom: 0px;
+  text-align: center; 
+}
+
 .footer, .footer a {
   font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif'; 
   font-weight: bold;

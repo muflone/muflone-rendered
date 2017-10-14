@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="italian">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
+    <title>Articles | Accesso amministrativo con su e sudo</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/articles/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/articles/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/articles/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/articles/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/articles/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/articles/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/articles/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/articles/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/articles/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/articles/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/articles/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/articles/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/articles/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/font-architects.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
+
+    <link type="text/css" rel="stylesheet" href="/theme/css/offline-copy.css">
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <a href="/articles/italian">
+          <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
+        <h1>Articles</h1>
+        <h2>Accesso amministrativo con su e sudo</h2>
+        <a href="https://github.com/muflone" target="_blank" class="button">
+          <small>Vedi il progetto su</small>
+          GitHub
+        </a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content" class="article"><div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 17 - Accesso amministrativo con su e sudo)</div>
+          <hr />
+
+          <div class="articles_pages">
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/index" title="Installare Arch Linux su Lenovo G50-70">Indice</a> | 
+      
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/preparazione-del-sistema" title="Preparazione del sistema">Parte 1</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/connessione-wifi" title="Connessione Wi-Fi">Parte 2</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/partizionamento-del-disco" title="Partizionamento del disco">Parte 3</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/installazione-del-sistema" title="Installazione del sistema">Parte 4</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/installazione-del-gestore-di-avvio" title="Installazione del gestore di avvio">Parte 5</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/funzionamento-di-refind" title="Funzionamento di rEFInd">Parte 6</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/primo-avvio-del-sistema" title="Primo avvio del sistema">Parte 7</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/riconfigurazione-della-wifi" title="Riconfigurazione della connessione Wi-Fi">Parte 8</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/aggiornamento-del-microcode" title="Aggiornamento del microcode">Parte 9</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/pacman" title="Il gestore di pacchetti pacman">Parte 10</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/systemd" title="Il sistema di avvio systemd">Parte 11</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/accesso-ssh" title="Accesso tramite SSH">Parte 12</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/installare-l-ambiente-grafico" title="Installare l'ambiente grafico">Parte 13</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/installare-gnome" title="Installazione di GNOME">Parte 14</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/utenti-e-gruppi" title="Utenti e gruppi di utenti">Parte 15</a> | 
+            Parte 16
+          </div>
+          <hr />
+
+
+          <p>Con l’utilizzo di
+<a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/utenti-e-gruppi">un utente con privilegi limitati</a>
+prima o poi si avrà la necessità di eseguire dei comandi amministrativi con
+l’utente root.</p>
+
+<p>Ci sono due maniere per eseguire un cambio di utente dal proprio utente a root:</p>
+
+<ul>
+  <li>Con l’uso del comando <strong>su</strong> (switch user) che richiederà l’inserimento della
+password dell’utente che verrà impersonato (root di default)</li>
+  <li>Con l’uso del comando <strong>sudo</strong> (switch user and do) che richiederà
+l’inserimento della password dell’utente corrente</li>
+</ul>
+
+<p>La differenza tra i due comandi è quindi il tipo di password richiesta.</p>
+
+<h2 id="utilizzo-di-su">Utilizzo di su</h2>
+
+<p>Chi preferisse continuare ad utilizzare la password di root come fatto finora
+può semplicemente ignorare la configurazione di sudo e continuare ad utilizzare
+su come segue:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ su
+Password: 
+</code></pre>
+</div>
+
+<p>Dopo l’esecuzione del comando su verrà richiesto l’inserimento della password
+dell’utente root e se l’autenticazione avverrà correttamente si passerà all’uso
+dell’utente root.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo muflone]# id
+uid=0(root) gid=0(root) gruppi=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),19(log)
+</code></pre>
+</div>
+
+<p>Al termine dell’uso dell’utente root si potrà tornare al proprio utente
+chiudendo la sessione col comando <strong>exit</strong>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo muflone]# exit
+exit
+</code></pre>
+</div>
+
+<p>Per eseguire un comando con l’utente desiderato senza bisogno di dover uscire
+dall’ambiente del nuovo utente è possibile aggiungere l’argomento <strong>-c</strong> seguito
+dalla riga di comando da eseguire.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ su -c "id"
+Password: 
+uid=0(root) gid=0(root) gruppi=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),19(log)
+</code></pre>
+</div>
+
+<p>Mediante l’uso del comando su è anche possibile utilizzare altri utenti oltre
+root, semplicemente indicando l’argomento <strong>--login</strong> (o anche <strong>-l</strong> oppure
+anche <strong>-</strong> da solo) e il nome utente dopo il comando su.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ su -l prova
+Password: 
+</code></pre>
+</div>
+
+<p>Quando richiesto inserire la password dell’utente prova.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[prova@arch-lenovo ~]$ id
+uid=1001(prova) gid=100(users) gruppi=100(users)
+[prova@arch-lenovo ~]$ exit
+logout
+[muflone@arch-lenovo ~]$ 
+</code></pre>
+</div>
+
+<p>Ovviamente è anche possibile combinare l’argomento <strong>-l</strong> con l’argomento <strong>-c</strong>
+per eseguire un’operazione con un altro utente ed immediatamente ritornare
+all’utente iniziale.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ su -l -c "id" prova
+Password: 
+uid=1001(prova) gid=100(users) gruppi=100(users)
+</code></pre>
+</div>
+
+<h2 id="utilizzo-di-sudo">Utilizzo di sudo</h2>
+
+<p>L’uso di <strong>su</strong> consente ad ogni utente di diventare temporaneamente root ed
+eseguire le operazioni amministrative all’occorrenza.</p>
+
+<p>Lo strumento <strong>sudo</strong> opera in maniera leggermente diversa, consente a certi
+utenti di poter eseguire alcuni comandi attraverso un file di configurazione
+di nome <strong>sudoers</strong>.</p>
+
+<h3 id="installazione-di-sudo">Installazione di sudo</h3>
+
+<p>Prima di poter utilizzare sudo è necessario installare il relativo pacchetto:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S sudo
+risoluzione delle dipendenze in corso...
+ricerca dei pacchetti in conflitto in corso...
+
+Pacchetti (1) sudo-1.8.14.p3-2
+
+Dimensione totale dei pacchetti da scaricare:   0,84 MiB
+Dimensione totale dei pacchetti da installare:  3,46 MiB
+
+:: Vuoi procedere con l'installazione? [S/n] 
+:: Download dei pacchetti in corso...
+ sudo-1.8.14.p3-2-x86_64          863,5 KiB  5,37M/s 00:00 [####################################] 100%
+(1/1) verifica delle chiavi presenti nel portachiavi       [####################################] 100%
+(1/1) verifica dell'integrità dei pacchetti                [####################################] 100%
+(1/1) caricamento dei file dei pacchetti                   [####################################] 100%
+(1/1) controllo dei conflitti in corso                     [####################################] 100%
+(1/1) controllo dello spazio disponibile sul disco         [####################################] 100%
+(1/1) installazione in corso di sudo                       [####################################] 100%
+</code></pre>
+</div>
+
+<p>Il comando sudo legge il contenuto del file <em>/etc/sudoers</em> e da ciò determina
+quali utenti possano eseguire quali comandi.</p>
+
+<p>Per impostazione predefinita soltanto l’utente root può utilizzare il comando
+sudo per eseguire un’azione attraverso un altro utente.</p>
+
+<h3 id="modifica-del-file-sudoers">Modifica del file sudoers</h3>
+
+<p>Per modificare il file /etc/sudoers è <strong>fortemente raccomandato</strong> l’uso del
+comando visudo che avvia l’editor di testo col file di configurazione, ne
+controlla la correttezza e soltanto se non dovesse rilevare errori salverà il
+file modificato.</p>
+
+<p>Se si dovesse decidere di modificare manualmente il file sudoers con un editor
+di testo qualsiasi, se si commettesse qualche errore il comando sudo smetterebbe
+di funzionare fino a quando questi errori non vengano risolti.</p>
+
+<p>Per modificare il file sudoers quindi eseguire il comando visudo che avvierà
+l’editor di testo vi. Chi preferisse utilizzare un editor di testo differente
+come ad esempio nano potrà utilizzare il comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# EDITOR=nano visudo
+</code></pre>
+</div>
+
+<p>All’interno di questo file tutte le righe che iniziano con # sono descrittive.</p>
+
+<p>Scorrendo il file si possono notare le seguenti righe:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>##
+## User privilege specification
+##
+root ALL=(ALL) ALL
+</code></pre>
+</div>
+
+<p>Queste righe appunto definiscono la possibilità dell’utente root di utilizzare
+qualsiasi comando.</p>
+
+<h3 id="aggiunta-di-un-utente-alluso-di-sudo">Aggiunta di un utente all’uso di sudo</h3>
+
+<p>Per concedere all’utente <em>muflone</em> il permesso di utilizzare sudo è possibile
+aggiungere sotto quelle righe:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>muflone ALL=(ALL) ALL
+</code></pre>
+</div>
+
+<p>Salvare il file, uscire dall’editor di testo e passare all’utente muflone.</p>
+
+<p>Eseguendo il comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ sudo id
+
+Questa lezione dovrebbe essere stata impartita dall'amministratore
+di sistema locale. Solitamente equivale a:
+
+    #1) Rispettare la privacy degli altri
+    #2) Pensare prima di digitare
+    #3) Da grandi poteri derivano grandi responsabilità
+
+[sudo] password di muflone: 
+uid=0(root) gid=0(root) gruppi=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),19(log)
+</code></pre>
+</div>
+
+<p>L’avviso iniziale sarà mostrato soltanto la prima volta, quindi verrà chiesta
+la password dell’utente corrente e se fornita, sarà eseguito il comando id con
+l’utente root.</p>
+
+<h3 id="aggiunta-di-un-gruppo-alluso-di-sudo">Aggiunta di un gruppo all’uso di sudo</h3>
+
+<p>In maniera analoga all’aggiunta di un utente all’uso di sudo, è possibile
+aggiungere un
+<a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/utenti-e-gruppi#gruppi-di-utenti">gruppo di utenti</a>
+tutti autorizzati all’uso del comando sudo.</p>
+
+<p>Per convenzione si usa il gruppo wheel per identificare gli utenti autorizzati
+ad operazioni amministrative.</p>
+
+<p>Per configurare sudo all’uso del gruppo wheel basterà aggiungere nel file
+sudoers la riga:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>%wheel ALL=(ALL) ALL
+</code></pre>
+</div>
+
+<p>Quindi <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/utenti-e-gruppi#aggiungere-un-utente-ad-un-gruppo-di-utenti">aggiungere tutti gli utenti interessati al gruppo</a>
+wheel anziché doverli elencare uno per uno nel file sudoers con:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# gpasswd -a muflone wheel
+Aggiunta dell'utente muflone al gruppo wheel
+</code></pre>
+</div>
+
+<p>In questo modo l’utente muflone potrà eseguire qualsiasi comando attraverso sudo.</p>
+
+<h3 id="autorizzare-soltanto-alcuni-comandi">Autorizzare soltanto alcuni comandi</h3>
+
+<p>E’ possibile configurare sudo per permettere agli utenti autorizzati soltanto
+l’uso di alcuni comandi anziché avere l’accesso completo a tutti i permessi
+dell’utente root.</p>
+
+<p>Per configurare i comandi permessi dall’uso di sudo basterà indicarli nel file
+sudoers al posto dell’ultimo ALL. Ad esempio le righe seguenti:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>%wheel ALL=(ALL) /usr/bin/who
+%wheel ALL=(ALL) /usr/bin/whoami
+</code></pre>
+</div>
+
+<p>Permetteranno a tutti i membri del gruppo wheel di eseguire i comandi who e
+whoami mentre l’uso di sudo sarà proibito per tutti gli altri comandi.</p>
+
+<p>In maniera analoga è possibile anche aggiungere argomenti ai richiami permessi,
+in modo che sia permessa all’utente l’esecuzione del comando soltanto con quegli
+argomenti forniti.</p>
+
+<p>Aggiungendo nel file sudoers la riga seguente:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>%wheel ALL=(ALL) /usr/bin/who -b
+</code></pre>
+</div>
+
+<p>Sarà permesso ai membri del gruppo wheel l’uso del comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ sudo who -b
+[sudo] password di muflone: 
+         avvio di sistema 2015-08-02 15:45
+</code></pre>
+</div>
+
+<p>Se lo stesso utente eseguisse il comando sudo who riceverebbe un errore:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ sudo who 
+[sudo] password di muflone: 
+All'utente muflone non è consentito eseguire "/usr/bin/who" come root su arch-lenovo.
+</code></pre>
+</div>
+
+<h3 id="richiesta-della-password-di-sudo">Richiesta della password di sudo</h3>
+
+<p>Dopo l’esecuzione di un comando sudo, la richiesta successiva se formulata entro
+5 minuti, <strong>non</strong> sarà chiesta la password dell’utente poiché sudo tiene conto
+del tempo dall’ultima esecuzione del comando sudo e per 5 minuti non ripete la
+richiesta di password a meno che non sia stato chiuso il terminale o la sessione.</p>
+
+<p>Per configurare il numero di minuti prima della scadenza della password di sudo
+è possibile aggiungere la riga <strong>Defaults timestamp_timeout=MINUTI</strong>, ad esempio:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Defaults timestamp_timeout=1
+</code></pre>
+</div>
+
+<p>Lascerà valida la sessione di sudo per 1 minuto dopo l’esecuzione dell’ultimo
+comando attraverso sudo. In altre parole si avranno 60 secondi di tempo tra un
+comando e l’altro senza che sudo richieda nuovamente la password.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Defaults timestamp_timeout=0
+</code></pre>
+</div>
+
+<p>Configurando un timeout di 0 la password scadrà immediatamente e quindi ad ogni
+uso di sudo verrà nuovamente richiesta la password.</p>
+
+<p>Configurando un timeout di -1 la password invece non scadrà mai fino a quando
+non venga esplicitamente eseguito il comando sudo -k.</p>
+
+<h3 id="omettere-la-richiesta-della-password">Omettere la richiesta della password</h3>
+
+<p>Tramite la configurazione di sudo è anche possibile permettere ad un utente di
+omettere la password quando qualche comando autorizzato viene eseguito.</p>
+
+<p>Aggiungendo al file sudoers, nella specifica dei comandi da eseguire NOPASSWD:
+per tali comandi non verrà chiesta alcuna password.</p>
+
+<p>Si consideri il seguente esempio, nel file sudoers:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>%wheel ALL=(ALL) NOPASSWD: /usr/bin/who -b
+%wheel ALL=(ALL) /usr/bin/whoami
+</code></pre>
+</div>
+
+<p>Agli utenti del gruppo wheel sarà permessa l’esecuzione del comando who -b senza
+alcuna richiesta della password e l’esecuzione del comando who che richiederà
+l’immissione della password.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ sudo -k
+[muflone@arch-lenovo ~]$ sudo who -b
+         avvio di sistema 2015-08-02 15:45
+[muflone@arch-lenovo ~]$ sudo whoami
+[sudo] password di muflone: 
+root
+</code></pre>
+</div>
+
+<p>La prima riga annulla ogni eventuale password in memoria per sudo, la seconda
+esegue il comando who -b senza nessuna richiesta di password, mentre il terzo
+comando esegue whoami per il quale sarà richiesta la password.</p>
+
+<p>Naturalmente se al posto del comando, dopo NOPASSWD: si aggiungesse ALL,
+l’utente verrebbe autorizzato all’uso di qualsiasi comando senza alcuna richiesta
+di password.</p>
+
+<h3 id="configurare-sudo-su-file-separati">Configurare sudo su file separati</h3>
+
+<p>Anziché modificare direttamente il file sudoers è possibile aggiungere dei
+file di configurazione separati, ciascuno con le proprie informazioni.</p>
+
+<p>Questa configurazione permette di mantenere le configurazioni separate dal file
+principale e quindi di tenerle facilmente ben visibili rispetto il file generale.</p>
+
+<p>L’approccio generale è quello di creare dei file tramite visudo all’interno
+della directory /etc/sudoers.d. La sintassi per creare questi file di configurazione
+separati è <strong>visudo -f /etc/sudoers.d/FILE</strong>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# EDITOR=nano visudo -f /etc/sudoers.d/10-groups 
+</code></pre>
+</div>
+
+<p>Quindi aggiungere all’interno del file i gruppi da autorizzare, ad esempio:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>%wheel ALL=(ALL) ALL
+</code></pre>
+</div>
+
+<p>Nota bene: i file di configurazione separati non devono contenere né punti né
+terminare col carattere ~ altrimenti verranno scartati.</p>
+
+<h2 id="conclusioni">Conclusioni</h2>
+
+<p>Le numerose possibilità di configurazione di sudo, per utente, per comando,
+per opzioni, con o senza richiesta di password, offrono molta più flessibilità
+del comando su e soprattutto non richiedono che l’utente debba conoscere la
+password dell’utente root ma gli basterà digitare la propria password.</p>
+
+<p>Ulteriori informazioni sulla configurazione del comando sudo si possono trovare
+nella pagina <a target="_blank" class="external" href="https://wiki.archlinux.org/index.php/Sudo">sudo del wiki</a> di Arch Linux.</p>
+
+
+
+          <hr />
+          <!-- Begin of Google+ block -->
+          <g:plusone size="medium"></g:plusone>
+          <script type="text/javascript">
+            (function() {
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/plusone.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+          </script>
+          <!-- End of Google+ block -->
+          <!-- Begin of Twitter block -->
+          <a href="https://twitter.com/share" class="twitter-share-button" >Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          <!-- End of Twitter block -->
+          <!-- Begin of disqus block -->
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            var disqus_shortname = 'muflone';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          <!-- End of disqus block -->
+
+        </section>
+      </div>
+    </div>
+
+    <!-- Begin of footer block -->
+    <div class="footer">
+      <div id="icons">
+        <a href="/" title="Home">
+          <img src="/resources/home/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/articles" title="Articles">
+          <img src="/resources/articles/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/contacts" title="Muflone">
+          <img src="/resources/contacts/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gespeaker" title="Gespeaker">
+          <img src="/resources/gespeaker/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gwakeonlan" title="gWakeOnLAN">
+          <img src="/resources/gwakeonlan/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gextractwinicons" title="gExtractWinIcons">
+          <img src="/resources/gextractwinicons/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/bluewho" title="BlueWho">
+          <img src="/resources/bluewho/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/cpucompare" title="CPUCompare">
+          <img src="/resources/cpucompare/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gptrace" title="gpTrace">
+          <img src="/resources/gptrace/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gnome-appfolders-manager" title="GNOME AppFolders Manager">
+          <img src="/resources/gnome-appfolders-manager/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gtransmemory" title="gTransMemory">
+          <img src="/resources/gtransmemory/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-builder" title="Remmina Plugin Builder">
+          <img src="/resources/remmina-plugin-builder/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-exec" title="Remmina Plugin Exec">
+          <img src="/resources/remmina-plugin-exec/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-folder" title="Remmina Plugin Folder">
+          <img src="/resources/remmina-plugin-folder/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-open" title="Remmina Plugin Open">
+          <img src="/resources/remmina-plugin-open/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-rdesktop" title="Remmina Plugin RDesktop">
+          <img src="/resources/remmina-plugin-rdesktop/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-teamviewer" title="Remmina Plugin TeamViewer">
+          <img src="/resources/remmina-plugin-teamviewer/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-ultravnc" title="Remmina Plugin UltraVNC">
+          <img src="/resources/remmina-plugin-ultravnc/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-url" title="Remmina Plugin URL">
+          <img src="/resources/remmina-plugin-url/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-webkit" title="Remmina Plugin WebKit">
+          <img src="/resources/remmina-plugin-webkit/icons/android-icon-48x48.png">
+        </a>
+
+      </div>
+      <div>Copyright &copy; 2013-2017
+        <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+        <a href="/" title="Home">Home</a> | 
+        <a href="/english" title="Inglese">
+          <img src="/theme/images/flag-en-16.png">
+          Inglese
+        </a> |
+        <a href="/italian" title="Italiano">
+          <img src="/theme/images/flag-it-16.png">
+          Italiano
+        </a> |
+        <a href="/contacts" title="Contatti">
+          Contatti
+        </a> |
+        <a href="//www.iubenda.com/privacy-policy/939201"
+          target="_blank" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+      </div>
+    </div>
+    <!-- End of footer block -->
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {'message': 'Questo sito web utilizza i cookie per semplificare e personalizzare l\'esperienza di navigazione. I cookie memorizzano informazioni utili sul computer per aiutarci a migliorare l\'efficienza e la rilevanza del nostro sito. In alcuni casi sono essenziali per il corretto funzionamento del sito. L\'accesso a questo sito implica il consenso all\'utilizzo dei cookie.',
+                                        'dismiss': 'Nascondi',
+                                        'learnMore': 'Leggi l\'informativa completa',
+                                        'link': 'https://www.iubenda.com/privacy-policy/939201',
+                                        'theme': 'dark-top'
+                                       };
+    </script>
+    <script type="text/javascript" src="/theme/js/cookieconsent.js"></script>
+    <!-- End Cookie Consent plugin -->
+    <!-- Begin of Google Analytics block -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics block -->
+  </body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="italian">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
+    <title>Articles | Accesso tramite SSH</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/articles/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/articles/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/articles/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/articles/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/articles/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/articles/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/articles/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/articles/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/articles/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/articles/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/articles/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/articles/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/articles/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/font-architects.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
+
+    <link type="text/css" rel="stylesheet" href="/theme/css/offline-copy.css">
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <a href="/articles/italian">
+          <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
+        <h1>Articles</h1>
+        <h2>Accesso tramite SSH</h2>
+        <a href="https://github.com/muflone" target="_blank" class="button">
+          <small>Vedi il progetto su</small>
+          GitHub
+        </a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content" class="article"><div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 12 - Accesso tramite SSH)</div>
+          <hr />
+
+          <div class="articles_pages">
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/index" title="Installare Arch Linux su Lenovo G50-70">Indice</a> | 
+      
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/preparazione-del-sistema" title="Preparazione del sistema">Parte 1</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/connessione-wifi" title="Connessione Wi-Fi">Parte 2</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/partizionamento-del-disco" title="Partizionamento del disco">Parte 3</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/installazione-del-sistema" title="Installazione del sistema">Parte 4</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/installazione-del-gestore-di-avvio" title="Installazione del gestore di avvio">Parte 5</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/funzionamento-di-refind" title="Funzionamento di rEFInd">Parte 6</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/primo-avvio-del-sistema" title="Primo avvio del sistema">Parte 7</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/riconfigurazione-della-wifi" title="Riconfigurazione della connessione Wi-Fi">Parte 8</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/aggiornamento-del-microcode" title="Aggiornamento del microcode">Parte 9</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/pacman" title="Il gestore di pacchetti pacman">Parte 10</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/systemd" title="Il sistema di avvio systemd">Parte 11</a> | 
+            Parte 12 | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/installare-l-ambiente-grafico" title="Installare l'ambiente grafico">Parte 13</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/installare-gnome" title="Installazione di GNOME">Parte 14</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/utenti-e-gruppi" title="Utenti e gruppi di utenti">Parte 15</a> | 
+            <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/accesso-amministrativo" title="Accesso amministrativo con su e sudo">Parte 16</a>
+          </div>
+          <hr />
+
+
+          <p>Se si utilizza un altro dispositivo, sia esso dotato di sistema operativo
+GNU/Linux oppure Microsoft Windows o anche Apple OS X e perfino sistemi mobili
+come Android o iOS, è possibile accedere alla propria installazione tramite
+la rete utilizzando il protocollo <strong><a target="_blank" class="external" href="https://wiki.archlinux.org/index.php/Secure_Shell">Secure Shell</a></strong> (SSH).</p>
+
+<h2 id="installazione-del-servizio-ssh">Installazione del servizio SSH</h2>
+
+<p>Per installare il servizio SSH è necessario installare il pacchetto <strong>openssh</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S openssh
+risoluzione delle dipendenze in corso...
+ricerca dei pacchetti in conflitto in corso...
+
+Pacchetti (4) dnssec-anchors-20150403-1  ldns-1.6.17-2  libedit-20150325_3.1-1  openssh-6.8p1-3
+
+Dimensione totale dei pacchetti da scaricare:   1,20 MiB
+Dimensione totale dei pacchetti da installare:  6,25 MiB
+
+:: Vuoi procedere con l'installazione? [S/n] 
+:: Download dei pacchetti in corso...
+ libedit-20150325_3.1-1-x86_64       92,8 KiB   248K/s 00:00 [####################################] 100%
+ dnssec-anchors-20150403-1-x86_64  1460,0   B  0,00B/s 00:00 [####################################] 100%
+ ldns-1.6.17-2-x86_64               429,6 KiB   223K/s 00:02 [####################################] 100%
+ openssh-6.8p1-3-x86_64             703,0 KiB   222K/s 00:03 [####################################] 100%
+(4/4) verifica delle chiavi presenti nel portachiavi         [####################################] 100%
+(4/4) verifica dell'integrità dei pacchetti                  [####################################] 100%
+(4/4) caricamento dei file dei pacchetti                     [####################################] 100%
+(4/4) controllo dei conflitti in corso                       [####################################] 100%
+(4/4) controllo dello spazio disponibile sul disco           [####################################] 100%
+
+(1/4) installazione di libedit in corso...                   [####################################] 100%
+(1/4) installazione di dnssec-anchors in corso...            [####################################] 100%
+(3/4) installazione di ldns in corso...                      [####################################] 100%
+Dipendenze opzionali di ldns
+    libpcap: ldns-dpa tool
+(4/4) installazione di openssh in corso...                   [####################################] 100%
+Dipendenze opzionali di openssh
+    xorg-xauth: X11 forwarding
+    x11-ssh-askpass: input passphrase in X
+</code></pre>
+</div>
+
+<h2 id="attivazione-del-servizio-ssh">Attivazione del servizio SSH</h2>
+
+<p>Il servizio appena installato non sarà automaticamente avviato né subito né
+dopo il riavvio del sistema.</p>
+
+<p>Per avviare manualmente il servizio SSH è possibile utilizzare
+<a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/systemd">systemd</a>
+e in particolare il comando <em>systemctl start sshd.service</em></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl start sshd.service
+</code></pre>
+</div>
+
+<p>Per avviare automaticamente il servizio SSH dopo ogni avvio del sistema utilizzando
+<strong>systemctl enable sshd.service</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl enable sshd.service
+Created symlink from /etc/systemd/system/multi-user.target.wants/sshd.service to /usr/lib/systemd/sshd.service.
+</code></pre>
+</div>
+
+<p>Dopo l’avvio del servizio SSH, da un’altra postazione, indipendentemente dal
+suo sistema operativo sarà possibile connettersi al nostro sistema Arch Linux
+utilizzando un qualsiasi <a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Comparison_of_SSH_clients">client SSH</a>.</p>
+
+<h3 id="client-ssh-per-microsoft-windows">Client SSH per Microsoft Windows:</h3>
+
+<ul>
+  <li><a target="_blank" class="external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">Putty</a></li>
+  <li><a target="_blank" class="external" href="http://www.bitvise.com/ssh-client">Bitvise SSH Client</a></li>
+  <li><a target="_blank" class="external" href="https://www.vandyke.com/products/securecrt/index.html">SecureCRT</a></li>
+  <li><a target="_blank" class="external" href="http://www.emtec.com/zoc/">ZOC</a></li>
+  <li><a target="_blank" class="external" href="http://choung.net/token2shell/">Token2Shell</a></li>
+</ul>
+
+<h3 id="client-ssh-per-gnulinux">Client SSH per GNU/Linux</h3>
+
+<ul>
+  <li><a target="_blank" class="external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">Putty</a></li>
+  <li><a target="_blank" class="external" href="https://sourceforge.net/projects/pacmanager/">PAC Manager</a></li>
+  <li><a target="_blank" class="external" href="https://www.vandyke.com/products/securecrt/index.html">SecureCRT</a></li>
+  <li>OpenSSH (solo a riga di comando)</li>
+</ul>
+
+<h3 id="client-ssh-per-apple-os-x">Client SSH per Apple OS X</h3>
+
+<ul>
+  <li><a target="_blank" class="external" href="https://www.vandyke.com/products/securecrt/index.html">SecureCRT</a></li>
+  <li><a target="_blank" class="external" href="http://www.emtec.com/zoc/">ZOC</a></li>
+</ul>
+
+<h3 id="client-ssh-per-ios">Client SSH per iOS</h3>
+
+<ul>
+  <li><a target="_blank" class="external" href="https://www.vandyke.com/products/securecrt/index.html">SecureCRT</a></li>
+</ul>
+
+<h3 id="client-ssh-per-android">Client SSH per Android</h3>
+
+<ul>
+  <li><a target="_blank" class="external" href="https://connectbot.org/">ConnectBot</a></li>
+  <li><a target="_blank" class="external" href="https://juicessh.com/">JuiceSSH</a></li>
+</ul>
+
+<h3 id="client-ssh-per-windows-phone">Client SSH per Windows Phone</h3>
+
+<ul>
+  <li><a target="_blank" class="external" href="http://choung.net/token2shell/">Token2Shell</a></li>
+</ul>
+
+<h2 id="recuperare-lindirizzo-ip-della-connessione-di-rete">Recuperare l’indirizzo IP della connessione di rete</h2>
+
+<p>Prima di poter accedere al proprio sistema è necessario conoscere l’indirizzo
+IP che l’installazione di Arch Linux ha ricevuto tramite rete WiFi.</p>
+
+<p>Per conoscere il proprio indirizzo IP utilizzare il comando <strong>ip addr</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# ip addr
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp1s0: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 28:d2:44:cd:25:b7 brd ff:ff:ff:ff:ff:ff
+3: wlp2s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether b0:10:41:a2:ab:87 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.66/24 brd 192.168.1.255 scope global wlp2s0
+       valid_lft forever preferred_lft forever
+    inet6 fda6:d284:bb8b:0:b210:41ff:fea2:ab87/64 scope global mngtmpaddr dynamic 
+       valid_lft 7185sec preferred_lft 1785sec
+    inet6 fe80::b210:41ff:fea2:ab87/64 scope link 
+       valid_lft forever preferred_lft forever
+</code></pre>
+</div>
+
+<p>Saranno mostrati tutti gli indirizzi di tutte le interfacce di rete. Per vedere
+l’indirizzo della sola interfaccia WiFi utilizzare il comando <strong>ip -4 addr show dev wlp2s0</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# ip -4 addr show dev wlp2s0
+3: wlp2s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
+    inet 192.168.1.66/24 brd 192.168.1.255 scope global wlp2s0
+       valid_lft forever preferred_lft forever
+</code></pre>
+</div>
+
+<p>La risposta mostrerà l’indirizzo che la scheda WiFi sta utilizzando, in questo
+caso si tratta di <strong>192.168.1.66</strong>.</p>
+
+<h2 id="accedere-al-proprio-lenovo-utilizzando-la-riga-di-comando">Accedere al proprio Lenovo utilizzando la riga di comando</h2>
+
+<p>E’ possibile accedere al proprio sistema Lenovo utilizzando un’altra distribuzione
+GNU/Linux utilizzando la riga di comando con un semplice comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[muflone@archbox ~]$ ssh root@192.168.1.66
+
+The authenticity of host '192.168.1.66 (192.168.1.66)' can't be established.
+ECDSA key fingerprint is SHA256:deuxH032JgG+OSkTjL+7pY6V3pJCGErcthsG7yxrgQc.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.1.66' (ECDSA) to the list of known hosts.
+root@192.168.1.66's password: 
+
+[root@arch-lenovo ~]# 
+</code></pre>
+</div>
+
+<h2 id="accedere-al-proprio-lenovo-utilizzando-putty">Accedere al proprio Lenovo utilizzando Putty</h2>
+
+<p>Viene mostrato un esempio di accesso al proprio notebook Lenovo utilizzando
+<a target="_blank" class="external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">Putty</a> ma il procedimento è analogo a qualsiasi altro applicativo si decidesse
+di utilizzare.</p>
+
+<p class="center"><img src="/resources/articles/arch-g50-70/putty/putty-1.png" alt="" /></p>
+
+<p>Quando richiesto inserire nel campo <strong>Host Name (or IP Address)</strong> l’indirizzo della
+macchina, nel nostro esempio 192.168.1.66 e cliccare su Open per instaurare
+la connessione.</p>
+
+<p class="center"><img src="/resources/articles/arch-g50-70/putty/putty-2.png" alt="" /></p>
+
+<p>Verrà richiesto di verificare l’identità del server cui ci si connette, cliccare
+su <strong>Accept</strong>.</p>
+
+<p class="center"><img src="/resources/articles/arch-g50-70/putty/putty-3.png" alt="" /></p>
+
+<p>Infine quando verrà richiesto, inserire il nome utente <strong>root</strong> e la password
+decisa in fase di installazione.</p>
+
+<p>Tramite questa sessione di terminale sarà possibile impartire qualsiasi comando
+(non grafico) tramite un’altra postazione di lavoro e eseguire la manutenzione
+del sistema Lenovo attraverso un’altra postazione.</p>
+
+
+
+          <hr />
+          <!-- Begin of Google+ block -->
+          <g:plusone size="medium"></g:plusone>
+          <script type="text/javascript">
+            (function() {
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/plusone.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+          </script>
+          <!-- End of Google+ block -->
+          <!-- Begin of Twitter block -->
+          <a href="https://twitter.com/share" class="twitter-share-button" >Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          <!-- End of Twitter block -->
+          <!-- Begin of disqus block -->
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            var disqus_shortname = 'muflone';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          <!-- End of disqus block -->
+
+        </section>
+      </div>
+    </div>
+
+    <!-- Begin of footer block -->
+    <div class="footer">
+      <div id="icons">
+        <a href="/" title="Home">
+          <img src="/resources/home/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/articles" title="Articles">
+          <img src="/resources/articles/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/contacts" title="Muflone">
+          <img src="/resources/contacts/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gespeaker" title="Gespeaker">
+          <img src="/resources/gespeaker/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gwakeonlan" title="gWakeOnLAN">
+          <img src="/resources/gwakeonlan/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gextractwinicons" title="gExtractWinIcons">
+          <img src="/resources/gextractwinicons/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/bluewho" title="BlueWho">
+          <img src="/resources/bluewho/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/cpucompare" title="CPUCompare">
+          <img src="/resources/cpucompare/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gptrace" title="gpTrace">
+          <img src="/resources/gptrace/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gnome-appfolders-manager" title="GNOME AppFolders Manager">
+          <img src="/resources/gnome-appfolders-manager/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gtransmemory" title="gTransMemory">
+          <img src="/resources/gtransmemory/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-builder" title="Remmina Plugin Builder">
+          <img src="/resources/remmina-plugin-builder/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-exec" title="Remmina Plugin Exec">
+          <img src="/resources/remmina-plugin-exec/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-folder" title="Remmina Plugin Folder">
+          <img src="/resources/remmina-plugin-folder/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-open" title="Remmina Plugin Open">
+          <img src="/resources/remmina-plugin-open/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-rdesktop" title="Remmina Plugin RDesktop">
+          <img src="/resources/remmina-plugin-rdesktop/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-teamviewer" title="Remmina Plugin TeamViewer">
+          <img src="/resources/remmina-plugin-teamviewer/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-ultravnc" title="Remmina Plugin UltraVNC">
+          <img src="/resources/remmina-plugin-ultravnc/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-url" title="Remmina Plugin URL">
+          <img src="/resources/remmina-plugin-url/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-webkit" title="Remmina Plugin WebKit">
+          <img src="/resources/remmina-plugin-webkit/icons/android-icon-48x48.png">
+        </a>
+
+      </div>
+      <div>Copyright &copy; 2013-2017
+        <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+        <a href="/" title="Home">Home</a> | 
+        <a href="/english" title="Inglese">
+          <img src="/theme/images/flag-en-16.png">
+          Inglese
+        </a> |
+        <a href="/italian" title="Italiano">
+          <img src="/theme/images/flag-it-16.png">
+          Italiano
+        </a> |
+        <a href="/contacts" title="Contatti">
+          Contatti
+        </a> |
+        <a href="//www.iubenda.com/privacy-policy/939201"
+          target="_blank" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+      </div>
+    </div>
+    <!-- End of footer block -->
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {'message': 'Questo sito web utilizza i cookie per semplificare e personalizzare l\'esperienza di navigazione. I cookie memorizzano informazioni utili sul computer per aiutarci a migliorare l\'efficienza e la rilevanza del nostro sito. In alcuni casi sono essenziali per il corretto funzionamento del sito. L\'accesso a questo sito implica il consenso all\'utilizzo dei cookie.',
+                                        'dismiss': 'Nascondi',
+                                        'learnMore': 'Leggi l\'informativa completa',
+                                        'link': 'https://www.iubenda.com/privacy-policy/939201',
+                                        'theme': 'dark-top'
+                                       };
+    </script>
+    <script type="text/javascript" src="/theme/js/cookieconsent.js"></script>
+    <!-- End Cookie Consent plugin -->
+    <!-- Begin of Google Analytics block -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics block -->
+  </body>
+</html>
