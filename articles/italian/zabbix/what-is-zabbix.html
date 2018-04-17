@@ -3,8 +3,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosa è Zabbix? Introduzione al sistema di monitoraggio più avanzato e più usato al mondo." />
+    <meta name="keywords" content="zabbix, introduzione, avvisi, monitoraggio, sistemi, web, snmp, ipmi" />
     <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
-    <title>Articles | Zabbix</title>
+    <title>Articles | Introduzione</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/articles/icons/apple-icon-72x72.png">
@@ -29,6 +31,7 @@
     <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
 
+    <link type="text/css" rel="stylesheet" href="/theme/css/offline-copy.css">
   </head>
   <body>
     <header>
@@ -36,7 +39,7 @@
         <a href="/articles/italian">
           <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
         <h1>Articles</h1>
-        <h2>Zabbix</h2>
+        <h2>Introduzione</h2>
         <a href="https://github.com/muflone" target="_blank" class="button">
           <small>Vedi il progetto su</small>
           GitHub
@@ -46,16 +49,102 @@
 
     <div id="content-wrapper">
       <div class="inner clearfix">
-        <section id="main-content">
+        <section id="main-content" class="article">
+          <div class="articles_pages">
+            <a href="/articles/italian/zabbix/index" title="Zabbix">Indice</a> | 
+      
+            Parte 1
+          </div>
+          <hr />
 
-          <!-- Begin of page content section -->
-          
 
-          <!-- End of page content section -->
+          <p class="center"><img src="/resources/articles/zabbix/logo.png" alt="Metrics" /></p>
 
-          <h2><img src="/theme/images/flag-it-16.png">
-            <a href="/articles/italian/zabbix/what-is-zabbix">Introduzione</a></h2>
-          <div class="article_description">Cosa è Zabbix? Introduzione al sistema di monitoraggio più avanzato e più usato al mondo.</div>
+<h1 id="cosa-è-zabbix">Cosa è Zabbix?</h1>
+
+<p><a target="_blank" class="external" href="https://www.zabbix.com/">Zabbix</a> è il più avanzato e completo sistema di monitoraggio di sistemi
+informatici, utilizzando da migliaia di aziende in tutto il mondo.
+<a target="_blank" class="external" href="https://www.zabbix.com/download_sources">Open Source al 100%</a> e <a target="_blank" class="external" href="https://www.zabbix.com/download">rilasciato gratuitamente</a> a
+chiunque voglia utilizzarlo.</p>
+
+<p>Zabbix è altamente scalabile e permette il controllo anche di migliaia di
+dispositivi contemporaneamente, affidandosi ad una infrastruttura client-server
+mista. Gli avvisi possono arrivare direttamente dalle macchine controllate
+oppure possono essere il risultato di controlli eseguiti direttamente dal server.</p>
+
+<p>Sono già numerosissime le aziende che adoperano Zabbix per il controllo dei
+propri sistemi, della rete e delle applicazioni.</p>
+
+<hr />
+<h1 id="cosa-può-fare-zabbix">Cosa può fare Zabbix?</h1>
+
+<p class="center"><img src="/resources/articles/zabbix/metric_collection.svg" alt="Metrics" height="400px" /></p>
+
+<p>Zabbix può controllare:</p>
+
+<ul>
+  <li><strong>Sistemi operativi</strong> come Microsoft Windows, GNU/Linux, Apple OS X, Solaris,
+BSD, AIX</li>
+  <li><strong>Hardware</strong> come server, UPS, NAS, router, switch attraverso SNMP e IPMI</li>
+  <li>Sistemi raggiungibili <strong>via rete</strong> attraverso ICMP, SSH, Telnet e connessioni TCP</li>
+  <li><strong>Macchine virtuali</strong> e <strong>Hypervisor</strong></li>
+  <li><strong>Database</strong></li>
+  <li><strong>Applicazioni</strong> e <strong>servizi Web</strong></li>
+</ul>
+
+<hr />
+<h1 id="come-funziona-zabbix">Come funziona Zabbix?</h1>
+
+<p>Zabbix supporta numerose modalità di controllo delle risorse.</p>
+
+<ul>
+  <li>Per il controllo dei sistemi operativi è possibile installare un software
+chiamato <strong>agente Zabbix</strong>, disponibile per i principali sistemi operativi</li>
+  <li>Per il controllo dei dispositivi hardware è possibile leggere i valori 
+tramite <strong>interfaccia SNMP o IPMI</strong> e recuperare i valori interessati, come ad
+esempio temperature, livelli di consumabili, carica delle batterie, stato di
+salute (naturalmente l’interfaccia SNMP o IPMI deve fornitore questi valori)</li>
+  <li>Controlli via rete come PING o accesso ai servizi di rete possono consentire
+la verifica dello stato di attività</li>
+  <li>Il controllo dei siti internet può basarsi ad esempio sulla velocità di
+risposta o di trasferimento dei dati</li>
+  <li>Ulteriori controlli ad hoc possono essere sviluppati per assicurare il corretto
+funzionamento di un servizio o di un’applicazione</li>
+</ul>
+
+
+
+          <hr />
+          <!-- Begin of Google+ block -->
+          <g:plusone size="medium"></g:plusone>
+          <script type="text/javascript">
+            (function() {
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/plusone.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+          </script>
+          <!-- End of Google+ block -->
+          <!-- Begin of Twitter block -->
+          <a href="https://twitter.com/share" class="twitter-share-button" >Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          <!-- End of Twitter block -->
+          <!-- Begin of disqus block -->
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            var disqus_shortname = 'muflone';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          <!-- End of disqus block -->
+
         </section>
       </div>
     </div>
