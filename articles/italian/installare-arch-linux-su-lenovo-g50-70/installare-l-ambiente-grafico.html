@@ -84,7 +84,7 @@ per il touchpad Synaptics e delle applicazioni di base.</p>
 <p>Il primo dei pacchetti da installare è il server grafico <a target="_blank" class="external" href="https://wiki.archlinux.org/index.php/Xorg">Xorg</a> contenuto in
 <strong>xserver-xorg</strong>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xorg-server
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xorg-server
 risoluzione delle dipendenze in corso...
 :: Ci sono 4 provider disponibili per libgl:
 :: Repository extra
@@ -133,8 +133,7 @@ Dimensione totale dei pacchetti da installare:  121,21 MiB
 
     Old behavior can be restored through Xorg.wrap config file.
     See Xorg.wrap man page (man xorg.wrap).
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="installazione-dei-driver-video-intel">Installazione dei driver video Intel</h2>
 
@@ -142,7 +141,7 @@ Dimensione totale dei pacchetti da installare:  121,21 MiB
 <a target="_blank" class="external" href="https://wiki.archlinux.org/index.php/Intel_graphics">driver Intel</a> per la scheda video integrata, contenuti nel pacchetto
 <strong>xf86-video-intel</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xf86-video-intel
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xf86-video-intel
 risoluzione delle dipendenze in corso...
 ricerca dei pacchetti in conflitto in corso...
 
@@ -183,8 +182,7 @@ Dipendenze opzionali di xf86-video-intel
     libxinerama: for intel-virtual-output
     libxcursor: for intel-virtual-output
     libxtst: for intel-virtual-output
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="installazione-dei-driver-per-il-touchpad">Installazione dei driver per il touchpad</h2>
 
@@ -192,7 +190,7 @@ Dipendenze opzionali di xf86-video-intel
 installare i driver per comandarlo, contenuti nel pacchetto
 <strong>xf86-input-synaptics</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xf86-input-synaptics
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xf86-input-synaptics
 risoluzione delle dipendenze in corso...
 ricerca dei pacchetti in conflitto in corso...
 
@@ -219,8 +217,7 @@ Dimensione totale dei pacchetti da installare:  1,41 MiB
 (3/5) installazione in corso di recordproto                  [####################################] 100%
 (4/5) installazione in corso di libxtst                      [####################################] 100%
 (5/5) installazione in corso di xf86-input-synaptics         [####################################] 100%
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="installazione-dei-programmi-di-base-dellambiente-grafico">Installazione dei programmi di base dell’ambiente grafico</h2>
 
@@ -230,7 +227,7 @@ pertanto installeremo il pacchetto <strong>xorg-xinit</strong> che contiene il c
 <strong>startx</strong> per avviare manualmente l’ambiente grafico e il pacchetto <strong>xterm</strong>
 che contiene un emulatore di terminale molto basilare.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xorg-xinit xterm 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xorg-xinit xterm 
 risoluzione delle dipendenze in corso...
 ricerca dei pacchetti in conflitto in corso...
 
@@ -280,8 +277,7 @@ Dipendenze opzionali di xorg-xinit
 (13/15) installazione in corso di xbitmaps                   [####################################] 100%
 (14/15) installazione in corso di libutempter                [####################################] 100%
 (15/15) installazione in corso di xterm                      [####################################] 100%
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="avvio-del-server-grafico-minimale">Avvio del server grafico minimale</h2>
 
@@ -302,10 +298,9 @@ a sinistra eseguendo il comando <strong>exit</strong>.</p>
 <p>Alla chiusura dell’ambiente grafico si potranno vedere tra i tanti messaggi i
 due seguenti:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/etc/X11/xinit/xinitrc: riga 51: twm: comando non trovato
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/X11/xinit/xinitrc: riga 51: twm: comando non trovato
 /etc/X11/xinit/xinitrc: riga 52: xclock: comando non trovato
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Lo script di avvio (xinitrc) ha provato a richiamare due comandi non ancora
 installati: <strong>twm</strong> (contenuto nel pacchetto xorg-twm) e <strong>xclock</strong> (contenuto
@@ -314,7 +309,7 @@ che permetterà di spostare le finestre di terminale e un orologio.</p>
 
 <p>Installiamo i due pacchetti sopra descritti con:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xorg-twm xorg-xclock
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xorg-twm xorg-xclock
 risoluzione delle dipendenze in corso...
 ricerca dei pacchetti in conflitto in corso...
 
@@ -334,8 +329,7 @@ Dimensione totale dei pacchetti da installare:  0,32 MiB
 (2/2) controllo dello spazio disponibile sul disco           [####################################] 100%
 (1/2) installazione in corso di xorg-twm                     [####################################] 100%
 (2/2) installazione in corso di xorg-xclock                  [####################################] 100%
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Riavviando il server grafico con <strong>startx</strong> si potrà mostrare una situazione
 leggermente diversa dalla precedente.</p>

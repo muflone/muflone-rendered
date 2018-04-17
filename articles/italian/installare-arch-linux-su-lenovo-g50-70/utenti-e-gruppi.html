@@ -90,12 +90,11 @@ a più utenti.</p>
 <p>Per conoscere l’elenco dei gruppi ai quali aggiungere gli utenti è possibile
 utilizzare il comando <strong>getent group</strong>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# getent group
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# getent group
 root:x:0:root
 bin:x:1:root,bin,daemon
 ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>La maggior parte dei gruppi di utenti sono ad uso del sistema mentre alcuni
 gruppi aggiuntivi sono specifici per l’aggiunta di permessi agli utenti extra,
@@ -131,9 +130,8 @@ WiFi o Bluetooth</li>
 <p>Per aggiungere un nuovo utente è possibile utilizzare il comando <strong>useradd</strong> in
 questa maniera:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# useradd -m -g users muflone
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# useradd -m -g users muflone
+</code></pre></div></div>
 
 <p>L’ultimo argomento <strong>muflone</strong> rappresenta il nome del nuovo utente da creare,
 mentre l’argomento <strong>-m</strong> indica di creare una nuova directory home col nome
@@ -143,9 +141,8 @@ l’utente appartiene, in questo caso <strong>users</strong>.</p>
 <p>E’ possibile specificare gruppi di utenti aggiuntivi con l’argomento <strong>-G</strong>,
 ad esempio con:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# useradd -m -g users -G rfkill,systemd-journal muflone
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# useradd -m -g users -G rfkill,systemd-journal muflone
+</code></pre></div></div>
 
 <p>L’utente muflone sarà automaticamente membro del gruppo <strong>users</strong> e dei gruppi
 aggiuntivi <strong>rfkill</strong> (per l’uso del comando rfkill) e <strong>systemd-journal</strong> (per
@@ -156,13 +153,12 @@ la lettura del log di sistema col comando journalctl).</p>
 <p>E’ anche possibile aggiungere in un secondo momento un utente ad un gruppo
 utilizzando il comando <strong>gpasswd --add UTENTE GRUPPO</strong>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# gpasswd --add muflone rfkill
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# gpasswd --add muflone rfkill
 Aggiunta dell'utente muflone al gruppo rfkill
 
 [root@arch-lenovo ~]# gpasswd --add muflone systemd-journal
 Aggiunta dell'utente muflone al gruppo systemd-journal
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Un utente per il sistema viene sempre identificato attraverso il suo UID,
 sebbene molti programmi (come gpasswd ad esempio) richiedono l’uso del suo nome.
@@ -172,22 +168,20 @@ dell’utente, una sorta di descrizione associata a ciascun utente.</p>
 <p>Per cambiare il nome completo dell’utente è possibile utilizzare il comando
 <strong>chfn --full-name “NOME COMPLETO” UTENTE</strong> come ad esempio.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# chfn --full-name "Muflone Ovinis" muflone
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# chfn --full-name "Muflone Ovinis" muflone
 Modifica delle informazioni finger per muflone in corso.
 
 Le informazioni finger sono state modificate.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="verifica-di-un-utente">Verifica di un utente</h2>
 
 <p>Per verificare l’operazione appena eseguita è possibile utilizzare il comando
 <strong>id UTENTE</strong>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# id muflone
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# id muflone
 uid=1000(muflone) gid=100(users) gruppi=100(users),24(rfkill),190(systemd-journal)
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>L’utente muflone avrà un identificativo personale (uid) 1000, un identificativo
 di gruppo (gid) 100 e sarà presente nei gruppi 100 (users), 24 (rfkill) e 190
@@ -196,10 +190,9 @@ di gruppo (gid) 100 e sarà presente nei gruppi 100 (users), 24 (rfkill) e 190
 <p>Per verificare i gruppi cui un utente appartiene è possibile utilizzare il
 comando <strong>groups UTENTE</strong>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# groups muflone
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# groups muflone
 rfkill systemd-journal users
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="cambiare-la-password-di-accesso-di-un-utente">Cambiare la password di accesso di un utente</h2>
 
@@ -208,12 +201,11 @@ rfkill systemd-journal users
 <p>Per assegnare una password di accesso al nuovo utente appena creato si potrà
 utilizzare il comando <strong>passwd UTENTE</strong>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# passwd muflone
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# passwd muflone
 Immettere nuova password UNIX: 
 Reimmettere la nuova password UNIX: 
 passwd: password aggiornata correttamente
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Quando richiesto, digitare la nuova password da assegnare all’utente. <strong>Non
 saranno mostrati asterischi</strong> o altri simboli durante la digitazione per non
@@ -225,10 +217,9 @@ password, confermarla con invio e ridigitarla quando richiesto.</p>
 <p>Per completezza di informazione è possibile eliminare un utente preesistente
 utilizzando il comando <strong>userdel</strong>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# userdel -r muflone
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# userdel -r muflone
 userdel: muflone mail spool (/var/spool/mail/muflone) not found
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>L’argomento <strong>-r</strong> indica l’eliminazione di tutti i dati personali nella
 directory home dell’utente da eliminare. Senza l’argomento -r la directory

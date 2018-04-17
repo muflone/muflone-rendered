@@ -129,14 +129,13 @@ un pacchetto, ma ogni tanto, è un’operazione da eseguire.</p>
 
 <p>Per aggiornare l’elenco dei software nei repository utilizzare il comando:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Sy
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Sy
 :: Sincronizzazione dei database in corso...
  core è aggiornato
  extra è aggiornato
  community                          2,7 MiB   183K/s 00:15 [####################################] 100%
  multilib è aggiornato
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Il gestore pacchetti non scaricherà elenchi che siano già aggiornati, nell’esempio
 sopra soltanto il repository community ha avuto dei cambiamenti ed è stato
@@ -144,14 +143,13 @@ scaricato l’elenco aggiornato.</p>
 
 <p>Per forzare lo scaricamento completo dell’elenco dei repository utilizzare:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Syy
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Syy
 :: Sincronizzazione dei database in corso...
  core è aggiornato                122,3 KiB   192K/s 00:01 [####################################] 100%
  extra è aggiornato              1738,6 KiB   188K/s 00:09 [####################################] 100%
  community                          2,7 MiB   183K/s 00:15 [####################################] 100%
  multilib è aggiornato            125,8 KiB   196K/s 00:01 [####################################] 100%
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="configurare-gli-indirizzi-dei-mirror-dei-repository">Configurare gli indirizzi dei mirror dei repository</h2>
 
@@ -164,24 +162,21 @@ frequenza di aggiornamento (vedere anche la pagina <strong><a target="_blank" cl
 <p>L’installazione di uno o più pacchetti è l’operazione più frequente e 
 fondamentalmente basta il comando</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S pacchetto_1 pacchetto_2
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S pacchetto_1 pacchetto_2
+</code></pre></div></div>
 
 <p>E’ anche possibile combinare l’aggiornamento dei repository con l’installazione
 del pacchetto in un’unica operazione:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Sy pacchetto_1 pacchetto_2
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Sy pacchetto_1 pacchetto_2
+</code></pre></div></div>
 
 <p>Se sono stati abilitati repository aggiuntivi, con versioni multiple (ad esempio
 testing contiene software presenti anche in core o extra, ma più aggiornato) è
 possibile indicare esplicitamente il nome del repository come ad esempio.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S core/pacchetto_1 testing/pacchetto_2
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S core/pacchetto_1 testing/pacchetto_2
+</code></pre></div></div>
 
 <p>I pacchetti di Arch Linux hanno generalmente un nome composto da
 <strong>nome_pacchetto-versione-revisione-architettura.pkg.tar.xz</strong>.</p>
@@ -189,17 +184,15 @@ possibile indicare esplicitamente il nome del repository come ad esempio.</p>
 <p>E’ possibile scaricare in locale un pacchetto per Arch Linux (anche da altri
 siti, non necessariamente repository) ed installarlo con:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -U /percorso/nome_file.pkg.tar.xz
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -U /percorso/nome_file.pkg.tar.xz
+</code></pre></div></div>
 
 <p>E’ anche possibile scaricare direttamente un pacchetto mediante pacman senza
 che vi sia il repository configurato e attivato oppure fuori da repository
 semplicemente indicando il suo indirizzo internet da cui scaricarlo.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -U http://www.sitoweb.it/nome_file.pkg.tar.xz
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -U http://www.sitoweb.it/nome_file.pkg.tar.xz
+</code></pre></div></div>
 
 <h2 id="installazione-o-reinstallazione-di-gruppi-di-pacchetti">Installazione (o reinstallazione) di gruppi di pacchetti</h2>
 
@@ -211,7 +204,7 @@ pacchetti di base all’avvio di un sistema minimale.</p>
 
 <p>Per installare un gruppo di pacchetti basterà semplicemente indicare il suo nome:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S base-devel
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S base-devel
 :: Ci sono 50 membri nel gruppo base:
 
 :: Repository testing
@@ -226,8 +219,7 @@ pacchetti di base all’avvio di un sistema minimale.</p>
    49) which  50) xfsprogs
 
 Digita una selezione (default=tutto): 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Confermando con invio verranno automaticamente installati tutti i pacchetti
 elencati del gruppo, altrimenti sarà possibile indicare i numeri dei singoli
@@ -242,9 +234,8 @@ i pacchetti il cui numero va da X a Y.</p>
 <p>Per disinstallare uno o più pacchetti precedentemente installati è possibile
 utilizzare il comando:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -R pacchetto_1 pacchetto_2
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -R pacchetto_1 pacchetto_2
+</code></pre></div></div>
 
 <p>Se durante l’installazione di pacchetto_1 e pacchetto_2 erano stati installati
 anche altri pacchetti necessari come dipendenze, tali pacchetti non saranno
@@ -253,9 +244,8 @@ automaticamente disinstallati e resteranno quindi installati.</p>
 <p>Per rimuovere anche i pacchetti dipendenti in una sola operazione è possibile
 utilizzare:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Rs pacchetto_1 pacchetto_2
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Rs pacchetto_1 pacchetto_2
+</code></pre></div></div>
 
 <p>In questo modo, tutti i pacchetti che erano stati installati durante l’installazione
 di pacchetto_1 e pacchetto_2, saranno automaticamente rimossi assieme ai due
@@ -267,16 +257,14 @@ pacchetti richiesti.</p>
 che anche il software installato venga periodicamente aggiornato. Per aggiornare
 tutti i pacchetti già installati è possibile utilizzare il comando:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Su
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Su
+</code></pre></div></div>
 
 <p>Oppure combinare in un’unica operazione l’aggiornamento dell’elenco del software
 nei repository con l’aggiornamento dei pacchetti:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Syu
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Syu
+</code></pre></div></div>
 
 <p>Tutti i pacchetti già installati verranno aggiornati all’ultima versione
 presente nei repository.</p>
@@ -286,7 +274,7 @@ presente nei repository.</p>
 <p>Se non si conosce il nome di un pacchetto da installare (o rimuovere) è possibile
 utilizzare la ricerca:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Ss filesystem utilities
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Ss filesystem utilities
 testing/dosfstools 3.0.28-1 [installato]
     DOS filesystem utilities
 core/btrfs-progs 4.0.1-1
@@ -301,15 +289,14 @@ core/xfsprogs 3.2.2-1 (base) [installato]
     XFS filesystem utilities
 extra/ntfs-3g 2015.3.14-1 [installato]
     NTFS filesystem driver and utilities
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Con la ricerca di <em>filesystem</em> e <em>utilities</em> saranno mostrati tutti i pacchetti
 nei repository la cui descrizione contiene entrambe le parole ricercate.</p>
 
 <p>E’ anche possibile limitare la ricerca ai soli pacchetti già installati:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Qs filesystem utilities
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Qs filesystem utilities
 local/dosfstools 3.0.28-1
     DOS filesystem utilities
 local/e2fsprogs 1.42.12-2 (base)
@@ -320,14 +307,13 @@ local/ntfs-3g 2015.3.14-1
     NTFS filesystem driver and utilities
 local/xfsprogs 3.2.2-1 (base)
     XFS filesystem utilities
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="leggere-informazioni-sui-pacchetti">Leggere informazioni sui pacchetti</h2>
 
 <p>E’ possibile recuperare informazioni sui pacchetti già installati con:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Si e2fsprogs
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Si e2fsprogs
 Repository     : core
 Nome           : e2fsprogs
 Versione       : 1.42.12-2
@@ -346,13 +332,12 @@ KiB richiesti  : 3327,00 KiB
 Autore         : Ronald van Haren &lt;ronald@archlinux.org&gt;
 Creato il      : lun 02 mar 2015 16:15:54 CET
 Convalidato da : Somma MD5  Somma SHA256  Firma
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In maniera analoga si possono recuperare informazioni sui pacchetti già
 installati con:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Qi e2fsprogs
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Qi e2fsprogs
 Nome           : e2fsprogs
 Versione       : 1.42.12-2
 Descrizione    : Ext2/3/4 filesystem utilities
@@ -374,8 +359,7 @@ Installato il  : mer 04 mar 2015 16:56:21 CET
 Motivo         : Installato esplicitamente
 Script install : Sì
 Convalidato da : Firma
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>La ricerca locale sui pacchetti già installati mostrerà dettagli aggiuntivi come
 la riga <strong>Richiesto da</strong> che indica che tale pacchetto costituisce una dipendenza
@@ -385,16 +369,15 @@ rimuovere anche tali pacchetti.</p>
 <p>Dato invece un file di pacchetto .pkg.tar.xz già scaricato è possibile eseguire
 la stessa operazione con:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Qpi /var/cache/pacman/pkg/e2fsprogs-1.42.12-2-x86_64.pkg.tar.xz
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Qpi /var/cache/pacman/pkg/e2fsprogs-1.42.12-2-x86_64.pkg.tar.xz
+</code></pre></div></div>
 
 <h2 id="elencare-i-pacchetti-presenti-in-un-repository">Elencare i pacchetti presenti in un repository</h2>
 
 <p>Per conoscere l’elenco dei pacchetti presenti in un determinato repository
 è possibile utilizzare:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Sl core
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Sl core
 core acl 2.2.52-2 [installato]
 core archlinux-keyring 20150605-1 [installato]
 core attr 2.4.47-1 [installato]
@@ -403,14 +386,13 @@ core automake 1.15-1 [installato]
 core b43-fwcutter 019-1
 core bash 4.3.039-1 [installato]
 ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="elencare-i-file-contenuti-in-un-pacchetto">Elencare i file contenuti in un pacchetto</h2>
 
 <p>E’ possibile conoscere l’elenco dei file contenuti in un pacchetto con:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Ql which
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Ql which
 which /usr/
 which /usr/bin/
 which /usr/bin/which
@@ -420,13 +402,12 @@ which /usr/share/info/which.info.gz
 which /usr/share/man/
 which /usr/share/man/man1/
 which /usr/share/man/man1/which.1.gz
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Dato invece un file di pacchetto .pkg.tar.xz già scaricato è possibile eseguire
 la stessa operazione con:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Qpl /var/cache/pacman/pkg/which-2.21-1-x86_64.pkg.tar.xz 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Qpl /var/cache/pacman/pkg/which-2.21-1-x86_64.pkg.tar.xz 
 which /usr/
 which /usr/bin/
 which /usr/bin/which
@@ -436,18 +417,16 @@ which /usr/share/info/which.info.gz
 which /usr/share/man/
 which /usr/share/man/man1/
 which /usr/share/man/man1/which.1.gz
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="conoscere-la-provenienza-di-un-file">Conoscere la provenienza di un file</h2>
 
 <p>Se si conosce il nome di un file è possibile conoscere quale pacchetti sia
 responsabile e l’abbia installato, utilizzando:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Qo /usr/bin/which
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Qo /usr/bin/which
 /usr/bin/which è contenuto in which 2.21-1
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="visualizzare-lelenco-completo-delle-dipendenze-di-un-pacchetto">Visualizzare l’elenco completo delle dipendenze di un pacchetto</h2>
 
@@ -455,7 +434,7 @@ responsabile e l’abbia installato, utilizzando:</p>
 in modo da avere un elenco completo delle dipendenze del pacchetto è possibile
 utilizzare:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pactree which
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pactree which
 which
 ├─glibc
 │ ├─linux-api-headers
@@ -471,13 +450,12 @@ which
   │   │ └─glibc
   │   └─bash provides sh
   └─glibc
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In alternativa è possibile avere l’elenco di tutti i pacchetti senza elementi
 grafici in questa maniera:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pactree -l -u which
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pactree -l -u which
 which
 glibc
 linux-api-headers
@@ -488,8 +466,7 @@ bash
 readline
 ncurses
 gcc-libs
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h1 id="pulire-la-cache-dei-pacchetti">Pulire la cache dei pacchetti</h1>
 
@@ -498,7 +475,7 @@ locale solitamente posta in <strong>/var/cache/pacman/pkg</strong>.</p>
 
 <p>E’ possibile eliminare dalla cache <strong>tutti</strong> i pacchetti scaricati mediante:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Scc
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Scc
 
 Directory della cache: /var/cache/pacman/pkg/
 :: Vuoi rimuovere TUTTI i file dalla cache? [s/N] s
@@ -507,14 +484,13 @@ rimozione di tutti i file dalla cache in corso...
 Directory del database: /var/lib/pacman/
 :: Vuoi rimuovere i repository inutilizzati? [S/n] 
 rimozione dei repository inutilizzati in corso...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In alternativa è possibile escludere dalla cancellazione i pacchetti attualmente
 installati, quindi rimuovere dalla cache soltanto i pacchetti non installati,
 utilizzando:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Sc
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -Sc
 Pacchetti da mantenere:
   Tutti i pacchetti installati localmente
 
@@ -525,8 +501,7 @@ rimozione dei vecchi pacchetti dalla cache in corso...
 Directory del database: /var/lib/pacman/
 :: Vuoi rimuovere i repository inutilizzati? [S/n] 
 rimozione dei repository inutilizzati in corso...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="file-di-configurazione">File di configurazione</h2>
 

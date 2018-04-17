@@ -85,7 +85,7 @@ ogni riavvio verrà nuovamente applicato.</p>
 <p>Per installare l’aggiornamento del Microcode del processore Intel di questo
 computer installare il pacchetto <strong>intel-ucode</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S intel-ucode
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S intel-ucode
 risoluzione delle dipendenze in corso...
 ricerca dei pacchetti in conflitto in corso...
 
@@ -103,51 +103,46 @@ Dimensione totale dei pacchetti da installare:  0,64 MiB
 (1/1) controllo dei conflitti in corso                     [####################################] 100%
 (1/1) controllo dello spazio disponibile sul disco         [####################################] 100%
 (1/1) installazione in corso di intel-ucode                [####################################] 100%
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="attivazione-del-microcode-intel">Attivazione del Microcode Intel</h2>
 
 <p>Per attivare il nuovo Microcode è necessario modificare il file di avvio del
 kernel Linux usato da rEFInd. Si tratta del file <strong>/boot/refind_linux.conf</strong>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# nano /boot/refind_linux.conf
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# nano /boot/refind_linux.conf
+</code></pre></div></div>
 
 <p>Non modificare il valore dopo UUID (qui indicato con xxx), mantenendo quello
 proposto automaticamente e modificare soltanto la prima riga aggiungendo al
 termine <strong>initrd=intel-ucode.img initrd=initramfs-linux.img</strong> come segue:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"Boot with standard options"  "ro root=UUID=xxx   initrd=/intel-ucode.img initrd=/initramfs-linux.img"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Boot with standard options"  "ro root=UUID=xxx   initrd=/intel-ucode.img initrd=/initramfs-linux.img"
 "Boot to single-user mode"    "ro root=UUID=xxx   single"
 "Boot with minimal options"   "ro root=UUID=xxx"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Salvare il file premendo <kbd>Control</kbd>+<kbd>O</kbd>, confermare con invio
 e <kbd>Control</kbd>+<kbd>X</kbd> per uscire dall’editor di testo.</p>
 
 <h2 id="verifica-del-microcode-in-uso">Verifica del Microcode in uso</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# dmesg | grep microcode
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# dmesg | grep microcode
 [    0.419461] microcode: CPU0 sig=0x40651, pf=0x40, revision=0x17
 [    0.419467] microcode: CPU1 sig=0x40651, pf=0x40, revision=0x17
 [    0.419474] microcode: CPU2 sig=0x40651, pf=0x40, revision=0x17
 [    0.419482] microcode: CPU3 sig=0x40651, pf=0x40, revision=0x17
 [    0.419526] microcode: Microcode Update Driver: v2.00 &lt;tigran@aivazian.fsnet.co.uk&gt;, Peter Oruba
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Riavviare il sistema con la nuova impostazione</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl reboot
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl reboot
+</code></pre></div></div>
 
 <p>Verificare nuovamente la versione di Microcode in uso:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# dmesg | grep microcode
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# dmesg | grep microcode
 [    0.000000] CPU0 microcode updated early to revision 0x1c, date = 2014-07-03
 [    0.143357] CPU2 microcode updated early to revision 0x1c, date = 2014-07-03
 [    0.414865] microcode: CPU0 sig=0x40651, pf=0x40, revision=0x1c
@@ -155,8 +150,7 @@ e <kbd>Control</kbd>+<kbd>X</kbd> per uscire dall’editor di testo.</p>
 [    0.414878] microcode: CPU2 sig=0x40651, pf=0x40, revision=0x1c
 [    0.414886] microcode: CPU3 sig=0x40651, pf=0x40, revision=0x1c
 [    0.414931] microcode: Microcode Update Driver: v2.00 &lt;tigran@aivazian.fsnet.co.uk&gt;, Peter Oruba
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Come si può notare la versione del Microcode è stata aggiornata dalla <strong>revisione
 0x17</strong> (ovvero 23) alla <strong>revisione 0x1c</strong> (ovvero 28).</p>

@@ -63,31 +63,28 @@ source code files to be put into a specific folder and compile it with few comma
 <p>The prepare process simply needs the extraction of Remmina Plugin Builder source
 code using:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd "~/folder with the downloaded file"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd "~/folder with the downloaded file"
 mkdir build
 tar xvzf "file name.tar.gz" -C build
 cd build/remmina-plugin-builder-*
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h1 id="compile-the-plugin">Compile the plugin</h1>
 
 <p>Then you need to put the plugin source code into the <strong>remmina-plugin-to-build</strong>
 folder and compile everything using:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cmake -DCMAKE_INSTALL_PREFIX=/usr .
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake -DCMAKE_INSTALL_PREFIX=/usr .
 make
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If the previous commands don’t return any errors you should read something like:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Scanning dependencies of target PLUGIN-NAME
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Scanning dependencies of target PLUGIN-NAME
 [100%] Building C object remmina-plugin-to-build/PLUGIN-NAME/..o
 Linking C shared library PLUGIN-NAME.so
 [100%] Built target PLUGIN-NAME
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The compiled plugin library can be found under
 <strong>remmina-plugin-to-build/PLUGIN-NAME</strong> folder.</p>
@@ -95,28 +92,25 @@ Linking C shared library PLUGIN-NAME.so
 <h1 id="install-the-plugin">Install the plugin</h1>
 
 <p>If you want to automatically install the plugin in your system you can use:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo make install
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo make install
+</code></pre></div></div>
 
 <h1 id="package-the-plugin">Package the plugin</h1>
 
 <p>If you want to package the plugin instead of intall it in your system you can use:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>make DESTDIR=FOLDER install
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make DESTDIR=FOLDER install
+</code></pre></div></div>
 
 <p>You should see something similar to:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[100%] Built target PLUGIN-NAME
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[100%] Built target PLUGIN-NAME
 Install the project...
 -- Install configuration: "Release"
 -- Installing: PACKAGE/usr/lib/remmina/plugins/PLUGIN-NAME.so
 -- Installing: PACKAGE/usr/share/icons/hicolor/16x16/emblems/PLUGIN-NAME.png
 -- Installing: PACKAGE/usr/share/icons/hicolor/22x22/emblems/PLUGIN-NAME.png
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Finally you’ll find the plugin library under the specified destination folder.
 It’s up to you to complete the rest of the package itself.</p>

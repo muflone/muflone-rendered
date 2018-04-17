@@ -139,7 +139,7 @@ solo di emergenza.</p>
 non avviate e quelli avviate che abbiano terminato la loro esecuzione utilizzare
 il comando systemctl.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl
 UNIT                                                 LOAD   ACTIVE SUB       DESCRIPTION
 proc-sys-fs-binfmt_misc.automount                    loaded active waiting   Arbitrary Executable File Formats File System Automount Point
 sys-devices-platform-serial8250-tty-ttyS0.device     loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS0
@@ -150,40 +150,37 @@ dev-hugepages.mount                                  loaded active mounted   Hug
 dev-mqueue.mount                                     loaded active mounted   POSIX Message Queue File System
 home.mount                                           loaded active mounted   /home
 ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Per visualizzare soltanto le unit di un determinato tipo aggiungere --type=TIPO
 come ad esempio:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl --type=service
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl --type=service
 UNIT                                                 LOAD   ACTIVE SUB     DESCRIPTION
 dbus.service                                         loaded active running D-Bus System Message Bus
 getty@tty1.service                                   loaded active running Getty on tty1
 kmod-static-nodes.service                            loaded active exited  Create list of required static device nodes for the current kernel
 netctl@wlp2s0\x2dMLWG2\x2d75F4.service               loaded active exited  Automatically generated profile by wifi-menu
 ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="visualizzare-lelenco-di-tutte-le-unit">Visualizzare l’elenco di tutte le unit</h2>
 
 <p>Per visualizzare tutte le unit caricate incluse quelle inattive che hanno 
 terminato la loro esecuzione utilizzare:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl --all
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl --all
   UNIT                                               LOAD      ACTIVE   SUB       DESCRIPTION
   proc-sys-fs-binfmt_misc.automount                  loaded    active   waiting   Arbitrary Executable File Formats File System Automount Point
 ● org.freedesktop.login1.busname                     not-found inactive dead      org.freedesktop.login1.busname
   dev-cdrom.device                                   loaded    active   plugged   PLDS_DVD-RW_DA8A5SH
   ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Per visualizzare tutte le unit configurate utilizzare, incluse quelle non
 avviate, quelle terminate, quelle non configurate per l’avvio:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl list-unit-files
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl list-unit-files
 
 UNIT FILE                                            STATE 
 proc-sys-fs-binfmt_misc.automount                    static
@@ -195,28 +192,25 @@ sys-kernel-config.mount                              static
 sys-kernel-debug.mount                               static
 tmp.mount                                            static
 ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="ricaricare-lelenco-delle-unit">Ricaricare l’elenco delle unit</h2>
 
 <p>Per ricaricare in memoria l’elenco delle unit, che possono essere state
 cambiate dall’ultimo riavvio, è possibile usare:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl daemon-reload
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl daemon-reload
+</code></pre></div></div>
 
 <h2 id="fermare-una-unit">Fermare una unit</h2>
 
 <p>Se una unit è in esecuzione è possibile interromperne l’esecuzione utilizzando
 <strong>systemctl stop NOME</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl stop logrotate.service
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl stop logrotate.service
 Warning: Stopping logrotate.service, but it can still be activated by:
   logrotate.timer 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Il messaggio avvisa che la unit, sebbene fermata, possa essere nuovamente
 attivata dalla unit logrotate.timer che in determinati momenti può avviare
@@ -226,23 +220,21 @@ la unit logrotate.service.</p>
 
 <p>E’ possibile avviare una unit ferma utilizzando la sintassi: <strong>systemctl start NOME</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl start logrotate.service
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl start logrotate.service
+</code></pre></div></div>
 
 <p>E’ anche possibile eseguire in un’unica operazione il riavvio (ovvero l’interruzione
 e il successivo avvio) di una unit utilizzando la sintassi <strong>systemctl restart NOME</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl restart logrotate.service
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl restart logrotate.service
+</code></pre></div></div>
 
 <h2 id="controllare-lo-stato-di-una-unit">Controllare lo stato di una unit</h2>
 
 <p>Per controllare lo stato di una unit è possibile utilizzare il comando
 <strong>systemctl status NOME</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl status logrotate.service
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl status logrotate.service
 ● logrotate.service - Rotate log files
    Loaded: loaded (/usr/lib/systemd/system/logrotate.service; static; vendor preset: disabled)
    Active: inactive (dead) since gio 2015-06-25 00:00:18 CEST; 13min ago
@@ -251,8 +243,7 @@ e il successivo avvio) di una unit utilizzando la sintassi <strong>systemctl res
 
 giu 25 00:00:16 arch-lenovo systemd[1]: Starting Rotate log files...
 giu 25 00:00:18 arch-lenovo systemd[1]: Started Rotate log files.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Sarà visualizzato il percorso dove è configurata la unit, lo stato predefinito,
 lo stato attuale (loaded inactive), il comando effettivo che la unit controlla,
@@ -261,9 +252,8 @@ il suo PID (Process IDentifier) e un breve log dell’attività della unit.</p>
 <p>Per visualizzare il log completo della unit interessata aggiungere l’argomento
 --full come ad esempio:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl --full status logrotate.service
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl --full status logrotate.service
+</code></pre></div></div>
 
 <h2 id="configurare-lavvio-automatico-di-una-unit">Configurare l’avvio automatico di una unit</h2>
 
@@ -274,10 +264,9 @@ esplicitamente per l’avvio automatico.</p>
 <p>E’ possibile avviare automaticamente una unit utilizzando la sintassi:
 <strong>systemctl enable NOME</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl enable iptables.service
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl enable iptables.service
 Created symlink from /etc/systemd/system/multi-user.target.wants/iptables.service to /usr/lib/systemd/system/iptables.service.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Questa operazione effettivamente crea semplicemente un link simbolico in
 /etc/systemd alla unit interessata, in modo che al prossimo avvio del sistema
@@ -286,40 +275,36 @@ possa essere eseguita automaticamente.</p>
 <p>Per disattivare una unit configurata per l’avvio automatico è possibile utilizzare
 <strong>systemctl disable NOME</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl disable iptables.service 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl disable iptables.service 
 Removed symlink /etc/systemd/system/multi-user.target.wants/iptables.service.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>L’operazione semplicemente elimina il collegamento simbolico da /etc/systemd</p>
 
 <p>Per controllare se una unit sia in avvio automatico è possibile usare:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl is-enabled iptables.service
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl is-enabled iptables.service
 disabled
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="disabilitare-e-riabilitare-una-unit">Disabilitare e riabilitare una unit</h2>
 
 <p>Per disabilitare forzatamente qualsiasi avvio di una unit, sia esso automatico
 sia esso manuale è disponibile il comando <strong>systemctl mask NOME</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl mask iptables.service
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl mask iptables.service
 Created symlink from /etc/systemd/system/iptables.service to /dev/null.
 
 [root@arch-lenovo ~]# systemctl start iptables.service
 Failed to start iptables.service: Unit iptables.service is masked.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Per rimuovere la disabilitazione all’avvio la sintassi invece è:
 <strong>systemctl unmask NOME</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl unmask iptables.service
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl unmask iptables.service
 Removed symlink /etc/systemd/system/iptables.service.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
@@ -331,25 +316,22 @@ Removed symlink /etc/systemd/system/iptables.service.
 
 <p>Per riavviare immediatamente il sistema operativo utilizzare:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl reboot
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl reboot
+</code></pre></div></div>
 
 <h2 id="spegnere-il-sistema">Spegnere il sistema</h2>
 
 <p>Per spegnere immediatamente il sistema:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl poweroff
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl poweroff
+</code></pre></div></div>
 
 <h2 id="mandare-il-sistema-in-sospensione-stand-by">Mandare il sistema in sospensione (stand-by)</h2>
 
 <p>E’ possibile mandare il sistema in sospensione senza spegnerlo utilizzando:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl suspend
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl suspend
+</code></pre></div></div>
 
 <p>Sebbene questa caratteristica sia studiata per il risparmio energetico quando
 il computer non viene utilizzato, il sistema resterà avviato e basterà premere
@@ -362,9 +344,8 @@ dati presenti nella RAM e quindi spegnere il computer. Riavviando il sistema
 verranno recuperati i dati dalla swap e riposizionati in RAM affinché il sistema
 possa riprendere l’esecuzione dove era stato lasciato.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl hibernate
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl hibernate
+</code></pre></div></div>
 
 <p><strong>Nota bene!</strong> Il processo di ibernazione non è esente da errori e determinati
 driver possono bloccare la fase di ibernazione e perfino mandare il sistema in
@@ -384,7 +365,7 @@ quant’altro.</p>
 <p>Per visualizzare l’intero registro di sistema basterà richiamare il comando
 journalctl senza argomenti.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# journalctl
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# journalctl
 
 -- Logs begin at mar 2015-06-16 21:18:01 CEST, end at gio 2015-06-25 00:57:06 CEST. --
 giu 16 21:18:01 arch-lenovo systemd-journal[159]: Runtime journal is using 8.0M (max allowed 293.2M, trying to leave 439.8M free of 2.8G available → current limit 293.2M).
@@ -393,8 +374,7 @@ giu 16 21:18:02 arch-lenovo systemd-journal[159]: Time spent on flushing to /var
 giu 16 21:18:02 arch-lenovo kernel: Initializing cgroup subsys cpuset
 giu 16 21:18:02 arch-lenovo kernel: Initializing cgroup subsys cpu
 giu 16 21:18:02 arch-lenovo kernel: Initializing cgroup subsys cpuacct
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="visualizzare-il-registro-dallultimo-avvio">Visualizzare il registro dall’ultimo avvio</h2>
 
@@ -402,7 +382,7 @@ giu 16 21:18:02 arch-lenovo kernel: Initializing cgroup subsys cpuacct
 registrazioni. E’ possibile visualizzare il registro a partire dall’ultimo
 avvio del sistema utilizzando:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# journalctl --boot
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# journalctl --boot
 
 -- Logs begin at mar 2015-06-16 21:18:01 CEST, end at gio 2015-06-25 00:58:58 CEST. --
 giu 25 00:44:09 arch-lenovo systemd-journal[142]: Runtime journal is using 8.0M (max allowed 293.2M, trying to leave 439.8M free of 2.8G available → current limit 293.2M).
@@ -411,15 +391,14 @@ giu 25 00:44:09 arch-lenovo kernel: CPU0 microcode updated early to revision 0x1
 giu 25 00:44:09 arch-lenovo kernel: Initializing cgroup subsys cpuset
 giu 25 00:44:09 arch-lenovo kernel: Initializing cgroup subsys cpu
 giu 25 00:44:09 arch-lenovo kernel: Initializing cgroup subsys cpuacct
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="visualizzare-il-registro-di-avvii-precedenti">Visualizzare il registro di avvii precedenti</h2>
 
 <p>E’ anche possibile visualizzare la registrazione di un avvio precedente, dapprima
 consultando la lista degli avvii con:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# journalctl --list-boots
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# journalctl --list-boots
 -16 6e0e879d5b644fc9bde271ab5848095a mar 2015-06-16 21:18:01 CEST—mar 2015-06-16 21:21:38 CEST
 -15 6387b2e33020485a84ead68ccb654d30 mer 2015-06-17 20:22:40 CEST—mer 2015-06-17 20:52:39 CEST
 -14 9ad92a9a4d734844a218829513af7a32 mer 2015-06-17 20:52:55 CEST—mer 2015-06-17 20:59:06 CEST
@@ -437,26 +416,24 @@ consultando la lista degli avvii con:</p>
  -2 b3c8357e2c97497180f404ddaaea065b mer 2015-06-24 23:11:42 CEST—gio 2015-06-25 00:41:56 CEST
  -1 bef9b450a4dc43379d9b7e8ee7f78cfe gio 2015-06-25 00:42:15 CEST—gio 2015-06-25 00:43:11 CEST
   0 54eac59386044cb187dc0b50641c70e8 gio 2015-06-25 00:44:09 CEST—gio 2015-06-25 00:58:58 CEST
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Quindi per visualizzare la registrazione di un avvio specifico utilizzare la
 sintassi: <strong>journalctl –boot -NUMERO</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# journalctl --boot -9
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# journalctl --boot -9
 -- Logs begin at mar 2015-06-16 21:18:01 CEST, end at gio 2015-06-25 00:58:58 CEST. --
 giu 24 23:11:42 arch-lenovo systemd-journal[143]: Runtime journal is using 8.0M (max allowed 293.2M, trying to leave 439.8M free of 2.8G available → current limit 293.2M).
 giu 24 23:11:42 arch-lenovo systemd-journal[143]: Runtime journal is using 8.0M (max allowed 293.2M, trying to leave 439.8M free of 2.8G available → current limit 293.2M).
 giu 24 23:11:42 arch-lenovo kernel: CPU0 microcode updated early to revision 0x1c, date = 2014-07-03
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="visualizzare-i-messaggi-di-una-unit">Visualizzare i messaggi di una unit</h2>
 
 <p>Per visualizzare il registro dei messaggi prodotti da una unit specifica è
 possibile utilizzare la sintassi: <strong>journalctl –unit NOME</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# journalctl --unit logrotate.service
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# journalctl --unit logrotate.service
 -- Logs begin at mar 2015-06-16 21:18:01 CEST, end at gio 2015-06-25 00:58:58 CEST. --
 giu 17 20:22:48 arch-lenovo systemd[1]: Starting Rotate log files...
 giu 17 20:22:49 arch-lenovo systemd[1]: Started Rotate log files.
@@ -464,22 +441,20 @@ giu 17 20:22:49 arch-lenovo systemd[1]: Started Rotate log files.
 giu 19 15:46:16 arch-lenovo systemd[1]: Starting Rotate log files...
 giu 19 15:46:16 arch-lenovo systemd[1]: Started Rotate log files.
 ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="visualizzare-i-messaggi-del-kernel">Visualizzare i messaggi del kernel</h2>
 
 <p>Per visualizzare i messaggi del kernel e dei moduli del kernel è possibile
 utilizzare la sintassi <strong>journalctl –dmesg</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# journalctl --dmesg 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# journalctl --dmesg 
 -- Logs begin at mar 2015-06-16 21:18:01 CEST, end at gio 2015-06-25 00:58:58 CEST. --
 giu 25 00:44:09 arch-lenovo kernel: CPU0 microcode updated early to revision 0x1c, date = 2014-07-03
 giu 25 00:44:09 arch-lenovo kernel: Initializing cgroup subsys cpuset
 giu 25 00:44:09 arch-lenovo kernel: Initializing cgroup subsys cpu
 giu 25 00:44:09 arch-lenovo kernel: Initializing cgroup subsys cpuacct
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 

@@ -82,7 +82,7 @@ la rete utilizzando il protocollo <strong><a target="_blank" class="external" hr
 
 <p>Per installare il servizio SSH è necessario installare il pacchetto <strong>openssh</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S openssh
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S openssh
 risoluzione delle dipendenze in corso...
 ricerca dei pacchetti in conflitto in corso...
 
@@ -112,8 +112,7 @@ Dipendenze opzionali di ldns
 Dipendenze opzionali di openssh
     xorg-xauth: X11 forwarding
     x11-ssh-askpass: input passphrase in X
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="attivazione-del-servizio-ssh">Attivazione del servizio SSH</h2>
 
@@ -124,17 +123,15 @@ dopo il riavvio del sistema.</p>
 <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/systemd">systemd</a>
 e in particolare il comando <em>systemctl start sshd.service</em></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl start sshd.service
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl start sshd.service
+</code></pre></div></div>
 
 <p>Per avviare automaticamente il servizio SSH dopo ogni avvio del sistema utilizzando
 <strong>systemctl enable sshd.service</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl enable sshd.service
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl enable sshd.service
 Created symlink from /etc/systemd/system/multi-user.target.wants/sshd.service to /usr/lib/systemd/sshd.service.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Dopo l’avvio del servizio SSH, da un’altra postazione, indipendentemente dal
 suo sistema operativo sarà possibile connettersi al nostro sistema Arch Linux
@@ -192,7 +189,7 @@ IP che l’installazione di Arch Linux ha ricevuto tramite rete WiFi.</p>
 
 <p>Per conoscere il proprio indirizzo IP utilizzare il comando <strong>ip addr</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# ip addr
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# ip addr
 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default 
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -209,18 +206,16 @@ IP che l’installazione di Arch Linux ha ricevuto tramite rete WiFi.</p>
        valid_lft 7185sec preferred_lft 1785sec
     inet6 fe80::b210:41ff:fea2:ab87/64 scope link 
        valid_lft forever preferred_lft forever
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Saranno mostrati tutti gli indirizzi di tutte le interfacce di rete. Per vedere
 l’indirizzo della sola interfaccia WiFi utilizzare il comando <strong>ip -4 addr show dev wlp2s0</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# ip -4 addr show dev wlp2s0
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# ip -4 addr show dev wlp2s0
 3: wlp2s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
     inet 192.168.1.66/24 brd 192.168.1.255 scope global wlp2s0
        valid_lft forever preferred_lft forever
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>La risposta mostrerà l’indirizzo che la scheda WiFi sta utilizzando, in questo
 caso si tratta di <strong>192.168.1.66</strong>.</p>
@@ -230,7 +225,7 @@ caso si tratta di <strong>192.168.1.66</strong>.</p>
 <p>E’ possibile accedere al proprio sistema Lenovo utilizzando un’altra distribuzione
 GNU/Linux utilizzando la riga di comando con un semplice comando:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[muflone@archbox ~]$ ssh root@192.168.1.66
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@archbox ~]$ ssh root@192.168.1.66
 
 The authenticity of host '192.168.1.66 (192.168.1.66)' can't be established.
 ECDSA key fingerprint is SHA256:deuxH032JgG+OSkTjL+7pY6V3pJCGErcthsG7yxrgQc.
@@ -239,8 +234,7 @@ Warning: Permanently added '192.168.1.66' (ECDSA) to the list of known hosts.
 root@192.168.1.66's password: 
 
 [root@arch-lenovo ~]# 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="accedere-al-proprio-lenovo-utilizzando-putty">Accedere al proprio Lenovo utilizzando Putty</h2>
 

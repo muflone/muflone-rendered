@@ -75,9 +75,8 @@ comune all’interno di un file di inclusione.</p>
 <p>Ogni file salvato nella cartella <strong>_include</strong> potrà essere incluso all’interno
 di un’altra pagina o post utilizzando:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">nome_del_file</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include nome_del_file %}
+</code></pre></div></div>
 
 <p>L’intero codice sarà copiato all’interno della pagina come se fosse stato
 scritto all’interno della pagina. Ovviamente il file incluso può avere a sua
@@ -85,7 +84,7 @@ volta altre inclusioni oppure altri tag liquidi.</p>
 
 <p>Se osserviamo il contenuto del file <strong>_layouts/page.html</strong> possiamo vedere:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>---
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 &lt;div class="post"&gt;
@@ -99,12 +98,11 @@ layout: default
   &lt;/article&gt;
 
 &lt;/div&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Il file predefinito <strong>_layouts/post.html</strong> invece contiene:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>---
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 &lt;div class="post"&gt;
@@ -121,8 +119,7 @@ layout: default
   &lt;/article&gt;
 
 &lt;/div&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>I due file sono molto simili, eccetto una singola riga il loro contenuto è il
 medesimo. Questi due file sono degli ottimi candidati per utilizzare un tag di
@@ -137,7 +134,7 @@ controllo per escludere tale riga dalla pagina ottenuta, semplicemente passando
 un argomento al file incluso, quindi creiamo un nuovo file chiamato
 <strong>_include/post_content.html</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div class="post"&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="post"&gt;
 
   &lt;header class="post-header"&gt;
     &lt;h1&gt;{{ page.title }}&lt;/h1&gt;
@@ -153,8 +150,7 @@ un argomento al file incluso, quindi creiamo un nuovo file chiamato
   &lt;/article&gt;
 
 &lt;/div&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Il valore <strong>include.meta_paragraph</strong> sarà passato al file incluso e se tale
 valore sarà vero (<em>true</em>) allora il paragrafo sarà aggiunto alla pagina,
@@ -162,24 +158,22 @@ altrimenti non sarà scritto affatto.</p>
 
 <p>Quindi cambiamo il contenuto del file <strong>_layouts/page.html</strong> in:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>---
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 {% include post_content.html meta_paragraph=false %}
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>All’interno del file incluso <strong>meta_paragraph</strong> diverrà <strong>include.meta_paragraph</strong>
 e sarà controllato per produrre od omettere il paragrafo non comune.</p>
 
 <p>Il file <strong>_layouts/post.html</strong> conterrà invece:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>---
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 {% include post_content.html meta_paragraph=true %}
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Et voilà, entrambi i file adesso sono similari e basta una singola copia del
 codice per gestire entrambe le impaginazioni.</p>

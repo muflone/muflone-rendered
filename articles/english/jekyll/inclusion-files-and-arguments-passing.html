@@ -75,16 +75,15 @@ common code inside an inclusion file.</p>
 <p>Every file saved into the <strong>_include</strong> folder could be included inside any other
 page or post using:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">filename</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include filename %}
+</code></pre></div></div>
 
 <p>The whole code will be copied inside the page as if it was written inside the
 page. Obviously the included file can have other includes or other liquid tags.</p>
 
 <p>If you look at the content of the file <strong>_layouts/page.html</strong> you can see:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>---
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 &lt;div class="post"&gt;
@@ -98,12 +97,11 @@ layout: default
   &lt;/article&gt;
 
 &lt;/div&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The default file <strong>_layouts/post.html</strong> instead contains:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>---
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 &lt;div class="post"&gt;
@@ -120,8 +118,7 @@ layout: default
   &lt;/article&gt;
 
 &lt;/div&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The two files are really similar, except a single line their whole content is
 the same. These two files are optimal candidates to use the inclusion tag with
@@ -134,7 +131,7 @@ automatically be applied to any pages that use the same included file.</p>
 to exclude such line from the rendered page by simply passing an argument to
 the included file, so let’s create a new file called <strong>_include/post_content.html</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div class="post"&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="post"&gt;
 
   &lt;header class="post-header"&gt;
     &lt;h1&gt;{{ page.title }}&lt;/h1&gt;
@@ -150,8 +147,7 @@ the included file, so let’s create a new file called <strong>_include/post_con
   &lt;/article&gt;
 
 &lt;/div&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The <strong>include.meta_paragraph</strong> is a value that will be passed to the included
 file. If the passed value will be true then the paragraph will be added to the
@@ -159,24 +155,22 @@ page else it will not be written at all.</p>
 
 <p>So to change the <strong>_layouts/page.html</strong> file content to:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>---
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 {% include post_content.html meta_paragraph=false %}
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The <strong>meta_paragraph</strong> will become <strong>include.meta_paragraph</strong> inside the
 included file and it will be checked to produce or omit the paragraph.</p>
 
 <p>The <strong>_layouts/post.html</strong> will contain:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>---
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 {% include post_content.html meta_paragraph=true %}
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Et voilà, both files now are similar and a single copy of the code is needed
 to handle both layout pages.</p>

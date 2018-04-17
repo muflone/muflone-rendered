@@ -81,7 +81,7 @@ l’avvio dal nuovo sistema.</p>
 
 <h2 id="installazione-dei-pacchetti-del-sistema-di-base">Installazione dei pacchetti del sistema di base</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>root@archiso ~ # pacstrap /mnt base
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # pacstrap /mnt base
 ==&gt; Creating install root at /mnt
 ==&gt; Installing packages to /mnt
 :: Synchronizing package databases...
@@ -151,8 +151,7 @@ Total Installed Size:  512.80 MiB
   ...
 (123/123) installing xfsprogs                              [####################################] 100%
 pacstrap /mnt base  21.48s user 1.69s system 80% cpu 28.886 total
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="completare-linstallazione-di-base">Completare l’installazione di base</h2>
 
@@ -164,37 +163,33 @@ usate durante la formattazione delle partizioni. In alternativa è possibile
 utilizzare l’argomento <strong>-U</strong> che identifica l’uso degli UUID (Universally
 Unique IDentifier).</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>root@archiso ~ # genfstab -L -p /mnt &gt;&gt; /mnt/etc/fstab 
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # genfstab -L -p /mnt &gt;&gt; /mnt/etc/fstab 
+</code></pre></div></div>
 
 <h2 id="accedere-alla-nuova-root-e-configurare-il-sistema">Accedere alla nuova root e configurare il sistema</h2>
 
 <p>Sarà adesso possibile accedere alla nuova installazione prima del riavvio per
 completare alcune messe a punto iniziali.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>root@archiso ~ # arch-chroot /mnt
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # arch-chroot /mnt
 sh-4.3# 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="configurazione-del-nome-del-computer">Configurazione del nome del computer</h2>
 
 <p>Assegnare quindi un nome al computer, col quale il sistema sarà identificato
 all’interno della rete.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sh-4.3# echo arch-lenovo &gt; /etc/hostname
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# echo arch-lenovo &gt; /etc/hostname
+</code></pre></div></div>
 
 <h2 id="impostazione-del-fuso-orario">Impostazione del fuso orario</h2>
 
 <p>Specificare quindi il fuso orario italiano, in questo caso <strong>Europe/Rome</strong>,
 utile per traslare l’orologio di sistema nell’orario corrente.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sh-4.3# ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
+</code></pre></div></div>
 
 <h2 id="configurazione-del-locale">Configurazione del locale</h2>
 
@@ -208,7 +203,7 @@ togliendo i simboli # per attivare un layout.</p>
 <p>L’istruzione sottostante attiva direttamente la lingua italiana senza dover
 modificare manualmente il file locale.gen.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sh-4.3# sed -i 's/^#it_IT.UTF-8/it_IT.UTF-8/' /etc/locale.gen
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# sed -i 's/^#it_IT.UTF-8/it_IT.UTF-8/' /etc/locale.gen
 
 sh-4.3# echo LANG=it_IT.UTF-8 &gt; /etc/locale.conf
 
@@ -216,17 +211,15 @@ sh-4.3# locale-gen
 Generating locales...
   it_IT.UTF-8... done
 Generation complete.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="configurazione-della-tastiera-italiana">Configurazione della tastiera italiana</h2>
 
 <p>Affinché venga caricata la tastiera lingua italiana ad ogni riavvio è necessario
 indicare il layout di tastiera nel file <strong>/etc/vconsole.conf</strong>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sh-4.3# echo KEYMAP=it &gt; /etc/vconsole.conf
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# echo KEYMAP=it &gt; /etc/vconsole.conf
+</code></pre></div></div>
 
 <h2 id="installazione-dei-pacchetti-per-la-configurazione-di-rete">Installazione dei pacchetti per la configurazione di rete</h2>
 
@@ -236,7 +229,7 @@ strumenti per la
 ma l’installazione minimale non include questi strumenti, per cui è necessario
 installarli esplicitamente.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sh-4.3# pacman -S dialog wpa_supplicant rfkill iw
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# pacman -S dialog wpa_supplicant rfkill iw
 resolving dependencies...
 looking for conflicting packages...
 
@@ -264,8 +257,7 @@ Optional dependencies for wpa_supplicant
     wpa_supplicant_gui: wpa_gui program
 (4/5) installing rfkill
 (5/5) installing iw
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="impostazione-della-password-di-root">Impostazione della password di root</h2>
 
@@ -275,12 +267,11 @@ scrivere la password desiderata e ripeterla. <strong>Non saranno mostrati asteri
 durante la digitazione della password, è necessario scriverla alla cieca quando
 richiesta.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sh-4.3# passwd
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# passwd
 Enter new UNIX password: 
 Retype new UNIX password: 
 passwd: password updated successfully
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <hr />

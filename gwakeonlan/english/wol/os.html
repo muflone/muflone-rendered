@@ -57,25 +57,23 @@ the machine will not turn on even if everything else is done properly.</p>
 
 <p>To check if the network card supports the Wake On LAN then the following command
 can be used:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code># ethtool eth0
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ethtool eth0
 Settings for eth0:
         ....
         Supports Wake-on: pumbg
         Wake-on: d
         .....
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If the <strong>Supports Wake-on</strong> field contains <strong>g</strong> then the Wake On LAN by
 magic-packet can be used:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code># ethtool -s eth0 wol g
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ethtool -s eth0 wol g
 # ethtool eth0
 Settings for eth0:
         ....
         Wake-on: g
         .....
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The command must be performed before the machine shutdown.</p>
 

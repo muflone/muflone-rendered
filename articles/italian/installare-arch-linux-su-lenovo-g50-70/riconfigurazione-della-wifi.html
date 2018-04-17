@@ -75,11 +75,10 @@
 
           <p>Al primo avvio di Arch Linux sarà mostrato soltanto un prompt di accesso:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Arch Linux 4.0.5-1-ARCH (tty1)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Arch Linux 4.0.5-1-ARCH (tty1)
 
 arch-lenovo login:
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Accedere al proprio sistema utilizzando il nome utente <strong>root</strong> e la password
 impostata durante l’<a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/installazione-del-sistema#impostazione-della-password-di-root">installazione del sistema</a>.</p>
@@ -88,7 +87,7 @@ impostata durante l’<a href="/articles/italian/installare-arch-linux-su-lenovo
 <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/connessione-wifi">riconfigurazione della connessione Wi-Fi</a>
 come si è fatto durante la fase di installazione.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# rfkill list wlan
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# rfkill list wlan
 1: ideapad_wlan: Wireless LAN
   Soft blocked: yes
   Hard blocked: no
@@ -100,13 +99,12 @@ come si è fatto durante la fase di installazione.</p>
 
 [root@arch-lenovo ~]# wifi-menu
 Scanning for networks... done
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Seguire la procedura guidata come fatto in precedenza e riconfigurare la rete.
 Al termine eseguire una semplice verifica di navigazione.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# ping -c 4 www.muflone.com
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# ping -c 4 www.muflone.com
 PING muflone.com (198.38.82.4) 56(84) bytes of data.
 64 bytes from mocha3006.mochahost.com (198.38.82.4): icmp_seq=1 ttl=49 time=141 ms
 64 bytes from mocha3006.mochahost.com (198.38.82.4): icmp_seq=2 ttl=49 time=141 ms
@@ -116,8 +114,7 @@ PING muflone.com (198.38.82.4) 56(84) bytes of data.
 --- muflone.com ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 3003ms
 rtt min/avg/max/mdev = 141.060/141.618/143.047/0.829 ms
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Se venisse risposto <strong>unknown host</strong> oppure <strong>no route to host</strong> c’è un problema
 con la connessione Wi-Fi, riprovare la configurazione o verificare i parametri
@@ -130,24 +127,21 @@ che ad ogni avvio non sia necessario riconfigurare la rete.</p>
 <p>Il comando <strong>netctl list</strong> mostrerà il nome del profilo di rete che è stato
 configurato in precedenza.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# netctl list
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# netctl list
   wlp2s0-MLWG2-75F4
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Per attivarlo automaticamente all’avvio del sistema eseguire <strong>netctl enable NOME</strong>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# netctl enable wlp2s0-MLWG2-75F4
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# netctl enable wlp2s0-MLWG2-75F4
 ln -s '/etc/systemd/system/netctl@wlp2s0\x2dMLWG2\x2d75F4.service' '/etc/systemd/system/multi-user.target.wants/netctl@wlp2s0\x2dMLWG2\x2d75F4.service'
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Riavviare quindi il sistema con <strong>reboot</strong> o <strong>systemctl reboot</strong> per verificare
 la corretta riconfigurazione della rete Wi-Fi.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl reboot
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# systemctl reboot
+</code></pre></div></div>
 
 
           <hr />
