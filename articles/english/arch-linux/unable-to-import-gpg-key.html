@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
+    <title>Articles | Unable to import GPG key</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/articles/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/articles/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/articles/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/articles/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/articles/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/articles/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/articles/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/articles/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/articles/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/articles/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/articles/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/articles/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/articles/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/font-architects.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-english.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
+
+    <link type="text/css" rel="stylesheet" href="/theme/css/offline-copy.css">
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <a href="/articles/english">
+          <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
+        <h1>Articles</h1>
+        <h2>Unable to import GPG key</h2>
+        <a href="https://github.com/muflone" target="_blank" class="button">
+          <small>View project on</small>
+          GitHub
+        </a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content" class="article"><div class="title">Unable to import a GPG key during the updates installation</div>
+          <hr />
+
+
+          <blockquote>
+  <blockquote>
+    <blockquote>
+      <p>This guide refers to a particular issue, due to impossibility to import
+a GPG key. This procedure <strong>must not be used</strong> if you simply have a problem
+with a non-existent or an unrecognized GPG key.</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<hr />
+<h1 id="introduction">Introduction</h1>
+
+<p>While trying to update an old Arch Linux installation, I’ve received an issue
+related to an old GPG key:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# pacman -Su
+:: Starting full system upgrade...
+resolving dependencies...
+warning: dependency cycle detected:
+warning: harfbuzz will be installed before its freetype2 dependency
+warning: dependency cycle detected:
+warning: libglvnd will be installed before its mesa dependency
+looking for inter-conflicts...
+
+Packages (235): acl-2.2.52-4  argon2-20171227-3  attr-2.4.47-3  autoconf-2.69-4
+automake-1.15.1-1  bash-4.4.019-1  binutils-2.29.1-3  bison-3.0.4-3  bzip2-1.0.6-7
+ca-certificates-20170307-1 ca-certificates-cacert-20140824-4
+ca-certificates-mozilla-3.36-1  ca-certificates-utils-20170307-1  coreutils-8.29-1
+cracklib-2.9.6-1  cryptsetup-2.0.2-1  curl-7.59.0-2
+...
+
+Total Installed Size:   1311.00 MiB
+Net Upgrade Size:       613.98 MiB
+
+:: Proceed with installation? [Y/n] 
+(221/221) checking keys in keyring                           [################################] 100%
+downloading required keys...
+:: Import PGP key 256/, "Gaetan Bisson &lt;bisson@gaati.org&gt;", created: 1998-03-24? [Y/n] Y
+error: key "Gaetan Bisson &lt;bisson@gaati.org&gt;" could not be imported
+error: required key missing from keyring
+error: failed to commit transaction (unexpected error)
+Errors occurred, no packages were upgraded.
+</code></pre></div></div>
+
+<p>The last 5 lines report an error when importing the GPG key of an Arch Linux
+developer: Gaetan Bisson.</p>
+
+<hr />
+<h1 id="attempts-to-get-around-the-problem">Attempts to get around the problem</h1>
+
+<p>The first attempt was to reinstall the keyring with all the Arch Linux
+developers and maintainers keys:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# pacman -S archlinux-keyring
+resolving dependencies...
+looking for inter-conflicts...
+
+Packages (1): archlinux-keyring-20180404-1
+
+Total Installed Size:   0.90 MiB
+Net Upgrade Size:       0.00 MiB
+
+:: Proceed with installation? [Y/n] 
+(1/1) checking keys in keyring                               [################################] 100%
+(1/1) checking package integrity                             [################################] 100%
+(1/1) loading package files                                  [################################] 100%
+(1/1) checking for file conflicts                            [################################] 100%
+(1/1) checking available disk space                          [################################] 100%
+(1/1) reinstalling archlinux-keyring                         [################################] 100%
+==&gt; Appending keys from archlinux.gpg...
+gpg: key EE2EEEEE: no valid user IDs
+gpg: key B9B7018A: no valid user IDs
+==&gt; Locally signing trusted keys in keyring...
+  -&gt; Locally signing key DDB867B92AA789C165EEFA799B729B06A680C281...
+  -&gt; Locally signing key 0E8B644079F599DFC1DDC3973348882F6AC6A4C2...
+...
+==&gt; Importing owner trust values...
+==&gt; Disabling revoked keys in keyring...
+  -&gt; Disabling key F5A361A3A13554B85E57DDDAAF7EF7873CFD4BB6...
+...
+==&gt; Updating trust database...
+gpg: next trustdb check due at 2018-06-25
+</code></pre></div></div>
+
+<p>After the upgrade of the keys, the error was still there.</p>
+
+<p>Then I’ve tried to manually add the missing key, searching it on the official
+<a target="_blank" class="external" href="https://www.archlinux.org/master-keys/">Arch Linux master keys</a> website.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# pacman-key --recv-key 1A60DC44245D06FEF90623D6EEEEE2EEEE2EEEEE
+gpg: requesting key EE2EEEEE from hkp server pool.sks-keyservers.net
+gpg: key EE2EEEEE: no valid user IDs
+gpg: this may be caused by a missing self-signature
+gpg: Total number processed: 1
+gpg:           w/o user IDs: 1
+==&gt; ERROR: Remote key not fetched correctly from keyserver.
+</code></pre></div></div>
+
+<p>However the error does not go away.</p>
+
+<p>I am then convinced that the keys database (/etc/pacman.d/gnupg) was damaged,
+let’s try to delete and regenerate it with the previous commands, but still no
+luck.</p>
+
+<p>Having found the PGP/GPG key <a target="_blank" class="external" href="https://gaati.org/bisson/?en">on the Bisson website</a>, I’ve downloaded and tried
+to import it:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# curl https://gaati.org/bisson/bisson.gpg | pacman-key -a -
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 20749  100 20749    0     0  19558      0  0:00:01  0:00:01 --:--:-- 19574
+gpg: key EE2EEEEE: no valid user IDs
+==&gt; ERROR: A specified keyfile could not be added to the keyring.
+</code></pre></div></div>
+
+<p>The defect it’s not a matter of keys servers, it’s just the key to have
+something wrong.</p>
+
+<p>The error message is always the same:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg: key EE2EEEEE: no valid user IDs
+</code></pre></div></div>
+
+<p>After a long online search the problem seems due to the fact that the key
+is not self-signed by the author (<a target="_blank" class="external" href="https://gpgtools.tenderapp.com/discussions/problems/31848-adding-self-signature-to-really-old-keys">1</a> and <a target="_blank" class="external" href="https://lists.gt.net/gnupg/users/49624">2</a>) and the only solution seems to
+force gpg to accept the non-self-signed key:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# echo "allow-non-selfsigned-uid" &gt;&gt; /etc/pacman.d/gnupg/gpg.conf
+[root@vboxarch ~]# rm /etc/pacman.d/gnupg/*.gpg
+[root@vboxarch ~]# curl https://gaati.org/bisson/bisson.gpg | pacman-key -a -
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 20749  100 20749    0     0  16781      0  0:00:01  0:00:01 --:--:-- 16787
+gpg: key EE2EEEEE: accepted non self-signed user ID "Gaetan Bisson &lt;gaetan@fenua.org&gt;"
+gpg: key EE2EEEEE: accepted non self-signed user ID "Gaetan Bisson &lt;bisson@gaati.org&gt;"
+gpg: key EE2EEEEE: accepted non self-signed user ID "Gaetan Bisson &lt;bisson@archlinux.org&gt;"
+gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
+gpg: depth: 0  valid:   1  signed:   5  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: depth: 1  valid:   5  signed:  72  trust: 0-, 0q, 0n, 5m, 0f, 0u
+gpg: depth: 2  valid:  72  signed:   8  trust: 72-, 0q, 0n, 0m, 0f, 0u
+gpg: next trustdb check due at 2018-06-25
+==&gt; Updating trust database...
+gpg: next trustdb check due at 2018-06-25
+</code></pre></div></div>
+
+<p>At this point I think to have solved the problem:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# pacman -Su
+</code></pre></div></div>
+
+<p>But unfortunately the issue is always the same.</p>
+
+<hr />
+<h1 id="workaround">Workaround</h1>
+
+<p>The last chance remains to disable the package signatures verification:</p>
+
+<p>Edit the pacman.conf file</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# nano /etc/pacman.conf
+</code></pre></div></div>
+
+<p>And change the line from:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SigLevel = Required DatabaseOptional
+</code></pre></div></div>
+
+<p>to:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SigLevel = Never
+</code></pre></div></div>
+
+<p>The update process will be successful, ignoring the issue with the keys.</p>
+
+<hr />
+<h1 id="conclusion">Conclusion</h1>
+
+<p>After the system update is recommended to restore the <strong>SigLevel</strong> option to
+its default value:
+<code class="highlighter-rouge">Required DatabaseOptional</code></p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <p>In the case of an installation not updated after 2016-04-23 the initial
+ramdisk creation is strongly recommended.<br />
+Otherwise, if you have and old version of pacman without hooks support, this
+procedure will not be executed and the kernel will remain without the support
+ramdisk.</p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>To recreate the initial ramdisk you can use the following command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkinitcpio -p linux
+</code></pre></div></div>
+
+<p>For further information: <a target="_blank" class="external" href="https://www.archlinux.org/news/required-update-to-pacman-501-before-2016-04-23/">Required update to pacman-5.0.1 before 2016-04-23</a>.</p>
+
+
+
+          <hr />
+          <!-- Begin of Google+ block -->
+          <g:plusone size="medium"></g:plusone>
+          <script type="text/javascript">
+            (function() {
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/plusone.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+          </script>
+          <!-- End of Google+ block -->
+          <!-- Begin of Twitter block -->
+          <a href="https://twitter.com/share" class="twitter-share-button" >Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          <!-- End of Twitter block -->
+          <!-- Begin of disqus block -->
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            var disqus_shortname = 'muflone';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          <!-- End of disqus block -->
+
+        </section>
+      </div>
+    </div>
+
+    <!-- Begin of footer block -->
+    <div class="footer">
+      <div id="icons">
+        <a href="/" title="Home">
+          <img src="/resources/home/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/articles" title="Articles">
+          <img src="/resources/articles/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/contacts" title="Muflone">
+          <img src="/resources/contacts/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gespeaker" title="Gespeaker">
+          <img src="/resources/gespeaker/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gwakeonlan" title="gWakeOnLAN">
+          <img src="/resources/gwakeonlan/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gextractwinicons" title="gExtractWinIcons">
+          <img src="/resources/gextractwinicons/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/bluewho" title="BlueWho">
+          <img src="/resources/bluewho/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/cpucompare" title="CPUCompare">
+          <img src="/resources/cpucompare/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gptrace" title="gpTrace">
+          <img src="/resources/gptrace/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gnome-appfolders-manager" title="GNOME AppFolders Manager">
+          <img src="/resources/gnome-appfolders-manager/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/gtransmemory" title="gTransMemory">
+          <img src="/resources/gtransmemory/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-builder" title="Remmina Plugin Builder">
+          <img src="/resources/remmina-plugin-builder/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-exec" title="Remmina Plugin Exec">
+          <img src="/resources/remmina-plugin-exec/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-folder" title="Remmina Plugin Folder">
+          <img src="/resources/remmina-plugin-folder/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-open" title="Remmina Plugin Open">
+          <img src="/resources/remmina-plugin-open/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-rdesktop" title="Remmina Plugin RDesktop">
+          <img src="/resources/remmina-plugin-rdesktop/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-teamviewer" title="Remmina Plugin TeamViewer">
+          <img src="/resources/remmina-plugin-teamviewer/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-ultravnc" title="Remmina Plugin UltraVNC">
+          <img src="/resources/remmina-plugin-ultravnc/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-url" title="Remmina Plugin URL">
+          <img src="/resources/remmina-plugin-url/icons/android-icon-48x48.png">
+        </a>
+
+        <a href="/remmina-plugin-webkit" title="Remmina Plugin WebKit">
+          <img src="/resources/remmina-plugin-webkit/icons/android-icon-48x48.png">
+        </a>
+
+      </div>
+      <div>Copyright &copy; 2013-2017
+        <a href="https://plus.google.com/+FabioCastelli?rel=author">Fabio Castelli</a> |
+        <a href="/" title="Home">Home</a> | 
+        <a href="/english" title="English">
+          <img src="/theme/images/flag-en-16.png">
+          English
+        </a> |
+        <a href="/italian" title="Italian">
+          <img src="/theme/images/flag-it-16.png">
+          Italian
+        </a> |
+        <a href="/contacts" title="Contacts">
+          Contacts
+        </a> |
+        <a href="//www.iubenda.com/privacy-policy/721463"
+          target="_blank" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+      </div>
+    </div>
+    <!-- End of footer block -->
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {'message': 'This website uses cookies to make your browsing experience more convenient and personal. Cookies store useful information on your computer to help us improve the efficiency and relevance of our site for you. In some cases, they are essential to making the site work properly. By accessing this site, you consent to the use of cookies.',
+                                        'dismiss': 'Hide',
+                                        'learnMore': 'More info',
+                                        'link': 'https://www.iubenda.com/privacy-policy/721463',
+                                        'theme': 'dark-top'
+                                       };
+    </script>
+    <script type="text/javascript" src="/theme/js/cookieconsent.js"></script>
+    <!-- End Cookie Consent plugin -->
+    <!-- Begin of Google Analytics block -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics block -->
+  </body>
+</html>
