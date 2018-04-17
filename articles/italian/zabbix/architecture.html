@@ -3,8 +3,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="L'architettura di Zabbix e a cosa serve ciascun componente di Zabbix." />
+    <meta name="keywords" content="zabbix, architettura, componenti, server, web, proxy, agent, client" />
     <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
-    <title>Articles | Zabbix</title>
+    <title>Articles | Architettura</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/articles/icons/apple-icon-72x72.png">
@@ -29,6 +31,7 @@
     <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
 
+    <link type="text/css" rel="stylesheet" href="/theme/css/offline-copy.css">
   </head>
   <body>
     <header>
@@ -36,7 +39,7 @@
         <a href="/articles/italian">
           <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
         <h1>Articles</h1>
-        <h2>Zabbix</h2>
+        <h2>Architettura</h2>
         <a href="https://github.com/muflone" target="_blank" class="button">
           <small>Vedi il progetto su</small>
           GitHub
@@ -46,19 +49,128 @@
 
     <div id="content-wrapper">
       <div class="inner clearfix">
-        <section id="main-content">
+        <section id="main-content" class="article">
+          <div class="articles_pages">
+            <a href="/articles/italian/zabbix/index" title="Zabbix">Indice</a> | 
+      
+            <a href="/articles/italian/zabbix/what-is-zabbix" title="Introduzione">Parte 1</a> | 
+            Parte 2
+          </div>
+          <hr />
 
-          <!-- Begin of page content section -->
-          
 
-          <!-- End of page content section -->
+          <p class="center"><img src="/resources/articles/zabbix/logo.png" alt="Metrics" /></p>
 
-          <h2><img src="/theme/images/flag-it-16.png">
-            <a href="/articles/italian/zabbix/what-is-zabbix">Introduzione</a></h2>
-          <div class="article_description">Cosa è Zabbix? Introduzione al sistema di monitoraggio più avanzato e più usato al mondo.</div>
-          <h2><img src="/theme/images/flag-it-16.png">
-            <a href="/articles/italian/zabbix/architecture">Architettura</a></h2>
-          <div class="article_description">L'architettura di Zabbix e a cosa serve ciascun componente di Zabbix.</div>
+<p><strong>Zabbix</strong> si compone di tante parti, ognuna delle quali con uno scopo preciso e
+necessario ad ottenere l’analisi dei valori dei sistemi controllati.</p>
+
+<p class="center"><img src="/resources/articles/zabbix/security_authentication.svg" alt="Components" height="400px" /></p>
+
+<h1 id="zabbix-server">Zabbix Server</h1>
+
+<p>La parte centrale del sistema Zabbix si occupa di contattare i sistemi remoti
+controllati, di ricevere i valori, di generare gli avvisi e di notificare agli
+amministratori dei sistemi dei problemi emersi.</p>
+
+<p>Dopo che tutti i valori sono stati configurati tramite l’interfaccia Web, è il
+server a svolgere il lavoro quotidiano di controllo dei dispositivi e servizi
+controllati.</p>
+
+<h1 id="zabbix-web">Zabbix Web</h1>
+
+<p>L’interfaccia web di Zabbix Server che consente di configurare il server di
+Zabbix, aggiungere nuovi sistemi da controllare, aggiungere i valori da
+controllare, definire quali valori costituiscano un problema</p>
+
+<h1 id="zabbix-proxy">Zabbix Proxy</h1>
+
+<p>Si tratta di un server speciale, minimale, studiato per distribuire il
+monitoraggio su più sistemi. Sarà poi il proxy ad informare il server dei
+valori e dei problemi rilevati.</p>
+
+<p>La funzione principale del proxy è quella di rendere monitorabili anche risorse
+al di fuori della rete controllata e di permettere di portare il carico di rete
+anziché dal server ai client, dal proxy ai client, che vivranno nello stesso
+segmento di rete.</p>
+
+<h1 id="zabbix-agent">Zabbix Agent</h1>
+
+<p>L’agente è un’applicazione che si installa sui computer da controllare e si
+occupa di informare periodicamente il server o il proxy dei valori rilevati sul
+sistema operativo sul quale è in esecuzione.</p>
+
+<p>L’agente <a target="_blank" class="external" href="https://www.zabbix.com/download_agents">è disponibile</a> per i principali sistemi operativi:</p>
+
+<ul>
+  <li>Microsoft Windows</li>
+  <li>GNU/Linux</li>
+  <li>Apple OS X</li>
+  <li>FreeBSD</li>
+  <li>OpenBSD</li>
+  <li>AIX</li>
+  <li>HP-UX</li>
+  <li>Solaris</li>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <p>Purtroppo al momento non sono disponibili agenti ufficiali per dispositivi
+mobili come Android e iPhone. E’ possibile sponsorizzare lo sviluppo di un
+agente ufficiale per Android
+<a target="_blank" class="external" href="https://www.zabbix.com/development_services">dalla pagina dedicata</a>.</p>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<h1 id="moduli-di-terze-parti">Moduli di terze parti</h1>
+
+<p>Trattandosi di un prodotto <a target="_blank" class="external" href="https://www.zabbix.com/download_sources">Open Source</a>, sono stati sviluppati numerosi moduli
+aggiuntivi che estendono le funzionalità iniziali di Zabbix e permettono anche
+l’integrazione con servizi di terze parti (ad esempio dispositivi o applicazioni
+proprietarie).</p>
+
+<p>Attraverso questo tipo di moduli sono stati sviluppati anche applicazioni per
+dispositivi mobili in modo da permettere l’accesso immediato ai valori di un
+server Zabbix senza utilizzare l’interfaccia Web.</p>
+
+
+
+          <hr />
+          <!-- Begin of Google+ block -->
+          <g:plusone size="medium"></g:plusone>
+          <script type="text/javascript">
+            (function() {
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/plusone.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+          </script>
+          <!-- End of Google+ block -->
+          <!-- Begin of Twitter block -->
+          <a href="https://twitter.com/share" class="twitter-share-button" >Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          <!-- End of Twitter block -->
+          <!-- Begin of disqus block -->
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            var disqus_shortname = 'muflone';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          <!-- End of disqus block -->
+
         </section>
       </div>
     </div>
