@@ -1,2 +1,65 @@
 Options +MultiViews
 AddDefaultCharset utf-8
+
+#####################################################################################################################################
+# Explicit rules for old references (Gespeaker)
+#####################################################################################################################################
+RewriteRule ^gespeaker/italian/mbrola-availability.html$                                    /gespeaker/italian/mbrola_voices/ [R=301,NC,L]
+RewriteRule ^gespeaker/italian/mbrola_voices/availability$                                  /gespeaker/italian/mbrola_voices/ [R=301,NC,L]
+RewriteRule ^it/gespeaker/mbrola-availability/(.*)-(.*)$                                    /gespeaker/italian/mbrola_voices/$1$2 [R=301,NC,L]
+RewriteRule ^it/gespeaker/mbrola-availability/(.*)$                                         /gespeaker/italian/mbrola_voices/$1 [R=301,NC,L]
+RewriteRule ^it/gespeaker/mbrola-availability$                                              /gespeaker/italian/mbrola_voices/ [R=301,NC,L]
+RewriteRule ^gespeaker/italian/mbrola-(.*).html$                                            /gespeaker/italian/mbrola_voices/$1 [R=301,NC,L]
+
+RewriteRule ^gespeaker/english/mbrola-availability.html$                                    /gespeaker/english/mbrola_voices/ [R=301,NC,L]
+RewriteRule ^gespeaker/english/mbrola_voices/availability$                                  /gespeaker/english/mbrola_voices/ [R=301,NC,L]
+RewriteRule ^en/gespeaker/mbrola-availability/(.*)-(.*)$                                    /gespeaker/english/mbrola_voices/$1$2 [R=301,NC,L]
+RewriteRule ^en/gespeaker/mbrola-availability/(.*)$                                         /gespeaker/english/mbrola_voices/$1 [R=301,NC,L]
+RewriteRule ^en/gespeaker/mbrola-availability$                                              /gespeaker/english/mbrola_voices/ [R=301,NC,L]
+RewriteRule ^gespeaker/english/mbrola-(.*).html$                                            /gespeaker/english/mbrola_voices/$1 [R=301,NC,L]
+
+RewriteRule ^Gespeaker$                                                                     /gespeaker
+
+#####################################################################################################################################
+# Explicit rules for old references (gWakeOnLAN)
+#####################################################################################################################################
+RewriteRule ^gwakeonlan/italian/wol_(.*).html$                                              /gwakeonlan/italian/wol/$1 [R=301,NC,L]
+RewriteRule ^gwakeonlan/italian/wol_(.*)$                                                   /gwakeonlan/italian/wol/$1 [R=301,NC,L]
+
+RewriteRule ^gwakeonlan/english/wol_(.*).html$                                              /gwakeonlan/english/wol/$1 [R=301,NC,L]
+RewriteRule ^gwakeonlan/english/wol_(.*)$                                                   /gwakeonlan/english/wol/$1 [R=301,NC,L]
+
+RewriteRule ^gWakeOnLan$                                                                    /gwakeonlan
+RewriteRule ^gWakeOnLAN$                                                                    /gwakeonlan
+
+#####################################################################################################################################
+# Explicit rules for old references (Articles)
+#####################################################################################################################################
+RewriteRule ^en/articles/installare-arch-linux-su-lenovo-g50-70/(.*)                        /articles/italian/installare-arch-linux-su-lenovo-g50-70/$1
+RewriteRule ^en/articles/installare-arch-linux-su-lenovo-g50-70                             /articles/italian/installare-arch-linux-su-lenovo-g50-70
+RewriteRule ^articles/italian/(.*)/installare-arch-linux-su-lenovo-g50-70(.*).html          /articles/italian/installare-arch-linux-su-lenovo-g50-70
+RewriteRule ^user/pages/22.articles/03.installare-arch-linux-su-lenovo-g50-70/(.*)          /articles/italian/installare-arch-linux-su-lenovo-g50-70
+RewriteRule ^articles/english/2014-06-30/pages-and-posts.html                               /articles/english/jekyll/pages-and-posts
+RewriteRule ^articles/english/2014-07-05/inclusion-files-and-arguments-passing.html         /articles/english/jekyll/inclusion-files-and-arguments-passing
+
+#####################################################################################################################################
+# Generic rules
+#####################################################################################################################################
+RewriteRule ^it/(.*)/(.*)/(.*)/(.*)/(.*)$                                                   /$1/italian/$2/$3/$4/$5 [R=301,NC,L]
+RewriteRule ^it/(.*)/(.*)/(.*)/(.*)$                                                        /$1/italian/$2/$3/$4 [R=301,NC,L]
+RewriteRule ^it/(.*)/(.*)/(.*)$                                                             /$1/italian/$2/$3 [R=301,NC,L]
+RewriteRule ^it/(.*)/(.*)$                                                                  /$1/italian/$2 [R=301,NC,L]
+RewriteRule ^it/(.*)$                                                                       /$1/italian [R=301,NC,L]
+RewriteRule ^it$                                                                            /italian [R=301,NC,L]
+RewriteRule ^(.*)/it/(.*).html$                                                             /$1/italian/$2 [R=301,NC,L]
+
+RewriteRule ^en/(.*)/(.*)/(.*)/(.*)/(.*)$                                                   /$1/english/$2/$3/$4/$5 [R=301,NC,L]
+RewriteRule ^en/(.*)/(.*)/(.*)/(.*)$                                                        /$1/english/$2/$3/$4 [R=301,NC,L]
+RewriteRule ^en/(.*)/(.*)/(.*)$                                                             /$1/english/$2/$3 [R=301,NC,L]
+RewriteRule ^en/(.*)/(.*)$                                                                  /$1/english/$2 [R=301,NC,L]
+RewriteRule ^en/(.*)$                                                                       /$1/english [R=301,NC,L]
+RewriteRule ^en$                                                                            /english [R=301,NC,L]
+RewriteRule ^(.*)/en/(.*).html$                                                             /$1/english/$2 [R=301,NC,L]
+
+RewriteRule ^home$                                                                          /
+RewriteRule ^admin$                                                                         /
