@@ -3,10 +3,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="La configurazione iniziale di Zabbix Frontend Web richiede l'inserimento dei dati di accesso del server di database e di Zabbix Server." />
+    <meta name="description" content="Impariamo a conoscere Zabbix Frontend Web, la parte centrale per la configurazione del sistema, degli host, degli avvisi e dei valori da monitorare." />
     <meta name="keywords" content="zabbix, configurazione, setup, web, frontend" />
     <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
-    <title>Articles | Configurazione iniziale di Zabbix Frontend Web</title>
+    <title>Articles | Conoscere Zabbix Frontend Web</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/articles/icons/apple-icon-72x72.png">
@@ -39,7 +39,7 @@
         <a href="/articles/italian">
           <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
         <h1>Articles</h1>
-        <h2>Configurazione iniziale di Zabbix Frontend Web</h2>
+        <h2>Conoscere Zabbix Frontend Web</h2>
         <a href="https://github.com/muflone" target="_blank" class="button">
           <small>Vedi il progetto su</small>
           GitHub
@@ -59,8 +59,8 @@
             <a href="/articles/italian/zabbix/install-from-iso" title="Installazione appliance da file ISO">Parte 4</a> | 
             <a href="/articles/italian/zabbix/install-to-vm" title="Installazione appliance su macchina virtuale">Parte 5</a> | 
             <a href="/articles/italian/zabbix/install-to-arch-linux" title="Installazione su Arch Linux">Parte 6</a> | 
-            Parte 7 | 
-            <a href="/articles/italian/zabbix/frontend-first-view" title="Conoscere Zabbix Frontend Web">Parte 8</a> | 
+            <a href="/articles/italian/zabbix/frontend-setup" title="Configurazione iniziale di Zabbix Frontend Web">Parte 7</a> | 
+            Parte 8 | 
             <a href="/articles/italian/zabbix/definitions" title="Termini e definizioni">Parte 9</a>
           </div>
           <hr />
@@ -68,17 +68,20 @@
 
           <p class="center"><img src="/resources/articles/zabbix/logo.png" alt="Zabbix logo" /></p>
 
+<p>All’accesso di Zabbix Frontend Web saranno chiesti utente e password prima di
+poter visionare l’interfaccia di gestione di Zabbix.</p>
+
+<p class="center"><img src="/resources/articles/zabbix/login.png" alt="Zabbix login" /></p>
+
 <blockquote>
   <blockquote>
     <blockquote>
       <blockquote>
         <blockquote>
           <blockquote>
-            <blockquote>
-              <p>Nel caso di utilizzo della Zabbix Appliance questa procedura non è
-necessaria in quanto Zabbix Frontend Web risulta già configurato automaticamente
-con i dati del database incluso nell’appliance stessa.</p>
-            </blockquote>
+            <p>I dati di accesso predefiniti a Zabbix Frontend Web sono i seguenti:<br />
+<strong>Utente</strong>: Admin<br />
+<strong>Password</strong>: zabbix</p>
           </blockquote>
         </blockquote>
       </blockquote>
@@ -86,76 +89,138 @@ con i dati del database incluso nell’appliance stessa.</p>
   </blockquote>
 </blockquote>
 
-<p>Accedendo al server web di Zabbix Frontend Web all’indirizzo
-<strong>http://indirizzo/zabbix</strong> (oppure http://indirizzo qualora fosse stato
-installato Zabbix sulla radice del server web) verrà mostrata la procedura
-guidata di configurazione.</p>
+<p class="center"><a target="_blank" href="/resources/articles/zabbix/overview/dashboard-initial.png"><img src="/resources/articles/zabbix/overview/dashboard-initial-thumb.png" alt="Dashboard" /></a></p>
 
-<p class="center"><img src="/resources/articles/zabbix/frontend-setup/01.png" alt="Welcome to Zabbix" /></p>
+<p>Al primo accesso sarà mostrata la <strong>Dashboard</strong> predefinita, ovvero un cruscotto
+di controllo dello stato di salute di tutto il sistema, inclusi anche tutti gli
+altri sistemi controllati.</p>
 
-<p>La procedura inizia con una finestra di benvenuti sulla quale si potrà avanzare
-cliccando il pulsante <strong>Next step</strong>.</p>
+<p class="center"><img src="/resources/articles/zabbix/overview/sections.png" alt="Sections" /></p>
 
-<p class="center"><img src="/resources/articles/zabbix/frontend-setup/02.png" alt="Check of pre-requisites" /></p>
+<p>L’area superiore di qualsiasi schermata di Zabbix mostra le sezioni di interesse
+accessibili, suddivise in più sottosezioni.</p>
 
-<p>Successivamente saranno mostrati i requisiti minimi per il funzionamento e i
-valori attuale rilevati. Se non si dovessero riscontrare i requisiti minimi non
-sarà possibile procedere con la configurazione di Zabbix Frontend Web. In tal
-caso si raccomanda di verificare la procedura di installazione e rimediare prima
-di configurare nuovamente Zabbix Frontend Web.</p>
+<p>Ulteriori informazioni sulle sezioni di interesse del frontend possono trovarsi
+<a target="_blank" class="external" href="https://www.zabbix.com/documentation/3.4/manual/web_interface/frontend_sections">nella documentazione ufficiale</a> di Zabbix.</p>
 
-<p class="center"><img src="/resources/articles/zabbix/frontend-setup/03.png" alt="Configure DB connection" /></p>
+<hr />
+<h1 id="monitoring">Monitoring</h1>
 
-<p>Il passaggio principale della configurazione di Zabbix Frontend Web è la
-configurazione della connessione al database e per far ciò è necessario indicare:</p>
+<p>Questa area contiene la visualizzazione degli elementi controllati per il
+monitoraggio.</p>
 
-<ol>
-  <li>Il tipo di database utilizzato (in questo esempio <strong>MySQL</strong>)</li>
-  <li>L’indirizzo del server dove si trova il database (in questo esempio
-<strong>localhost</strong>)</li>
-  <li>Il numero di porta da utilizzare per accedere al database (in questo esempio
-è stato lasciato il valore 0 che fa riferimento alla porta 3306 predefinita
-di MySQL)</li>
-  <li>Il nome del database sul server dei database (in questo esempio <strong>zabbix</strong>)</li>
-  <li>Il nome utente valido per accedere al server e al database (in questo esempio
-<strong>zabbix</strong>)</li>
-  <li>La password di accesso correlata all’utente del server e del database</li>
-</ol>
+<p>Attraverso di essa è possibile visionare lo stato degli avvisi ed è la sezione
+utilizzata da chi si occupa della manutenzione dei sistemi.</p>
 
-<p class="center"><img src="/resources/articles/zabbix/frontend-setup/04.png" alt="Zabbix server details" /></p>
-
-<p>Segue la procedura con l’indicazione dei dati di Zabbix Server:</p>
+<p>All’interno di questa sezione sono presenti le seguenti sottosezioni</p>
 
 <ol>
-  <li>Indicare l’indirizzo del server dove è in esecuzione Zabbix Server (in questo
-esempio <strong>localhost</strong> in quanto Zabbix Frontend Web è in esecuzione sulla
-stessa macchina dove è in esecuzione Zabbix Server)</li>
-  <li>Indicare il numero di porta sulla quale Zabbix Server è in ascolto, la
-porta predefinita di Zabbix Server è 10051</li>
-  <li>Indicare il nome che sarà visualizzato nell’interfaccia web di Zabbix per
-identificare il server controllato (in questo esempio <strong>Zabbix Muflone</strong>)</li>
+  <li><strong>Dashboard</strong>: mostrerà i cruscotti configurati, contenenti grafici e valori
+statistici rapidi per la supervisione d’insieme</li>
+  <li><strong>Problems</strong>: consente di eseguire filtri sui problemi e avvisi attualmente
+esistenti</li>
+  <li><strong>Overview</strong>: mostra una panoramica generale su tutti gli avvisi rilevati,
+un insieme più generale della sottosezione Problems</li>
+  <li><strong>Web</strong>: mostra i grafici e le statistiche delle analisi web, un particolare
+tipo di analisi che confronta le prestazioni dei siti web</li>
+  <li><strong>Latest data</strong>: è la sezione più dettagliata che contiene i valori rilevati
+dalle analisi e mostra i valori come sono stati ricevuti, sia che costituiscano
+o meno un allarme o un avviso</li>
+  <li><strong>Triggers</strong>: contiene gli allarmi (triggers), quelle condizioni che fanno
+scaturire un avviso, una notifica, un processo o un’altra qualsiasi reazione
+in base ai valori ottenuti dalle rilevazioni</li>
+  <li><strong>Graphs</strong>: sono mostrati in essa grafici correlati ai dati ottenuti</li>
+  <li><strong>Screens</strong>: contengono le schermate, ovvero gruppi di grafici e statistiche</li>
+  <li><strong>Maps</strong>: contengono le mappe e gli schemi disegnati che semplificano la
+comprensione della struttura di rete</li>
+  <li><strong>Discovery</strong>: mostra lo stato dell’analisi (discovery) di rete, un processo
+atto a esplorare la rete per scoprire la presenza di nuovi sistemi da
+monitorare</li>
+  <li><strong>Services</strong>: contiene i reparti che possono essere configurati per competenza
+del tipo di avviso o gruppi di sistemi, ciascuno dei quali con il proprio
+livello di SLA basato sul tempo di disservizio</li>
 </ol>
 
-<p class="center"><img src="/resources/articles/zabbix/frontend-setup/05.png" alt="Pre-installation summary" /></p>
+<hr />
+<h1 id="inventory">Inventory</h1>
 
-<p>Prima di avviare la configurazione di Zabbix Frontend Web sarà data un’ultima
-possibilità di visionare i dati immessi.</p>
+<p>L’area dell’inventario contiene un elenco dei sistemi e delle informazioni
+proprie di ogni sistema, come numero di serie, marca, modello.</p>
 
-<p class="center"><img src="/resources/articles/zabbix/frontend-setup/06.png" alt="Install" /></p>
+<p>All’interno di questa sezione sono presenti le seguenti sottosezioni</p>
 
-<p>Se la procedura è andata a buon fine sarà mostrata una schermata di
-congratulazioni che conferma il salvataggio della configurazione nel file
-<em>zabbix.conf.php</em>.</p>
+<ol>
+  <li><strong>Overview</strong>: mostra il conteggio del numero di host raggruppati per tipologia</li>
+  <li><strong>Hosts</strong>: mostra l’intentario degli host identificati</li>
+</ol>
 
-<p>Terminare la procedura guidata cliccando su <strong>Finish</strong>.</p>
+<hr />
+<h1 id="reports">Reports</h1>
 
-<p class="center"><img src="/resources/articles/zabbix/login.png" alt="Zabbix login" /></p>
+<p>L’area dei report contiene dati più sintetici e generali dello stato di tutto
+il sistema e degli host controllati.</p>
 
-<p>Successivamente sarà automaticamente mostrata la finestra di accesso a
-Zabbix Frontend Web.</p>
+<p>All’interno di questa sezione sono presenti le seguenti sottosezioni</p>
 
-<p>La configurazione iniziale è terminata ed è il momento di
-<a href="frontend-first-view">passare ad utilizzare il nostro Zabbix</a>.</p>
+<ol>
+  <li><strong>Status of Zabbix</strong>: mostra informazioni circa lo stato di salute di Zabbix,
+come il numero di sistemi controllati, il numero di utenti e così via</li>
+  <li><strong>Availability report</strong>: mostra lo stato di disponibilità dei servizi
+controllati</li>
+  <li><strong>Triggers top 100</strong>: mostra i primi 100 allarmi scattati, ovvero i primi 100
+avvisi problematici più frequenti</li>
+  <li><strong>Audit</strong>: mostra le modifiche e le configurazioni effettuate dal frontend</li>
+  <li><strong>Action log</strong>: mostra gli avvisi inviati in seguito agli allarmi scattati</li>
+  <li><strong>Notifications</strong>: mostra i totali degli avvisi inviati a ciascun operatore</li>
+</ol>
+
+<hr />
+<h1 id="configuration">Configuration</h1>
+
+<p>L’area della configurazione contiene le informazioni di configurazione di tutto
+il sistema Zabbix, gli host i gruppi, le regole e tutto il resto che fa funzionare
+Zabbix Server per monitorare i sistemi.</p>
+
+<ol>
+  <li><strong>Host groups</strong>: definisce i gruppi di host, al fine di raggruppare gli
+avvisi, gli allarmi, i controlli, anziché ridefinirli per ogni sistema
+controllato</li>
+  <li><strong>Templates</strong>: definisce i modelli che contengono al loro interno i valori
+da controllare, gli allarmi, gli eventi da far scattare, raggruppati in
+maniera logica</li>
+  <li><strong>Hosts</strong>: definisce i sistemi da controllare, agganciando ad essi i modelli
+e i gruppi di host</li>
+  <li><strong>Maintenance</strong>: definisce i periodi di manutenzione e controllo dei gruppi
+di host</li>
+  <li><strong>Actions</strong>: configura le azioni che dovranno scattare allo scattare di
+alcuni eventi, in risposta alla variazione o allo scaturire dei problemi</li>
+  <li><strong>Event correlation</strong>: consente di correlare gli eventi tra loro in modo da
+far scattare operazioni quando due o più eventi vengono correlati tra loro</li>
+  <li><strong>Discovery</strong>: definiscono le regole di scoperta, per l’indagine della rete</li>
+  <li><strong>Services</strong>: definiscono le persone responsabili dei disservizi in maniera
+gerarchica</li>
+</ol>
+
+<hr />
+<h1 id="administration">Administration</h1>
+
+<p>La sezione amministrazione definisce le configurazioni proprie del server Zabbix
+e non riguardano gli host controllati.</p>
+
+<ol>
+  <li><strong>General</strong>: consente di configurare opzioni di carattere generale</li>
+  <li><strong>Proxies</strong>: consente di definire quali sistemi opereranno come Zabbix Proxy
+per il monitoraggio di altri sistemi e centralizzarne sul server i risultati</li>
+  <li><strong>Authentication</strong>: definisce il tipo di autenticazione per gli utenti del
+sistema</li>
+  <li><strong>User groups</strong>: definisce i gruppi di utenti</li>
+  <li><strong>Users</strong>: definisce gli utenti che avranno accesso al sistema</li>
+  <li><strong>Media types</strong>: definisce i media che potranno notificare agli operatori gli
+avvisi ricevuti</li>
+  <li><strong>Scripts</strong>: definisce strumenti aggiuntivi che potranno essere eseguiti su
+richiesta</li>
+  <li><strong>Queue</strong>: mostra la coda delle richieste in attesa di essere elaborate</li>
+</ol>
 
 
 

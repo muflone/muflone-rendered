@@ -3,10 +3,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="La configurazione iniziale di Zabbix Frontend Web richiede l'inserimento dei dati di accesso del server di database e di Zabbix Server." />
-    <meta name="keywords" content="zabbix, configurazione, setup, web, frontend" />
+    <meta name="description" content="I termini e le definizioni utilizzati su Zabbix, fondamentali per capire Zabbix e il suo funzionamento." />
+    <meta name="keywords" content="zabbix, termini, definizioni" />
     <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
-    <title>Articles | Configurazione iniziale di Zabbix Frontend Web</title>
+    <title>Articles | Termini e definizioni</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/articles/icons/apple-icon-72x72.png">
@@ -39,7 +39,7 @@
         <a href="/articles/italian">
           <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
         <h1>Articles</h1>
-        <h2>Configurazione iniziale di Zabbix Frontend Web</h2>
+        <h2>Termini e definizioni</h2>
         <a href="https://github.com/muflone" target="_blank" class="button">
           <small>Vedi il progetto su</small>
           GitHub
@@ -59,103 +59,127 @@
             <a href="/articles/italian/zabbix/install-from-iso" title="Installazione appliance da file ISO">Parte 4</a> | 
             <a href="/articles/italian/zabbix/install-to-vm" title="Installazione appliance su macchina virtuale">Parte 5</a> | 
             <a href="/articles/italian/zabbix/install-to-arch-linux" title="Installazione su Arch Linux">Parte 6</a> | 
-            Parte 7 | 
+            <a href="/articles/italian/zabbix/frontend-setup" title="Configurazione iniziale di Zabbix Frontend Web">Parte 7</a> | 
             <a href="/articles/italian/zabbix/frontend-first-view" title="Conoscere Zabbix Frontend Web">Parte 8</a> | 
-            <a href="/articles/italian/zabbix/definitions" title="Termini e definizioni">Parte 9</a>
+            Parte 9
           </div>
           <hr />
 
 
           <p class="center"><img src="/resources/articles/zabbix/logo.png" alt="Zabbix logo" /></p>
 
-<blockquote>
-  <blockquote>
-    <blockquote>
-      <blockquote>
-        <blockquote>
-          <blockquote>
-            <blockquote>
-              <p>Nel caso di utilizzo della Zabbix Appliance questa procedura non è
-necessaria in quanto Zabbix Frontend Web risulta già configurato automaticamente
-con i dati del database incluso nell’appliance stessa.</p>
-            </blockquote>
-          </blockquote>
-        </blockquote>
-      </blockquote>
-    </blockquote>
-  </blockquote>
-</blockquote>
+<p>Su Zabbix sono utilizzati numerosi termini tecnici che è fondamentale conoscere
+per configurare e capire Zabbix.</p>
 
-<p>Accedendo al server web di Zabbix Frontend Web all’indirizzo
-<strong>http://indirizzo/zabbix</strong> (oppure http://indirizzo qualora fosse stato
-installato Zabbix sulla radice del server web) verrà mostrata la procedura
-guidata di configurazione.</p>
+<p>Ulteriori informazioni possono trovarsi <a target="_blank" class="external" href="https://www.zabbix.com/documentation/3.4/manual/definitions">nella documentazione ufficiale</a>
+di Zabbix.</p>
 
-<p class="center"><img src="/resources/articles/zabbix/frontend-setup/01.png" alt="Welcome to Zabbix" /></p>
+<h1 id="host">Host</h1>
 
-<p>La procedura inizia con una finestra di benvenuti sulla quale si potrà avanzare
-cliccando il pulsante <strong>Next step</strong>.</p>
+<p>Un host (o sistema) è un dispositivo da monitorare, generalmente un computer o
+un altro apparato di rete.</p>
 
-<p class="center"><img src="/resources/articles/zabbix/frontend-setup/02.png" alt="Check of pre-requisites" /></p>
+<h1 id="host-group">Host group</h1>
 
-<p>Successivamente saranno mostrati i requisiti minimi per il funzionamento e i
-valori attuale rilevati. Se non si dovessero riscontrare i requisiti minimi non
-sarà possibile procedere con la configurazione di Zabbix Frontend Web. In tal
-caso si raccomanda di verificare la procedura di installazione e rimediare prima
-di configurare nuovamente Zabbix Frontend Web.</p>
+<p>Un gruppo di host è un raggruppamento logico di uno o più host, la loro
+organizzazione consente di assegnare regole e permessi comuni a tutti i membri
+all’interno di un gruppo, ad esempio tutti i firewall condivideranno le stesse
+regole di monitoraggio.</p>
 
-<p class="center"><img src="/resources/articles/zabbix/frontend-setup/03.png" alt="Configure DB connection" /></p>
+<p>Un singolo host può appartenere contemporaneamente a più host, ad esempio il
+firewall della sede 1 può appartenere contemporaneamente al gruppo Firewall e
+al gruppo Sede 1, in modo da legare gli avvisi ai responsabili della sicurezza
+e il controllo allo staff della sede 1.</p>
 
-<p>Il passaggio principale della configurazione di Zabbix Frontend Web è la
-configurazione della connessione al database e per far ciò è necessario indicare:</p>
+<h1 id="item">Item</h1>
 
-<ol>
-  <li>Il tipo di database utilizzato (in questo esempio <strong>MySQL</strong>)</li>
-  <li>L’indirizzo del server dove si trova il database (in questo esempio
-<strong>localhost</strong>)</li>
-  <li>Il numero di porta da utilizzare per accedere al database (in questo esempio
-è stato lasciato il valore 0 che fa riferimento alla porta 3306 predefinita
-di MySQL)</li>
-  <li>Il nome del database sul server dei database (in questo esempio <strong>zabbix</strong>)</li>
-  <li>Il nome utente valido per accedere al server e al database (in questo esempio
-<strong>zabbix</strong>)</li>
-  <li>La password di accesso correlata all’utente del server e del database</li>
-</ol>
+<p>Un item è un elemento di dati da ricevere dagli host controllati, ad esempio
+il tempo di latenza, la quantità di RAM libera sono item.</p>
 
-<p class="center"><img src="/resources/articles/zabbix/frontend-setup/04.png" alt="Zabbix server details" /></p>
+<h1 id="application">Application</h1>
 
-<p>Segue la procedura con l’indicazione dei dati di Zabbix Server:</p>
+<p>Un raggruppamento logico di uno o più item.</p>
 
-<ol>
-  <li>Indicare l’indirizzo del server dove è in esecuzione Zabbix Server (in questo
-esempio <strong>localhost</strong> in quanto Zabbix Frontend Web è in esecuzione sulla
-stessa macchina dove è in esecuzione Zabbix Server)</li>
-  <li>Indicare il numero di porta sulla quale Zabbix Server è in ascolto, la
-porta predefinita di Zabbix Server è 10051</li>
-  <li>Indicare il nome che sarà visualizzato nell’interfaccia web di Zabbix per
-identificare il server controllato (in questo esempio <strong>Zabbix Muflone</strong>)</li>
-</ol>
+<h1 id="trigger">Trigger</h1>
 
-<p class="center"><img src="/resources/articles/zabbix/frontend-setup/05.png" alt="Pre-installation summary" /></p>
+<p>Un trigger è un allarme, una condizione che si verifica quando i valori di una
+o più item fanno scattare un allarme.</p>
 
-<p>Prima di avviare la configurazione di Zabbix Frontend Web sarà data un’ultima
-possibilità di visionare i dati immessi.</p>
+<p>Il termine allarme non rappresenta necessariamente un avviso (e-mail o telefonata)
+che deve mettere in guardia lo staff che se ne occupa. Un allarme è solo lo
+scaturire di una condizione che può essere normale o anomala.</p>
 
-<p class="center"><img src="/resources/articles/zabbix/frontend-setup/06.png" alt="Install" /></p>
+<h1 id="event">Event</h1>
 
-<p>Se la procedura è andata a buon fine sarà mostrata una schermata di
-congratulazioni che conferma il salvataggio della configurazione nel file
-<em>zabbix.conf.php</em>.</p>
+<p>Un evento è lo scattare di una condizione, ovvero il cambio di stato di un
+allarme (trigger).</p>
 
-<p>Terminare la procedura guidata cliccando su <strong>Finish</strong>.</p>
+<h1 id="problem">Problem</h1>
 
-<p class="center"><img src="/resources/articles/zabbix/login.png" alt="Zabbix login" /></p>
+<p>Un problema è lo stato che un allarme può avere, uno stato specifico che
+identifica il trigger come problematico e da segnalare.</p>
 
-<p>Successivamente sarà automaticamente mostrata la finestra di accesso a
-Zabbix Frontend Web.</p>
+<h1 id="action">Action</h1>
 
-<p>La configurazione iniziale è terminata ed è il momento di
-<a href="frontend-first-view">passare ad utilizzare il nostro Zabbix</a>.</p>
+<p>La conseguenza di un evento può far scattare un’azione, si tratta di un’operazione
+(come una notifica) correlata ad una condizione di un evento.</p>
+
+<h1 id="escalation">Escalation</h1>
+
+<p>La sequenza delle azioni da eseguire al verificarsi di un problema.</p>
+
+<h1 id="media">Media</h1>
+
+<p>Un mezzo di notifica, ad esempio la mail, l’avviso sui log, l’SMS o una
+telefonata sono tutti media di notifica.</p>
+
+<h1 id="notification">Notification</h1>
+
+<p>Un messaggio preconfigurato che viene inoltrato allo staff coi media configurati.</p>
+
+<h1 id="remote-command">Remote command</h1>
+
+<p>Un comando remoto è un’azione che il server può avviare allo scattare di un
+evento.</p>
+
+<h1 id="grafici">Grafici</h1>
+
+<p>Un grafico è la rappresentazione grafica dello storico di un valore, ad esempio
+i singoli tempi di risposta, posti in un piano cartesiano rappresentano il
+grafico dei tempi di risposta.</p>
+
+<h1 id="discovery">Discovery</h1>
+
+<p>La scoperta è un meccanismo di analisi di alcune informazioni, partendo da un
+generico per arrivare al dettaglio presente sul singolo host.</p>
+
+<p>Ad esempio la regola di discovery delle interfacce di rete fa sì che si possano
+sviluppare operazioni su tutte le interfacce disponibili su un host.</p>
+
+<h1 id="template">Template</h1>
+
+<p>I modelli sono contenitori degli elementi precedenti, ad esempio il modello per
+i sistemi operativi GNU/Linux contiene:</p>
+
+<ul>
+  <li>Item di memoria, CPU, tempi e altro</li>
+  <li>Applicazioni memoria, CPU, file system che raggruppano le item precedenti</li>
+  <li>Triggers che scattano quando i tempi di risposta al ping sono elevati oppure
+quando la quantità di memoria libera è inferiore ad una certe percentuale</li>
+  <li>Grafici che uniscono i valori dei tempi di risposta</li>
+  <li>Regole di discovery per file system e per interfacce di rete</li>
+  <li>Collegamenti ad altri template</li>
+</ul>
+
+<p>I template consentono di definire le regole di analisi in maniera raggruppata,
+da applicare ad un singolo host o gruppi di host. In questo modo si semplifica
+l’assegnazione delle informazioni agli host.</p>
+
+<h1 id="web-scenario">Web scenario</h1>
+
+<p>Gli scenari web si compongono di richieste HTTP atte a indagare lo stato di
+salute di un servizio web. L’unione di queste richieste HTTP svilupperà poi un
+grafico.</p>
 
 
 
