@@ -3,10 +3,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Cosa è Zabbix? Introduzione al sistema di monitoraggio più avanzato e più usato al mondo." />
-    <meta name="keywords" content="zabbix, introduzione, avvisi, monitoraggio, sistemi, web, snmp, ipmi" />
+    <meta name="description" content="Installare Zabbix Appliance su macchina virtuale è possibile utilizzando un modello già pronto da scaricare e semplicemente importare nel virtualizzatore preferito." />
+    <meta name="keywords" content="zabbix, installazione, appliance, virtual, machine, vm, download, ovf" />
     <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
-    <title>Articles | Introduzione</title>
+    <title>Articles | Installazione appliance su macchina virtuale</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/articles/icons/apple-icon-72x72.png">
@@ -39,7 +39,7 @@
         <a href="/articles/italian">
           <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
         <h1>Articles</h1>
-        <h2>Introduzione</h2>
+        <h2>Installazione appliance su macchina virtuale</h2>
         <a href="https://github.com/muflone" target="_blank" class="button">
           <small>Vedi il progetto su</small>
           GitHub
@@ -53,11 +53,11 @@
           <div class="articles_pages">
             <a href="/articles/italian/zabbix/index" title="Zabbix">Indice</a> | 
       
-            Parte 1 | 
+            <a href="/articles/italian/zabbix/what-is-zabbix" title="Introduzione">Parte 1</a> | 
             <a href="/articles/italian/zabbix/architecture" title="Architettura">Parte 2</a> | 
             <a href="/articles/italian/zabbix/install" title="Installazione">Parte 3</a> | 
             <a href="/articles/italian/zabbix/install-from-iso" title="Installazione appliance da file ISO">Parte 4</a> | 
-            <a href="/articles/italian/zabbix/install-to-vm" title="Installazione appliance su macchina virtuale">Parte 5</a> | 
+            Parte 5 | 
             <a href="/articles/italian/zabbix/install-to-arch-linux" title="Installazione su Arch Linux">Parte 6</a> | 
             <a href="/articles/italian/zabbix/frontend-setup" title="Configurazione iniziale di Zabbix Frontend Web">Parte 7</a>
           </div>
@@ -66,57 +66,126 @@
 
           <p class="center"><img src="/resources/articles/zabbix/logo.png" alt="Zabbix logo" /></p>
 
-<h1 id="cosa-è-zabbix">Cosa è Zabbix?</h1>
+<p>Alla pagina <a target="_blank" class="external" href="https://www.zabbix.com/download_appliance">Download and install Zabbix</a> è possibile
+scaricare una Zabbix Appliance in uno dei tanti formati.</p>
 
-<p><a target="_blank" class="external" href="https://www.zabbix.com/">Zabbix</a> è il più avanzato e completo sistema di monitoraggio di sistemi
-informatici, utilizzando da migliaia di aziende in tutto il mondo.
-<a target="_blank" class="external" href="https://www.zabbix.com/download_sources">Open Source al 100%</a> e <a target="_blank" class="external" href="https://www.zabbix.com/download">rilasciato gratuitamente</a> a
-chiunque voglia utilizzarlo.</p>
-
-<p>Zabbix è altamente scalabile e permette il controllo anche di migliaia di
-dispositivi contemporaneamente, affidandosi ad una infrastruttura client-server
-mista. Gli avvisi possono arrivare direttamente dalle macchine controllate
-oppure possono essere il risultato di controlli eseguiti direttamente dal server.</p>
-
-<p>Sono già numerosissime le aziende che adoperano Zabbix per il controllo dei
-propri sistemi, della rete e delle applicazioni.</p>
-
-<hr />
-<h1 id="cosa-può-fare-zabbix">Cosa può fare Zabbix?</h1>
-
-<p class="center"><img src="/resources/articles/zabbix/metric_collection.svg" alt="Metrics" height="400px" /></p>
-
-<p>Zabbix può controllare:</p>
+<p>Per installare Zabbix Appliance in una macchina virtuale si può utilizzare un
+file immagine pronto da scaricare, nel formato che più si adatta all’Hypervisor
+in uso. I formati disponibili sono:</p>
 
 <ul>
-  <li><strong>Sistemi operativi</strong> come Microsoft Windows, GNU/Linux, Apple OS X, Solaris,
-BSD, AIX</li>
-  <li><strong>Hardware</strong> come server, UPS, NAS, router, switch attraverso SNMP e IPMI</li>
-  <li>Sistemi raggiungibili <strong>via rete</strong> attraverso ICMP, SSH, Telnet e connessioni TCP</li>
-  <li><strong>Macchine virtuali</strong> e <strong>Hypervisor</strong></li>
-  <li><strong>Database</strong></li>
-  <li><strong>Applicazioni</strong> e <strong>servizi Web</strong></li>
+  <li>KVM, QEMU (.qcow2)</li>
+  <li>KVM, Parallels, QEMU, USB stick, VirtualBox, Xen (.raw)</li>
+  <li>Open virtualization format (.ovf)</li>
+  <li>Microsoft Azure</li>
+  <li>Microsoft Hyper-V 2008</li>
+  <li>Microsoft Hyper-V 2012</li>
+  <li>VirtualBox, VMWare (.vmdk)</li>
 </ul>
 
-<hr />
-<h1 id="come-funziona-zabbix">Come funziona Zabbix?</h1>
+<p>I formati <strong>.qcow2, .raw e .vmdk</strong> contengono soltanto i dischi della
+Zabbix Appliance, per cui è necessario configurare/creare la macchina virtuale
+manuale e aggiungere i dischi scaricati.</p>
 
-<p>Zabbix supporta numerose modalità di controllo delle risorse.</p>
+<p>Il formato <strong>.ovf</strong> è quello da me preferito sia per Oracle VirtualBox sia per
+VMware ESXi in quanto in entrambi i sistemi la procedura di importazione
+supporta questo specifico formato.</p>
+
+<p>Dopo aver decompresso il file <em>zabbix_appliance_X.Y.Z_x86_64.ovf.tar.gz</em> si
+otterrà una cartella contenente due file:</p>
 
 <ul>
-  <li>Per il controllo dei sistemi operativi è possibile installare un software
-chiamato <strong>agente Zabbix</strong>, disponibile per i principali sistemi operativi</li>
-  <li>Per il controllo dei dispositivi hardware è possibile leggere i valori 
-tramite <strong>interfaccia SNMP o IPMI</strong> e recuperare i valori interessati, come ad
-esempio temperature, livelli di consumabili, carica delle batterie, stato di
-salute (naturalmente l’interfaccia SNMP o IPMI deve fornitore questi valori)</li>
-  <li>Controlli via rete come PING o accesso ai servizi di rete possono consentire
-la verifica dello stato di attività</li>
-  <li>Il controllo dei siti internet può basarsi ad esempio sulla velocità di
-risposta o di trasferimento dei dati</li>
-  <li>Ulteriori controlli ad hoc possono essere sviluppati per assicurare il corretto
-funzionamento di un servizio o di un’applicazione</li>
+  <li><strong>zabbix_appliance_X.Y.Z.ovf</strong></li>
+  <li><strong>zabbix_appliance_X.Y.Z-disk1.vmdk</strong></li>
 </ul>
+
+<p>Il primo di questi file rappresenta la macchina virtuale da importare in Oracle
+VirtualBox oppure VMware, il secondo rappresenta il disco contenente i dati
+della macchina virtuale.</p>
+
+<h1 id="importazione-su-oracle-virtualbox">Importazione su Oracle VirtualBox</h1>
+
+<p class="center"><img src="/resources/articles/zabbix/install-to-virtualbox/01.png" alt="Importa applicazione virtuale" /></p>
+
+<p>Su Oracle VirtualBox, aprendo il menu <strong>File</strong> scegliere l’opzione
+<strong>Importa applicazione virtuale</strong>.</p>
+
+<p class="center"><img src="/resources/articles/zabbix/install-to-virtualbox/02.png" alt="Applicazione virtuale da importare" /></p>
+
+<p>La finestra guidata di importazione chiederà semplicemente il percorso del file
+.ovf da importare.</p>
+
+<p class="center"><img src="/resources/articles/zabbix/install-to-virtualbox/03.png" alt="Impostazioni applicazione virtuale" /></p>
+
+<p>Al secondo passaggio dell’importazione della macchina virtuale sarà possibile
+effettuare lievi modifiche alla macchina virtuale, come il cambio del nome della
+macchina virtuale da importare, il sistema operativo utilizzato, la quantità
+di CPU e di memoria RAM da impiegare.</p>
+
+<p>In generale è meglio non effettuare variazioni, eccetto il nome della macchina
+virtuale che è modificabile liberamente, in questo esempio <strong>Zabbix Appliance</strong>.</p>
+
+<p class="center"><img src="/resources/articles/zabbix/install-to-virtualbox/04.png" alt="Importazione applicazione virtuale" /></p>
+
+<p>La procedura di importazione richiederà qualche minuto e si concluderà
+automaticamente non appena raggiunto il 100%.</p>
+
+<p class="center"><img src="/resources/articles/zabbix/install-to-virtualbox/05.png" alt="Configurazione rete virtuale" /></p>
+
+<p>Prima di avviare la macchina virtuale si raccomanda di configurare la scheda di
+rete virtuale dalla modalità <strong>NAT</strong> alla modalità <strong>Scheda con bridge</strong>,
+altrimenti non sarà possibile raggiungere dall’esterno la rete della macchina
+virtuale. Questa configurazione è possibile cliccando il pulsante <strong>Impostazioni</strong>
+e spostandosi nella sezione <strong>Rete</strong>.</p>
+
+<p>Terminata questa configurazione basterà avviare la macchina virtuale appena
+importata cliccando sul pulsante <strong>Avvia</strong>. Qualche secondo dopo la macchina
+sarà avviata e sarà possibile iniziare ad utilizzarla.</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <p>Normalmente non è necessario accedere al sistema operativo Ubuntu Server
+ma qualora divenisse necessario i dati di accesso al sistema Ubuntu sono i
+seguenti:<br />
+<strong>Utente</strong>: appliance<br />
+<strong>Password</strong>: zabbix</p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p class="center"><img src="/resources/articles/zabbix/install-from-iso/03.png" alt="Accesso al server locale" /></p>
+
+<p>L’indirizzo IP alla macchina appena installata sarà fornito automaticamente via
+DHCP ma nel caso non fosse noto è possibile accedere alla console del server
+ed eseguire il comando <code class="highlighter-rouge">ip a</code>, nell’esempio l’indirizzo è 192.168.1.67.</p>
+
+<p>Per accedere al sistema basterà quindi avviare un browser da un’altra postazione
+e puntare alla pagina http://INDIRIZZO_SERVER/zabbix</p>
+
+<p class="center"><img src="/resources/articles/zabbix/login.png" alt="Zabbix login" /></p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <p>I dati di accesso predefiniti a Zabbix Frontend Web sono i seguenti:<br />
+<strong>Utente</strong>: Admin<br />
+<strong>Password</strong>: zabbix</p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
 
 
 

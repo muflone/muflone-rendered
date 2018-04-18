@@ -3,10 +3,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Cosa è Zabbix? Introduzione al sistema di monitoraggio più avanzato e più usato al mondo." />
-    <meta name="keywords" content="zabbix, introduzione, avvisi, monitoraggio, sistemi, web, snmp, ipmi" />
+    <meta name="description" content="L'installazione di Zabbix Server su Arch Linux richiede un minimo di configurazione delle varie componenti. Questa guida spiega i passaggi fino all'avvio di Zabbix Frontend Web." />
+    <meta name="keywords" content="zabbix, installazione, arch, linux, pacman, pacchetti" />
     <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
-    <title>Articles | Introduzione</title>
+    <title>Articles | Installazione su Arch Linux</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/articles/icons/apple-icon-72x72.png">
@@ -39,7 +39,7 @@
         <a href="/articles/italian">
           <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
         <h1>Articles</h1>
-        <h2>Introduzione</h2>
+        <h2>Installazione su Arch Linux</h2>
         <a href="https://github.com/muflone" target="_blank" class="button">
           <small>Vedi il progetto su</small>
           GitHub
@@ -53,12 +53,12 @@
           <div class="articles_pages">
             <a href="/articles/italian/zabbix/index" title="Zabbix">Indice</a> | 
       
-            Parte 1 | 
+            <a href="/articles/italian/zabbix/what-is-zabbix" title="Introduzione">Parte 1</a> | 
             <a href="/articles/italian/zabbix/architecture" title="Architettura">Parte 2</a> | 
             <a href="/articles/italian/zabbix/install" title="Installazione">Parte 3</a> | 
             <a href="/articles/italian/zabbix/install-from-iso" title="Installazione appliance da file ISO">Parte 4</a> | 
             <a href="/articles/italian/zabbix/install-to-vm" title="Installazione appliance su macchina virtuale">Parte 5</a> | 
-            <a href="/articles/italian/zabbix/install-to-arch-linux" title="Installazione su Arch Linux">Parte 6</a> | 
+            Parte 6 | 
             <a href="/articles/italian/zabbix/frontend-setup" title="Configurazione iniziale di Zabbix Frontend Web">Parte 7</a>
           </div>
           <hr />
@@ -66,57 +66,157 @@
 
           <p class="center"><img src="/resources/articles/zabbix/logo.png" alt="Zabbix logo" /></p>
 
-<h1 id="cosa-è-zabbix">Cosa è Zabbix?</h1>
+<p>L’installazione di Zabbix Server e Zabbix Frontend Web su Arch Linux non viene
+documentata sul sito ufficiale. Sul <a target="_blank" class="external" href="https://wiki.archlinux.org/index.php/Zabbix">Wiki di Arch Linux</a> la procedura di
+installazione è spiegata molto bene e ad oggi risulta correttamente funzionante.</p>
 
-<p><a target="_blank" class="external" href="https://www.zabbix.com/">Zabbix</a> è il più avanzato e completo sistema di monitoraggio di sistemi
-informatici, utilizzando da migliaia di aziende in tutto il mondo.
-<a target="_blank" class="external" href="https://www.zabbix.com/download_sources">Open Source al 100%</a> e <a target="_blank" class="external" href="https://www.zabbix.com/download">rilasciato gratuitamente</a> a
-chiunque voglia utilizzarlo.</p>
+<h1 id="installazione-dei-pacchetti-necessari">Installazione dei pacchetti necessari</h1>
 
-<p>Zabbix è altamente scalabile e permette il controllo anche di migliaia di
-dispositivi contemporaneamente, affidandosi ad una infrastruttura client-server
-mista. Gli avvisi possono arrivare direttamente dalle macchine controllate
-oppure possono essere il risultato di controlli eseguiti direttamente dal server.</p>
+<p>Installare innanzitutto i pacchetti <strong>zabbix-server</strong> e <strong>zabbix-frontend-php</strong>.</p>
 
-<p>Sono già numerosissime le aziende che adoperano Zabbix per il controllo dei
-propri sistemi, della rete e delle applicazioni.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># pacman -S zabbix-server
+# pacman -S zabbix-frontend-php
+</code></pre></div></div>
 
-<hr />
-<h1 id="cosa-può-fare-zabbix">Cosa può fare Zabbix?</h1>
+<h1 id="configurazione-del-database-mariadbmysql">Configurazione del database MariaDB/MySQL</h1>
 
-<p class="center"><img src="/resources/articles/zabbix/metric_collection.svg" alt="Metrics" height="400px" /></p>
+<p>Sono poi necessari un database a scelta tra PostgreSQL e MySQL/MariaDB. Nel caso
+di MariaDB è possibile installare e configurare il database con i comandi seguenti:</p>
 
-<p>Zabbix può controllare:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># pacman -S mariadb
+# mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+# systemctl enable mariadb
+# systemctl start mariadb
+# mysql_secure_installation
+Enter current password for root (enter for none): (premere invio)
+Set root password? [Y/n] Y
+New password: (inserire la password per l'utente root di MySQL)
+Re-enter new password: (reinserire la stessa password)
+Remove anonymous users? [Y/n] Y
+Disallow root login remotely? [Y/n] Y
+Remove test database and access to it? [Y/n] Y
+Reload privilege tables now? [Y/n] Y
+</code></pre></div></div>
 
-<ul>
-  <li><strong>Sistemi operativi</strong> come Microsoft Windows, GNU/Linux, Apple OS X, Solaris,
-BSD, AIX</li>
-  <li><strong>Hardware</strong> come server, UPS, NAS, router, switch attraverso SNMP e IPMI</li>
-  <li>Sistemi raggiungibili <strong>via rete</strong> attraverso ICMP, SSH, Telnet e connessioni TCP</li>
-  <li><strong>Macchine virtuali</strong> e <strong>Hypervisor</strong></li>
-  <li><strong>Database</strong></li>
-  <li><strong>Applicazioni</strong> e <strong>servizi Web</strong></li>
-</ul>
+<p>Serve creare anche un nuovo utente dedicato a Zabbix e il relativo database.</p>
 
-<hr />
-<h1 id="come-funziona-zabbix">Come funziona Zabbix?</h1>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <p>La password scelta per l’utente <strong>zabbix</strong> è <strong>zabxpassword</strong>, modificare
+la scelta a proprio piacimento.</p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
 
-<p>Zabbix supporta numerose modalità di controllo delle risorse.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u root -p -e "create database zabbix character set utf8"
+mysql -u root -p -e "grant all on zabbix.* to zabbix@localhost identified by 'zabxpassword'"
+</code></pre></div></div>
 
-<ul>
-  <li>Per il controllo dei sistemi operativi è possibile installare un software
-chiamato <strong>agente Zabbix</strong>, disponibile per i principali sistemi operativi</li>
-  <li>Per il controllo dei dispositivi hardware è possibile leggere i valori 
-tramite <strong>interfaccia SNMP o IPMI</strong> e recuperare i valori interessati, come ad
-esempio temperature, livelli di consumabili, carica delle batterie, stato di
-salute (naturalmente l’interfaccia SNMP o IPMI deve fornitore questi valori)</li>
-  <li>Controlli via rete come PING o accesso ai servizi di rete possono consentire
-la verifica dello stato di attività</li>
-  <li>Il controllo dei siti internet può basarsi ad esempio sulla velocità di
-risposta o di trasferimento dei dati</li>
-  <li>Ulteriori controlli ad hoc possono essere sviluppati per assicurare il corretto
-funzionamento di un servizio o di un’applicazione</li>
-</ul>
+<p>Quando richiesto, inserire la password <strong>dell’utente root</strong> configurata in
+precedenza col comando <em>mysql_secure_installation</em>.</p>
+
+<p>Per procedere con la creazione del database di Zabbix utilizzare la password
+<strong>dell’utente zabbix</strong> appena configurato.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u zabbix -p zabbix &lt; /usr/share/zabbix-server/mysql/schema.sql
+mysql -u zabbix -p zabbix &lt; /usr/share/zabbix-server/mysql/images.sql
+mysql -u zabbix -p zabbix &lt; /usr/share/zabbix-server/mysql/data.sql
+</code></pre></div></div>
+
+<h1 id="configurare-il-database-di-zabbix">Configurare il database di Zabbix</h1>
+
+<p>Serve comunicare a Zabbix i dati di accesso per il database appena configurato.
+Tutto ciò è fattibile modificando i valori seguenti dal file
+/etc/zabbix/zabbix_server.conf (tenere presente che le righe che iniziano con #
+sono commenti e non vengono utilizzate).</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DBHost=localhost
+DBName=zabbix
+DBUser=zabbix
+DBPassword=zabxpassword
+</code></pre></div></div>
+
+<h1 id="configurazione-del-server-web">Configurazione del server web</h1>
+
+<p>Oltre il database è necessario installare anche il server web, in questo esempio
+Apache.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># pacman -S apache
+# systemctl enable httpd
+</code></pre></div></div>
+
+<p>A questo punto resta da configurare il server web Apache. Il Wiki ufficiale di
+Arch Linux suggerisce la soluzione per avere Zabbix installato in una directory
+della radice del server web (ad esempio <em>http://indirizzo/zabbix</em>):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ln -s /usr/share/webapps/zabbix/ /srv/http/zabbix
+</code></pre></div></div>
+
+<p>Nel caso che si volesse invece installare Zabbix sulla radice del server web
+(ad esempio <em>http://indirizzo/</em>) è possibile rimuovere la directory /srv/http e
+rifare il collegamento su /srv/http:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># rm /srv/http
+# ln -s /usr/share/webapps/zabbix/ /srv/http
+</code></pre></div></div>
+
+<h1 id="configurazione-dellinterprete-php">Configurazione dell’interprete PHP</h1>
+
+<p>Installare l’interprete PHP per il server web Apache:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># pacman -S php-apache
+</code></pre></div></div>
+
+<p>Abilitare l’interprete PHP nella configurazione di Apache, modificando il file
+/etc/httpd/conf/httpd.conf</p>
+
+<p>Modificare le righe:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#LoadModule mpm_event_module modules/mod_mpm_event.so
+LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+</code></pre></div></div>
+
+<p>Quindi aggiungere in fondo al file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LoadModule php7_module modules/libphp7.so
+AddHandler php7-script .php
+Include conf/extra/php7_module.conf
+</code></pre></div></div>
+
+<p>Configurare quindi PHP con i valori seguenti, andando a modificare il file
+/etc/php/php.ini:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extension=bcmath
+extension=gd
+extension=sockets
+extension=mysqli
+extension=gettext
+post_max_size = 16M
+max_execution_time = 300
+max_input_time = 300
+date.timezone = "UTC"
+</code></pre></div></div>
+
+<h1 id="avvio-di-zabbix-server">Avvio di Zabbix Server</h1>
+
+<p>E’ giunto il momento di avviare il server web e Zabbix Server</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># systemctl enable zabbix-server-mysql
+# systemctl start zabbix-server-mysql
+# systemctl start httpd
+</code></pre></div></div>
+
+<h1 id="configurazione-di-zabbix-frontend-web">Configurazione di Zabbix Frontend Web</h1>
+
+<p>Per la configurazione del frontend web è possibile consultare la pagina
+<a href="frontend-setup">Configurazione iniziale di Zabbix Frontend Web</a>.</p>
 
 
 
