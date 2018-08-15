@@ -3,10 +3,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Impariamo a conoscere Zabbix Frontend Web, la parte centrale per la configurazione del sistema, degli host, degli avvisi e dei valori da monitorare." />
-    <meta name="keywords" content="zabbix, configurazione, setup, web, frontend" />
+    <meta name="description" content="L'agente di Zabbix è un software da installare sul sistema operativo da controllare che permette ai server di effettuare monitoraggio periodico e ricevere gli avvisi in caso di problemi riscontrati sul sistema operativo controllato." />
+    <meta name="keywords" content="zabbix, agent" />
     <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
-    <title>Articles | Conoscere Zabbix Frontend Web</title>
+    <title>Articles | Zabbix Agent</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/articles/icons/apple-icon-72x72.png">
@@ -39,7 +39,7 @@
         <a href="/articles/italian">
           <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
         <h1>Articles</h1>
-        <h2>Conoscere Zabbix Frontend Web</h2>
+        <h2>Zabbix Agent</h2>
         <a href="https://github.com/muflone" target="_blank" class="button">
           <small>Vedi il progetto su</small>
           GitHub
@@ -60,10 +60,10 @@
             <a href="/articles/italian/zabbix/install-to-vm" title="Installazione appliance su macchina virtuale">Parte 5</a> | 
             <a href="/articles/italian/zabbix/install-to-arch-linux" title="Installazione su Arch Linux">Parte 6</a> | 
             <a href="/articles/italian/zabbix/frontend-setup" title="Configurazione iniziale di Zabbix Frontend Web">Parte 7</a> | 
-            Parte 8 | 
+            <a href="/articles/italian/zabbix/frontend-first-view" title="Conoscere Zabbix Frontend Web">Parte 8</a> | 
             <a href="/articles/italian/zabbix/definitions" title="Termini e definizioni">Parte 9</a> | 
             <a href="/articles/italian/zabbix/host-preparation" title="Preparare il sistema da controllare">Parte 10</a> | 
-            <a href="/articles/italian/zabbix/agent" title="Zabbix Agent">Parte 11</a> | 
+            Parte 11 | 
             <a href="/articles/italian/zabbix/agent-installation" title="Installazione di Zabbix Agent">Parte 12</a>
           </div>
           <hr />
@@ -71,158 +71,105 @@
 
           <p class="center"><img src="/resources/articles/zabbix/logo.png" alt="Zabbix logo" /></p>
 
-<p>All’accesso di Zabbix Frontend Web saranno chiesti utente e password prima di
-poter visionare l’interfaccia di gestione di Zabbix.</p>
+<p><strong>Zabbix Agent</strong> rappresenta uno dei software fondamentali per il monitoraggio
+di sistemi operativi (Microsoft Windows, GNU/Linux, Mac OS X, Solaris e altri).</p>
 
-<p class="center"><img src="/resources/articles/zabbix/login.png" alt="Zabbix login" /></p>
-
-<blockquote>
-  <blockquote>
-    <blockquote>
-      <blockquote>
-        <blockquote>
-          <blockquote>
-            <p>I dati di accesso predefiniti a Zabbix Frontend Web sono i seguenti:<br />
-<strong>Utente</strong>: Admin<br />
-<strong>Password</strong>: zabbix</p>
-          </blockquote>
-        </blockquote>
-      </blockquote>
-    </blockquote>
-  </blockquote>
-</blockquote>
-
-<p class="center"><a target="_blank" href="/resources/articles/zabbix/overview/dashboard-initial.png"><img src="/resources/articles/zabbix/overview/dashboard-initial-thumb.png" alt="Dashboard" /></a></p>
-
-<p>Al primo accesso sarà mostrata la <strong>Dashboard</strong> predefinita, ovvero un cruscotto
-di controllo dello stato di salute di tutto il sistema, inclusi anche tutti gli
-altri sistemi controllati.</p>
-
-<p class="center"><img src="/resources/articles/zabbix/overview/sections.png" alt="Sections" /></p>
-
-<p>L’area superiore di qualsiasi schermata di Zabbix mostra le sezioni di interesse
-accessibili, suddivise in più sottosezioni.</p>
-
-<p>Ulteriori informazioni sulle sezioni di interesse del frontend possono trovarsi
-<a target="_blank" class="external" href="https://www.zabbix.com/documentation/3.4/manual/web_interface/frontend_sections">nella documentazione ufficiale</a> di Zabbix.</p>
+<p>Si tratta di un software di dimensioni molto ridotte, non invasivo, che ad
+intervalli regolari effettua controlli e restituisce ai server le informazioni
+ottenute.</p>
 
 <hr />
-<h1 id="monitoring">Monitoring</h1>
+<h1 id="modalità-di-funzionamento">Modalità di funzionamento</h1>
 
-<p>Questa area contiene la visualizzazione degli elementi controllati per il
-monitoraggio.</p>
+<h2 id="modalità-passiva">Modalità passiva</h2>
 
-<p>Attraverso di essa è possibile visionare lo stato degli avvisi ed è la sezione
-utilizzata da chi si occupa della manutenzione dei sistemi.</p>
+<p>In questa modalità l’agente non esegue nessuna operazione di propria iniziativa,
+quindi resta sempre in attesa che il server di Zabbix effettui una richiesta,
+l’agente la riceve, la processa e rimanda al server la risposta ottenuta.</p>
 
-<p>All’interno di questa sezione sono presenti le seguenti sottosezioni</p>
+<p>Questa modalità è più onerosa per il server Zabbix in quanto dovrà periodicamente
+chiedere ai sistemi controllati i valori desiderati.</p>
+
+<p>L’operazione può essere sintetizzata come segue:</p>
 
 <ol>
-  <li><strong>Dashboard</strong>: mostrerà i cruscotti configurati, contenenti grafici e valori
-statistici rapidi per la supervisione d’insieme</li>
-  <li><strong>Problems</strong>: consente di eseguire filtri sui problemi e avvisi attualmente
-esistenti</li>
-  <li><strong>Overview</strong>: mostra una panoramica generale su tutti gli avvisi rilevati,
-un insieme più generale della sottosezione Problems</li>
-  <li><strong>Web</strong>: mostra i grafici e le statistiche delle analisi web, un particolare
-tipo di analisi che confronta le prestazioni dei siti web</li>
-  <li><strong>Latest data</strong>: è la sezione più dettagliata che contiene i valori rilevati
-dalle analisi e mostra i valori come sono stati ricevuti, sia che costituiscano
-o meno un allarme o un avviso</li>
-  <li><strong>Triggers</strong>: contiene gli allarmi (triggers), quelle condizioni che fanno
-scaturire un avviso, una notifica, un processo o un’altra qualsiasi reazione
-in base ai valori ottenuti dalle rilevazioni</li>
-  <li><strong>Graphs</strong>: sono mostrati in essa grafici correlati ai dati ottenuti</li>
-  <li><strong>Screens</strong>: contengono le schermate, ovvero gruppi di grafici e statistiche</li>
-  <li><strong>Maps</strong>: contengono le mappe e gli schemi disegnati che semplificano la
-comprensione della struttura di rete</li>
-  <li><strong>Discovery</strong>: mostra lo stato dell’analisi (discovery) di rete, un processo
-atto a esplorare la rete per scoprire la presenza di nuovi sistemi da
-monitorare</li>
-  <li><strong>Services</strong>: contiene i reparti che possono essere configurati per competenza
-del tipo di avviso o gruppi di sistemi, ciascuno dei quali con il proprio
-livello di SLA basato sul tempo di disservizio</li>
+  <li>Zabbix Server effettua una richiesta a Zabbix agent</li>
+  <li>Zabbix Agent riceve la richiesta e la interpreta, se valida</li>
+  <li>Zabbix Agent elabora la richiesta ricevuta</li>
+  <li>Zabbix Agent invia la risposta a Zabbix Server</li>
+</ol>
+
+<h2 id="modalità-attiva">Modalità attiva</h2>
+
+<p>In questa modalità l’agente richiede autonomamente al server quali controlli
+eseguire e con quali tempi e periodicamente li effettua autonomamente e invia
+le risposte al server.</p>
+
+<p>Questa modalità è più onerosa per Zabbix Agent e scarica il server dell’onere di
+inviare le richieste a tutti gli agenti controllati.</p>
+
+<ol>
+  <li>Zabbix Agent richiede al server quali controlli eseguire</li>
+  <li>Zabbix Server riceve la richiesta e restituisce a Zabbix Agent l’elenco dei
+controlli da eseguire e gli intervalli tra ogni richiesta</li>
+  <li>Zabbix Agent tiene l’elenco dei compiti da eseguire e periodicamente elabora
+i compiti e invia le risposte al server</li>
+  <li>Zabbix Server riceve le risposte da Zabbix Agent</li>
 </ol>
 
 <hr />
-<h1 id="inventory">Inventory</h1>
+<h1 id="installazione-di-zabbix-agent">Installazione di Zabbix Agent</h1>
 
-<p>L’area dell’inventario contiene un elenco dei sistemi e delle informazioni
-proprie di ogni sistema, come numero di serie, marca, modello.</p>
+<p>Prima che un sistema possa essere controllato da Zabbix Server è necessario che
+venga in esso installato l’agente e configurato in modo che possa inviare le
+risposte al server.</p>
 
-<p>All’interno di questa sezione sono presenti le seguenti sottosezioni</p>
+<p>L’installazione dell’agente dipende dal sistema operativo in uso ma generalmente
+richiede la semplice installazione del software, la configurazione del file
+zabbix_agentd.conf e l’avvio del servizio.</p>
 
-<ol>
-  <li><strong>Overview</strong>: mostra il conteggio del numero di host raggruppati per tipologia</li>
-  <li><strong>Hosts</strong>: mostra l’intentario degli host identificati</li>
-</ol>
+<p>L’agente dopo il suo avvio resta in ascolto sulla porta predefinita TCP 10050 ma
+può essere modificata dalla configurazione dell’agente.</p>
 
-<hr />
-<h1 id="reports">Reports</h1>
-
-<p>L’area dei report contiene dati più sintetici e generali dello stato di tutto
-il sistema e degli host controllati.</p>
-
-<p>All’interno di questa sezione sono presenti le seguenti sottosezioni</p>
-
-<ol>
-  <li><strong>Status of Zabbix</strong>: mostra informazioni circa lo stato di salute di Zabbix,
-come il numero di sistemi controllati, il numero di utenti e così via</li>
-  <li><strong>Availability report</strong>: mostra lo stato di disponibilità dei servizi
-controllati</li>
-  <li><strong>Triggers top 100</strong>: mostra i primi 100 allarmi scattati, ovvero i primi 100
-avvisi problematici più frequenti</li>
-  <li><strong>Audit</strong>: mostra le modifiche e le configurazioni effettuate dal frontend</li>
-  <li><strong>Action log</strong>: mostra gli avvisi inviati in seguito agli allarmi scattati</li>
-  <li><strong>Notifications</strong>: mostra i totali degli avvisi inviati a ciascun operatore</li>
-</ol>
+<p>Per informazioni dettagliate sulla procedura di installazione dell’agente sui
+vari sistemi operativi vedere la pagina dedicata all’<a href="agent-installation">installazione dell’agente
+di Zabbix</a>.</p>
 
 <hr />
-<h1 id="configuration">Configuration</h1>
+<h1 id="test-di-funzionamento-dellagente">Test di funzionamento dell’agente</h1>
 
-<p>L’area della configurazione contiene le informazioni di configurazione di tutto
-il sistema Zabbix, gli host i gruppi, le regole e tutto il resto che fa funzionare
-Zabbix Server per monitorare i sistemi.</p>
+<p>Per verificare il funzionamento dell’agente installato su un sistema controllato
+è possibile eseguire delle semplici verifiche.</p>
 
-<ol>
-  <li><strong>Host groups</strong>: definisce i gruppi di host, al fine di raggrupparli e
-visionare tutti gli host in raggruppamenti omogenei</li>
-  <li><strong>Templates</strong>: definisce i modelli che contengono al loro interno i valori
-da controllare, gli allarmi, gli eventi da far scattare, raggruppati in
-maniera logica</li>
-  <li><strong>Hosts</strong>: definisce i sistemi da controllare, agganciando ad essi i modelli
-e i gruppi di host</li>
-  <li><strong>Maintenance</strong>: definisce i periodi di manutenzione e controllo dei gruppi
-di host</li>
-  <li><strong>Actions</strong>: configura le azioni che dovranno scattare allo scattare di
-alcuni eventi, in risposta alla variazione o allo scaturire dei problemi</li>
-  <li><strong>Event correlation</strong>: consente di correlare gli eventi tra loro in modo da
-far scattare operazioni quando due o più eventi vengono correlati tra loro</li>
-  <li><strong>Discovery</strong>: definiscono le regole di scoperta, per l’indagine della rete</li>
-  <li><strong>Services</strong>: definiscono le persone responsabili dei disservizi in maniera
-gerarchica</li>
-</ol>
+<p>La prima verifica riguarda la raggiungibilità del servizio dell’agente:</p>
 
-<hr />
-<h1 id="administration">Administration</h1>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>telnet INDIRIZZO 10050
+</code></pre></div></div>
 
-<p>La sezione amministrazione definisce le configurazioni proprie del server Zabbix
-e non riguardano gli host controllati.</p>
+<p>Se la connessione non viene stabilita oppure viene immediatamente rifiutata
+allora il servizio dell’agente non è in ascolto sulla porta 10050 oppure
+l’indirizzo indicato è errato oppure un firewall sta impedendo la connessione
+alla porta di rete.</p>
 
-<ol>
-  <li><strong>General</strong>: consente di configurare opzioni di carattere generale</li>
-  <li><strong>Proxies</strong>: consente di definire quali sistemi opereranno come Zabbix Proxy
-per il monitoraggio di altri sistemi e centralizzarne sul server i risultati</li>
-  <li><strong>Authentication</strong>: definisce il tipo di autenticazione per gli utenti del
-sistema</li>
-  <li><strong>User groups</strong>: definisce i gruppi di utenti</li>
-  <li><strong>Users</strong>: definisce gli utenti che avranno accesso al sistema</li>
-  <li><strong>Media types</strong>: definisce i media che potranno notificare agli operatori gli
-avvisi ricevuti</li>
-  <li><strong>Scripts</strong>: definisce strumenti aggiuntivi che potranno essere eseguiti su
-richiesta</li>
-  <li><strong>Queue</strong>: mostra la coda delle richieste in attesa di essere elaborate</li>
-</ol>
+<p>Se la connessione con telnet viene stabilita è possibile effettuare la verifica
+del funzionamento dell’agente dalla macchina Zabbix Server eseguendo:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zabbix_get -s INDIRIZZO -k agent.ping
+</code></pre></div></div>
+
+<p>Se venisse risposto un messaggio come il seguente:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zabbix_get [3330]: Get value error: ZBX_TCP_READ() failed: [104] Connection reset by peer
+zabbix_get [3330]: Check access restrictions in Zabbix agent configuration
+</code></pre></div></div>
+
+<p>Allora c’è un problema di configurazione dell’agente, non è stato configurato
+correttamente il server che deve ricevere le risposte, ovvero le opzioni
+<strong>Server</strong> e <strong>ServerActive</strong> del file zabbix_agentd.conf non puntano all’indirizzo
+del server Zabbix, quindi le richieste sono rifiutate.</p>
+
+<p>Se venisse risposto con <strong>1</strong> allora l’agente è in esecuzione e pronto a
+ricevere comandi.</p>
 
 
 

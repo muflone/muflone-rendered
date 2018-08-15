@@ -3,10 +3,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Impariamo a conoscere Zabbix Frontend Web, la parte centrale per la configurazione del sistema, degli host, degli avvisi e dei valori da monitorare." />
-    <meta name="keywords" content="zabbix, configurazione, setup, web, frontend" />
+    <meta name="description" content="La procedura di installazione di Zabbix Agent dipende dal sistema operativo in uso. In questa guida saranno mostrate le procedure di installazione dell'agente in vari sistemi operativi." />
+    <meta name="keywords" content="zabbix, agent, installation" />
     <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
-    <title>Articles | Conoscere Zabbix Frontend Web</title>
+    <title>Articles | Installazione di Zabbix Agent</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/articles/icons/apple-icon-72x72.png">
@@ -39,7 +39,7 @@
         <a href="/articles/italian">
           <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
         <h1>Articles</h1>
-        <h2>Conoscere Zabbix Frontend Web</h2>
+        <h2>Installazione di Zabbix Agent</h2>
         <a href="https://github.com/muflone" target="_blank" class="button">
           <small>Vedi il progetto su</small>
           GitHub
@@ -60,21 +60,57 @@
             <a href="/articles/italian/zabbix/install-to-vm" title="Installazione appliance su macchina virtuale">Parte 5</a> | 
             <a href="/articles/italian/zabbix/install-to-arch-linux" title="Installazione su Arch Linux">Parte 6</a> | 
             <a href="/articles/italian/zabbix/frontend-setup" title="Configurazione iniziale di Zabbix Frontend Web">Parte 7</a> | 
-            Parte 8 | 
+            <a href="/articles/italian/zabbix/frontend-first-view" title="Conoscere Zabbix Frontend Web">Parte 8</a> | 
             <a href="/articles/italian/zabbix/definitions" title="Termini e definizioni">Parte 9</a> | 
             <a href="/articles/italian/zabbix/host-preparation" title="Preparare il sistema da controllare">Parte 10</a> | 
             <a href="/articles/italian/zabbix/agent" title="Zabbix Agent">Parte 11</a> | 
-            <a href="/articles/italian/zabbix/agent-installation" title="Installazione di Zabbix Agent">Parte 12</a>
+            Parte 12
           </div>
           <hr />
 
 
           <p class="center"><img src="/resources/articles/zabbix/logo.png" alt="Zabbix logo" /></p>
 
-<p>All’accesso di Zabbix Frontend Web saranno chiesti utente e password prima di
-poter visionare l’interfaccia di gestione di Zabbix.</p>
+<p>Dalla pagina <a target="_blank" class="external" href="https://www.zabbix.com/download_agents">Download and install Precompiled Zabbix Agents</a> è possibile
+scaricare e trovare le istruzioni di installazione dell’agente di Zabbix su
+vari sistemi operativi.</p>
 
-<p class="center"><img src="/resources/articles/zabbix/login.png" alt="Zabbix login" /></p>
+<p>La procedura generalmente richiede la semplice installazione del software, la
+configurazione delle informazioni basilari e l’avvio del servizio.</p>
+
+<hr />
+<h1 id="installazione-di-zabbix-agent-su-microsoft-windows">Installazione di Zabbix Agent su Microsoft Windows</h1>
+
+<p>Dopo aver scaricato il file zip corrispondente (ad oggi l’ultima versione è
+<em>zabbix_agents_3.4.6.win.zip</em>) decomprimerlo nella directory <strong>C:\Zabbix</strong>.</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <p>In realtà il percorso C:\Zabbix non è obbligatorio, può essere scelta
+qualsiasi directory, purché tutti i passaggi successivi facciano riferimento
+alla directory scelta.</p>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>Spostarsi quindi nella directory <strong>C:\Zabbix\conf</strong> e creare un nuovo file di
+testo di nome <strong>zabbix_agent.conf</strong> contenente al suo interno quanto segue:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LogType=file
+LogFile=C:\Zabbix\zabbix_agentd.log
+
+Server=zabbix-server.muflone.local
+ServerActive=zabbix-server.muflone.local
+ListenPort=10050
+RefreshActiveChecks=120
+</code></pre></div></div>
+
+<p>Sostituendo <strong>zabbix-server.muflone.local</strong> con l’indirizzo del server Zabbix.</p>
 
 <blockquote>
   <blockquote>
@@ -82,9 +118,8 @@ poter visionare l’interfaccia di gestione di Zabbix.</p>
       <blockquote>
         <blockquote>
           <blockquote>
-            <p>I dati di accesso predefiniti a Zabbix Frontend Web sono i seguenti:<br />
-<strong>Utente</strong>: Admin<br />
-<strong>Password</strong>: zabbix</p>
+            <p>Per una spiegazione dei parametri di questo file di configurazione si può
+far riferimento al file di esempio <em>zabbix_agent.win.conf</em>.</p>
           </blockquote>
         </blockquote>
       </blockquote>
@@ -92,137 +127,42 @@ poter visionare l’interfaccia di gestione di Zabbix.</p>
   </blockquote>
 </blockquote>
 
-<p class="center"><a target="_blank" href="/resources/articles/zabbix/overview/dashboard-initial.png"><img src="/resources/articles/zabbix/overview/dashboard-initial-thumb.png" alt="Dashboard" /></a></p>
+<p>Per eseguire l’installazione dell’agente di Zabbix come servizio è possibile
+avviare un prompt dei comandi <strong>come amministratore</strong> ed eseguire i seguenti
+comandi:</p>
 
-<p>Al primo accesso sarà mostrata la <strong>Dashboard</strong> predefinita, ovvero un cruscotto
-di controllo dello stato di salute di tutto il sistema, inclusi anche tutti gli
-altri sistemi controllati.</p>
+<p class="center"><img src="/resources/articles/zabbix/agent-installation/windows-installation.png" alt="Agent installation" /></p>
 
-<p class="center"><img src="/resources/articles/zabbix/overview/sections.png" alt="Sections" /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CD \Zabbix
+bin\win32\zabbix_agentd.exe -c conf\zabbix_agent.conf --install
+</code></pre></div></div>
 
-<p>L’area superiore di qualsiasi schermata di Zabbix mostra le sezioni di interesse
-accessibili, suddivise in più sottosezioni.</p>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <p>Nel caso di un sistema operativo a 64 bit è raccomandato installare
+l’agente nella versione a 64 bit, sostituendo al comando precedente win32 con
+win64.</p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
 
-<p>Ulteriori informazioni sulle sezioni di interesse del frontend possono trovarsi
-<a target="_blank" class="external" href="https://www.zabbix.com/documentation/3.4/manual/web_interface/frontend_sections">nella documentazione ufficiale</a> di Zabbix.</p>
+<p>Subito dopo l’installazione è possibile avviare il servizio con:</p>
 
-<hr />
-<h1 id="monitoring">Monitoring</h1>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NET START "Zabbix Agent"
+</code></pre></div></div>
 
-<p>Questa area contiene la visualizzazione degli elementi controllati per il
-monitoraggio.</p>
+<p class="center"><img src="/resources/articles/zabbix/agent-installation/windows-firewall.png" alt="Windows firewall" /></p>
 
-<p>Attraverso di essa è possibile visionare lo stato degli avvisi ed è la sezione
-utilizzata da chi si occupa della manutenzione dei sistemi.</p>
-
-<p>All’interno di questa sezione sono presenti le seguenti sottosezioni</p>
-
-<ol>
-  <li><strong>Dashboard</strong>: mostrerà i cruscotti configurati, contenenti grafici e valori
-statistici rapidi per la supervisione d’insieme</li>
-  <li><strong>Problems</strong>: consente di eseguire filtri sui problemi e avvisi attualmente
-esistenti</li>
-  <li><strong>Overview</strong>: mostra una panoramica generale su tutti gli avvisi rilevati,
-un insieme più generale della sottosezione Problems</li>
-  <li><strong>Web</strong>: mostra i grafici e le statistiche delle analisi web, un particolare
-tipo di analisi che confronta le prestazioni dei siti web</li>
-  <li><strong>Latest data</strong>: è la sezione più dettagliata che contiene i valori rilevati
-dalle analisi e mostra i valori come sono stati ricevuti, sia che costituiscano
-o meno un allarme o un avviso</li>
-  <li><strong>Triggers</strong>: contiene gli allarmi (triggers), quelle condizioni che fanno
-scaturire un avviso, una notifica, un processo o un’altra qualsiasi reazione
-in base ai valori ottenuti dalle rilevazioni</li>
-  <li><strong>Graphs</strong>: sono mostrati in essa grafici correlati ai dati ottenuti</li>
-  <li><strong>Screens</strong>: contengono le schermate, ovvero gruppi di grafici e statistiche</li>
-  <li><strong>Maps</strong>: contengono le mappe e gli schemi disegnati che semplificano la
-comprensione della struttura di rete</li>
-  <li><strong>Discovery</strong>: mostra lo stato dell’analisi (discovery) di rete, un processo
-atto a esplorare la rete per scoprire la presenza di nuovi sistemi da
-monitorare</li>
-  <li><strong>Services</strong>: contiene i reparti che possono essere configurati per competenza
-del tipo di avviso o gruppi di sistemi, ciascuno dei quali con il proprio
-livello di SLA basato sul tempo di disservizio</li>
-</ol>
-
-<hr />
-<h1 id="inventory">Inventory</h1>
-
-<p>L’area dell’inventario contiene un elenco dei sistemi e delle informazioni
-proprie di ogni sistema, come numero di serie, marca, modello.</p>
-
-<p>All’interno di questa sezione sono presenti le seguenti sottosezioni</p>
-
-<ol>
-  <li><strong>Overview</strong>: mostra il conteggio del numero di host raggruppati per tipologia</li>
-  <li><strong>Hosts</strong>: mostra l’intentario degli host identificati</li>
-</ol>
-
-<hr />
-<h1 id="reports">Reports</h1>
-
-<p>L’area dei report contiene dati più sintetici e generali dello stato di tutto
-il sistema e degli host controllati.</p>
-
-<p>All’interno di questa sezione sono presenti le seguenti sottosezioni</p>
-
-<ol>
-  <li><strong>Status of Zabbix</strong>: mostra informazioni circa lo stato di salute di Zabbix,
-come il numero di sistemi controllati, il numero di utenti e così via</li>
-  <li><strong>Availability report</strong>: mostra lo stato di disponibilità dei servizi
-controllati</li>
-  <li><strong>Triggers top 100</strong>: mostra i primi 100 allarmi scattati, ovvero i primi 100
-avvisi problematici più frequenti</li>
-  <li><strong>Audit</strong>: mostra le modifiche e le configurazioni effettuate dal frontend</li>
-  <li><strong>Action log</strong>: mostra gli avvisi inviati in seguito agli allarmi scattati</li>
-  <li><strong>Notifications</strong>: mostra i totali degli avvisi inviati a ciascun operatore</li>
-</ol>
-
-<hr />
-<h1 id="configuration">Configuration</h1>
-
-<p>L’area della configurazione contiene le informazioni di configurazione di tutto
-il sistema Zabbix, gli host i gruppi, le regole e tutto il resto che fa funzionare
-Zabbix Server per monitorare i sistemi.</p>
-
-<ol>
-  <li><strong>Host groups</strong>: definisce i gruppi di host, al fine di raggrupparli e
-visionare tutti gli host in raggruppamenti omogenei</li>
-  <li><strong>Templates</strong>: definisce i modelli che contengono al loro interno i valori
-da controllare, gli allarmi, gli eventi da far scattare, raggruppati in
-maniera logica</li>
-  <li><strong>Hosts</strong>: definisce i sistemi da controllare, agganciando ad essi i modelli
-e i gruppi di host</li>
-  <li><strong>Maintenance</strong>: definisce i periodi di manutenzione e controllo dei gruppi
-di host</li>
-  <li><strong>Actions</strong>: configura le azioni che dovranno scattare allo scattare di
-alcuni eventi, in risposta alla variazione o allo scaturire dei problemi</li>
-  <li><strong>Event correlation</strong>: consente di correlare gli eventi tra loro in modo da
-far scattare operazioni quando due o più eventi vengono correlati tra loro</li>
-  <li><strong>Discovery</strong>: definiscono le regole di scoperta, per l’indagine della rete</li>
-  <li><strong>Services</strong>: definiscono le persone responsabili dei disservizi in maniera
-gerarchica</li>
-</ol>
-
-<hr />
-<h1 id="administration">Administration</h1>
-
-<p>La sezione amministrazione definisce le configurazioni proprie del server Zabbix
-e non riguardano gli host controllati.</p>
-
-<ol>
-  <li><strong>General</strong>: consente di configurare opzioni di carattere generale</li>
-  <li><strong>Proxies</strong>: consente di definire quali sistemi opereranno come Zabbix Proxy
-per il monitoraggio di altri sistemi e centralizzarne sul server i risultati</li>
-  <li><strong>Authentication</strong>: definisce il tipo di autenticazione per gli utenti del
-sistema</li>
-  <li><strong>User groups</strong>: definisce i gruppi di utenti</li>
-  <li><strong>Users</strong>: definisce gli utenti che avranno accesso al sistema</li>
-  <li><strong>Media types</strong>: definisce i media che potranno notificare agli operatori gli
-avvisi ricevuti</li>
-  <li><strong>Scripts</strong>: definisce strumenti aggiuntivi che potranno essere eseguiti su
-richiesta</li>
-  <li><strong>Queue</strong>: mostra la coda delle richieste in attesa di essere elaborate</li>
-</ol>
+<p>Nel caso che il firewall di Windows risultasse attivo, potrebbe essere necessario
+sbloccare l’accesso all’agente aggiungendo <strong>zabbix_agentd.exe</strong> alla lista
+delle eccezioni.</p>
 
 
 

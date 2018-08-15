@@ -61,7 +61,10 @@
             <a href="/articles/italian/zabbix/install-to-arch-linux" title="Installazione su Arch Linux">Parte 6</a> | 
             <a href="/articles/italian/zabbix/frontend-setup" title="Configurazione iniziale di Zabbix Frontend Web">Parte 7</a> | 
             <a href="/articles/italian/zabbix/frontend-first-view" title="Conoscere Zabbix Frontend Web">Parte 8</a> | 
-            Parte 9
+            Parte 9 | 
+            <a href="/articles/italian/zabbix/host-preparation" title="Preparare il sistema da controllare">Parte 10</a> | 
+            <a href="/articles/italian/zabbix/agent" title="Zabbix Agent">Parte 11</a> | 
+            <a href="/articles/italian/zabbix/agent-installation" title="Installazione di Zabbix Agent">Parte 12</a>
           </div>
           <hr />
 
@@ -82,14 +85,22 @@ un altro apparato di rete.</p>
 <h1 id="host-group">Host group</h1>
 
 <p>Un gruppo di host è un raggruppamento logico di uno o più host, la loro
-organizzazione consente di assegnare regole e permessi comuni a tutti i membri
-all’interno di un gruppo, ad esempio tutti i firewall condivideranno le stesse
-regole di monitoraggio.</p>
+organizzazione consente di tenere sotto controllo più host in un unico gruppo.</p>
 
 <p>Un singolo host può appartenere contemporaneamente a più host, ad esempio il
 firewall della sede 1 può appartenere contemporaneamente al gruppo Firewall e
 al gruppo Sede 1, in modo da legare gli avvisi ai responsabili della sicurezza
 e il controllo allo staff della sede 1.</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>Ad oggi non è possibile associare effettivamente template a gruppi di host,
+la loro funzione è meramente descrittiva e <strong>non applica</strong> automaticamente il
+modello a tutti gli host all’interno del gruppo.</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
 
 <h1 id="item">Item</h1>
 
@@ -172,8 +183,7 @@ quando la quantità di memoria libera è inferiore ad una certe percentuale</li>
 </ul>
 
 <p>I template consentono di definire le regole di analisi in maniera raggruppata,
-da applicare ad un singolo host o gruppi di host. In questo modo si semplifica
-l’assegnazione delle informazioni agli host.</p>
+da applicare ad un singolo host.</p>
 
 <h1 id="web-scenario">Web scenario</h1>
 

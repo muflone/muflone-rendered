@@ -3,10 +3,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Impariamo a conoscere Zabbix Frontend Web, la parte centrale per la configurazione del sistema, degli host, degli avvisi e dei valori da monitorare." />
-    <meta name="keywords" content="zabbix, configurazione, setup, web, frontend" />
+    <meta name="description" content="Prima di passare alla configurazione effettiva del primo sistema controllato da Zabbix è necessario conoscere il principio di funzionamento dei protocolli di monitoraggio, dei gruppi di host e degli host." />
+    <meta name="keywords" content="zabbix, configurazione, host, group, server, protocolli, monitoraggio, snmp, ipmi, agent" />
     <link rel="author" href="https://plus.google.com/+FabioCastelli"/>
-    <title>Articles | Conoscere Zabbix Frontend Web</title>
+    <title>Articles | Preparare il sistema da controllare</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/articles/icons/apple-icon-72x72.png">
@@ -39,7 +39,7 @@
         <a href="/articles/italian">
           <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
         <h1>Articles</h1>
-        <h2>Conoscere Zabbix Frontend Web</h2>
+        <h2>Preparare il sistema da controllare</h2>
         <a href="https://github.com/muflone" target="_blank" class="button">
           <small>Vedi il progetto su</small>
           GitHub
@@ -60,9 +60,9 @@
             <a href="/articles/italian/zabbix/install-to-vm" title="Installazione appliance su macchina virtuale">Parte 5</a> | 
             <a href="/articles/italian/zabbix/install-to-arch-linux" title="Installazione su Arch Linux">Parte 6</a> | 
             <a href="/articles/italian/zabbix/frontend-setup" title="Configurazione iniziale di Zabbix Frontend Web">Parte 7</a> | 
-            Parte 8 | 
+            <a href="/articles/italian/zabbix/frontend-first-view" title="Conoscere Zabbix Frontend Web">Parte 8</a> | 
             <a href="/articles/italian/zabbix/definitions" title="Termini e definizioni">Parte 9</a> | 
-            <a href="/articles/italian/zabbix/host-preparation" title="Preparare il sistema da controllare">Parte 10</a> | 
+            Parte 10 | 
             <a href="/articles/italian/zabbix/agent" title="Zabbix Agent">Parte 11</a> | 
             <a href="/articles/italian/zabbix/agent-installation" title="Installazione di Zabbix Agent">Parte 12</a>
           </div>
@@ -71,158 +71,137 @@
 
           <p class="center"><img src="/resources/articles/zabbix/logo.png" alt="Zabbix logo" /></p>
 
-<p>All’accesso di Zabbix Frontend Web saranno chiesti utente e password prima di
-poter visionare l’interfaccia di gestione di Zabbix.</p>
+<p>Il processo di configurazione di un host controllato passa da tre semplici
+passaggi (vedi anche la pagina <a href="what-is-zabbix#come-funziona-zabbix">come funziona Zabbix?</a>):</p>
 
-<p class="center"><img src="/resources/articles/zabbix/login.png" alt="Zabbix login" /></p>
+<ol>
+  <li>La scelta del <strong>protocollo di monitoraggio</strong> e quindi la configurazione del
+protocollo scelto sul sistema da controllare</li>
+  <li>La configurazione di un <strong>gruppo di host</strong> sul server di Zabbix</li>
+  <li>La configurazione dell’<strong>host</strong> sul server di Zabbix</li>
+</ol>
+
+<hr />
+<h1 id="scelta-del-protocollo-di-monitoraggio">Scelta del protocollo di monitoraggio</h1>
+
+<p>Zabbix può controllare vari dispositivi ma le principali tipologie sono:</p>
+
+<ul>
+  <li>Sistemi operativi, attraverso un applicativo da installare chiamato
+<strong>Zabbix Agent</strong> o agente</li>
+  <li>Dispositivi di rete tramite protocollo <strong>SNMP</strong></li>
+  <li>Server e altri hardware tramite protocollo <strong>IPMI</strong></li>
+</ul>
+
+<p>L’elenco non è completo, Zabbix infatti è estendibile in mille maniere e
+possono essere sviluppati altri controlli con altri protocolli.</p>
+
+<p>La scelta del protocollo di monitoraggio è naturalmente soggetta a ciò che
+il sistema da controllare supporta. Ad esempio se una stampante supporta
+unicamente il protocollo SNMP, la scelta sarà obbligata a quest’ultimo. Se si
+desidera controllare un sistema operativo, la scelta di Zabbix Agent è sempre
+la preferibile.</p>
+
+<h2 id="zabbix-agent">Zabbix Agent</h2>
+
+<p>L’agente di Zabbix è un piccolo software da installare nei sistemi operativi da
+controllare e si occupa di effettuare la verifica dei valori e li comunica
+al server di Zabbix che li raccoglie e li trasforma in avvisi e notifiche
+all’occorrenza.</p>
+
+<p>Le funzionalità che l’agente fornisce sono tante e sono estendibili, ovvero
+l’amministratore di sistema può definire domande aggiuntive che diventeranno
+comandi da eseguire sul sistema operativo per ottenere le risposte e quindi
+restituirle a Zabbix Server.</p>
+
+<p>Per l’installazione dell’agente di Zabbix sui vari sistemi operativi si veda
+la pagina dedicata a <a href="agent">Zabbix Agent</a>.</p>
+
+<h2 id="protocollo-snmp">Protocollo SNMP</h2>
+
+<p>Il <a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol">protocollo SNMP</a> (acronimo di <em>Simple Network Management Protocol</em>)
+è un protocollo di rete utilizzato da quasi tutti i produttori di hardware ed in
+taluni casi è applicabile anche ai sistemi operativi.</p>
+
+<p>La configurazione del protocollo SNMP sui dispositivi da controllare dipende
+dai dispositivi stessi, generalmente si trovano le sezioni SNMP su router,
+switch gestiti, stampanti, telecamere di rete, UPS e altri dispositivi.</p>
+
+<p>Del protocollo SNMP attualmente esistono tre versioni principali:</p>
+
+<ul>
+  <li>La versione 1 (<strong>SNMPv1</strong>) che fa uso di una semplice password (chiamata
+<em>Community string</em>), passata in chiaro durante la richiesta</li>
+  <li>La versione 2c (<strong>SNMPv2c</strong>) che estende le funzioni della versione SNMPv1 e
+fa uso della stessa Community string</li>
+  <li>La versione 3 (<strong>SNMPv3</strong>) permette l’uso di coppie utente e password e la
+crittografia delle richieste e delle risposte</li>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>I protocolli <strong>SNMPv1</strong> e <strong>SNMPv2c</strong> a causa della loro natura sono insicuri
+e se possibile vanno sostituiti dalla versione 3. Attraverso SNMPv1 e SNMPv2
+non si dovrebbero mai trasmettere informazioni riservate perché potrebbero
+essere facilmente intercettate o peggio modificate da un attaccante.</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>La quasi totalità dei dispositivi economici forniscono soltanto i protocolli
+v1 e v2c e per far l’utilizzo necessitano della sola stringa di comunità.</p>
+
+<h2 id="protocollo-ipmi">Protocollo IPMI</h2>
+
+<p>Il <a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface">protocollo IPMI</a> (acronimo di
+<em>Intelligent Platform Management Interface</em>) è un protocollo di rete che permette
+il controllo di dispositivi hardware di vario genere.</p>
+
+<p>Generalmente si trova disponibile unicamente su sistemi di un certo costo, come
+ad esempio sistemi server IBM, Lenovo, Dell e HP.</p>
+
+<p>Le sue funzionalità sono quelle relative al monitoraggio dei valori vitali
+dell’hardware come lo stato di funzionamento delle parti, le temperature,
+eventuali crash del sistema operativo in essi eseguito.</p>
+
+<p>Il protocollo in alcune implementazioni permette anche il controllo totale della
+macchina, incluse accensione e spegnimento e accesso allo schermo del sistema ma
+tutto ciò esula da Zabbix che non svolge queste operazioni.</p>
+
+<hr />
+<h1 id="configurazione-di-un-gruppo-host">Configurazione di un gruppo host</h1>
+
+<p>I <a href="definitions#host-group">gruppi di host</a> su Zabbix consentono di aggregare più host sotto
+un’unica voce. Ogni sistema controllato può appartenere a più gruppi di host
+contemporaneamente. Ad esempio una stampante oltre al gruppo <em>Printers</em> può
+appartenere anche al gruppo <em>Network piano terra</em>.</p>
+
+<hr />
+<h1 id="configurazione-di-un-host">Configurazione di un host</h1>
+
+<p>La configurazione dell’host definisce il nome, l’indirizzo del sistema,
+l’interfaccia (ovvero l’indirizzo e la porta) utilizzata per effettuare le
+analisi secondo i protocolli di monitoraggio indicati sopra.</p>
+
+<p>Oltre questi dati di configurazione dell’host è possibile associare uno o più
+<a href="definitions#template">modelli (Template)</a> di regole di controllo. Saranno questi modelli
+a determinare i controlli che saranno effettuati sul sistema configurato.</p>
 
 <blockquote>
   <blockquote>
     <blockquote>
       <blockquote>
         <blockquote>
-          <blockquote>
-            <p>I dati di accesso predefiniti a Zabbix Frontend Web sono i seguenti:<br />
-<strong>Utente</strong>: Admin<br />
-<strong>Password</strong>: zabbix</p>
-          </blockquote>
+          <p>Non è possibile associare modelli (template) a gruppi di host.
+La configurazione dei gruppi host permette soltanto di posizionare i modelli
+all’interno del gruppo di host ma non saranno efficaci e non svolgeranno alcuna
+funzione rispetto gli host nel gruppo.</p>
         </blockquote>
       </blockquote>
     </blockquote>
   </blockquote>
 </blockquote>
-
-<p class="center"><a target="_blank" href="/resources/articles/zabbix/overview/dashboard-initial.png"><img src="/resources/articles/zabbix/overview/dashboard-initial-thumb.png" alt="Dashboard" /></a></p>
-
-<p>Al primo accesso sarà mostrata la <strong>Dashboard</strong> predefinita, ovvero un cruscotto
-di controllo dello stato di salute di tutto il sistema, inclusi anche tutti gli
-altri sistemi controllati.</p>
-
-<p class="center"><img src="/resources/articles/zabbix/overview/sections.png" alt="Sections" /></p>
-
-<p>L’area superiore di qualsiasi schermata di Zabbix mostra le sezioni di interesse
-accessibili, suddivise in più sottosezioni.</p>
-
-<p>Ulteriori informazioni sulle sezioni di interesse del frontend possono trovarsi
-<a target="_blank" class="external" href="https://www.zabbix.com/documentation/3.4/manual/web_interface/frontend_sections">nella documentazione ufficiale</a> di Zabbix.</p>
-
-<hr />
-<h1 id="monitoring">Monitoring</h1>
-
-<p>Questa area contiene la visualizzazione degli elementi controllati per il
-monitoraggio.</p>
-
-<p>Attraverso di essa è possibile visionare lo stato degli avvisi ed è la sezione
-utilizzata da chi si occupa della manutenzione dei sistemi.</p>
-
-<p>All’interno di questa sezione sono presenti le seguenti sottosezioni</p>
-
-<ol>
-  <li><strong>Dashboard</strong>: mostrerà i cruscotti configurati, contenenti grafici e valori
-statistici rapidi per la supervisione d’insieme</li>
-  <li><strong>Problems</strong>: consente di eseguire filtri sui problemi e avvisi attualmente
-esistenti</li>
-  <li><strong>Overview</strong>: mostra una panoramica generale su tutti gli avvisi rilevati,
-un insieme più generale della sottosezione Problems</li>
-  <li><strong>Web</strong>: mostra i grafici e le statistiche delle analisi web, un particolare
-tipo di analisi che confronta le prestazioni dei siti web</li>
-  <li><strong>Latest data</strong>: è la sezione più dettagliata che contiene i valori rilevati
-dalle analisi e mostra i valori come sono stati ricevuti, sia che costituiscano
-o meno un allarme o un avviso</li>
-  <li><strong>Triggers</strong>: contiene gli allarmi (triggers), quelle condizioni che fanno
-scaturire un avviso, una notifica, un processo o un’altra qualsiasi reazione
-in base ai valori ottenuti dalle rilevazioni</li>
-  <li><strong>Graphs</strong>: sono mostrati in essa grafici correlati ai dati ottenuti</li>
-  <li><strong>Screens</strong>: contengono le schermate, ovvero gruppi di grafici e statistiche</li>
-  <li><strong>Maps</strong>: contengono le mappe e gli schemi disegnati che semplificano la
-comprensione della struttura di rete</li>
-  <li><strong>Discovery</strong>: mostra lo stato dell’analisi (discovery) di rete, un processo
-atto a esplorare la rete per scoprire la presenza di nuovi sistemi da
-monitorare</li>
-  <li><strong>Services</strong>: contiene i reparti che possono essere configurati per competenza
-del tipo di avviso o gruppi di sistemi, ciascuno dei quali con il proprio
-livello di SLA basato sul tempo di disservizio</li>
-</ol>
-
-<hr />
-<h1 id="inventory">Inventory</h1>
-
-<p>L’area dell’inventario contiene un elenco dei sistemi e delle informazioni
-proprie di ogni sistema, come numero di serie, marca, modello.</p>
-
-<p>All’interno di questa sezione sono presenti le seguenti sottosezioni</p>
-
-<ol>
-  <li><strong>Overview</strong>: mostra il conteggio del numero di host raggruppati per tipologia</li>
-  <li><strong>Hosts</strong>: mostra l’intentario degli host identificati</li>
-</ol>
-
-<hr />
-<h1 id="reports">Reports</h1>
-
-<p>L’area dei report contiene dati più sintetici e generali dello stato di tutto
-il sistema e degli host controllati.</p>
-
-<p>All’interno di questa sezione sono presenti le seguenti sottosezioni</p>
-
-<ol>
-  <li><strong>Status of Zabbix</strong>: mostra informazioni circa lo stato di salute di Zabbix,
-come il numero di sistemi controllati, il numero di utenti e così via</li>
-  <li><strong>Availability report</strong>: mostra lo stato di disponibilità dei servizi
-controllati</li>
-  <li><strong>Triggers top 100</strong>: mostra i primi 100 allarmi scattati, ovvero i primi 100
-avvisi problematici più frequenti</li>
-  <li><strong>Audit</strong>: mostra le modifiche e le configurazioni effettuate dal frontend</li>
-  <li><strong>Action log</strong>: mostra gli avvisi inviati in seguito agli allarmi scattati</li>
-  <li><strong>Notifications</strong>: mostra i totali degli avvisi inviati a ciascun operatore</li>
-</ol>
-
-<hr />
-<h1 id="configuration">Configuration</h1>
-
-<p>L’area della configurazione contiene le informazioni di configurazione di tutto
-il sistema Zabbix, gli host i gruppi, le regole e tutto il resto che fa funzionare
-Zabbix Server per monitorare i sistemi.</p>
-
-<ol>
-  <li><strong>Host groups</strong>: definisce i gruppi di host, al fine di raggrupparli e
-visionare tutti gli host in raggruppamenti omogenei</li>
-  <li><strong>Templates</strong>: definisce i modelli che contengono al loro interno i valori
-da controllare, gli allarmi, gli eventi da far scattare, raggruppati in
-maniera logica</li>
-  <li><strong>Hosts</strong>: definisce i sistemi da controllare, agganciando ad essi i modelli
-e i gruppi di host</li>
-  <li><strong>Maintenance</strong>: definisce i periodi di manutenzione e controllo dei gruppi
-di host</li>
-  <li><strong>Actions</strong>: configura le azioni che dovranno scattare allo scattare di
-alcuni eventi, in risposta alla variazione o allo scaturire dei problemi</li>
-  <li><strong>Event correlation</strong>: consente di correlare gli eventi tra loro in modo da
-far scattare operazioni quando due o più eventi vengono correlati tra loro</li>
-  <li><strong>Discovery</strong>: definiscono le regole di scoperta, per l’indagine della rete</li>
-  <li><strong>Services</strong>: definiscono le persone responsabili dei disservizi in maniera
-gerarchica</li>
-</ol>
-
-<hr />
-<h1 id="administration">Administration</h1>
-
-<p>La sezione amministrazione definisce le configurazioni proprie del server Zabbix
-e non riguardano gli host controllati.</p>
-
-<ol>
-  <li><strong>General</strong>: consente di configurare opzioni di carattere generale</li>
-  <li><strong>Proxies</strong>: consente di definire quali sistemi opereranno come Zabbix Proxy
-per il monitoraggio di altri sistemi e centralizzarne sul server i risultati</li>
-  <li><strong>Authentication</strong>: definisce il tipo di autenticazione per gli utenti del
-sistema</li>
-  <li><strong>User groups</strong>: definisce i gruppi di utenti</li>
-  <li><strong>Users</strong>: definisce gli utenti che avranno accesso al sistema</li>
-  <li><strong>Media types</strong>: definisce i media che potranno notificare agli operatori gli
-avvisi ricevuti</li>
-  <li><strong>Scripts</strong>: definisce strumenti aggiuntivi che potranno essere eseguiti su
-richiesta</li>
-  <li><strong>Queue</strong>: mostra la coda delle richieste in attesa di essere elaborate</li>
-</ol>
 
 
 
