@@ -57,7 +57,7 @@ nella maniera corretta.</p>
 
 <p>Per controllare se la scheda di rete supporta il Wake On LAN il seguente comando
 può essere utilizzato:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ethtool eth0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ethtool eth0
 Settings for eth0:
         ....
         Supports Wake-on: pumbg
@@ -67,7 +67,7 @@ Settings for eth0:
 
 <p>Se il campo <strong>Supports Wake-on</strong> contiene <strong>g</strong> allora il Wake On LAN con
 Magic Packet può essere utilizzato:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ethtool -s eth0 wol g
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ethtool -s eth0 wol g
 # ethtool eth0
 Settings for eth0:
         ....

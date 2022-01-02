@@ -63,7 +63,7 @@ specifica e la compilazione con pochi comandi.</p>
 
 <p>Il processo di preparazione semplicemente richiede l’estraazione del codice
 sorgente di Remmina Plugin Builder con:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd "~/cartella con il file scaricato"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd "~/cartella con il file scaricato"
 mkdir build
 tar xvzf "nome del file.tar.gz" -C build
 cd build/remmina-plugin-builder-*
@@ -74,14 +74,14 @@ cd build/remmina-plugin-builder-*
 <p>Quindi è necessario posizionare il codice sorgente del plugin nella cartella
 <strong>remmina-plugin-to-build</strong> e compilare tutto quanto usando:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake -DCMAKE_INSTALL_PREFIX=/usr .
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake -DCMAKE_INSTALL_PREFIX=/usr .
 make
 </code></pre></div></div>
 
 <p>Se i comandi precedenti non restituiscono alcun errore si dovrebbe leggere
 qualcosa del genere:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Scanning dependencies of target NOME-PLUGIN
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Scanning dependencies of target NOME-PLUGIN
 [100%] Building C object remmina-plugin-to-build/NOME-PLUGIN/..o
 Linking C shared library NOME-PLUGIN.so
 [100%] Built target NOME-PLUGIN
@@ -95,7 +95,7 @@ Linking C shared library NOME-PLUGIN.so
 <p>Se si desidera installare automaticamente il plugin nel sistema è possibile
 utilizzare:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo make install
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo make install
 </code></pre></div></div>
 
 <h1 id="impacchettamento-del-plugin">Impacchettamento del plugin</h1>
@@ -103,12 +103,12 @@ utilizzare:</p>
 <p>Se si desidera impacchettare il plugin invece di installarlo nel sistema si
 potrà utilizzare:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make DESTDIR=CARTELLA install
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make DESTDIR=CARTELLA install
 </code></pre></div></div>
 
 <p>Dovrebbe essere mostrato qualcosa simile a:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[100%] Built target NOME-PLUGIN
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[100%] Built target NOME-PLUGIN
 Install the project...
 -- Install configuration: "Release"
 -- Installing: PACKAGE/usr/lib/remmina/plugins/NOME-PLUGIN.so
