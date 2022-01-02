@@ -140,7 +140,7 @@ di Zabbix</a>.</p>
 
 <p>La prima verifica riguarda la raggiungibilità del servizio dell’agente:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>telnet INDIRIZZO 10050
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>telnet INDIRIZZO 10050
 </code></pre></div></div>
 
 <p>Se la connessione non viene stabilita oppure viene immediatamente rifiutata
@@ -151,12 +151,12 @@ alla porta di rete.</p>
 <p>Se la connessione con telnet viene stabilita è possibile effettuare la verifica
 del funzionamento dell’agente dalla macchina Zabbix Server eseguendo:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zabbix_get -s INDIRIZZO -k agent.ping
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zabbix_get -s INDIRIZZO -k agent.ping
 </code></pre></div></div>
 
 <p>Se venisse risposto un messaggio come il seguente:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zabbix_get [3330]: Get value error: ZBX_TCP_READ() failed: [104] Connection reset by peer
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zabbix_get [3330]: Get value error: ZBX_TCP_READ() failed: [104] Connection reset by peer
 zabbix_get [3330]: Check access restrictions in Zabbix agent configuration
 </code></pre></div></div>
 

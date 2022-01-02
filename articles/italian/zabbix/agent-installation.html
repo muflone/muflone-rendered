@@ -98,7 +98,7 @@ alla directory scelta.</p>
 <p>Spostarsi quindi nella directory <strong>C:\Zabbix\conf</strong> e creare un nuovo file di
 testo di nome <strong>zabbix_agent.conf</strong> contenente al suo interno quanto segue:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LogType=file
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LogType=file
 LogFile=C:\Zabbix\zabbix_agentd.log
 
 Server=zabbix-server.muflone.local
@@ -130,7 +130,7 @@ comandi:</p>
 
 <p class="center"><img src="/resources/articles/zabbix/agent-installation/windows-installation.png" alt="Agent installation" /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CD \Zabbix
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CD \Zabbix
 bin\win32\zabbix_agentd.exe -c conf\zabbix_agent.conf --install
 </code></pre></div></div>
 
@@ -152,7 +152,7 @@ win64.</p>
 
 <p>Subito dopo l’installazione è possibile avviare il servizio con:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NET START "Zabbix Agent"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NET START "Zabbix Agent"
 </code></pre></div></div>
 
 <p class="center"><img src="/resources/articles/zabbix/agent-installation/windows-firewall.png" alt="Windows firewall" /></p>

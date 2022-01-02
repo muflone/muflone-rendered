@@ -72,7 +72,7 @@ common code inside an inclusion file.</p>
 <p>Every file saved into the <strong>_include</strong> folder could be included inside any other
 page or post using:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include filename %}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include filename %}
 </code></pre></div></div>
 
 <p>The whole code will be copied inside the page as if it was written inside the
@@ -80,7 +80,7 @@ page. Obviously the included file can have other includes or other liquid tags.<
 
 <p>If you look at the content of the file <strong>_layouts/page.html</strong> you can see:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 &lt;div class="post"&gt;
@@ -98,7 +98,7 @@ layout: default
 
 <p>The default file <strong>_layouts/post.html</strong> instead contains:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 &lt;div class="post"&gt;
@@ -128,7 +128,7 @@ automatically be applied to any pages that use the same included file.</p>
 to exclude such line from the rendered page by simply passing an argument to
 the included file, so let’s create a new file called <strong>_include/post_content.html</strong>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="post"&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="post"&gt;
 
   &lt;header class="post-header"&gt;
     &lt;h1&gt;{{ page.title }}&lt;/h1&gt;
@@ -152,7 +152,7 @@ page else it will not be written at all.</p>
 
 <p>So to change the <strong>_layouts/page.html</strong> file content to:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 {% include post_content.html meta_paragraph=false %}
@@ -163,7 +163,7 @@ included file and it will be checked to produce or omit the paragraph.</p>
 
 <p>The <strong>_layouts/post.html</strong> will contain:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 {% include post_content.html meta_paragraph=true %}

@@ -68,7 +68,7 @@ with a non-existent or an unrecognized GPG key.</p>
 <p>While trying to update an old Arch Linux installation, I’ve received an issue
 related to an old GPG key:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# pacman -Su
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# pacman -Su
 :: Starting full system upgrade...
 resolving dependencies...
 warning: dependency cycle detected:
@@ -106,7 +106,7 @@ developer: Gaetan Bisson.</p>
 <p>The first attempt was to reinstall the keyring with all the Arch Linux
 developers and maintainers keys:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# pacman -S archlinux-keyring
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# pacman -S archlinux-keyring
 resolving dependencies...
 looking for inter-conflicts...
 
@@ -142,7 +142,7 @@ gpg: next trustdb check due at 2018-06-25
 <p>Then I’ve tried to manually add the missing key, searching it on the official
 <a target="_blank" class="external" href="https://www.archlinux.org/master-keys/">Arch Linux master keys</a> website.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# pacman-key --recv-key 1A60DC44245D06FEF90623D6EEEEE2EEEE2EEEEE
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# pacman-key --recv-key 1A60DC44245D06FEF90623D6EEEEE2EEEE2EEEEE
 gpg: requesting key EE2EEEEE from hkp server pool.sks-keyservers.net
 gpg: key EE2EEEEE: no valid user IDs
 gpg: this may be caused by a missing self-signature
@@ -160,7 +160,7 @@ luck.</p>
 <p>Having found the PGP/GPG key <a target="_blank" class="external" href="https://gaati.org/bisson/?en">on the Bisson website</a>, I’ve downloaded and tried
 to import it:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# curl https://gaati.org/bisson/bisson.gpg | pacman-key -a -
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# curl https://gaati.org/bisson/bisson.gpg | pacman-key -a -
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100 20749  100 20749    0     0  19558      0  0:00:01  0:00:01 --:--:-- 19574
@@ -173,14 +173,14 @@ something wrong.</p>
 
 <p>The error message is always the same:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg: key EE2EEEEE: no valid user IDs
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg: key EE2EEEEE: no valid user IDs
 </code></pre></div></div>
 
 <p>After a long online search the problem seems due to the fact that the key
 is not self-signed by the author (<a target="_blank" class="external" href="https://gpgtools.tenderapp.com/discussions/problems/31848-adding-self-signature-to-really-old-keys">1</a> and <a target="_blank" class="external" href="https://lists.gt.net/gnupg/users/49624">2</a>) and the only solution seems to
 force gpg to accept the non-self-signed key:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# echo "allow-non-selfsigned-uid" &gt;&gt; /etc/pacman.d/gnupg/gpg.conf
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# echo "allow-non-selfsigned-uid" &gt;&gt; /etc/pacman.d/gnupg/gpg.conf
 [root@vboxarch ~]# rm /etc/pacman.d/gnupg/*.gpg
 [root@vboxarch ~]# curl https://gaati.org/bisson/bisson.gpg | pacman-key -a -
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -200,7 +200,7 @@ gpg: next trustdb check due at 2018-06-25
 
 <p>At this point I think to have solved the problem:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# pacman -Su
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# pacman -Su
 </code></pre></div></div>
 
 <p>But unfortunately the issue is always the same.</p>
@@ -212,17 +212,17 @@ gpg: next trustdb check due at 2018-06-25
 
 <p>Edit the pacman.conf file</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# nano /etc/pacman.conf
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@vboxarch ~]# nano /etc/pacman.conf
 </code></pre></div></div>
 
 <p>And change the line from:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SigLevel = Required DatabaseOptional
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SigLevel = Required DatabaseOptional
 </code></pre></div></div>
 
 <p>to:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SigLevel = Never
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SigLevel = Never
 </code></pre></div></div>
 
 <p>The update process will be successful, ignoring the issue with the keys.</p>
@@ -232,7 +232,7 @@ gpg: next trustdb check due at 2018-06-25
 
 <p>After the system update is recommended to restore the <strong>SigLevel</strong> option to
 its default value:
-<code class="highlighter-rouge">Required DatabaseOptional</code></p>
+<code class="language-plaintext highlighter-rouge">Required DatabaseOptional</code></p>
 
 <blockquote>
   <blockquote>
@@ -254,7 +254,7 @@ ramdisk.</p>
 
 <p>To recreate the initial ramdisk you can use the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkinitcpio -p linux
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkinitcpio -p linux
 </code></pre></div></div>
 
 <p>For further information: <a target="_blank" class="external" href="https://www.archlinux.org/news/required-update-to-pacman-501-before-2016-04-23/">Required update to pacman-5.0.1 before 2016-04-23</a>.</p>

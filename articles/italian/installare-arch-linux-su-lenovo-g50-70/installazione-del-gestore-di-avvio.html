@@ -79,7 +79,7 @@ gestore di avvio. Per i computer dotati di UEFI la scelta più apprezzata resta
 di avviare anche altri sistemi operativi come Windows, OS X e altre distribuzioni
 GNU/Linux.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# pacman -S refind-efi efibootmgr prebootloader
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# pacman -S refind-efi efibootmgr prebootloader
 resolving dependencies...
 looking for conflicting packages...
 
@@ -134,7 +134,7 @@ Optional dependencies for refind-efi
 <p>Il gestore di avvio rEFInd va innanzitutto installato nella partizione boot. Il
 comando refind-install si occuperà di copiare i suoi file nella partizione.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# refind-install 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# refind-install 
 ShimSource is none
 Installing rEFInd on Linux....
 ESP was found at /boot using vfat
@@ -165,7 +165,7 @@ Secure Boot.</p>
 rinominare il file di avvio di rEFInd (<strong>refind_x64.efi</strong>) in <strong>loader.efi</strong>,
 in questo modo, dopo l’avvio di PreLoader sarà avviato rEFInd.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# cp /usr/lib/prebootloader/*.efi /boot/EFI/refind/
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# cp /usr/lib/prebootloader/*.efi /boot/EFI/refind/
 
 sh-4.3# mv /boot/EFI/refind/refind_x64.efi /boot/EFI/refind/loader.efi
 
@@ -176,7 +176,7 @@ HashTool.efi  KeyTool.efi  PreLoader.efi  icons  keys  loader.efi  refind.conf
 <p>Attraverso <strong>efibootmgr</strong> è possibile visualizzare e configurare le scelte e le
 voci di avvio UEFI, che avvieranno il sistema scelto.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# efibootmgr 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# efibootmgr 
 BootCurrent: 0001
 Timeout: 0 seconds
 BootOrder: 0005,0002,2001,2003,0000,2002
@@ -198,7 +198,7 @@ della voce con numero identificativo <strong>0005</strong> (ovvero Boot0005).</p
 <p>Poiché è stato modificato il file di avvio di rEFInd da refind_x64.efi a
 loader.efi, sarà prima necessario eliminare la voce di avvio creata automaticamente.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# efibootmgr --bootnum 0005 --delete-bootnum
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# efibootmgr --bootnum 0005 --delete-bootnum
 BootCurrent: 0001
 Timeout: 0 seconds
 BootOrder: 0002,2001,2003,0000,2002
@@ -215,7 +215,7 @@ Boot2003* EFI Network
 <p>Dopo l’eliminazione sarà possibile aggiungere una nuova voce di avvio che
 eseguirà <strong>PreLoader.efi</strong>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# efibootmgr --create --disk /dev/sda --part 2 --label "rEFInd Boot Manager" --loader '\EFI\refind\PreLoader.efi'
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# efibootmgr --create --disk /dev/sda --part 2 --label "rEFInd Boot Manager" --loader '\EFI\refind\PreLoader.efi'
 BootCurrent: 0001
 Timeout: 0 seconds
 BootOrder: 0005,0002,2001,2003,0000,2002
@@ -234,7 +234,7 @@ Boot0005* rEFInd Boot Manager
 
 <h2 id="uscita-dallambiente-chroot">Uscita dall’ambiente chroot</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# exit
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh-4.3# exit
 exit
 arch-chroot /mnt  3.38s user 1.83s system 0% cpu 39:54.86 total
 root@archiso ~ # umount /mnt/home 

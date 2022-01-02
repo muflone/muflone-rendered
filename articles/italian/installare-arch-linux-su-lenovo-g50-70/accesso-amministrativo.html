@@ -93,7 +93,7 @@ l’inserimento della password dell’utente corrente</li>
 può semplicemente ignorare la configurazione di sudo e continuare ad utilizzare
 su come segue:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ su
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ su
 Password: 
 </code></pre></div></div>
 
@@ -101,14 +101,14 @@ Password:
 dell’utente root e se l’autenticazione avverrà correttamente si passerà all’uso
 dell’utente root.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo muflone]# id
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo muflone]# id
 uid=0(root) gid=0(root) gruppi=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),19(log)
 </code></pre></div></div>
 
 <p>Al termine dell’uso dell’utente root si potrà tornare al proprio utente
 chiudendo la sessione col comando <strong>exit</strong>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo muflone]# exit
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo muflone]# exit
 exit
 </code></pre></div></div>
 
@@ -116,7 +116,7 @@ exit
 dall’ambiente del nuovo utente è possibile aggiungere l’argomento <strong>-c</strong> seguito
 dalla riga di comando da eseguire.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ su -c "id"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ su -c "id"
 Password: 
 uid=0(root) gid=0(root) gruppi=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),19(log)
 </code></pre></div></div>
@@ -125,13 +125,13 @@ uid=0(root) gid=0(root) gruppi=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10
 root, semplicemente indicando l’argomento <strong>--login</strong> (o anche <strong>-l</strong> oppure
 anche <strong>-</strong> da solo) e il nome utente dopo il comando su.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ su -l prova
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ su -l prova
 Password: 
 </code></pre></div></div>
 
 <p>Quando richiesto inserire la password dell’utente prova.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[prova@arch-lenovo ~]$ id
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[prova@arch-lenovo ~]$ id
 uid=1001(prova) gid=100(users) gruppi=100(users)
 [prova@arch-lenovo ~]$ exit
 logout
@@ -142,7 +142,7 @@ logout
 per eseguire un’operazione con un altro utente ed immediatamente ritornare
 all’utente iniziale.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ su -l -c "id" prova
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ su -l -c "id" prova
 Password: 
 uid=1001(prova) gid=100(users) gruppi=100(users)
 </code></pre></div></div>
@@ -160,7 +160,7 @@ di nome <strong>sudoers</strong>.</p>
 
 <p>Prima di poter utilizzare sudo è necessario installare il relativo pacchetto:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S sudo
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S sudo
 risoluzione delle dipendenze in corso...
 ricerca dei pacchetti in conflitto in corso...
 
@@ -201,14 +201,14 @@ di funzionare fino a quando questi errori non vengano risolti.</p>
 l’editor di testo vi. Chi preferisse utilizzare un editor di testo differente
 come ad esempio nano potrà utilizzare il comando:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# EDITOR=nano visudo
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# EDITOR=nano visudo
 </code></pre></div></div>
 
 <p>All’interno di questo file tutte le righe che iniziano con # sono descrittive.</p>
 
 <p>Scorrendo il file si possono notare le seguenti righe:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##
 ## User privilege specification
 ##
 root ALL=(ALL) ALL
@@ -222,14 +222,14 @@ qualsiasi comando.</p>
 <p>Per concedere all’utente <em>muflone</em> il permesso di utilizzare sudo è possibile
 aggiungere sotto quelle righe:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>muflone ALL=(ALL) ALL
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>muflone ALL=(ALL) ALL
 </code></pre></div></div>
 
 <p>Salvare il file, uscire dall’editor di testo e passare all’utente muflone.</p>
 
 <p>Eseguendo il comando:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ sudo id
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ sudo id
 
 Questa lezione dovrebbe essere stata impartita dall'amministratore
 di sistema locale. Solitamente equivale a:
@@ -259,13 +259,13 @@ ad operazioni amministrative.</p>
 <p>Per configurare sudo all’uso del gruppo wheel basterà aggiungere nel file
 sudoers la riga:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%wheel ALL=(ALL) ALL
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%wheel ALL=(ALL) ALL
 </code></pre></div></div>
 
 <p>Quindi <a href="/articles/italian/installare-arch-linux-su-lenovo-g50-70/utenti-e-gruppi.html#aggiungere-un-utente-ad-un-gruppo-di-utenti">aggiungere tutti gli utenti interessati al gruppo</a>
 wheel anziché doverli elencare uno per uno nel file sudoers con:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# gpasswd -a muflone wheel
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# gpasswd -a muflone wheel
 Aggiunta dell'utente muflone al gruppo wheel
 </code></pre></div></div>
 
@@ -280,7 +280,7 @@ dell’utente root.</p>
 <p>Per configurare i comandi permessi dall’uso di sudo basterà indicarli nel file
 sudoers al posto dell’ultimo ALL. Ad esempio le righe seguenti:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%wheel ALL=(ALL) /usr/bin/who
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%wheel ALL=(ALL) /usr/bin/who
 %wheel ALL=(ALL) /usr/bin/whoami
 </code></pre></div></div>
 
@@ -293,19 +293,19 @@ argomenti forniti.</p>
 
 <p>Aggiungendo nel file sudoers la riga seguente:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%wheel ALL=(ALL) /usr/bin/who -b
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%wheel ALL=(ALL) /usr/bin/who -b
 </code></pre></div></div>
 
 <p>Sarà permesso ai membri del gruppo wheel l’uso del comando:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ sudo who -b
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ sudo who -b
 [sudo] password di muflone: 
          avvio di sistema 2015-08-02 15:45
 </code></pre></div></div>
 
 <p>Se lo stesso utente eseguisse il comando sudo who riceverebbe un errore:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ sudo who 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ sudo who 
 [sudo] password di muflone: 
 All'utente muflone non è consentito eseguire "/usr/bin/who" come root su arch-lenovo.
 </code></pre></div></div>
@@ -320,14 +320,14 @@ richiesta di password a meno che non sia stato chiuso il terminale o la sessione
 <p>Per configurare il numero di minuti prima della scadenza della password di sudo
 è possibile aggiungere la riga <strong>Defaults timestamp_timeout=MINUTI</strong>, ad esempio:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Defaults timestamp_timeout=1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Defaults timestamp_timeout=1
 </code></pre></div></div>
 
 <p>Lascerà valida la sessione di sudo per 1 minuto dopo l’esecuzione dell’ultimo
 comando attraverso sudo. In altre parole si avranno 60 secondi di tempo tra un
 comando e l’altro senza che sudo richieda nuovamente la password.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Defaults timestamp_timeout=0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Defaults timestamp_timeout=0
 </code></pre></div></div>
 
 <p>Configurando un timeout di 0 la password scadrà immediatamente e quindi ad ogni
@@ -346,7 +346,7 @@ per tali comandi non verrà chiesta alcuna password.</p>
 
 <p>Si consideri il seguente esempio, nel file sudoers:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%wheel ALL=(ALL) NOPASSWD: /usr/bin/who -b
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%wheel ALL=(ALL) NOPASSWD: /usr/bin/who -b
 %wheel ALL=(ALL) /usr/bin/whoami
 </code></pre></div></div>
 
@@ -354,7 +354,7 @@ per tali comandi non verrà chiesta alcuna password.</p>
 alcuna richiesta della password e l’esecuzione del comando who che richiederà
 l’immissione della password.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ sudo -k
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[muflone@arch-lenovo ~]$ sudo -k
 [muflone@arch-lenovo ~]$ sudo who -b
          avvio di sistema 2015-08-02 15:45
 [muflone@arch-lenovo ~]$ sudo whoami
@@ -382,12 +382,12 @@ principale e quindi di tenerle facilmente ben visibili rispetto il file generale
 della directory /etc/sudoers.d. La sintassi per creare questi file di configurazione
 separati è <strong>visudo -f /etc/sudoers.d/FILE</strong>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# EDITOR=nano visudo -f /etc/sudoers.d/10-groups 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# EDITOR=nano visudo -f /etc/sudoers.d/10-groups 
 </code></pre></div></div>
 
 <p>Quindi aggiungere all’interno del file i gruppi da autorizzare, ad esempio:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%wheel ALL=(ALL) ALL
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%wheel ALL=(ALL) ALL
 </code></pre></div></div>
 
 <p>Nota bene: i file di configurazione separati non devono contenere né punti né

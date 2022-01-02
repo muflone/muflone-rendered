@@ -82,7 +82,7 @@ per il touchpad Synaptics e delle applicazioni di base.</p>
 <p>Il primo dei pacchetti da installare è il server grafico <a target="_blank" class="external" href="https://wiki.archlinux.org/index.php/Xorg">Xorg</a> contenuto in
 <strong>xserver-xorg</strong>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xorg-server
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xorg-server
 risoluzione delle dipendenze in corso...
 :: Ci sono 4 provider disponibili per libgl:
 :: Repository extra
@@ -139,7 +139,7 @@ Dimensione totale dei pacchetti da installare:  121,21 MiB
 <a target="_blank" class="external" href="https://wiki.archlinux.org/index.php/Intel_graphics">driver Intel</a> per la scheda video integrata, contenuti nel pacchetto
 <strong>xf86-video-intel</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xf86-video-intel
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xf86-video-intel
 risoluzione delle dipendenze in corso...
 ricerca dei pacchetti in conflitto in corso...
 
@@ -188,7 +188,7 @@ Dipendenze opzionali di xf86-video-intel
 installare i driver per comandarlo, contenuti nel pacchetto
 <strong>xf86-input-synaptics</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xf86-input-synaptics
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xf86-input-synaptics
 risoluzione delle dipendenze in corso...
 ricerca dei pacchetti in conflitto in corso...
 
@@ -225,7 +225,7 @@ pertanto installeremo il pacchetto <strong>xorg-xinit</strong> che contiene il c
 <strong>startx</strong> per avviare manualmente l’ambiente grafico e il pacchetto <strong>xterm</strong>
 che contiene un emulatore di terminale molto basilare.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xorg-xinit xterm 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xorg-xinit xterm 
 risoluzione delle dipendenze in corso...
 ricerca dei pacchetti in conflitto in corso...
 
@@ -296,7 +296,7 @@ a sinistra eseguendo il comando <strong>exit</strong>.</p>
 <p>Alla chiusura dell’ambiente grafico si potranno vedere tra i tanti messaggi i
 due seguenti:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/X11/xinit/xinitrc: riga 51: twm: comando non trovato
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/X11/xinit/xinitrc: riga 51: twm: comando non trovato
 /etc/X11/xinit/xinitrc: riga 52: xclock: comando non trovato
 </code></pre></div></div>
 
@@ -307,7 +307,7 @@ che permetterà di spostare le finestre di terminale e un orologio.</p>
 
 <p>Installiamo i due pacchetti sopra descritti con:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xorg-twm xorg-xclock
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S xorg-twm xorg-xclock
 risoluzione delle dipendenze in corso...
 ricerca dei pacchetti in conflitto in corso...
 

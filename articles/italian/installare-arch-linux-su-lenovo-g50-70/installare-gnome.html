@@ -83,7 +83,7 @@ e aggiornato come <a target="_blank" class="external" href="https://www.gnome.or
 <p>Il pacchetto minimale per l’uso di GNOME è <strong>gnome-shell</strong> che include solo la
 shell di GNOME, le librerie di base e nulla di più.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S gnome-shell
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S gnome-shell
 risoluzione delle dipendenze in corso...
 ricerca dei pacchetti in conflitto in corso...
 
@@ -155,7 +155,7 @@ tre terminali, dell’orologio e di Twm visti in precedenza).</p>
 <p>Basterà pertanto creare un nuovo file di nome .xinitrc all’interno della propria
 home e startx lo leggerà prima di mostrare l’ambiente grafico.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# echo exec gnome-session &gt; $HOME/.xinitrc
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# echo exec gnome-session &gt; $HOME/.xinitrc
 </code></pre></div></div>
 
 <p>Fatto ciò, avviando Xorg tramite il comando <strong>startx</strong> sarà avviata una sessione
@@ -183,7 +183,7 @@ cliccare su <strong>Termina sessione</strong>.</p>
 GNOME, che consente di configurare varie preferenze e servizi. Il centro di
 controllo è contenuto nel pacchetto <strong>gnome-control-center</strong>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S gnome-control-center
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S gnome-control-center
 risoluzione delle dipendenze in corso...
 :: Ci sono 2 provider disponibili per libx264.so=148-64:
 :: Repository extra
@@ -262,7 +262,7 @@ base di GNOME.</p>
 <p>Per installare le applicazioni predefinite di GNOME è necessario installare il
 gruppo di pacchetti <strong>gnome</strong> che include sia librerie sia applicazioni.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S gnome
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S gnome
 :: Ci sono 39 membri nel gruppo gnome:
 
 :: Repository extra
@@ -286,7 +286,7 @@ server <strong>Apache</strong>, inutile per la quasi totalità di installazioni 
 scegliere di installare soltanto i pacchetti davvero desiderati. In questo caso
 sarà installato tutto il gruppo di base, inclusi i pacchetti non davvero necessari.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>attenzione: adwaita-icon-theme-3.16.2.1-1 è aggiornato ma sarà reinstallato
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>attenzione: adwaita-icon-theme-3.16.2.1-1 è aggiornato ma sarà reinstallato
 attenzione: gnome-control-center-3.16.2-2 è aggiornato ma sarà reinstallato
 attenzione: gnome-desktop-1:3.16.2-1 è aggiornato ma sarà reinstallato
 attenzione: gnome-session-3.16.0-1 è aggiornato ma sarà reinstallato
@@ -357,7 +357,7 @@ disponibile un altro gruppo di pacchetti aggiuntivi chiamato <strong>gnome-extra
 <p>Tutti questi pacchetti sono opzionali e contengono giochi e applicazioni
 aggiuntive di GNOME la cui utilità dipende da ciascun utilizzatore.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S gnome-extra
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# pacman -S gnome-extra
 :: Ci sono 53 membri nel gruppo gnome-extra:
 
 :: Repository extra

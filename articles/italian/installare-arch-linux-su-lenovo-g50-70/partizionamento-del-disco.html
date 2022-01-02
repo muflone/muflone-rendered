@@ -101,7 +101,7 @@ ridurla è possibile utilizzare la gestione disco di Windows.</p>
 
 <h2 id="partizionamento-iniziale-visto-da-gdisk">Partizionamento iniziale visto da gdisk</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # gdisk -l /dev/sda
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # gdisk -l /dev/sda
 GPT fdisk (gdisk) version 1.0.0
 
 Partition table scan:
@@ -131,7 +131,7 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 
 <h2 id="partizionamento-iniziale-visto-da-parted">Partizionamento iniziale visto da parted</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # parted -l /dev/sda
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # parted -l /dev/sda
 Model: ATA WDC WD10JPCX-24U (scsi)
 Disk /dev/sda: 1000GB
 Sector size (logical/physical): 512B/4096B
@@ -154,7 +154,7 @@ Number  Start   End     Size    File system     Name                          Fl
 
 <p>Per il partizionamento del disco sarà utilizzato il comando parted</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # parted /dev/sda
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # parted /dev/sda
 GNU Parted 3.2
 Using /dev/sda
 Welcome to GNU Parted! Type 'help' to view a list of commands.
@@ -169,7 +169,7 @@ kernel, librerie e i dati variabili come log, liste dei pacchetti e altro.</p>
 <p>Sarà creata una partizione da <strong>30 GB</strong>, più che sufficiente per le normali
 esigenze.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(parted) mkpart
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(parted) mkpart
 Partition name?  []? 
 File system type?  [ext2]? ext4
 Start? 2505M
@@ -204,7 +204,7 @@ dall’installazione dei pacchetti del software.</p>
 <p>Sarà creata una partizione di <strong>117 GB</strong>, l’esigenza reale dipende
 dall’utilizzatore.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(parted) mkpart
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(parted) mkpart
 Partition name?  []? 
 File system type?  [ext2]? ext4
 Start? 33.2G
@@ -242,7 +242,7 @@ delle prestazioni, essendo il disco rigido assai più lento della RAM.</p>
 della RAM, al fine di permettere la conservazione della RAM su swap, utile per
 l’operazione di sospensione (detta anche ibernazione).</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(parted) mkpart                                                           
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(parted) mkpart                                                           
 Partition name?  []? 
 File system type?  [ext2]? linux-swap
 Start? 852G
@@ -283,7 +283,7 @@ prestazioni, soprattutto in fase di scrittura dei dati. Per ulteriori informazio
 e <a target="_blank" class="external" href="http://www.seagate.com/tech-insights/advanced-format-4k-sector-hard-drives-master-ti/">Transition to Advanced Format 4K Sector Hard Drives</a>
 (<a href="/resources/articles/arch-g50-70/seagate-4k-sectors-transition-it.pdf" class="offline-copy offline-copy-pdf">Copia offline</a>).</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(parted) print                                                            
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(parted) print                                                            
 Model: ATA WDC WD10JPCX-24U (scsi)
 Disk /dev/sda: 1000GB
 Sector size (logical/physical): 512B/4096B
@@ -319,7 +319,7 @@ Number  Start   End     Size    File system     Name                          Fl
 <p>Eseguire le stesse verifiche con gdisk confermerà che tutte le partizioni sono
 allineate correttamente.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # gdisk /dev/sda
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # gdisk /dev/sda
 GPT fdisk (gdisk) version 1.0.0
 
 Partition table scan:
@@ -371,7 +371,7 @@ Command (? for help): q
 root, ciò per evitare che un uso errato di un log possa riempire completamente
 la partizione.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # mke2fs -L Root -m 1 /dev/sda8 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # mke2fs -L Root -m 1 /dev/sda8 
 mke2fs 1.42.12 (29-Aug-2014)
 Creating filesystem with 7500032 4k blocks and 1875968 inodes
 Filesystem UUID: 2cce8139-2aa7-415a-811a-0830dd16614b
@@ -389,7 +389,7 @@ Writing superblocks and filesystem accounting information: done
 <p>Per la partizione home non sarà necessario riservare spazio all’utente root,
 pertanto verrà indicata la percentuale dello 0% (<strong>-m 0</strong>).</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # mke2fs -L Home -m 0 /dev/sda9
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # mke2fs -L Home -m 0 /dev/sda9
 mke2fs 1.42.12 (29-Aug-2014)
 Creating filesystem with 28509440 4k blocks and 7135232 inodes
 Filesystem UUID: d96414ef-54eb-42e6-acab-612a9689c7b4
@@ -404,7 +404,7 @@ Writing superblocks and filesystem accounting information: done
 
 <h2 id="formattazione-della-partizione-swap">Formattazione della partizione swap</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # mkswap -L "Swap_6_GB" /dev/sda10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # mkswap -L "Swap_6_GB" /dev/sda10
 Setting up swapspace version 1, size = 5.9 GiB (6275723264 bytes)
 LABEL=Swap_6_GB, UUID=6290142a-f101-4e39-acbd-71dc33d259eb
 </code></pre></div></div>
@@ -420,7 +420,7 @@ quale sia la partizione contenente i file di avvio di Windows, la cosiddetta
 <p>Utilizzare il comando <strong>blkid</strong> per conoscere l’elenco delle partizioni
 disponibili, con alcuni dettagli:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # blkid
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # blkid
 /dev/sda1: LABEL="WINRE_DRV" UUID="12D02132D0211E0B" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="c714930a-c127-4c77-af04-c6039c287a09"
 /dev/sda2: LABEL="SYSTEM_DRV" UUID="2223-7318" TYPE="vfat" PARTLABEL="EFI system partition" PARTUUID="9ec6d731-187b-49bc-9c96-0ac6b5c1ff39"
 /dev/sda3: LABEL="LRS_ESP" UUID="7627-2E57" TYPE="vfat" PARTLABEL="Basic data partition" PARTUUID="3b3d4cf2-708b-404b-9efb-6e3c36eb5138"
@@ -447,7 +447,7 @@ pagina <a target="_blank" class="external" href="http://www.lionhack.com/2013/12
 
 <p>E’ infine possibile montare le nuove partizioni root, boot e home.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # mount /dev/sda8 /mnt
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@archiso ~ # mount /dev/sda8 /mnt
 root@archiso ~ # mkdir /mnt/boot
 root@archiso ~ # mount /dev/sda2 /mnt/boot 
 root@archiso ~ # mkdir /mnt/home          

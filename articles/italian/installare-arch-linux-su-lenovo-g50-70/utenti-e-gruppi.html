@@ -88,7 +88,7 @@ a più utenti.</p>
 <p>Per conoscere l’elenco dei gruppi ai quali aggiungere gli utenti è possibile
 utilizzare il comando <strong>getent group</strong>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# getent group
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# getent group
 root:x:0:root
 bin:x:1:root,bin,daemon
 ...
@@ -128,7 +128,7 @@ WiFi o Bluetooth</li>
 <p>Per aggiungere un nuovo utente è possibile utilizzare il comando <strong>useradd</strong> in
 questa maniera:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# useradd -m -g users muflone
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# useradd -m -g users muflone
 </code></pre></div></div>
 
 <p>L’ultimo argomento <strong>muflone</strong> rappresenta il nome del nuovo utente da creare,
@@ -139,7 +139,7 @@ l’utente appartiene, in questo caso <strong>users</strong>.</p>
 <p>E’ possibile specificare gruppi di utenti aggiuntivi con l’argomento <strong>-G</strong>,
 ad esempio con:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# useradd -m -g users -G rfkill,systemd-journal muflone
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# useradd -m -g users -G rfkill,systemd-journal muflone
 </code></pre></div></div>
 
 <p>L’utente muflone sarà automaticamente membro del gruppo <strong>users</strong> e dei gruppi
@@ -151,7 +151,7 @@ la lettura del log di sistema col comando journalctl).</p>
 <p>E’ anche possibile aggiungere in un secondo momento un utente ad un gruppo
 utilizzando il comando <strong>gpasswd --add UTENTE GRUPPO</strong>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# gpasswd --add muflone rfkill
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# gpasswd --add muflone rfkill
 Aggiunta dell'utente muflone al gruppo rfkill
 
 [root@arch-lenovo ~]# gpasswd --add muflone systemd-journal
@@ -166,7 +166,7 @@ dell’utente, una sorta di descrizione associata a ciascun utente.</p>
 <p>Per cambiare il nome completo dell’utente è possibile utilizzare il comando
 <strong>chfn --full-name “NOME COMPLETO” UTENTE</strong> come ad esempio.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# chfn --full-name "Muflone Ovinis" muflone
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# chfn --full-name "Muflone Ovinis" muflone
 Modifica delle informazioni finger per muflone in corso.
 
 Le informazioni finger sono state modificate.
@@ -177,7 +177,7 @@ Le informazioni finger sono state modificate.
 <p>Per verificare l’operazione appena eseguita è possibile utilizzare il comando
 <strong>id UTENTE</strong>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# id muflone
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# id muflone
 uid=1000(muflone) gid=100(users) gruppi=100(users),24(rfkill),190(systemd-journal)
 </code></pre></div></div>
 
@@ -188,7 +188,7 @@ di gruppo (gid) 100 e sarà presente nei gruppi 100 (users), 24 (rfkill) e 190
 <p>Per verificare i gruppi cui un utente appartiene è possibile utilizzare il
 comando <strong>groups UTENTE</strong>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# groups muflone
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# groups muflone
 rfkill systemd-journal users
 </code></pre></div></div>
 
@@ -199,7 +199,7 @@ rfkill systemd-journal users
 <p>Per assegnare una password di accesso al nuovo utente appena creato si potrà
 utilizzare il comando <strong>passwd UTENTE</strong>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# passwd muflone
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# passwd muflone
 Immettere nuova password UNIX: 
 Reimmettere la nuova password UNIX: 
 passwd: password aggiornata correttamente
@@ -215,7 +215,7 @@ password, confermarla con invio e ridigitarla quando richiesto.</p>
 <p>Per completezza di informazione è possibile eliminare un utente preesistente
 utilizzando il comando <strong>userdel</strong>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# userdel -r muflone
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@arch-lenovo ~]# userdel -r muflone
 userdel: muflone mail spool (/var/spool/mail/muflone) not found
 </code></pre></div></div>
 
