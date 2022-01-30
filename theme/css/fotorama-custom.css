@@ -1,0 +1,48 @@
+.fotorama {
+    padding-bottom: 20px;
+}
+
+.fotorama__caption {
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif';
+    font-size: 2.8em;
+    color: white;
+}
+
+.fotorama__caption__wrap {
+    background-color: rgba(20, 20, 20, .7);
+    width: 100%;
+}
+
+.fotorama__arr,
+.fotorama__fullscreen-icon,
+.fotorama__video-close,
+.fotorama__video-play {
+    background: url(../images/fotorama.png) no-repeat;
+}
+
+.fotorama__arr--prev {
+    left:2px;
+    background-position:0 0;
+}
+
+.fotorama__arr--next {
+    right:2px;
+    background-position:-32px 0;
+}
+
+.fotorama__wrap--slide .fotorama__stage__frame {
+    background: url('../images/skin-header.jpg');
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5),(min-resolution:2dppx) {
+    .fotorama__arr,
+    .fotorama__fullscreen-icon,
+    .fotorama__video-close,
+    .fotorama__video-play {
+        background:url(../images/fotorama@2x.png) 0 0/96px 160px no-repeat;
+    }
+}
