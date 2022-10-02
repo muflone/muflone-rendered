@@ -47,11 +47,23 @@
       <div class="inner clearfix">
         <section id="main-content">
 
+<p><!-- Installation type for Debian and Ubuntu --></p>
+<h1>Installazione su Debian, Ubuntu e derivate</h1>
+<p>E' possibile scaricare il pacchetto <strong>deb</strong> dalla <a href="download.html">pagina Scarica</a> e installarlo utilizzando:
+</p>
+<pre class="highlight"><code>cd "~/cartella con il file scaricato"
+sudo dpkg -i "nome del file.deb"
+</code></pre>
+
 <!-- Installation type for Arch Linux -->
 <h1>Installazione su Arch Linux e derivate</h1>
 
 <!-- Installation type for AUR package -->
 <p>In AUR è presente l'ultima versione disponibile, è possibile scaricarla e compilarla utilizzando yaourt (o un analogo gestore per AUR) con <code>yaourt -S gtransmemory</code> e seguire le istruzioni del gestore di AUR.
+</p>
+
+<!-- Installation type for development AUR package -->
+<p>E' anche disponibile la versione di sviluppo in AUR e può essere installata utilizzando yaourt (o un analogo gestore per AUR) con <code>yaourt -S gtransmemory-git</code>.
 </p>
 
 <!-- Installation type for downloadable .tar.zst -->
@@ -61,16 +73,16 @@
 sudo pacman -U "gtransmemory-versione.tar.zst"
 </code></pre>
 
-<p><!-- Installation type for source code with Python 2 --></p>
-<h1>Installazione dal codice sorgente con Python 2</h1>
+<p><!-- Installation type for source code with Python 3 --></p>
+<h1>Installazione dal codice sorgente con Python 3</h1>
 <p>Se non fosse disponibile il pacchetto preassemblato per la propria distribuzione è possibile utilizzare il pacchetto col codice sorgente per installare gTransMemory utilizzando:
 </p>
 <pre class="highlight"><code>cd "~/cartella con il file scaricato"
 mkdir build
 tar xzf "nome del file.pkg.tar.gz" -C build
 cd build/gtransmemory-*
-python2 setup.py build
-sudo python2 setup.py install
+python3 setup.py build
+sudo python3 setup.py install
 sudo gtk-update-icon-cache -q /usr/share/icons/hicolor/
 sudo xdg-icon-resource forceupdate
 sudo xdg-desktop-menu forceupdate
