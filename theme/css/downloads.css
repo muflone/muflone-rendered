@@ -1,35 +1,54 @@
-#packages tr td {
-  padding: 5px;
+table.packages thead tr,
+table.packages tbody tr {
+  line-height: 3rem;
 }
 
-#packages tr td.type {
+table.packages thead tr th,
+table.packages tbody tr td {
+  padding: 0;
+}
+
+table.packages thead tr th.package-type,
+table.packages tbody tr td.package-type {
   text-align: left;
   width: 25%;
 }
 
-#packages tr td.name {
+table.packages thead tr th.package-name,
+table.packages tbody tr td.package-name {
   white-space: nowrap;
-  text-align: center;
-  width: 25%;
+  text-align: left;
+  width: 35%;
 }
 
-#packages tr td.size {
-  white-space: nowrap;
-  text-align: center;
-  width: 5%;
-}
-
-#packages tr td.md5sum {
-  text-align: center;
+table.packages thead tr th.package-checksum,
+table.packages tbody tr td.package-checksum {
+  text-align: left;
   width: 30%;
 }
 
-#packages tr td.downloads {
-  overflow: hidden;
-  text-align: left;
-  width: 15%;
+table.packages thead tr th.package-download,
+table.packages tbody tr td.package-download {
+  text-align: center;
+  width: 10%;
 }
 
-#packages tr td img {
-  vertical-align: middle;
+table.packages tbody tr td img {
+  margin-bottom: 0;
+}
+
+ul.accordion-list {
+  list-style: none;
+}
+
+ul.accordion-list li {
+  display: block;
+}
+
+ul.accordion-list li::before {
+  content: '';
+}
+
+div.package-version {
+  font-size: 17px;
 }

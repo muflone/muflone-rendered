@@ -1,9 +1,10 @@
 blockquote {
   border-left: 10px solid #F0F2F4;
+  font-style: normal;
 }
 
 blockquote p {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: #999;
 }
 
@@ -24,6 +25,7 @@ blockquote blockquote {
 
 blockquote > blockquote > blockquote {
   margin: 0;
+  max-width: 100%;
 }
 
 blockquote > blockquote > blockquote p {
@@ -41,8 +43,8 @@ blockquote > blockquote > blockquote p:first-child:before {
   left: -5px;
   top: 2px;
   color: #fff;
-  font-family: FontAwesome;
-  content: '';
+  font-family: 'Material Icons';
+  content: 'report';
 }
 
 blockquote > blockquote > blockquote p:first-child:after {
@@ -51,28 +53,29 @@ blockquote > blockquote > blockquote p:first-child:after {
   left: 20px;
   color: #fff;
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
 blockquote > blockquote > blockquote > p {
-  margin-left: -71px;
+  margin-left: -60px;
   border-top: 30px solid #F0B37E;
   background: #FFF2DB;
 }
 
 blockquote > blockquote > blockquote > blockquote > p {
-  margin-left: -91px;
+  margin-left: -80px;
   border-top: 30px solid rgba(217, 83, 79, 0.8);
   background: #FAE2E2;
 }
 
 blockquote > blockquote > blockquote > blockquote > blockquote > p {
-  margin-left: -111px;
+  margin-left: -100px;
   border-top: 30px solid #6AB0DE;
   background: #E7F2FA;
 }
 
 blockquote > blockquote > blockquote > blockquote > blockquote > blockquote > p {
-  margin-left: -131px;
+  margin-left: -120px;
   border-top: 30px solid rgba(92, 184, 92, 0.8);
   background: #E6F9E6;
 }

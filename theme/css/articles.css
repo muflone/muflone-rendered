@@ -1,3 +1,8 @@
+#main-content {
+  width: 100%;
+  float: left;
+}
+
 a.offline-copy {
   padding-right: 18px;
   position: relative;

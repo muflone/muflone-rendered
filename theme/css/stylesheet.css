@@ -1,4 +1,8 @@
 /* Common styles */
+p {
+  margin-bottom: 1rem;
+}
+
 a {
   color: #2879d0;
   font-weight: bold;
@@ -17,19 +21,10 @@ blockquote {
   padding: 0 0 0 10px;
 }
 
-body {
-  height: 100%;
-  font-size: 15px;
-  line-height: 1.5; 
-  background: #fafafa url('../images/skin-body.jpg') 0 0 repeat;
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'serif';
-  font-weight: 400;
-  color: #666;
-}
-
 pre code {
   padding: 5px 10px 5px 20px;
   margin-bottom: 5px;
+  width: 100%;
 }
 
 code {
@@ -42,82 +37,8 @@ code {
   outline: solid 1px #cccccc;
 }
 
-em {
-  font-style: italic;
-}
-
-dl dd {
-  font-style: italic;
-  font-weight: 100;
-}
-
-footer, push {
-  margin-top: 40px;
-  padding-top: 20px;
-  padding-bottom: 30px;
-  font-size: 13px;
-  color: #aaa;
-}
-
-footer a {
-  color: #666;
-}
-
-footer a:hover {
-  color: #444;
-}
-
-form {
-  background: #f2f2f2;
-  padding: 20px;
-  
-}
-
-h4:before {
-  content: '////';
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -2.8em;
-}
-
-h5:before {
-  content: '/////';
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -3.2em;
-}
-
-h6:before {
-  content: '//////';
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -3.7em;
-}
-
-header {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif'; 
-  background: #2e7bcf url('../images/skin-header.jpg') 0 0 repeat-x;
-  border-bottom: solid 1px #275da1;
-  margin: 0;
-}
-
-header h1 {
-  letter-spacing: -1px;
-  font-size: 60px;
-  color: #fff;
-  line-height: 1;
-  margin-bottom: 0.2em;
-  width: calc(100% - 200px);
-}
-
-header h2 {
-  font-size: 26px;
-  color: #9ddcff;
-  font-weight: normal;
-  line-height: 1.3;
-  letter-spacing: 0;
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
 }
 
 hr {
@@ -132,36 +53,21 @@ kbd {
   font-weight: bold;
   background-color: #F7F7F7;
   color: #333;
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 2px #FFF inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #FFF inset;
   border-radius: 3px;
   display: inline-block;
-  margin: 0px 0.1em;
-  text-shadow: 0px 1px 0px #FFF;
+  margin: 0 0.1em;
+  text-shadow: 0 1px 0 #FFF;
   line-height: 1.4;
   white-space: nowrap;
 }
 
-ol li {
-  list-style: decimal inside;
-  padding-left: 3px;
-}
-
-p {
-  margin-bottom: 15px;
-}
-
-strong {
-  font-weight: bold;
-}
-
 table {
   width: 100%;
-  border: 1px solid #ebebeb;
 }
 
 td {
-  border: 1px solid #ebebeb;
-  text-align: center; 
+  text-align: center;
   font-weight: 300;
 }
 
@@ -169,24 +75,32 @@ th {
   font-weight: bold;
 }
 
-ul, ol, dl {
-  margin-bottom: 20px;
+div.bff-container a {
+  color: var(--primary-color);
+  justify-content: normal;
 }
 
-ul li {
-  list-style: disc inside;
-  padding-left: 20px;
-  padding-bottom: 5px;
+a.main-logo {
+  float: left;
+  margin-right: 20px;
+}
+
+a.main-logo img:hover {
+  filter: brightness(120%);
+}
+
+div.main-title {
+  float: left;
+  width: calc(95% - 230px);
 }
 
 /* Custom classes */
-.big {
-  font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif'; 
-  font-size: 30px;
-}
-
 .center {
   text-align: center;
+}
+
+.float-left {
+  float: left;
 }
 
 .left {
@@ -195,6 +109,18 @@ ul li {
 
 .right {
   text-align: right;
+}
+
+.float-right {
+  float: right;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.full-width {
+  width: 100%;
 }
 
 .clearfix {
@@ -209,10 +135,26 @@ ul li {
   height: 0;
 }
 
+div#content {
+  margin-top: 1rem;
+}
+
 .inner {
   position: relative;
   width: 80%;
   margin: 0 auto;
+}
+
+.content > * {
+  margin-bottom: 0;
+}
+
+.mbrola-voices {
+  margin-bottom: 0;
+}
+
+.mbrola-voices img {
+  vertical-align: top;
 }
 
 /* Layout styles */
@@ -222,77 +164,8 @@ ul li {
 }
 
 #main-content {
-  width: calc(100% - 230px);
+  width: calc(95% - 230px);
   float: left;
-}
-
-#main-content.full {
-  width: 100%;
-  float: center;
-}
-
-#main-content h1 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif'; 
-  font-size: 2.8em;
-  letter-spacing: -1px;
-  color: #474747;
-} 
-
-#main-content h1:before {
-  content: '/';
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -0.9em;
-}
-
-#main-content h2 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif'; 
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #474747;
-} 
-
-#main-content h2:before {
-  content: '//';
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -1.5em;
-}
-
-#main-content h3 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif'; 
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 24px;
-  margin-bottom: 8px;
-  color: #474747;
-} 
- 
-#main-content h3:before {
-  content: '///';
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -2em;
-}
-
-#main-content h4 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif'; 
-  font-size: 15px;
-  font-weight: bold;
-  color: #474747;
-} 
-
-#main-content h5 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif'; 
-  font-size: 14px;
-  color: #474747;
-} 
-
-#main-content h6 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif'; 
-  font-size: .8em;
-  color: #474747;
 }
 
 #main-content img {
@@ -302,7 +175,7 @@ ul li {
 #main-content div.articles_pages {
   font-size: 23px;
   font-weight: bold;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   text-align: center; 
 }
 
@@ -311,11 +184,16 @@ ul li {
   padding-bottom: 10px;
 }
 
+#main-content ol li a,
+#main-content ul li a {
+  margin: 0 5px;
+}
+
 #main-content ul#articles li {
   list-style: none;
   line-height: 1.5;
   font-size: 16px;
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 #main-content ul#articles li:before {
@@ -328,12 +206,9 @@ ul li {
   padding-left: 35px;
 }
 
-.footer, .footer a {
-  font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif'; 
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  background: #2e7bcf url('../images/skin-header.jpg') 0 0 repeat-x;
+#main-content img {
+  display: inline;
+  margin-bottom: 0;
 }
 
 .footer div#icons {
@@ -341,11 +216,17 @@ ul li {
   padding-bottom: 5px;
 }
 
-.title {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
-  font-size: 46px;
-  letter-spacing: -1px;
-  color: #474747;
+.footer-main {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+blockquote.demo-voices {
+  border-left: 3px solid var(--main-color);
+}
+
+blockquote.demo-voices p {
+  color: var(--text-primary);
 }
 
 a.button {
@@ -356,7 +237,6 @@ a.button {
   color: #fff;
   padding-left: 68px;
   padding-top: 22px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif'; 
 }
 
 a.button small {
@@ -364,118 +244,51 @@ a.button small {
   font-size: 11px;
 }
 
-header a.button {
-  position: absolute;
-  right: 0;
-  top: 0;
+div.bff-container div.gitrepo {
+  display: block;
+  border: none;
   background: transparent url('../images/skin-github-button.png') 0 0 no-repeat;
+  min-width: 210px;
+  text-align: end;
+  padding: 0 30px 20px 0;
+  margin-left: 20px;
+  opacity: 80%;
 }
 
-/* #Media Queries
-================================================== */
+div.bff-container div.gitrepo:hover {
+  opacity: 100%;
+}
 
-/* Smaller than standard 960 (devices and browsers) */
-@media only screen and (max-width: 959px) {}
+.footer a {
+  opacity: 100%;
+}
 
-/* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-  .inner {
-    width: 740px;
-  }
+.footer-links ul {
+  margin: 0;
+}
 
-  header h1, header h2 {
-    width: 340px;
-  }
+.footer-icons img:hover {
+  filter: brightness(120%);
+}
 
-  header h1 {
-    font-size: 60px;
-  }
+.footer-links ul li {
+  margin: 0 2rem 0 0;
+}
 
-  header h2 {
-    font-size: 30px;
-  }
 
-  #main-content {
-    width: 490px;
-  }
-
-  #main-content h1:before,
-  #main-content h2:before,
-  #main-content h3:before,
-  #main-content h4:before,
-  #main-content h5:before,
-  #main-content h6:before {
-    content: none;
-    padding-right: 0;
-    margin-left: 0;
+@media (min-width: 1200px) {
+  .container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 95%;
   }
 }
 
-/* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
-  .inner {
-    width: 93%;
-  }
-  
-  header {
-    padding: 20px 0;
+  div.bff-container div.gitrepo {
+    display: none;
   }
 
-  header .inner {
-    position: relative;
-  }
-
-  header h1, header h2 {
+  div.main-title {
+    float: left;
     width: 100%;
   }
-
-  header h1 {
-    font-size: 48px;
-  }
-
-  header h2 {
-    font-size: 24px;
-  }
-
-  #main-content h1:before,
-  #main-content h2:before,
-  #main-content h3:before,
-  #main-content h4:before,
-  #main-content h5:before,
-  #main-content h6:before {
-    content: none;
-    padding-right: 0;
-    margin-left: 0;
-  }
-
-  header a.button {
-    background-image: none;
-    width: auto;
-    height: auto;
-    display: inline-block;
-    margin-top: 15px;
-    padding: 5px 10px;
-    position: relative;
-    text-align: center;
-    font-size: 13px;
-    line-height: 1;
-    background-color: #9ddcff;
-    color: #2879d0;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;                     
-    border-radius: 5px;    
-  }
-
-  header a.button small {
-    font-size: 13px;
-    display: inline;
-  }
-}
-
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-}
-
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {
 }

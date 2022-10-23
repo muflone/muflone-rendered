@@ -2,8 +2,12 @@
 <html lang="italian">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="charset" content="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <meta name="keywords" content="arch, linux, lenovo, ideapad, g50-70, uefi, secure boot, efibootmgr, loader, refind, prebootloader" />
+
     <title>Articles | Funzionamento di rEFInd</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/articles/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/articles/icons/apple-icon-60x60.png">
@@ -20,34 +24,61 @@
     <link rel="icon" type="image/png" sizes="16x16"   href="/resources/articles/icons/favicon-16x16.png">
     <link rel="icon" type="image/x-icon"              href="/resources/articles/icons/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon"     href="/resources/articles/icons/favicon.ico">
-    <link type="text/css" rel="stylesheet" href="/theme/css/reset.css">
-    <link type="text/css" rel="stylesheet" href="/theme/css/font-architects.css">
-    <link type="text/css" rel="stylesheet" href="/theme/css/font-awesome.min.css">
+
+    <link type="text/css" rel="stylesheet" href="/theme/css/libs.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/style.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
 
-    <link type="text/css" rel="stylesheet" href="/theme/css/offline-copy.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/articles.css">
+
+
+
+
+
+
+
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-regular.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-600.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons-outlined.woff2" as="font" crossorigin>
+    <script type="text/javascript" src="/theme/js/jquery-1.10.2.min.js"></script>
+
   </head>
   <body>
-    <header>
-      <div class="inner">
-        <a href="/articles/italian/">
-          <img src="/resources/articles/icons/ms-icon-144x144.png" style="padding-right: 20px;" align="left"></a>
-        <h1>Articles</h1>
-        <h2>Funzionamento di rEFInd</h2>
-        <a href="https://github.com/muflone" target="_blank" class="button">
-          <small>Vedi il progetto su</small>
-          GitHub
-        </a>
-      </div>
-    </header>
+    <main class="main">
+      <div class="main-inner">
+        <div class="bff d-md-block">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="bff-container">
+                  <a class="main-logo" href="/articles/italian/">
+                    <img src="/resources/articles/icons/ms-icon-144x144.png"></a>
+                  <div class="main-title">
+                    <h1><a href="/articles/italian/">
+                      <span class="middle">Articles</span></a></h1>
+                    <h2>Funzionamento di rEFInd</h2>
+                  </div>
+                  <div class="float-right gitrepo">
+                    <a href="https://github.com/muflone" target="_blank" class="button">
+                      <small>Vedi il progetto su</small>
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content" class="article"><div class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 6 - Funzionamento di rEFInd)</div>
+        <div class="container content" id="content">
+                  <section id="main-content" class="article"><h1 class="title">Installare Arch Linux su Lenovo IdeaPad G50-70 con UEFI e Secure Boot (parte 6 - Funzionamento di rEFInd)</h1>
           <hr />
 
           <div class="articles_pages">
@@ -90,37 +121,37 @@ visualizzata, 2 per la seconda e così via.</p>
 <table>
   <thead>
     <tr>
-      <th><strong>Icona</strong></th>
+      <th style="text-align: center"><strong>Icona</strong></th>
       <th style="text-align: left"><strong>Significato</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/os_arch.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/os_arch.png" alt="" /></td>
       <td style="text-align: left">Indica l’avvio di un sistema Arch Linux</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/os_linux.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/os_linux.png" alt="" /></td>
       <td style="text-align: left">Indica l’avvio di un generico sistema GNU/Linux</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/os_win.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/os_win.png" alt="" /></td>
       <td style="text-align: left">Indica l’avvio di un sistema Microsoft Windows</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/os_win8.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/os_win8.png" alt="" /></td>
       <td style="text-align: left">Indica l’avvio di un sistema Microsoft Windows 8</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/os_unknown.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/os_unknown.png" alt="" /></td>
       <td style="text-align: left">Indica l’avvio di un sistema operativo generico</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/arrow_left.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/arrow_left.png" alt="" /></td>
       <td style="text-align: left">Scorre l’elenco dei sistemi verso sinistra</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/arrow_right.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/arrow_right.png" alt="" /></td>
       <td style="text-align: left">Scorre l’elenco dei sistemi verso destra</td>
     </tr>
   </tbody>
@@ -142,25 +173,25 @@ aggiuntiva che indica dove si trovi il sistema operativo da avviare.</p>
 <table>
   <thead>
     <tr>
-      <th><strong>Icona</strong></th>
+      <th style="text-align: center"><strong>Icona</strong></th>
       <th style="text-align: left"><strong>Significato</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/vol_internal.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/vol_internal.png" alt="" /></td>
       <td style="text-align: left">Indica un sistema avviato da un disco interno</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/vol_optical.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/vol_optical.png" alt="" /></td>
       <td style="text-align: left">Indica un sistema avviato da un’unità ottica</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/vol_external.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/vol_external.png" alt="" /></td>
       <td style="text-align: left">Indica un sistema avviato da un disco esterno</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/vol_net.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/vol_net.png" alt="" /></td>
       <td style="text-align: left">Indica un sistema avviato da rete</td>
     </tr>
   </tbody>
@@ -174,45 +205,45 @@ non supportate o non disponibili non saranno mostrate.</p>
 <table>
   <thead>
     <tr>
-      <th><strong>Icona</strong></th>
+      <th style="text-align: center"><strong>Icona</strong></th>
       <th style="text-align: left"><strong>Significato</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/tool_windows_rescue.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/tool_windows_rescue.png" alt="" /></td>
       <td style="text-align: left">Avvia la partizione di ripristino di Windows</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/tool_mok_tool.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/tool_mok_tool.png" alt="" /></td>
       <td style="text-align: left">Avvia uno degli strumenti di firma di PreLoader</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/tool_memtest.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/tool_memtest.png" alt="" /></td>
       <td style="text-align: left">Avvia l’utilità di controllo della memoria RAM</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/tool_shell.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/tool_shell.png" alt="" /></td>
       <td style="text-align: left">Avvia una shell EFI</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/func_about.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/func_about.png" alt="" /></td>
       <td style="text-align: left">Mostra le informazioni sulla versione di rEFInd</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/func_shutdown.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/func_shutdown.png" alt="" /></td>
       <td style="text-align: left">Spegne il computer</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/func_reset.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/func_reset.png" alt="" /></td>
       <td style="text-align: left">Riavvia il computer</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/func_exit.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/func_exit.png" alt="" /></td>
       <td style="text-align: left">Esce da rEFInd e torna alla Shell EFI</td>
     </tr>
     <tr>
-      <td><img src="/resources/articles/arch-g50-70/refind/func_firmware.png" alt="" /></td>
+      <td style="text-align: center"><img src="/resources/articles/arch-g50-70/refind/func_firmware.png" alt="" /></td>
       <td style="text-align: left">Avvia l’utilità di configurazione di UEFI</td>
     </tr>
   </tbody>
@@ -220,112 +251,132 @@ non supportate o non disponibili non saranno mostrate.</p>
 
 
         </section>
+        </div>
       </div>
-    </div>
 
-    <!-- Begin of footer block -->
-    <div class="footer">
-      <div id="icons">
-        <a href="/" title="Home">
-          <img src="/resources/home/icons/android-icon-48x48.png">
-        </a>
+      <!-- Begin footer -->
+      <footer class="footer">
+        <div class="footer-main row">
+          <div class="container footer-icons">
+            <a href="/" title="Home">
+              <img src="/resources/home/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/articles/" title="Articles">
-          <img src="/resources/articles/icons/android-icon-48x48.png">
-        </a>
+            <a href="/contacts/" title="Muflone">
+              <img src="/resources/contacts/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/contacts/" title="Muflone">
-          <img src="/resources/contacts/icons/android-icon-48x48.png">
-        </a>
+            <a href="/articles/" title="Articles">
+              <img src="/resources/articles/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/gespeaker/" title="Gespeaker">
-          <img src="/resources/gespeaker/icons/android-icon-48x48.png">
-        </a>
+            <a href="/gespeaker/" title="Gespeaker">
+              <img src="/resources/gespeaker/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/gwakeonlan/" title="gWakeOnLAN">
-          <img src="/resources/gwakeonlan/icons/android-icon-48x48.png">
-        </a>
+            <a href="/gwakeonlan/" title="gWakeOnLAN">
+              <img src="/resources/gwakeonlan/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/gextractwinicons/" title="gExtractWinIcons">
-          <img src="/resources/gextractwinicons/icons/android-icon-48x48.png">
-        </a>
+            <a href="/gextractwinicons/" title="gExtractWinIcons">
+              <img src="/resources/gextractwinicons/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/bluewho/" title="BlueWho">
-          <img src="/resources/bluewho/icons/android-icon-48x48.png">
-        </a>
+            <a href="/bluewho/" title="BlueWho">
+              <img src="/resources/bluewho/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/cpucompare/" title="CPUCompare">
-          <img src="/resources/cpucompare/icons/android-icon-48x48.png">
-        </a>
+            <a href="/cpucompare/" title="CPUCompare">
+              <img src="/resources/cpucompare/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/gptrace/" title="gpTrace">
-          <img src="/resources/gptrace/icons/android-icon-48x48.png">
-        </a>
+            <a href="/gptrace/" title="gpTrace">
+              <img src="/resources/gptrace/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/gnome-appfolders-manager/" title="GNOME AppFolders Manager">
-          <img src="/resources/gnome-appfolders-manager/icons/android-icon-48x48.png">
-        </a>
+            <a href="/gnome-appfolders-manager/" title="GNOME AppFolders Manager">
+              <img src="/resources/gnome-appfolders-manager/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/gtransmemory/" title="gTransMemory">
-          <img src="/resources/gtransmemory/icons/android-icon-48x48.png">
-        </a>
+            <a href="/gtransmemory/" title="gTransMemory">
+              <img src="/resources/gtransmemory/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/remmina-plugin-builder/" title="Remmina Plugin Builder">
-          <img src="/resources/remmina-plugin-builder/icons/android-icon-48x48.png">
-        </a>
+            <a href="/remmina-plugin-builder/" title="Remmina Plugin Builder">
+              <img src="/resources/remmina-plugin-builder/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/remmina-plugin-exec/" title="Remmina Plugin Exec">
-          <img src="/resources/remmina-plugin-exec/icons/android-icon-48x48.png">
-        </a>
+            <a href="/remmina-plugin-exec/" title="Remmina Plugin Exec">
+              <img src="/resources/remmina-plugin-exec/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/remmina-plugin-folder/" title="Remmina Plugin Folder">
-          <img src="/resources/remmina-plugin-folder/icons/android-icon-48x48.png">
-        </a>
+            <a href="/remmina-plugin-folder/" title="Remmina Plugin Folder">
+              <img src="/resources/remmina-plugin-folder/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/remmina-plugin-open/" title="Remmina Plugin Open">
-          <img src="/resources/remmina-plugin-open/icons/android-icon-48x48.png">
-        </a>
+            <a href="/remmina-plugin-open/" title="Remmina Plugin Open">
+              <img src="/resources/remmina-plugin-open/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/remmina-plugin-rdesktop/" title="Remmina Plugin RDesktop">
-          <img src="/resources/remmina-plugin-rdesktop/icons/android-icon-48x48.png">
-        </a>
+            <a href="/remmina-plugin-rdesktop/" title="Remmina Plugin RDesktop">
+              <img src="/resources/remmina-plugin-rdesktop/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/remmina-plugin-teamviewer/" title="Remmina Plugin TeamViewer">
-          <img src="/resources/remmina-plugin-teamviewer/icons/android-icon-48x48.png">
-        </a>
+            <a href="/remmina-plugin-teamviewer/" title="Remmina Plugin TeamViewer">
+              <img src="/resources/remmina-plugin-teamviewer/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/remmina-plugin-ultravnc/" title="Remmina Plugin UltraVNC">
-          <img src="/resources/remmina-plugin-ultravnc/icons/android-icon-48x48.png">
-        </a>
+            <a href="/remmina-plugin-ultravnc/" title="Remmina Plugin UltraVNC">
+              <img src="/resources/remmina-plugin-ultravnc/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/remmina-plugin-url/" title="Remmina Plugin URL">
-          <img src="/resources/remmina-plugin-url/icons/android-icon-48x48.png">
-        </a>
+            <a href="/remmina-plugin-url/" title="Remmina Plugin URL">
+              <img src="/resources/remmina-plugin-url/icons/apple-icon-60x60.png">
+            </a>
 
-        <a href="/remmina-plugin-webkit/" title="Remmina Plugin WebKit">
-          <img src="/resources/remmina-plugin-webkit/icons/android-icon-48x48.png">
-        </a>
+            <a href="/remmina-plugin-webkit/" title="Remmina Plugin WebKit">
+              <img src="/resources/remmina-plugin-webkit/icons/apple-icon-60x60.png">
+            </a>
 
-      </div>
-      <div>Copyright &copy; 2013-2022
-        Fabio Castelli |
-        <a href="/" title="Home">Home</a> | 
-        <a href="/english/" title="Inglese">
-          <img src="/theme/images/flag-en-16.png">
-          Inglese
-        </a> |
-        <a href="/italian/" title="Italiano">
-          <img src="/theme/images/flag-it-16.png">
-          Italiano
-        </a> |
-        <a href="/contacts/" title="Contatti">
-          Contatti
-        </a> |
-        <a href="//www.iubenda.com/privacy-policy/939201"
-          target="_blank" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a>
-      </div>
-    </div>
-    <!-- End of footer block -->
+            </div>
+        </div>
+        <div class="footer-bottom row">
+          <div class="container">
+            <div class="row justify-content-between items">
+              <div class="col-md-auto col-12 item">
+                <nav class="footer-links">
+                  <ul>
+                    <li><a href="/">Home</a></li>
+                      <li><a href="/contacts/" title="Contatti">
+                          Contatti</a></li>
+                    <li><a href="/english/" title="Inglese">
+                        <img src="/theme/images/flag-en-16.png"> Inglese</a></li>
+                    <li><a href="/italian/" title="Italiano">
+                        <img src="/theme/images/flag-it-16.png"> Italiano</a></li>
+                    <li><a href="//www.iubenda.com/privacy-policy/939201" target="_blank">
+                      Privacy Policy</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-md-auto col-12 item">
+                <div class="copyright">
+                  Ultimo aggiornamento: 2022/10/23 -
+                  Copyright &copy; 2013-2022 Fabio Castelli (Muflone)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End footer -->
+    </main>
+    <!-- End main -->
+
+    <script type="text/javascript" src="/theme/js/lozad.min.js"></script>
+    <script type="text/javascript" src="/theme/js/device.js"></script>
+    <script type="text/javascript" src="/theme/js/custom.js"></script>
+
+
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
         window.cookieconsent_options = {'message': 'Questo sito web utilizza i cookie per semplificare e personalizzare l\'esperienza di navigazione. I cookie memorizzano informazioni utili sul computer per aiutarci a migliorare l\'efficienza e la rilevanza del nostro sito. In alcuni casi sono essenziali per il corretto funzionamento del sito. L\'accesso a questo sito implica il consenso all\'utilizzo dei cookie.',

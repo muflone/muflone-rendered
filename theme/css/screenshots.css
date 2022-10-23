@@ -7,7 +7,6 @@
     top: 0;
     left: 0;
     right: 0;
-    font-family: 'Architects Daughter', 'Helvetica Neue', 'Helvetica', 'Arial', 'serif';
     font-size: 2.8em;
     color: white;
 }
@@ -35,7 +34,7 @@
 }
 
 .fotorama__wrap--slide .fotorama__stage__frame {
-    background: url('../images/skin-header.jpg');
+    background: linear-gradient(to bottom, var(--el-gradient1) 0%, var(--el-gradient2) 100%);
 }
 
 @media (-webkit-min-device-pixel-ratio:1.5),(min-resolution:2dppx) {

@@ -1,17 +1,12 @@
-.flags {
-  text-align: center;
-  border: 0px;
+#main-content.full-width {
   width: 100%;
-  height: 300px;
+  margin: 30px;
 }
 
-.flags td {
-  border: 0px;
-  vertical-align: middle;
-  width: 50%;
+#main-content {
+  padding: 10% 0;
 }
 
-.flags td img {
-  width: 128px;
-  height: 102px;
+#main-content div.language-flag img:hover {
+  filter: brightness(120%);
 }
