@@ -42,8 +42,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 hr {
-  height: 1px;
-  line-height: 1px;
+  width: 50%;
+  height: 0px;
+  line-height: 0px;
 }
 
 kbd {
