@@ -310,9 +310,11 @@ che la partizione sia allineata correttamente.</p>
 <p>Un errato allineamento delle partizioni può causare un forte degrado delle
 prestazioni, soprattutto in fase di scrittura dei dati. Per ulteriori informazioni:
 <a target="_blank" class="external" href="http://www.ibm.com/developerworks/linux/library/l-4kb-sector-disks/">Linux on 4KB-sector disks</a>
-(<a href="/resources/articles/arch-g50-70/ibm-4k-sectors-practices.pdf" class="offline-copy offline-copy-pdf">Copia offline</a>)
-e <a target="_blank" class="external" href="http://www.seagate.com/tech-insights/advanced-format-4k-sector-hard-drives-master-ti/">Transition to Advanced Format 4K Sector Hard Drives</a>
-(<a href="/resources/articles/arch-g50-70/seagate-4k-sectors-transition-it.pdf" class="offline-copy offline-copy-pdf">Copia offline</a>).</p>
+(<a href="/resources/articles/arch-g50-70/ibm-4k-sectors-practices.pdf" class="offline-copy offline-copy-pdf">Copia offline</a>)</p>
+
+<p>e <a target="_blank" class="external" href="http://www.seagate.com/tech-insights/advanced-format-4k-sector-hard-drives-master-ti/">Transition to Advanced Format 4K Sector Hard Drives</a>
+(<a href="/resources/articles/arch-g50-70/seagate-4k-sectors-transition-it.pdf" class="offline-copy offline-copy-pdf">Copia offline</a>)
+.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(parted) print                                                            
 Model: ATA WDC WD10JPCX-24U (scsi)
@@ -474,7 +476,8 @@ partizione /dev/sda3 contiene i file di avvio del sistema di ripristino di Lenov
 
 <p>Per ulteriori dettagli sul significato delle varie partizioni consultare la
 pagina <a target="_blank" class="external" href="http://www.lionhack.com/2013/12/25/lenovo-yoga-2-pro-partitions/">Lenovo Yoga Pro 2 Partition Cleanup</a>
-(<a href="/resources/articles/arch-g50-70/lenovo-yoga-2-pro-partitions.pdf" class="offline-copy offline-copy-pdf">Copia offline</a>).</p>
+(<a href="/resources/articles/arch-g50-70/lenovo-yoga-2-pro-partitions.pdf" class="offline-copy offline-copy-pdf">Copia offline</a>)
+.</p>
 
 <p>E’ infine possibile montare le nuove partizioni root, boot e home.</p>
 
@@ -488,6 +491,7 @@ root@archiso ~ # mount /dev/sda9 /mnt/home
 
 
         </section>
+
         </div>
       </div>
 
@@ -587,6 +591,10 @@ root@archiso ~ # mount /dev/sda9 /mnt/home
               <img src="/resources/pixelcolor/icons/apple-icon-60x60.png">
             </a>
 
+            <a href="/django-admin-settings/" title="Django Admin Settings">
+              <img src="/resources/django-admin-settings/icons/apple-icon-60x60.png">
+            </a>
+
             </div>
         </div>
         <div class="footer-bottom row">
@@ -609,7 +617,7 @@ root@archiso ~ # mount /dev/sda9 /mnt/home
               </div>
               <div class="col-md-auto col-12 item">
                 <div class="copyright">
-                  Ultimo aggiornamento: 2023-03-11 -
+                  Ultimo aggiornamento: 2023-03-14 -
                   Copyright &copy; 2013-2022 Fabio Castelli (Muflone)
                 </div>
               </div>
@@ -637,6 +645,7 @@ root@archiso ~ # mount /dev/sda9 /mnt/home
     </script>
     <script type="text/javascript" src="/theme/js/cookieconsent.js"></script>
     <!-- End Cookie Consent plugin -->
+
     <!-- Begin of Google Analytics block -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -648,5 +657,6 @@ root@archiso ~ # mount /dev/sda9 /mnt/home
       ga('send', 'pageview');
     </script>
     <!-- End of Google Analytics block -->
+
   </body>
 </html>
