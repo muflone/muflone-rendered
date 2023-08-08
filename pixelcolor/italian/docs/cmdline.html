@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>PixelColor | Introduzione</title>
+    <title>PixelColor | Riga di comando</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/pixelcolor/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/pixelcolor/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/pixelcolor/icons/apple-icon-72x72.png">
@@ -59,7 +59,7 @@
                   <div class="main-title">
                     <h1><a href="/pixelcolor/italian/">
                       <span class="middle">PixelColor</span></a></h1>
-                    <h2>Introduzione</h2>
+                    <h2>Riga di comando</h2>
                   </div>
                   <div class="float-right gitrepo">
                     <a href="https://github.com/muflone/pixelcolor" target="_blank" class="button">
@@ -75,50 +75,32 @@
 
         <div class="container content" id="content">
                   <section id="main-content">
-          <h1>Descrizione</h1>
-          <!-- Begin of page content section -->
-          <p><strong>PixelColor</strong> è uno strumento a riga di comando per ottenere il colore di un
-pixel dello schermo.</p>
+<h1 id="opzioni-da-riga-di-comando">Opzioni da riga di comando</h1>
 
-<p>Basterà semplicemente passare le coordinate del pixel (X e Y) e il colore del
-pixel sarà stampato come risultato.</p>
+<p><strong>PixelColor</strong> è un’utilità a riga di comando e richiede alcuni argomenti e
+opzioni. Argomenti e opzioni tra parentesi quadre sono opzionali.</p>
 
-<p>Vedi l’esempio seguente:</p>
+<p>Per alcuni esempi di utilizzo vedi la pagina
+<a href="/pixelcolor/italian/examples.html">Esempi di utilizzo</a>.</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pixelcolor <span class="nt">--x</span> 200 <span class="nt">--y</span> 300 <span class="nt">--hex</span>
+<h2 id="usage">Usage</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pixelcolor <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">[</span><span class="nt">-V</span><span class="o">]</span> <span class="o">[</span><span class="nt">--display</span> DISPLAY] <span class="o">[</span><span class="nt">--triplets</span><span class="o">]</span> <span class="o">[</span><span class="nt">--hex</span><span class="o">]</span> <span class="o">[</span><span class="nt">--upper</span><span class="o">]</span> <span class="nt">--x</span> X <span class="nt">--y</span> Y
+
+options:
+  <span class="nt">-h</span>, <span class="nt">--help</span>         mostra questo messaggio di aiuto
+  <span class="nt">-V</span>, <span class="nt">--version</span>      mostra il numero di versione del programma
+
+Screen:
+  <span class="nt">--display</span> DISPLAY  display dal quale catturare il pixel
+  <span class="nt">--x</span> X, <span class="nt">-x</span> X        coordinata X del pixel da ottenere
+  <span class="nt">--y</span> Y, <span class="nt">-y</span> Y        coordinata Y del pixel da ottenere
+
+Output:
+  <span class="nt">--triplets</span>, <span class="nt">-T</span>     restituisce il colore <span class="k">in </span>triplette
+  <span class="nt">--hex</span>, <span class="nt">-H</span>          restituisce il colore <span class="k">in </span>formato esadecimale
+  <span class="nt">--upper</span>, <span class="nt">-U</span>        restituisce il risultato <span class="k">in </span>maiuscolo
 </code></pre></div></div>
-
-<p>Questo otterrà il color del pixel alla coordinata 200x300 per lo schermo
-primario e stamperà il colore come cifra esadecimale.</p>
-
-<p>Per una documentazione completa sull’elenco degli argomenti fare riferimento
-alla <a href="/pixelcolor/italian/docs/index.html">Documentazione</a> e per alcuni
-esempi di utilizzo vedi la pagina
-<a href="/pixelcolor/italian/examples.html">Esempi</a>.</p>
-
-          <!-- End of page content section -->
-
-          <!-- Begin of Installation section -->
-          <h1>Installazione</h1>
-          <p>I rilasci delle versioni stabili con codice sorgente e pacchetti precompilati sono presenti nella <a href="download.html">pagina Scarica</a>. Per informazioni sull'installazione da pacchetti o con codice sorgente fare riferimento alla <a href="install.html">pagina Installazione</a>.
-</p>
-          <p>Il codice sorgente di PixelColor è <a href="https://github.com/muflone/pixelcolor" target="_blank" class="external">disponibile su GitHub</a> con la versione attualmente in sviluppo.
-</p>
-          <!-- End of Installation section -->
-
-
-
-          <!-- Begin of License section -->
-
-    
-          <h1>Licenza</h1>
-          <p><strong>PixelColor</strong> viene distribuito sotto forma di codice sorgente aperto <a href="https://github.com/muflone/pixelcolor" target="_blank" class="external">disponibile su GitHub</a> sotto <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" class="external">licenza GNU GPL-3+</a> (GNU General Public License versione 3 o superiore).
-
-            Il software viene fornito così com'è e non è offerto alcun tipo di garanzia. Chiunque può derivare il progetto, modificarlo e distribuirlo purchè il nuovo progetto derivato sia rilasciato sotto la stessa licenza GNU GPL-3+.
-</p>
-    
-  
-          <!-- End of License section -->
 
 
         </section>
