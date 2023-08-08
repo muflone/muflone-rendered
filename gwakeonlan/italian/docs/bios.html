@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="english">
+<html lang="italian">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="charset" content="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>gWakeOnLAN | In the operating system</title>
+    <title>gWakeOnLAN | Nel BIOS</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/gwakeonlan/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/gwakeonlan/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/gwakeonlan/icons/apple-icon-72x72.png">
@@ -28,7 +28,7 @@
     <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
-    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-english.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
 
 
@@ -54,16 +54,16 @@
             <div class="row">
               <div class="col">
                 <div class="bff-container">
-                  <a class="main-logo" href="/gwakeonlan/english/">
+                  <a class="main-logo" href="/gwakeonlan/italian/">
                     <img src="/resources/gwakeonlan/icons/ms-icon-144x144.png"></a>
                   <div class="main-title">
-                    <h1><a href="/gwakeonlan/english/">
+                    <h1><a href="/gwakeonlan/italian/">
                       <span class="middle">gWakeOnLAN</span></a></h1>
-                    <h2>In the operating system</h2>
+                    <h2>Nel BIOS</h2>
                   </div>
                   <div class="float-right gitrepo">
                     <a href="https://github.com/muflone/gwakeonlan" target="_blank" class="button">
-                      <small>View project on</small>
+                      <small>Vedi il progetto su</small>
                       GitHub
                     </a>
                   </div>
@@ -75,95 +75,82 @@
 
         <div class="container content" id="content">
                   <section id="main-content">
-<h1 id="introduction">Introduction</h1>
+<h1 id="introduzione">Introduzione</h1>
 
-<p>After <a href="/gwakeonlan/english/wol/bios.html">enabling the Wake on LAN in the BIOS</a>
-the operating system must be informed to enable it before the shutdown otherwise
-the machine will not turn on even if everything else is done properly.</p>
+<p>Ogni BIOS è differente e non tutti hanno un’opzione per abilitare o disabilitare
+la funzionalità <strong>Wake On LAN</strong>.</p>
 
-<h1 id="gnulinux">GNU/Linux</h1>
+<p>In linea generale per abilitare il Wake On LAN dovrebbe essere nella sezione
+gestione energetica oppure, se la NIC (scheda di rete) è collegata via PCI
+l’opzione dovrebbe essere nella sezione periferiche PCI.</p>
 
-<p>To check if the network card supports the Wake On LAN then the following command
-can be used:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ethtool eth0
-Settings for eth0:
-        ....
-        Supports Wake-on: pumbg
-        Wake-on: d
-        .....
-</code></pre></div></div>
+<h1 id="necessità-del-cavo">Necessità del cavo</h1>
 
-<p>If the <strong>Supports Wake-on</strong> field contains <strong>g</strong> then the Wake On LAN by
-magic-packet can be used:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ethtool -s eth0 wol g
-# ethtool eth0
-Settings for eth0:
-        ....
-        Wake-on: g
-        .....
-</code></pre></div></div>
+<p>Alcune vecchie schede di rete richiedono la presenza di un cavo collegato prima
+di poter utilizzare il Wake On LAN.</p>
 
-<p>The command must be performed before the machine shutdown.</p>
+<p><a href="/resources/gwakeonlan/wol_bios/cable.jpg"><img src="/resources/gwakeonlan/wol_bios/cable-thumb.jpg" alt="" /></a></p>
 
-<h1 id="apple-os-x">Apple OS X</h1>
-<p>In the Apple OS X systems the Wake On LAN setting can be found in the
-<strong>System Preferences</strong> under the section <strong>Energy Saver</strong>.</p>
+<h1 id="immagini-di-esempio-di-vari-bios">Immagini di esempio di vari BIOS</h1>
 
-<p><a href="/resources/gwakeonlan/wol_os/osx-1.png"><img src="/resources/gwakeonlan/wol_os/osx-1-thumb.png" alt="" /></a></p>
+<h2 id="ami">AMI</h2>
 
-<h1 id="microsoft-windows">Microsoft Windows</h1>
+<p><a href="/resources/gwakeonlan/wol_bios/ami-1.jpg"><img src="/resources/gwakeonlan/wol_bios/ami-1-thumb.jpg" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_bios/ami-2.jpg"><img src="/resources/gwakeonlan/wol_bios/ami-2-thumb.jpg" alt="" /></a></p>
 
-<p>On major Microsoft Windows OS the Wake On LAN is enabled by default so generally
-nothing to be done is needed.
-If the machine still doesn’t turn itself on then you should check if the
-operating system has the Wake On LAN enabled with the <strong>Magic Packet</strong>.</p>
+<h2 id="award">Award</h2>
 
-<p>The following specifications can be different, they depends from the used driver.</p>
+<p><a href="/resources/gwakeonlan/wol_bios/award-1.jpg"><img src="/resources/gwakeonlan/wol_bios/award-1-thumb.jpg" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_bios/award-2.jpg"><img src="/resources/gwakeonlan/wol_bios/award-2-thumb.jpg" alt="" /></a></p>
 
-<h2 id="microsoft-windows-xp">Microsoft Windows XP</h2>
+<p><a href="/resources/gwakeonlan/wol_bios/award-3.jpg"><img src="/resources/gwakeonlan/wol_bios/award-3-thumb.jpg" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_bios/award-4.jpg"><img src="/resources/gwakeonlan/wol_bios/award-4-thumb.jpg" alt="" /></a></p>
 
-<p><a href="/resources/gwakeonlan/wol_os/windows_xp-1.jpg"><img src="/resources/gwakeonlan/wol_os/windows_xp-1-thumb.jpg" alt="" /></a>
-<a href="/resources/gwakeonlan/wol_os/windows_xp-2.jpg"><img src="/resources/gwakeonlan/wol_os/windows_xp-2-thumb.jpg" alt="" /></a></p>
+<h2 id="dell">Dell</h2>
 
-<h2 id="microsoft-windows-20002003-server">Microsoft Windows 2000/2003 Server</h2>
+<p><a href="/resources/gwakeonlan/wol_bios/dell-latitude.jpg"><img src="/resources/gwakeonlan/wol_bios/dell-latitude-thumb.jpg" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_bios/dell-latitude-2.jpg"><img src="/resources/gwakeonlan/wol_bios/dell-latitude-2-thumb.jpg" alt="" /></a></p>
 
-<p><a href="/resources/gwakeonlan/wol_os/windows_2000-1.jpg"><img src="/resources/gwakeonlan/wol_os/windows_2000-1-thumb.jpg" alt="" /></a></p>
+<p><a href="/resources/gwakeonlan/wol_bios/dell-inspiron.jpg"><img src="/resources/gwakeonlan/wol_bios/dell-inspiron-thumb.jpg" alt="" /></a></p>
 
-<h2 id="microsoft-windows-vista7820082012-server">Microsoft Windows Vista/7/8/2008/2012 Server</h2>
+<h2 id="hp">HP</h2>
 
-<p><a href="/resources/gwakeonlan/wol_os/windows_vista-1.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-1-thumb.png" alt="" /></a>
-<a href="/resources/gwakeonlan/wol_os/windows_vista-2.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-2-thumb.png" alt="" /></a></p>
+<p><a href="/resources/gwakeonlan/wol_bios/hp-proliant.jpg"><img src="/resources/gwakeonlan/wol_bios/hp-proliant-thumb.jpg" alt="" /></a></p>
 
-<p><a href="/resources/gwakeonlan/wol_os/windows_vista-3.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-3-thumb.png" alt="" /></a>
-<a href="/resources/gwakeonlan/wol_os/windows_vista-4.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-4-thumb.png" alt="" /></a></p>
+<h2 id="phoenix">Phoenix</h2>
 
-<p><a href="/resources/gwakeonlan/wol_os/windows_vista-5.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-5-thumb.png" alt="" /></a>
-<a href="/resources/gwakeonlan/wol_os/windows_vista-6.jpg"><img src="/resources/gwakeonlan/wol_os/windows_vista-6-thumb.jpg" alt="" /></a></p>
+<p><a href="/resources/gwakeonlan/wol_bios/phoenix-1.jpg"><img src="/resources/gwakeonlan/wol_bios/phoenix-1-thumb.jpg" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_bios/phoenix-2.jpg"><img src="/resources/gwakeonlan/wol_bios/phoenix-2-thumb.jpg" alt="" /></a></p>
 
-<p><a href="/resources/gwakeonlan/wol_os/windows_vista-7.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-7-thumb.png" alt="" /></a></p>
+<p><a href="/resources/gwakeonlan/wol_bios/phoenix-3.jpg"><img src="/resources/gwakeonlan/wol_bios/phoenix-3-thumb.jpg" alt="" /></a></p>
+
+<h2 id="altri">Altri</h2>
+
+<p><a href="/resources/gwakeonlan/wol_bios/other-1.jpg"><img src="/resources/gwakeonlan/wol_bios/other-1-thumb.jpg" alt="" /></a></p>
 
 
         </section>
         <aside id="sidebar" class="content">
           <!-- Build sidebar depth 1 -->
           <ul class="menu1">
-            <li class="menu1"><a href="/gwakeonlan/english/index.html">Introduction</a></li>
-            <li class="menu1"><a href="/gwakeonlan/english/download.html">Download</a></li>
-            <li class="menu1"><a href="/gwakeonlan/english/install.html">Installation</a></li>
-            <li class="menu1"><a href="/gwakeonlan/english/screenshots.html">Screenshots</a></li>
-            <li class="menu1"><a href="/gwakeonlan/english/languages.html">Supported languages</a></li>
-            <li class="menu1"><a href="/gwakeonlan/english/wol/index.html">Wake On LAN</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/index.html">Introduzione</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/download.html">Scarica</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/install.html">Installazione</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/screenshots.html">Schermate</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/languages.html">Lingue supportate</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/docs/index.html">Documentation</a></li>
             
             <!-- Begin of sidebar depth 2 -->
             <ul class="menu2">
           
-              <li class="menu2"><a href="/gwakeonlan/english/wol/requirements.html">Requirements</a></li>
-              <li class="menu2"><a href="/gwakeonlan/english/wol/bios.html">In the BIOS</a></li>
-              <li class="menu2"><a href="/gwakeonlan/english/wol/os.html">In the operating system</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/docs/wakeonlan.html">Wake On LAN</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/docs/requirements.html">Requisiti</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/docs/bios.html">Nel BIOS</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/docs/os.html">Nel sistema operativo</a></li>
             </ul>
             <!-- End of sidebar depth 2 -->
           
-            <li class="menu1"><a href="/gwakeonlan/english/changelog.html">Changelog</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/changelog.html">Cambiamenti</a></li>
           </ul>
           <!-- End of sidebar depth 1 -->
 
@@ -281,20 +268,20 @@ operating system has the Wake On LAN enabled with the <strong>Magic Packet</stro
                 <nav class="footer-links">
                   <ul>
                     <li><a href="/">Home</a></li>
-                      <li><a href="/contacts/" title="Contacts">
-                          Contacts</a></li>
-                    <li><a href="/english/" title="English">
-                        <img src="/theme/images/flag-en-16.png"> English</a></li>
-                    <li><a href="/italian/" title="Italian">
-                        <img src="/theme/images/flag-it-16.png"> Italian</a></li>
-                    <li><a href="//www.iubenda.com/privacy-policy/721463" target="_blank">
+                      <li><a href="/contacts/" title="Contatti">
+                          Contatti</a></li>
+                    <li><a href="/english/" title="Inglese">
+                        <img src="/theme/images/flag-en-16.png"> Inglese</a></li>
+                    <li><a href="/italian/" title="Italiano">
+                        <img src="/theme/images/flag-it-16.png"> Italiano</a></li>
+                    <li><a href="//www.iubenda.com/privacy-policy/939201" target="_blank">
                       Privacy Policy</a></li>
                   </ul>
                 </nav>
               </div>
               <div class="col-md-auto col-12 item">
                 <div class="copyright">
-                  Last update: 2023-08-08 -
+                  Ultimo aggiornamento: 2023-08-08 -
                   Copyright &copy; 2013-2022 Fabio Castelli (Muflone)
                 </div>
               </div>
@@ -313,10 +300,10 @@ operating system has the Wake On LAN enabled with the <strong>Magic Packet</stro
 
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
-        window.cookieconsent_options = {'message': 'This website uses cookies to make your browsing experience more convenient and personal. Cookies store useful information on your computer to help us improve the efficiency and relevance of our site for you. In some cases, they are essential to making the site work properly. By accessing this site, you consent to the use of cookies.',
-                                        'dismiss': 'Hide',
-                                        'learnMore': 'More info',
-                                        'link': 'https://www.iubenda.com/privacy-policy/721463',
+        window.cookieconsent_options = {'message': 'Questo sito web utilizza i cookie per semplificare e personalizzare l\'esperienza di navigazione. I cookie memorizzano informazioni utili sul computer per aiutarci a migliorare l\'efficienza e la rilevanza del nostro sito. In alcuni casi sono essenziali per il corretto funzionamento del sito. L\'accesso a questo sito implica il consenso all\'utilizzo dei cookie.',
+                                        'dismiss': 'Nascondi',
+                                        'learnMore': 'Leggi l\'informativa completa',
+                                        'link': 'https://www.iubenda.com/privacy-policy/939201',
                                         'theme': 'dark-top'
                                        };
     </script>

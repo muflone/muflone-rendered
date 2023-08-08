@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>gWakeOnLAN | Wake On LAN</title>
+    <title>gWakeOnLAN | Documentation</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/gwakeonlan/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/gwakeonlan/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/gwakeonlan/icons/apple-icon-72x72.png">
@@ -59,7 +59,7 @@
                   <div class="main-title">
                     <h1><a href="/gwakeonlan/italian/">
                       <span class="middle">gWakeOnLAN</span></a></h1>
-                    <h2>Wake On LAN</h2>
+                    <h2>Documentation</h2>
                   </div>
                   <div class="float-right gitrepo">
                     <a href="https://github.com/muflone/gwakeonlan" target="_blank" class="button">
@@ -75,44 +75,18 @@
 
         <div class="container content" id="content">
                   <section id="main-content">
-<h1 id="wake-on-lan">Wake On LAN</h1>
+<h1 id="documentazione">Documentazione</h1>
 
-<p>gWakeOnLAN utilizza il sistema <a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Wake_on_LAN">Wake On LAN</a> per accendere una macchina sia
-nella rete locale sia attraverso Internet.</p>
+<h2 id="wake-on-lan">Wake On LAN</h2>
 
-<p>Il tipo di Wake On LAN usato da gWakeOnLAN è chiamato <a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Wake-on-LAN#Magic_packet">Magic Packet</a>
-ed è ottenuto inviando alla macchina di destinazione uno speciale pacchetto
-<a target="_blank" class="external" href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">Pacchetto UDP</a> contenente alcuni dati.
-La macchina a riposo deve essere configurata per ricevere i pacchetti anche
-nello stato spento in modo che quando lo speciale Magic Packet è ricevuto la
-macchina si accenderà automaticamente.</p>
+<p>Il Wake On LAN è necessario per svegliare i sistemi utilizzando gWakeOnLAN.</p>
 
-<p>Per permettere il corretto funzionamento di gWakeOnLAN tutti i
-<a href="/gwakeonlan/italian/wol/requirements.html">requisiti</a>
-di sistema devono essere soddisfatti.</p>
-
-<h1 id="utilizzo-locale">Utilizzo locale</h1>
-
-<p class="center"><img src="/resources/gwakeonlan/usage/italian/local.png" alt="Utilizzo locale" /></p>
-
-<p>Quando il tipo di richiesta inviata gWakeOnLAN è <strong>Locale (broadcast)</strong> il
-Magic Packet viene inviato all’intera rete locale con una richiesta broadcast
-fatta all’indirizzo IP speciale <strong>255.255.255.255</strong>.
-In un ambiente di rete normale dove i pacchetti broadcast non sono in alcun modo
-bloccati, tutte le macchine nella rete locale riceveranno il pacchetto.</p>
-
-<h1 id="utilizzo-internet">Utilizzo Internet</h1>
-
-<p class="center"><img src="/resources/gwakeonlan/usage/italian/internet.png" alt="Utilizzo Internet" /></p>
-
-<p>Quando il tipo di richiesta è <strong>Internet</strong> è richiesto un sistema di
-destinazione e il Magic Packet sarà inviato a quel sistema che dovrà provvedere
-ad inviarlo al sistema spento corretto.</p>
-
-<p>Il sistema di destinazione non è inteso come la macchina da accendere ma un
-punto di rete raggiungibile che sia in grado di ricevere il pacchetto UDP e
-inoltrarlo alla macchina da accendere utilizzando il Wake On LAN.</p>
-
+<ul>
+  <li><a href="/gwakeonlan/italian/docs/wakeonlan.html">Wake On LAN</a></li>
+  <li><a href="/gwakeonlan/italian/docs/requirements.html">Requisiti</a></li>
+  <li><a href="/gwakeonlan/italian/docs/bios.html">Nel BIOS</a></li>
+  <li><a href="/gwakeonlan/italian/docs/os.html">Nel sistema operativo</a></li>
+</ul>
 
 
         </section>
@@ -124,14 +98,15 @@ inoltrarlo alla macchina da accendere utilizzando il Wake On LAN.</p>
             <li class="menu1"><a href="/gwakeonlan/italian/install.html">Installazione</a></li>
             <li class="menu1"><a href="/gwakeonlan/italian/screenshots.html">Schermate</a></li>
             <li class="menu1"><a href="/gwakeonlan/italian/languages.html">Lingue supportate</a></li>
-            <li class="menu1"><a href="/gwakeonlan/italian/wol/index.html">Wake On LAN</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/docs/index.html">Documentation</a></li>
             
             <!-- Begin of sidebar depth 2 -->
             <ul class="menu2">
           
-              <li class="menu2"><a href="/gwakeonlan/italian/wol/requirements.html">Requisiti</a></li>
-              <li class="menu2"><a href="/gwakeonlan/italian/wol/bios.html">Nel BIOS</a></li>
-              <li class="menu2"><a href="/gwakeonlan/italian/wol/os.html">Nel sistema operativo</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/docs/wakeonlan.html">Wake On LAN</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/docs/requirements.html">Requisiti</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/docs/bios.html">Nel BIOS</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/docs/os.html">Nel sistema operativo</a></li>
             </ul>
             <!-- End of sidebar depth 2 -->
           

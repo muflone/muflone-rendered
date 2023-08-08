@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>gWakeOnLAN | In the BIOS</title>
+    <title>gWakeOnLAN | Requirements</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/gwakeonlan/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/gwakeonlan/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/gwakeonlan/icons/apple-icon-72x72.png">
@@ -59,7 +59,7 @@
                   <div class="main-title">
                     <h1><a href="/gwakeonlan/english/">
                       <span class="middle">gWakeOnLAN</span></a></h1>
-                    <h2>In the BIOS</h2>
+                    <h2>Requirements</h2>
                   </div>
                   <div class="float-right gitrepo">
                     <a href="https://github.com/muflone/gwakeonlan" target="_blank" class="button">
@@ -75,58 +75,76 @@
 
         <div class="container content" id="content">
                   <section id="main-content">
-<h1 id="introduction">Introduction</h1>
+<h1 id="requirements">Requirements</h1>
 
-<p>Every BIOS is different so that not every has an option to enable or disable the
-<strong>Wake On LAN</strong> functionality.</p>
+<p>To allow gWakeOnLAN to turn on a machine <strong>all these requirements</strong> must be met.</p>
 
-<p>In a general way to enable the Wake On LAN there should be a section for Power
-Management or if the NIC is PCI attached the option should be in the PCI
-peripherals section.</p>
+<p>Each machine to turn on must:</p>
 
-<h1 id="cable-needed">Cable needed</h1>
+<ul>
+  <li>have an integrated (or PCI/PCIE) Ethernet network card.</li>
+  <li>have the network cable plugged all the time.</li>
+  <li>have the power cable plugged all the time.</li>
+  <li>support the Wake On LAN with the <a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Wake-on-LAN#Magic_packet">Magic Packet</a>.</li>
+  <li>have the Wake On LAN
+<a href="/gwakeonlan/english/docs/bios.html">enabled in the BIOS</a>.</li>
+  <li>have the Wake On LAN by Magic Packet
+<a href="/gwakeonlan/english/docs/os.html">enabled in the Operating System</a>.</li>
+  <li>be powered off from the Operating System.</li>
+</ul>
 
-<p>Some older network cards requires a cable to be connected before they can use
-the Wake On LAN.</p>
+<p>If one or more of these requirements is not met <strong>all the time</strong>, the
+Wake On LAN will not work.</p>
 
-<p><a href="/resources/gwakeonlan/wol_bios/cable.jpg"><img src="/resources/gwakeonlan/wol_bios/cable-thumb.jpg" alt="" /></a></p>
+<p>It will fail if a requirement is not met for some time,
+<strong>even after the machine was turned off</strong>, 
+like to unplug the power cord from the machine and connecting it later.</p>
 
-<h1 id="sample-images-from-various-bioses">Sample images from various BIOSes</h1>
+<h1 id="additional-requirements-for-internet">Additional requirements for Internet</h1>
+<p>In the case the command is sent through the Internet (not local broadcast)
+additional requirements must be met:</p>
 
-<h2 id="ami">AMI</h2>
+<ul>
+  <li>The machine to turn on must be reachable from the network</li>
+  <li>The UDP data sent from  gWakeOnLAN must reach the destination machine</li>
+  <li>The router must remember the turned off machines</li>
+</ul>
 
-<p><a href="/resources/gwakeonlan/wol_bios/ami-1.jpg"><img src="/resources/gwakeonlan/wol_bios/ami-1-thumb.jpg" alt="" /></a>
-<a href="/resources/gwakeonlan/wol_bios/ami-2.jpg"><img src="/resources/gwakeonlan/wol_bios/ami-2-thumb.jpg" alt="" /></a></p>
+<h2 id="the-machine-to-turn-on-must-be-reachable-from-the-network">The machine to turn on must be reachable from the network</h2>
 
-<h2 id="award">Award</h2>
+<p>The machine must not be connected with a modem directly connected to the machine,
+otherwise the data cannot be received if the network is disconnected.</p>
 
-<p><a href="/resources/gwakeonlan/wol_bios/award-1.jpg"><img src="/resources/gwakeonlan/wol_bios/award-1-thumb.jpg" alt="" /></a>
-<a href="/resources/gwakeonlan/wol_bios/award-2.jpg"><img src="/resources/gwakeonlan/wol_bios/award-2-thumb.jpg" alt="" /></a></p>
+<p>A connected and <strong>reachable router</strong> is then recommended to be able to receive
+the data sent from gWakeOnLAN.</p>
 
-<p><a href="/resources/gwakeonlan/wol_bios/award-3.jpg"><img src="/resources/gwakeonlan/wol_bios/award-3-thumb.jpg" alt="" /></a>
-<a href="/resources/gwakeonlan/wol_bios/award-4.jpg"><img src="/resources/gwakeonlan/wol_bios/award-4-thumb.jpg" alt="" /></a></p>
+<h2 id="the-udp-data-sent-from--gwakeonlan-must-reach-the-destination-machine">The UDP data sent from  gWakeOnLAN must reach the destination machine</h2>
 
-<h2 id="dell">Dell</h2>
+<p>The router must forward the UDP data from the specified port number to the
+destination IP address in its local network.</p>
 
-<p><a href="/resources/gwakeonlan/wol_bios/dell-latitude.jpg"><img src="/resources/gwakeonlan/wol_bios/dell-latitude-thumb.jpg" alt="" /></a>
-<a href="/resources/gwakeonlan/wol_bios/dell-latitude-2.jpg"><img src="/resources/gwakeonlan/wol_bios/dell-latitude-2-thumb.jpg" alt="" /></a></p>
+<p>This is generally done in the router configuration setting up a
+<strong>Virtual Server, Port forwarding or Port mapping</strong>.</p>
 
-<p><a href="/resources/gwakeonlan/wol_bios/dell-inspiron.jpg"><img src="/resources/gwakeonlan/wol_bios/dell-inspiron-thumb.jpg" alt="" /></a></p>
+<p>Plese refer to your router documentation to know how to setup your router.</p>
 
-<h2 id="hp">HP</h2>
+<h2 id="the-router-must-remember-the-turned-off-machines">The router must remember the turned off machines</h2>
 
-<p><a href="/resources/gwakeonlan/wol_bios/hp-proliant.jpg"><img src="/resources/gwakeonlan/wol_bios/hp-proliant-thumb.jpg" alt="" /></a></p>
+<p>Many consumer routers forget the MAC addresses on their local  network after
+2-5 minutes of inactivity, so even if a machine was properly shutdown with all
+the above requirements the receiving router may not to be able to remember on
+what MAC address to forward the data.</p>
 
-<h2 id="phoenix">Phoenix</h2>
+<p>The success key to accomplish this is called
+<a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Address_Resolution_Protocol">static ARP cache</a>
+which statically assigns a MAC address to the IP address to forward.</p>
 
-<p><a href="/resources/gwakeonlan/wol_bios/phoenix-1.jpg"><img src="/resources/gwakeonlan/wol_bios/phoenix-1-thumb.jpg" alt="" /></a>
-<a href="/resources/gwakeonlan/wol_bios/phoenix-2.jpg"><img src="/resources/gwakeonlan/wol_bios/phoenix-2-thumb.jpg" alt="" /></a></p>
+<p>Plese refer to your router documentation to know how to setup your router.</p>
 
-<p><a href="/resources/gwakeonlan/wol_bios/phoenix-3.jpg"><img src="/resources/gwakeonlan/wol_bios/phoenix-3-thumb.jpg" alt="" /></a></p>
+<p>If this requirement cannot be met because if your router doesn’t support a
+static ARP cache as an alternative you can setup an always-on computer to act
+as a gateway and configure the ARP cache in its operating system.</p>
 
-<h2 id="other">Other</h2>
-
-<p><a href="/resources/gwakeonlan/wol_bios/other-1.jpg"><img src="/resources/gwakeonlan/wol_bios/other-1-thumb.jpg" alt="" /></a></p>
 
 
         </section>
@@ -138,14 +156,15 @@ the Wake On LAN.</p>
             <li class="menu1"><a href="/gwakeonlan/english/install.html">Installation</a></li>
             <li class="menu1"><a href="/gwakeonlan/english/screenshots.html">Screenshots</a></li>
             <li class="menu1"><a href="/gwakeonlan/english/languages.html">Supported languages</a></li>
-            <li class="menu1"><a href="/gwakeonlan/english/wol/index.html">Wake On LAN</a></li>
+            <li class="menu1"><a href="/gwakeonlan/english/docs/index.html">Documentazione</a></li>
             
             <!-- Begin of sidebar depth 2 -->
             <ul class="menu2">
           
-              <li class="menu2"><a href="/gwakeonlan/english/wol/requirements.html">Requirements</a></li>
-              <li class="menu2"><a href="/gwakeonlan/english/wol/bios.html">In the BIOS</a></li>
-              <li class="menu2"><a href="/gwakeonlan/english/wol/os.html">In the operating system</a></li>
+              <li class="menu2"><a href="/gwakeonlan/english/docs/wakeonlan.html">Wake On LAN</a></li>
+              <li class="menu2"><a href="/gwakeonlan/english/docs/requirements.html">Requirements</a></li>
+              <li class="menu2"><a href="/gwakeonlan/english/docs/bios.html">In the BIOS</a></li>
+              <li class="menu2"><a href="/gwakeonlan/english/docs/os.html">In the operating system</a></li>
             </ul>
             <!-- End of sidebar depth 2 -->
           

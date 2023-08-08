@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>gWakeOnLAN | Wake On LAN</title>
+    <title>gWakeOnLAN | In the operating system</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/gwakeonlan/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/gwakeonlan/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/gwakeonlan/icons/apple-icon-72x72.png">
@@ -59,7 +59,7 @@
                   <div class="main-title">
                     <h1><a href="/gwakeonlan/english/">
                       <span class="middle">gWakeOnLAN</span></a></h1>
-                    <h2>Wake On LAN</h2>
+                    <h2>In the operating system</h2>
                   </div>
                   <div class="float-right gitrepo">
                     <a href="https://github.com/muflone/gwakeonlan" target="_blank" class="button">
@@ -75,44 +75,72 @@
 
         <div class="container content" id="content">
                   <section id="main-content">
-<h1 id="wake-on-lan">Wake On LAN</h1>
+<h1 id="introduction">Introduction</h1>
 
-<p>gWakeOnLAN uses the <a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Wake_on_LAN">Wake On LAN</a> system to turn on a machine in both local
-network or through Internet.</p>
+<p>After <a href="/gwakeonlan/english/docs/bios.html">enabling the Wake on LAN in the BIOS</a>
+the operating system must be informed to enable it before the shutdown otherwise
+the machine will not turn on even if everything else is done properly.</p>
 
-<p>The Wake On LAN type used by gWakeOnLAN is called <a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Wake-on-LAN#Magic_packet">Magic Packet</a> and is
-accomplished by sending to the target machine a special crafted
-<a target="_blank" class="external" href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP Packet</a> containing some data.
-The sleeping machine must be configured to receive the packets even in turned
-off state so that when the special Magic Packet is received the machine will
-automatically turned on.</p>
+<h1 id="gnulinux">GNU/Linux</h1>
 
-<p>To allow gWakeOnLAN to work all the system
-<a href="/gwakeonlan/english/wol/requirements.html">requirements</a>
-must be met.</p>
+<p>To check if the network card supports the Wake On LAN then the following command
+can be used:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ethtool eth0
+Settings for eth0:
+        ....
+        Supports Wake-on: pumbg
+        Wake-on: d
+        .....
+</code></pre></div></div>
 
-<h1 id="local-usage">Local usage</h1>
+<p>If the <strong>Supports Wake-on</strong> field contains <strong>g</strong> then the Wake On LAN by
+magic-packet can be used:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ethtool -s eth0 wol g
+# ethtool eth0
+Settings for eth0:
+        ....
+        Wake-on: g
+        .....
+</code></pre></div></div>
 
-<p class="center"><img src="/resources/gwakeonlan/usage/english/local.png" alt="Local usage" /></p>
+<p>The command must be performed before the machine shutdown.</p>
 
-<p>When the request type made from gWakeOnLAN is <strong>Local (broadcast)</strong> the
-Magic Packet is sent to the whole local network via a broadcast request made to
-the special IP address <strong>255.255.255.255</strong>.
-In a normal network environment where the broadcast packets are not blocked in
-any level, all the machines in the local network will receive the packet.</p>
+<h1 id="apple-os-x">Apple OS X</h1>
+<p>In the Apple OS X systems the Wake On LAN setting can be found in the
+<strong>System Preferences</strong> under the section <strong>Energy Saver</strong>.</p>
 
-<h1 id="internet-usage">Internet usage</h1>
+<p><a href="/resources/gwakeonlan/wol_os/osx-1.png"><img src="/resources/gwakeonlan/wol_os/osx-1-thumb.png" alt="" /></a></p>
 
-<p class="center"><img src="/resources/gwakeonlan/usage/english/internet.png" alt="Internet usage" /></p>
+<h1 id="microsoft-windows">Microsoft Windows</h1>
 
-<p>When the request type is <strong>Internet</strong> a destination host is required and the
-Magic Packet will be sent to such host which must provide to send it to the
-correct turned off machine.</p>
+<p>On major Microsoft Windows OS the Wake On LAN is enabled by default so generally
+nothing to be done is needed.
+If the machine still doesn’t turn itself on then you should check if the
+operating system has the Wake On LAN enabled with the <strong>Magic Packet</strong>.</p>
 
-<p>The destination host is not meant to be the machine to turn on but a reachable
-network peer that could receive the UDP packet and forward it to the machine to
-turn on using the Wake On LAN.</p>
+<p>The following specifications can be different, they depends from the used driver.</p>
 
+<h2 id="microsoft-windows-xp">Microsoft Windows XP</h2>
+
+<p><a href="/resources/gwakeonlan/wol_os/windows_xp-1.jpg"><img src="/resources/gwakeonlan/wol_os/windows_xp-1-thumb.jpg" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_os/windows_xp-2.jpg"><img src="/resources/gwakeonlan/wol_os/windows_xp-2-thumb.jpg" alt="" /></a></p>
+
+<h2 id="microsoft-windows-20002003-server">Microsoft Windows 2000/2003 Server</h2>
+
+<p><a href="/resources/gwakeonlan/wol_os/windows_2000-1.jpg"><img src="/resources/gwakeonlan/wol_os/windows_2000-1-thumb.jpg" alt="" /></a></p>
+
+<h2 id="microsoft-windows-vista7820082012-server">Microsoft Windows Vista/7/8/2008/2012 Server</h2>
+
+<p><a href="/resources/gwakeonlan/wol_os/windows_vista-1.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-1-thumb.png" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_os/windows_vista-2.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-2-thumb.png" alt="" /></a></p>
+
+<p><a href="/resources/gwakeonlan/wol_os/windows_vista-3.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-3-thumb.png" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_os/windows_vista-4.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-4-thumb.png" alt="" /></a></p>
+
+<p><a href="/resources/gwakeonlan/wol_os/windows_vista-5.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-5-thumb.png" alt="" /></a>
+<a href="/resources/gwakeonlan/wol_os/windows_vista-6.jpg"><img src="/resources/gwakeonlan/wol_os/windows_vista-6-thumb.jpg" alt="" /></a></p>
+
+<p><a href="/resources/gwakeonlan/wol_os/windows_vista-7.png"><img src="/resources/gwakeonlan/wol_os/windows_vista-7-thumb.png" alt="" /></a></p>
 
 
         </section>
@@ -124,14 +152,15 @@ turn on using the Wake On LAN.</p>
             <li class="menu1"><a href="/gwakeonlan/english/install.html">Installation</a></li>
             <li class="menu1"><a href="/gwakeonlan/english/screenshots.html">Screenshots</a></li>
             <li class="menu1"><a href="/gwakeonlan/english/languages.html">Supported languages</a></li>
-            <li class="menu1"><a href="/gwakeonlan/english/wol/index.html">Wake On LAN</a></li>
+            <li class="menu1"><a href="/gwakeonlan/english/docs/index.html">Documentazione</a></li>
             
             <!-- Begin of sidebar depth 2 -->
             <ul class="menu2">
           
-              <li class="menu2"><a href="/gwakeonlan/english/wol/requirements.html">Requirements</a></li>
-              <li class="menu2"><a href="/gwakeonlan/english/wol/bios.html">In the BIOS</a></li>
-              <li class="menu2"><a href="/gwakeonlan/english/wol/os.html">In the operating system</a></li>
+              <li class="menu2"><a href="/gwakeonlan/english/docs/wakeonlan.html">Wake On LAN</a></li>
+              <li class="menu2"><a href="/gwakeonlan/english/docs/requirements.html">Requirements</a></li>
+              <li class="menu2"><a href="/gwakeonlan/english/docs/bios.html">In the BIOS</a></li>
+              <li class="menu2"><a href="/gwakeonlan/english/docs/os.html">In the operating system</a></li>
             </ul>
             <!-- End of sidebar depth 2 -->
           

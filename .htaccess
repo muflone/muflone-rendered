@@ -23,11 +23,11 @@ RewriteRule ^Gespeaker$                                                         
 #####################################################################################################################################
 # Explicit rules for old references (gWakeOnLAN)
 #####################################################################################################################################
-RewriteRule ^gwakeonlan/italian/wol_(.*).html$                                              /gwakeonlan/italian/wol/$1 [R=301,NC,L]
-RewriteRule ^gwakeonlan/italian/wol_(.*)$                                                   /gwakeonlan/italian/wol/$1 [R=301,NC,L]
+RewriteRule ^gwakeonlan/italian/wol_(.*).html$                                              /gwakeonlan/italian/docs/$1 [R=301,NC,L]
+RewriteRule ^gwakeonlan/italian/wol_(.*)$                                                   /gwakeonlan/italian/docs/$1 [R=301,NC,L]
 
-RewriteRule ^gwakeonlan/english/wol_(.*).html$                                              /gwakeonlan/english/wol/$1 [R=301,NC,L]
-RewriteRule ^gwakeonlan/english/wol_(.*)$                                                   /gwakeonlan/english/wol/$1 [R=301,NC,L]
+RewriteRule ^gwakeonlan/english/wol_(.*).html$                                              /gwakeonlan/english/docs/$1 [R=301,NC,L]
+RewriteRule ^gwakeonlan/english/wol_(.*)$                                                   /gwakeonlan/english/docs/$1 [R=301,NC,L]
 
 RewriteRule ^gWakeOnLan$                                                                    /gwakeonlan
 RewriteRule ^gWakeOnLAN$                                                                    /gwakeonlan

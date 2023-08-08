@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="english">
+<html lang="italian">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="charset" content="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>gWakeOnLAN | Requirements</title>
+    <title>gWakeOnLAN | Wake On LAN</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/gwakeonlan/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/gwakeonlan/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/gwakeonlan/icons/apple-icon-72x72.png">
@@ -28,7 +28,7 @@
     <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
-    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-english.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
 
 
@@ -54,16 +54,16 @@
             <div class="row">
               <div class="col">
                 <div class="bff-container">
-                  <a class="main-logo" href="/gwakeonlan/english/">
+                  <a class="main-logo" href="/gwakeonlan/italian/">
                     <img src="/resources/gwakeonlan/icons/ms-icon-144x144.png"></a>
                   <div class="main-title">
-                    <h1><a href="/gwakeonlan/english/">
+                    <h1><a href="/gwakeonlan/italian/">
                       <span class="middle">gWakeOnLAN</span></a></h1>
-                    <h2>Requirements</h2>
+                    <h2>Wake On LAN</h2>
                   </div>
                   <div class="float-right gitrepo">
                     <a href="https://github.com/muflone/gwakeonlan" target="_blank" class="button">
-                      <small>View project on</small>
+                      <small>Vedi il progetto su</small>
                       GitHub
                     </a>
                   </div>
@@ -75,75 +75,43 @@
 
         <div class="container content" id="content">
                   <section id="main-content">
-<h1 id="requirements">Requirements</h1>
+<h1 id="wake-on-lan">Wake On LAN</h1>
 
-<p>To allow gWakeOnLAN to turn on a machine <strong>all these requirements</strong> must be met.</p>
+<p>gWakeOnLAN utilizza il sistema <a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Wake_on_LAN">Wake On LAN</a> per accendere una macchina sia
+nella rete locale sia attraverso Internet.</p>
 
-<p>Each machine to turn on must:</p>
+<p>Il tipo di Wake On LAN usato da gWakeOnLAN è chiamato <a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Wake-on-LAN#Magic_packet">Magic Packet</a>
+ed è ottenuto inviando alla macchina di destinazione uno speciale pacchetto
+<a target="_blank" class="external" href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">Pacchetto UDP</a> contenente alcuni dati.
+La macchina a riposo deve essere configurata per ricevere i pacchetti anche
+nello stato spento in modo che quando lo speciale Magic Packet è ricevuto la
+macchina si accenderà automaticamente.</p>
 
-<ul>
-  <li>have an integrated (or PCI/PCIE) Ethernet network card.</li>
-  <li>have the network cable plugged all the time.</li>
-  <li>have the power cable plugged all the time.</li>
-  <li>support the Wake On LAN with the <a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Wake-on-LAN#Magic_packet">Magic Packet</a>.</li>
-  <li>have the Wake On LAN
-<a href="/gwakeonlan/english/wol/bios.html">enabled in the BIOS</a>.</li>
-  <li>have the Wake On LAN by Magic Packet
-<a href="/gwakeonlan/italian/wol/os.html">enabled in the Operating System</a>.</li>
-  <li>be powered off from the Operating System.</li>
-</ul>
+<p>Per permettere il corretto funzionamento di gWakeOnLAN tutti i
+<a href="/gwakeonlan/italian/docs/requirements.html">requisiti</a>
+di sistema devono essere soddisfatti.</p>
 
-<p>If one or more of these requirements is not met <strong>all the time</strong>, the
-Wake On LAN will not work.</p>
+<h1 id="utilizzo-locale">Utilizzo locale</h1>
 
-<p>It will fail if a requirement is not met for some time,
-<strong>even after the machine was turned off</strong>, 
-like to unplug the power cord from the machine and connecting it later.</p>
+<p class="center"><img src="/resources/gwakeonlan/usage/italian/local.png" alt="Utilizzo locale" /></p>
 
-<h1 id="additional-requirements-for-internet">Additional requirements for Internet</h1>
-<p>In the case the command is sent through the Internet (not local broadcast)
-additional requirements must be met:</p>
+<p>Quando il tipo di richiesta inviata gWakeOnLAN è <strong>Locale (broadcast)</strong> il
+Magic Packet viene inviato all’intera rete locale con una richiesta broadcast
+fatta all’indirizzo IP speciale <strong>255.255.255.255</strong>.
+In un ambiente di rete normale dove i pacchetti broadcast non sono in alcun modo
+bloccati, tutte le macchine nella rete locale riceveranno il pacchetto.</p>
 
-<ul>
-  <li>The machine to turn on must be reachable from the network</li>
-  <li>The UDP data sent from  gWakeOnLAN must reach the destination machine</li>
-  <li>The router must remember the turned off machines</li>
-</ul>
+<h1 id="utilizzo-internet">Utilizzo Internet</h1>
 
-<h2 id="the-machine-to-turn-on-must-be-reachable-from-the-network">The machine to turn on must be reachable from the network</h2>
+<p class="center"><img src="/resources/gwakeonlan/usage/italian/internet.png" alt="Utilizzo Internet" /></p>
 
-<p>The machine must not be connected with a modem directly connected to the machine,
-otherwise the data cannot be received if the network is disconnected.</p>
+<p>Quando il tipo di richiesta è <strong>Internet</strong> è richiesto un sistema di
+destinazione e il Magic Packet sarà inviato a quel sistema che dovrà provvedere
+ad inviarlo al sistema spento corretto.</p>
 
-<p>A connected and <strong>reachable router</strong> is then recommended to be able to receive
-the data sent from gWakeOnLAN.</p>
-
-<h2 id="the-udp-data-sent-from--gwakeonlan-must-reach-the-destination-machine">The UDP data sent from  gWakeOnLAN must reach the destination machine</h2>
-
-<p>The router must forward the UDP data from the specified port number to the
-destination IP address in its local network.</p>
-
-<p>This is generally done in the router configuration setting up a
-<strong>Virtual Server, Port forwarding or Port mapping</strong>.</p>
-
-<p>Plese refer to your router documentation to know how to setup your router.</p>
-
-<h2 id="the-router-must-remember-the-turned-off-machines">The router must remember the turned off machines</h2>
-
-<p>Many consumer routers forget the MAC addresses on their local  network after
-2-5 minutes of inactivity, so even if a machine was properly shutdown with all
-the above requirements the receiving router may not to be able to remember on
-what MAC address to forward the data.</p>
-
-<p>The success key to accomplish this is called
-<a target="_blank" class="external" href="https://en.wikipedia.org/wiki/Address_Resolution_Protocol">static ARP cache</a>
-which statically assigns a MAC address to the IP address to forward.</p>
-
-<p>Plese refer to your router documentation to know how to setup your router.</p>
-
-<p>If this requirement cannot be met because if your router doesn’t support a
-static ARP cache as an alternative you can setup an always-on computer to act
-as a gateway and configure the ARP cache in its operating system.</p>
+<p>Il sistema di destinazione non è inteso come la macchina da accendere ma un
+punto di rete raggiungibile che sia in grado di ricevere il pacchetto UDP e
+inoltrarlo alla macchina da accendere utilizzando il Wake On LAN.</p>
 
 
 
@@ -151,23 +119,24 @@ as a gateway and configure the ARP cache in its operating system.</p>
         <aside id="sidebar" class="content">
           <!-- Build sidebar depth 1 -->
           <ul class="menu1">
-            <li class="menu1"><a href="/gwakeonlan/english/index.html">Introduction</a></li>
-            <li class="menu1"><a href="/gwakeonlan/english/download.html">Download</a></li>
-            <li class="menu1"><a href="/gwakeonlan/english/install.html">Installation</a></li>
-            <li class="menu1"><a href="/gwakeonlan/english/screenshots.html">Screenshots</a></li>
-            <li class="menu1"><a href="/gwakeonlan/english/languages.html">Supported languages</a></li>
-            <li class="menu1"><a href="/gwakeonlan/english/wol/index.html">Wake On LAN</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/index.html">Introduzione</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/download.html">Scarica</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/install.html">Installazione</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/screenshots.html">Schermate</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/languages.html">Lingue supportate</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/docs/index.html">Documentation</a></li>
             
             <!-- Begin of sidebar depth 2 -->
             <ul class="menu2">
           
-              <li class="menu2"><a href="/gwakeonlan/english/wol/requirements.html">Requirements</a></li>
-              <li class="menu2"><a href="/gwakeonlan/english/wol/bios.html">In the BIOS</a></li>
-              <li class="menu2"><a href="/gwakeonlan/english/wol/os.html">In the operating system</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/docs/wakeonlan.html">Wake On LAN</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/docs/requirements.html">Requisiti</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/docs/bios.html">Nel BIOS</a></li>
+              <li class="menu2"><a href="/gwakeonlan/italian/docs/os.html">Nel sistema operativo</a></li>
             </ul>
             <!-- End of sidebar depth 2 -->
           
-            <li class="menu1"><a href="/gwakeonlan/english/changelog.html">Changelog</a></li>
+            <li class="menu1"><a href="/gwakeonlan/italian/changelog.html">Cambiamenti</a></li>
           </ul>
           <!-- End of sidebar depth 1 -->
 
@@ -285,20 +254,20 @@ as a gateway and configure the ARP cache in its operating system.</p>
                 <nav class="footer-links">
                   <ul>
                     <li><a href="/">Home</a></li>
-                      <li><a href="/contacts/" title="Contacts">
-                          Contacts</a></li>
-                    <li><a href="/english/" title="English">
-                        <img src="/theme/images/flag-en-16.png"> English</a></li>
-                    <li><a href="/italian/" title="Italian">
-                        <img src="/theme/images/flag-it-16.png"> Italian</a></li>
-                    <li><a href="//www.iubenda.com/privacy-policy/721463" target="_blank">
+                      <li><a href="/contacts/" title="Contatti">
+                          Contatti</a></li>
+                    <li><a href="/english/" title="Inglese">
+                        <img src="/theme/images/flag-en-16.png"> Inglese</a></li>
+                    <li><a href="/italian/" title="Italiano">
+                        <img src="/theme/images/flag-it-16.png"> Italiano</a></li>
+                    <li><a href="//www.iubenda.com/privacy-policy/939201" target="_blank">
                       Privacy Policy</a></li>
                   </ul>
                 </nav>
               </div>
               <div class="col-md-auto col-12 item">
                 <div class="copyright">
-                  Last update: 2023-08-08 -
+                  Ultimo aggiornamento: 2023-08-08 -
                   Copyright &copy; 2013-2022 Fabio Castelli (Muflone)
                 </div>
               </div>
@@ -317,10 +286,10 @@ as a gateway and configure the ARP cache in its operating system.</p>
 
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
-        window.cookieconsent_options = {'message': 'This website uses cookies to make your browsing experience more convenient and personal. Cookies store useful information on your computer to help us improve the efficiency and relevance of our site for you. In some cases, they are essential to making the site work properly. By accessing this site, you consent to the use of cookies.',
-                                        'dismiss': 'Hide',
-                                        'learnMore': 'More info',
-                                        'link': 'https://www.iubenda.com/privacy-policy/721463',
+        window.cookieconsent_options = {'message': 'Questo sito web utilizza i cookie per semplificare e personalizzare l\'esperienza di navigazione. I cookie memorizzano informazioni utili sul computer per aiutarci a migliorare l\'efficienza e la rilevanza del nostro sito. In alcuni casi sono essenziali per il corretto funzionamento del sito. L\'accesso a questo sito implica il consenso all\'utilizzo dei cookie.',
+                                        'dismiss': 'Nascondi',
+                                        'learnMore': 'Leggi l\'informativa completa',
+                                        'link': 'https://www.iubenda.com/privacy-policy/939201',
                                         'theme': 'dark-top'
                                        };
     </script>
