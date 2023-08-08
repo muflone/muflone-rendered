@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="italian">
+<html lang="english">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="charset" content="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>BlueWho | Installazione</title>
+    <title>BlueWho | Documentazione</title>
     <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/bluewho/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/bluewho/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/bluewho/icons/apple-icon-72x72.png">
@@ -28,7 +28,7 @@
     <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
-    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-english.css">
     <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
 
 
@@ -54,16 +54,16 @@
             <div class="row">
               <div class="col">
                 <div class="bff-container">
-                  <a class="main-logo" href="/bluewho/italian/">
+                  <a class="main-logo" href="/bluewho/english/">
                     <img src="/resources/bluewho/icons/ms-icon-144x144.png"></a>
                   <div class="main-title">
-                    <h1><a href="/bluewho/italian/">
+                    <h1><a href="/bluewho/english/">
                       <span class="middle">BlueWho</span></a></h1>
-                    <h2>Installazione</h2>
+                    <h2>Documentazione</h2>
                   </div>
                   <div class="float-right gitrepo">
                     <a href="https://github.com/muflone/bluewho" target="_blank" class="button">
-                      <small>Vedi il progetto su</small>
+                      <small>View project on</small>
                       GitHub
                     </a>
                   </div>
@@ -75,77 +75,32 @@
 
         <div class="container content" id="content">
                   <section id="main-content">
+<h1 id="documentation">Documentation</h1>
 
-<!-- Installation type for Debian and Ubuntu -->
-<h1>Installazione su Debian, Ubuntu e derivate</h1>
-<p>E' possibile scaricare il pacchetto <strong>deb</strong> dalla <a href="download.html">pagina Scarica</a> e installarlo utilizzando:
-</p>
-<pre class="highlight"><code>cd "~/cartella con il file scaricato"
-sudo dpkg -i "nome del file.deb"
-</code></pre>
-
-<!-- Installation type for Arch Linux -->
-<h1>Installazione su Arch Linux e derivate</h1>
-
-<!-- Installation type for AUR package -->
-<p>In AUR è presente l'ultima versione disponibile, è possibile scaricarla e compilarla utilizzando yay (o un analogo gestore per AUR) con <code>yay -S bluewho</code> e seguire le istruzioni del gestore di AUR.
-</p>
-
-<!-- Installation type for development AUR package -->
-<p>E' anche disponibile la versione di sviluppo in AUR e può essere installata utilizzando yay (o un analogo gestore per AUR) con <code>yay -S bluewho-git</code>.
-</p>
-
-<!-- Installation type for downloadable .tar.zst -->
-<p>E' anche possibile scaricare il pacchetto <strong>tar.zst</strong> dalla <a href="download.html">pagina Scarica</a> e installarlo utilizzando:
-</p>
-<pre class="highlight"><code>cd "~/cartella con il file scaricato"
-sudo pacman -U "bluewho-versione.tar.zst"
-</code></pre>
-
-<!-- Installation type for source code with Python 3 -->
-<h1>Installazione dal codice sorgente con Python 3</h1>
-<p>Se non fosse disponibile il pacchetto preassemblato per la propria distribuzione è possibile utilizzare il pacchetto col codice sorgente per installare BlueWho utilizzando:
-</p>
-<pre class="highlight"><code>cd "~/cartella con il file scaricato"
-mkdir build
-tar xzf "nome del file.pkg.tar.gz" -C build
-cd build/bluewho-*
-python3 setup.py build
-sudo python3 setup.py install
-sudo gtk-update-icon-cache -q /usr/share/icons/hicolor/
-sudo xdg-icon-resource forceupdate
-sudo xdg-desktop-menu forceupdate
-cd ..
-</code></pre>
-
-<p>Al termine dell'installazione, se non sono stati riportati errori sarà possibile eliminare la cartella build da root oppure tramite <code>sudo rm -rf "build"</code> e il file sorgente scaricato.
-</p>
-<blockquote><blockquote><blockquote><p>
-  Dopo aver eseguito la procedura di installazione manuale da codice sorgente non sarà possibile disinstallare automaticamente il software ma sarà necessario eliminare manualmente tutti i files installati che sono indicati durante l'ultimo passaggio del processo di installazione.
-
-  </p></blockquote></blockquote></blockquote>
-
+<ul>
+  <li><a href="/bluewho/english/docs/faq.html">Frequently Asked Questions</a></li>
+</ul>
 
 
         </section>
         <aside id="sidebar" class="content">
           <!-- Build sidebar depth 1 -->
           <ul class="menu1">
-            <li class="menu1"><a href="/bluewho/italian/index.html">Introduzione</a></li>
-            <li class="menu1"><a href="/bluewho/italian/download.html">Scarica</a></li>
-            <li class="menu1"><a href="/bluewho/italian/install.html">Installazione</a></li>
-            <li class="menu1"><a href="/bluewho/italian/screenshots.html">Schermate</a></li>
-            <li class="menu1"><a href="/bluewho/italian/languages.html">Lingue supportate</a></li>
-            <li class="menu1"><a href="/bluewho/italian/docs/index.html">Documentation</a></li>
+            <li class="menu1"><a href="/bluewho/english/index.html">Introduction</a></li>
+            <li class="menu1"><a href="/bluewho/english/download.html">Download</a></li>
+            <li class="menu1"><a href="/bluewho/english/install.html">Installation</a></li>
+            <li class="menu1"><a href="/bluewho/english/screenshots.html">Screenshots</a></li>
+            <li class="menu1"><a href="/bluewho/english/languages.html">Supported languages</a></li>
+            <li class="menu1"><a href="/bluewho/english/docs/index.html">Documentazione</a></li>
             
             <!-- Begin of sidebar depth 2 -->
             <ul class="menu2">
           
-              <li class="menu2"><a href="/bluewho/italian/docs/faq.html">Domande frequenti</a></li>
+              <li class="menu2"><a href="/bluewho/english/docs/faq.html">FAQ</a></li>
             </ul>
             <!-- End of sidebar depth 2 -->
           
-            <li class="menu1"><a href="/bluewho/italian/changelog.html">Cambiamenti</a></li>
+            <li class="menu1"><a href="/bluewho/english/changelog.html">Changelog</a></li>
           </ul>
           <!-- End of sidebar depth 1 -->
 
@@ -263,20 +218,20 @@ cd ..
                 <nav class="footer-links">
                   <ul>
                     <li><a href="/">Home</a></li>
-                      <li><a href="/contacts/" title="Contatti">
-                          Contatti</a></li>
-                    <li><a href="/english/" title="Inglese">
-                        <img src="/theme/images/flag-en-16.png"> Inglese</a></li>
-                    <li><a href="/italian/" title="Italiano">
-                        <img src="/theme/images/flag-it-16.png"> Italiano</a></li>
-                    <li><a href="//www.iubenda.com/privacy-policy/939201" target="_blank">
+                      <li><a href="/contacts/" title="Contacts">
+                          Contacts</a></li>
+                    <li><a href="/english/" title="English">
+                        <img src="/theme/images/flag-en-16.png"> English</a></li>
+                    <li><a href="/italian/" title="Italian">
+                        <img src="/theme/images/flag-it-16.png"> Italian</a></li>
+                    <li><a href="//www.iubenda.com/privacy-policy/721463" target="_blank">
                       Privacy Policy</a></li>
                   </ul>
                 </nav>
               </div>
               <div class="col-md-auto col-12 item">
                 <div class="copyright">
-                  Ultimo aggiornamento: 2023-08-08 -
+                  Last update: 2023-08-08 -
                   Copyright &copy; 2013-2022 Fabio Castelli (Muflone)
                 </div>
               </div>
@@ -295,10 +250,10 @@ cd ..
 
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
-        window.cookieconsent_options = {'message': 'Questo sito web utilizza i cookie per semplificare e personalizzare l\'esperienza di navigazione. I cookie memorizzano informazioni utili sul computer per aiutarci a migliorare l\'efficienza e la rilevanza del nostro sito. In alcuni casi sono essenziali per il corretto funzionamento del sito. L\'accesso a questo sito implica il consenso all\'utilizzo dei cookie.',
-                                        'dismiss': 'Nascondi',
-                                        'learnMore': 'Leggi l\'informativa completa',
-                                        'link': 'https://www.iubenda.com/privacy-policy/939201',
+        window.cookieconsent_options = {'message': 'This website uses cookies to make your browsing experience more convenient and personal. Cookies store useful information on your computer to help us improve the efficiency and relevance of our site for you. In some cases, they are essential to making the site work properly. By accessing this site, you consent to the use of cookies.',
+                                        'dismiss': 'Hide',
+                                        'learnMore': 'More info',
+                                        'link': 'https://www.iubenda.com/privacy-policy/721463',
                                         'theme': 'dark-top'
                                        };
     </script>
