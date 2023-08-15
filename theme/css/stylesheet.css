@@ -72,6 +72,10 @@ td {
   font-weight: 300;
 }
 
+td strong {
+  font-weight: bold;
+}
+
 th {
   font-weight: bold;
 }
