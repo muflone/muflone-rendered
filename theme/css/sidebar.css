@@ -8,6 +8,7 @@ aside ul li.menu1:before {
   content: 'check';
 }
 
+aside ul li.menu1-prefix,
 aside ul li.menu1 {
   line-height: 1.5rem;
   font-size: 1rem;
@@ -20,11 +21,27 @@ aside ul li.menu2:before {
   margin-right: 0;
 }
 
+aside ul li.menu1-prefix:before {
+  content: 'expand_more';
+}
+
+aside ul li.menu2-prefix:before {
+  content: 'expand_more';
+  margin-right: 0;
+}
+
+aside ul li.menu2-prefix,
 aside ul li.menu2 {
   line-height: 1.0;
   font-size: 0.9rem;
   padding-left: 20px;
   text-align: start;
+}
+
+aside ul li.menu1-prefix,
+aside ul li.menu2-prefix {
+  font-weight: bold;
+  padding-top: 0.4rem;
 }
 
 aside#sidebar {
