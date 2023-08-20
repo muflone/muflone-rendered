@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="italian">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>WatchPage | Filters</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/watchpage/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/watchpage/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/watchpage/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/watchpage/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/watchpage/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/watchpage/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/watchpage/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/watchpage/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/watchpage/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/watchpage/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/watchpage/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/watchpage/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/watchpage/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/watchpage/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/watchpage/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/libs.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-regular.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-600.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons-outlined.woff2" as="font" crossorigin>
+    <script type="text/javascript" src="/theme/js/jquery-1.10.2.min.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="main-inner">
+        <div class="bff d-md-block">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="bff-container">
+                  <a class="main-logo" href="/watchpage/italian/">
+                    <img src="/resources/watchpage/icons/ms-icon-144x144.png"></a>
+                  <div class="main-title">
+                    <h1><a href="/watchpage/italian/">
+                      <span class="middle">WatchPage</span></a></h1>
+                    <h2>Filters</h2>
+                  </div>
+                  <div class="float-right gitrepo">
+                    <a href="https://github.com/muflone/watchpage" target="_blank" class="button">
+                      <small>Vedi il progetto su</small>
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container content" id="content">
+        <section id="main-content">
+<h1 id="filters">Filters</h1>
+
+<p>Quelli seguenti sono alcuni esempi di come utilizzare i
+<a href="/watchpage/italian/docs/filters.html">Filters</a>
+nei file di configurazione.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Per una migliore comprensione puoi effettuare i test utilizzando questo
+file di configurazione iniziale:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>watchpage <span class="nt">--config</span> test.yaml <span class="nt">--result</span> <span class="nb">.</span> <span class="nt">--dump</span>
+</code></pre></div></div>
+
+<p>Questo restituirà automaticamente tutti i collegamenti nella pagina
+https://github.com/muflone/watchpage e i Filters seguenti saranno usati
+per ottenere o trasformare i risultati fino a ottenere quanto necessario.</p>
+
+<h2 id="starts">STARTS</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://github.com/muflone/watchpage/tree/master/'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che iniziano con
+https://github.com/muflone/watchpage/tree/master/ con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://github.com/muflone/watchpage/tree/master/.circleci
+https://github.com/muflone/watchpage/tree/master/icons
+https://github.com/muflone/watchpage/tree/master/watchpage
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="not-starts">NOT STARTS</h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://pypi.org/'</span>
+  <span class="pi">-</span> <span class="na">NOT STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://pypi.org/project/PyYAML/'</span>
+  <span class="pi">-</span> <span class="na">NOT STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://pypi.org/project/beautifulsoup4/'</span>
+  <span class="pi">-</span> <span class="na">NOT STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://pypi.org/project/html5lib/'</span>
+  <span class="pi">-</span> <span class="na">NOT STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://pypi.org/project/lxml/'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che iniziano con https://pypi.org/
+ma che non iniziano con gli altri pattern, con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://pypi.org/project/WatchPage/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="ends">ENDS</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">ENDS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">.zip'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che terminano con .zip
+con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://github.com/muflone/watchpage/archive/refs/heads/master.zip
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="not-ends">NOT ENDS</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://pypi.org/'</span>
+  <span class="pi">-</span> <span class="na">NOT ENDS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/PyYAML/'</span>
+  <span class="pi">-</span> <span class="na">NOT ENDS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/beautifulsoup4/'</span>
+  <span class="pi">-</span> <span class="na">NOT ENDS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/html5lib/'</span>
+  <span class="pi">-</span> <span class="na">NOT ENDS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/lxml/'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che inziano con https://pypi.org/
+ma che non terminano con gli altri pattern, con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://pypi.org/project/WatchPage/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="contains">CONTAINS</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpage/tree/master/'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa
+/watchpage/tree/master/ con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://github.com/muflone/watchpage/tree/master/.circleci
+https://github.com/muflone/watchpage/tree/master/icons
+https://github.com/muflone/watchpage/tree/master/watchpage
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="not-contains">NOT CONTAINS</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpage/'</span>
+  <span class="pi">-</span> <span class="na">NOT CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">github.com'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti contenenti la stringa /watchpage/
+ma non quelli contenenti la stringa github.com con i seguenti risultati:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.muflone.com/watchpage/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="regex">REGEX</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">REGEX</span><span class="pi">:</span> <span class="s1">'</span><span class="s">^(http|https):\/\/github\.com\/.*/watchpage\/tree\/master\/'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che corrispondono all’espressione
+regolare indicata, con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://github.com/muflone/watchpage/tree/master/.circleci
+https://github.com/muflone/watchpage/tree/master/icons
+https://github.com/muflone/watchpage/tree/master/watchpage
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="not-regex">NOT REGEX</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpage'</span>
+  <span class="pi">-</span> <span class="na">NOT REGEX</span><span class="pi">:</span> <span class="s1">'</span><span class="s">(github|circleci)'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa /watchpage tranne
+quelli corrispondenti all’espressione regolare indicata, con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.muflone.com/watchpage/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="trim">TRIM</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">TRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/:.watchpge'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com
+e per ciascuno di essi rimuoverà i caratteri specificati, sia dall’inizio che
+dalla fine, con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>muflone.com
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="ltrim">LTRIM</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">LTRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">:/htp'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com
+e per ciascuno di essi rimuoverà i caratteri specificati, dall’inizio del
+testo, con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>www.muflone.com/watchpage/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="rtrim">RTRIM</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">RTRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpge'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi rimuoverà i caratteri specificati, dalla fine del testo,
+con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.muflone.com
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="prepend">PREPEND</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">LTRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">:/htp'</span>
+  <span class="pi">-</span> <span class="na">PREPEND</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi rimuoverà i caratteri specificati dall’inizio del testo e
+quindi aggiungerà la stringa https:// all’inizio con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://www.muflone.com/watchpage
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="append">APPEND</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">RTRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpge'</span>
+  <span class="pi">-</span> <span class="na">APPEND</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpage/'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi rimuoverà i caratteri specificati dalla fine del testo e
+quindi aggiungerà la stringa /watchpage/ alla fine con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.muflone.com/watchpage/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="remove">REMOVE</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">REMOVE</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi rimuoverà la stringa specificata con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://muflone.com/watchpage/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="remove-left">REMOVE LEFT</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">REMOVE LEFT</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi rimuoverà la stringa specificata all’inizio del testo
+con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>www.muflone.com/watchpage/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="remove-right">REMOVE RIGHT</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">REMOVE RIGHT</span><span class="pi">:</span> <span class="s1">'</span><span class="s">watchpage/'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi rimuoverà la stringa specificata dalla fine del testo
+con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.muflone.com/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="replace">REPLACE</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">REPLACE</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpage/'</span>
+    <span class="na">WITH</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/gwakeonlan/'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi sostituirà la stringa /watchpage/ con /gwakeonlan/
+con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.muflone.com/gwakeonlan/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="reverse">REVERSE</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">REVERSE</span><span class="pi">:</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi restituirà il testo invertito con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/egaphctaw/moc.enolfum.www//:ptth
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="upper">UPPER</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">pypi.org/project/WatchPage'</span>
+  <span class="pi">-</span> <span class="na">UPPER</span><span class="pi">:</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa
+pypi.org/project/WatchPage e per ciascuno di essi restituirà il testo
+in maiuscolo con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTPS://PYPI.ORG/PROJECT/WATCHPAGE/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="lower">LOWER</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">pypi.org/project/WatchPage'</span>
+  <span class="pi">-</span> <span class="na">LOWER</span><span class="pi">:</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa
+pypi.org/project/WatchPage e per ciascuno di essi restituirà il testo
+in minuscolo con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://pypi.org/project/watchpage/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="left">LEFT</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">LEFT</span><span class="pi">:</span> <span class="m">23</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi restituirà i primi 23 caratteri con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.muflone.com/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="right">RIGHT</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">RIGHT</span><span class="pi">:</span> <span class="m">26</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi restituirà gli ultimi 26 caratteri con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>www.muflone.com/watchpage/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="regex-replace">REGEX REPLACE</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">REGEX REPLACE</span><span class="pi">:</span> <span class="s1">'</span><span class="s">[w]{3}\.'</span>
+    <span class="na">WITH</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi sostituirà l’espressione regolare specificata col nuovo
+valore con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://muflone.com/watchpage/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="regex-search">REGEX SEARCH</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">REGEX SEARCH</span><span class="pi">:</span> <span class="s1">'</span><span class="s">(http|https):\/\/[w]{3}\.muflone\.com\/'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi estrarrà il risultato dell’espressione regolare specificata
+con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.muflone.com/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="json-dict">JSON DICT</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">PREPEND</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{</span><span class="nv"> </span><span class="s">"name":</span><span class="nv"> </span><span class="s">"Test",</span><span class="nv"> </span><span class="s">"value":</span><span class="nv"> </span><span class="s">"This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">sample</span><span class="nv"> </span><span class="s">dictionary"</span><span class="nv"> </span><span class="s">}'</span>
+  <span class="pi">-</span> <span class="na">LEFT</span><span class="pi">:</span> <span class="m">58</span>
+  <span class="pi">-</span> <span class="na">JSON DICT</span><span class="pi">:</span> <span class="s1">'</span><span class="s">value'</span>
+  <span class="pi">-</span> <span class="na">TRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">"'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi aggiungerà il testo JSON specificato, limitando i risultati
+al solo testo JSON, estraendo il valore ed eliminando le virgolette intorno
+con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is a sample dictionary
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="json-list">JSON LIST</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">NAME</span><span class="pi">:</span> <span class="s">watchpage</span>
+<span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
+<span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
+<span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">FILTERS</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
+  <span class="pi">-</span> <span class="na">PREPEND</span><span class="pi">:</span> <span class="s1">'</span><span class="s">[{</span><span class="nv"> </span><span class="s">"name":</span><span class="nv"> </span><span class="s">"Data</span><span class="nv"> </span><span class="s">1"</span><span class="nv"> </span><span class="s">},</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">"name":</span><span class="nv"> </span><span class="s">"Data</span><span class="nv"> </span><span class="s">2"</span><span class="nv"> </span><span class="s">}]'</span>
+  <span class="pi">-</span> <span class="na">LEFT</span><span class="pi">:</span> <span class="m">44</span>
+  <span class="pi">-</span> <span class="na">JSON LIST</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="pi">-</span> <span class="na">JSON DICT</span><span class="pi">:</span> <span class="s1">'</span><span class="s">name'</span>
+  <span class="pi">-</span> <span class="na">TRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">"'</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Restituirà soltanto i collegamenti che contengono la stringa www.muflone.com e
+per ciascuno di essi aggiungerà il testo JSON specificato, limitando i risultati
+al solo testo JSON, estraendo il secondo valore della lista e quindi da esso
+estraendo il valore ed eliminando le virgolette intorno con i risultati seguenti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Data 2
+</code></pre></div></div>
+
+<hr />
+
+
+        </section>
+        <aside id="sidebar" class="content">
+          <!-- Build sidebar depth 1 -->
+          <ul class="menu1">
+            <li class="menu1"><a href="/watchpage/italian/index.html">Introduzione</a></li>
+            <li class="menu1"><a href="/watchpage/italian/download.html">Scarica</a></li>
+            <li class="menu1"><a href="/watchpage/italian/install.html">Installazione</a></li>
+            <li class="menu1"><a href="/watchpage/italian/docs/index.html">Documentazione</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2-prefix">Riga di comando</li>
+              <li class="menu2"><a href="/watchpage/italian/docs/cmdline.html">Opzioni</a></li>
+              <li class="menu2-prefix">Configurazione</li>
+              <li class="menu2"><a href="/watchpage/italian/docs/configuration.html">Formato</a></li>
+              <li class="menu2"><a href="/watchpage/italian/docs/parser.html">Parser</a></li>
+              <li class="menu2"><a href="/watchpage/italian/docs/type.html">Type</a></li>
+              <li class="menu2"><a href="/watchpage/italian/docs/filters.html">Filters</a></li>
+              <li class="menu2"><a href="/watchpage/italian/docs/headers.html">Headers</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/watchpage/italian/examples/index.html">Esempi di utilizzo</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2"><a href="/watchpage/italian/examples/filters.html">Filters</a></li>
+              <li class="menu2"><a href="/watchpage/italian/examples/github.html">GitHub</a></li>
+              <li class="menu2"><a href="/watchpage/italian/examples/sourceforge.html">SourceForge</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/watchpage/italian/changelog.html">Cambiamenti</a></li>
+          </ul>
+          <!-- End of sidebar depth 1 -->
+
+        </aside>
+
+        </div>
+      </div>
+
+      <!-- Begin footer -->
+      <footer class="footer">
+        <div class="footer-main row">
+          <div class="container footer-icons">
+            <a href="/" title="Home">
+              <img src="/resources/home/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/contacts/" title="Muflone">
+              <img src="/resources/contacts/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/articles/" title="Articles">
+              <img src="/resources/articles/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gespeaker/" title="Gespeaker">
+              <img src="/resources/gespeaker/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gwakeonlan/" title="gWakeOnLAN">
+              <img src="/resources/gwakeonlan/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gextractwinicons/" title="gExtractWinIcons">
+              <img src="/resources/gextractwinicons/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/bluewho/" title="BlueWho">
+              <img src="/resources/bluewho/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/cpucompare/" title="CPUCompare">
+              <img src="/resources/cpucompare/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gptrace/" title="gpTrace">
+              <img src="/resources/gptrace/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gnome-appfolders-manager/" title="GNOME AppFolders Manager">
+              <img src="/resources/gnome-appfolders-manager/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gtransmemory/" title="gTransMemory">
+              <img src="/resources/gtransmemory/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-builder/" title="Remmina Plugin Builder">
+              <img src="/resources/remmina-plugin-builder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-exec/" title="Remmina Plugin Exec">
+              <img src="/resources/remmina-plugin-exec/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-folder/" title="Remmina Plugin Folder">
+              <img src="/resources/remmina-plugin-folder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-open/" title="Remmina Plugin Open">
+              <img src="/resources/remmina-plugin-open/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rdesktop/" title="Remmina Plugin RDesktop">
+              <img src="/resources/remmina-plugin-rdesktop/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rustdesk/" title="Remmina Plugin RustDesk">
+              <img src="/resources/remmina-plugin-rustdesk/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-teamviewer/" title="Remmina Plugin TeamViewer">
+              <img src="/resources/remmina-plugin-teamviewer/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-ultravnc/" title="Remmina Plugin UltraVNC">
+              <img src="/resources/remmina-plugin-ultravnc/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-url/" title="Remmina Plugin URL">
+              <img src="/resources/remmina-plugin-url/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-webkit/" title="Remmina Plugin WebKit">
+              <img src="/resources/remmina-plugin-webkit/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/awaitable/" title="Awaitable">
+              <img src="/resources/awaitable/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/pixelcolor/" title="PixelColor">
+              <img src="/resources/pixelcolor/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/django-admin-settings/" title="Django Admin Settings">
+              <img src="/resources/django-admin-settings/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/watchpage/" title="WatchPage">
+              <img src="/resources/watchpage/icons/apple-icon-60x60.png">
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom row">
+          <div class="container">
+            <div class="row justify-content-between items">
+              <div class="col-md-auto col-12 item">
+                <nav class="footer-links">
+                  <ul>
+                    <li><a href="/">Home</a></li>
+                      <li><a href="/contacts/" title="Contatti">
+                          Contatti</a></li>
+                    <li><a href="/english/" title="Inglese">
+                        <img src="/theme/images/flag-en-16.png"> Inglese</a></li>
+                    <li><a href="/italian/" title="Italiano">
+                        <img src="/theme/images/flag-it-16.png"> Italiano</a></li>
+                    <li><a href="//www.iubenda.com/privacy-policy/939201" target="_blank">
+                      Privacy Policy</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-md-auto col-12 item">
+                <div class="copyright">
+                  Ultimo aggiornamento:&nbsp;2023-08-21&nbsp;-
+                  Copyright &copy; 2013-2023 Fabio Castelli (Muflone)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End footer -->
+    </main>
+    <!-- End main -->
+
+    <script type="text/javascript" src="/theme/js/lozad.min.js"></script>
+    <script type="text/javascript" src="/theme/js/device.js"></script>
+    <script type="text/javascript" src="/theme/js/custom.js"></script>
+
+
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {'message': 'Questo sito web utilizza i cookie per semplificare e personalizzare l\'esperienza di navigazione. I cookie memorizzano informazioni utili sul computer per aiutarci a migliorare l\'efficienza e la rilevanza del nostro sito. In alcuni casi sono essenziali per il corretto funzionamento del sito. L\'accesso a questo sito implica il consenso all\'utilizzo dei cookie.',
+                                        'dismiss': 'Nascondi',
+                                        'learnMore': 'Leggi l\'informativa completa',
+                                        'link': 'https://www.iubenda.com/privacy-policy/939201',
+                                        'theme': 'dark-top'
+                                       };
+    </script>
+    <script type="text/javascript" src="/theme/js/cookieconsent.js"></script>
+    <!-- End Cookie Consent plugin -->
+
+    <!-- Begin of Google Analytics block -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics block -->
+
+  </body>
+</html>
