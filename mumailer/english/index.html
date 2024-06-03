@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>MuMailer | Introduction</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/mumailer/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/mumailer/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/mumailer/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/mumailer/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/mumailer/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/mumailer/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/mumailer/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/mumailer/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/mumailer/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/mumailer/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/mumailer/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/mumailer/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/mumailer/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/mumailer/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/mumailer/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/libs.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-english.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-regular.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-600.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons-outlined.woff2" as="font" crossorigin>
+    <script type="text/javascript" src="/theme/js/jquery-1.10.2.min.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="main-inner">
+        <div class="bff d-md-block">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="bff-container">
+                  <a class="main-logo" href="/mumailer/english/">
+                    <img src="/resources/mumailer/icons/ms-icon-144x144.png"></a>
+                  <div class="main-title">
+                    <h1><a href="/mumailer/english/">
+                      <span class="middle">MuMailer</span></a></h1>
+                    <h2>Introduction</h2>
+                  </div>
+                  <div class="float-right gitrepo">
+                    <a href="https://github.com/muflone/mumailer" target="_blank" class="button">
+                      <small>View project on</small>
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container content" id="content">
+        <section id="main-content">
+          <h1>Description</h1>
+          <!-- Begin of page content section -->
+          <p><strong>MuMailer</strong> is a simple mail transfer agent (MTA) to send email messages from
+Python or from command line, using multiple profiles to configure messages or
+SMTP parameters, programming in Object-Oriented way and without having to
+handle the connection details, the headers, the body or the text encoding to
+transform the attachments.</p>
+
+<h1 id="usage-from-python-code">Usage from Python code</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">mumailer</span> <span class="kn">import</span> <span class="n">Connection</span><span class="p">,</span> <span class="n">Message</span><span class="p">,</span> <span class="n">Recipient</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Muflone'</span><span class="p">,</span> <span class="s">'muflone@example.com'</span><span class="p">),</span>
+                  <span class="n">to</span><span class="o">=</span><span class="p">[</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Foo'</span><span class="p">,</span> <span class="s">'foo@example.com'</span><span class="p">)],</span>
+                  <span class="n">cc</span><span class="o">=</span><span class="p">[</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Bar'</span><span class="p">,</span> <span class="s">'bar@example.com'</span><span class="p">)],</span>
+                  <span class="n">subject</span><span class="o">=</span><span class="s">'Test e-mail'</span><span class="p">,</span>
+                  <span class="n">body</span><span class="o">=</span><span class="s">'&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;'</span><span class="p">,</span>
+                  <span class="n">use_html</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">Connection</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">'&lt;server&gt;'</span><span class="p">,</span>
+                        <span class="n">port</span><span class="o">=</span><span class="mi">587</span><span class="p">,</span>
+                        <span class="n">username</span><span class="o">=</span><span class="s">'&lt;username&gt;'</span><span class="p">,</span>
+                        <span class="n">password</span><span class="o">=</span><span class="s">'&lt;smtp password&gt;'</span><span class="p">)</span>
+<span class="n">connection</span><span class="p">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">connection</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">connection</span><span class="p">.</span><span class="n">disconnect</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>The previous code will prepare a message from <em>Muflone</em> and will send the
+message to <em>Foo</em>, adding <em>Bar</em> to the CC list, using the subject
+<em>Test e-mail</em> with the HTML body <em>Hello world!</em>.</p>
+
+<p>The SMTP connection will be established to the specified server on the TCP
+port 587 (the server must be running) using username and password authentication
+and encrypted using the SSL protocol.</p>
+
+<p>For more information please refer to the <a href="/mumailer/english/docs/index.html">Documentation</a>
+page and for some usage examples please see the <a href="/mumailer/english/examples/index.html">Examples</a> page.</p>
+
+<h1 id="profilesmtp-class">ProfileSMTP class</h1>
+
+<p>Using the SMTP profiles you can customize the SMTP settings in separated YAML
+files and load them when you need to send a message, instead of wiring them in
+your code.</p>
+
+<p>The SMTP settings can be specified in a profile file like the
+following:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">SMTP</span><span class="pi">:</span>
+  <span class="na">SERVER</span><span class="pi">:</span> <span class="s">&lt;SMTP server&gt;</span>
+  <span class="na">PORT</span><span class="pi">:</span> <span class="m">587</span>
+  <span class="na">USERNAME</span><span class="pi">:</span> <span class="s">&lt;username&gt;</span>
+  <span class="na">PASSWORD</span><span class="pi">:</span> <span class="s">&lt;password&gt;</span>
+  <span class="na">TIMEOUT</span><span class="pi">:</span> <span class="m">30</span>
+  <span class="na">ENCRYPTION</span><span class="pi">:</span> <span class="s">TLSv1_2</span>
+  <span class="na">CIPHERS</span><span class="pi">:</span>
+</code></pre></div></div>
+
+<p>You can load the <strong>ProfileSmtp</strong> file settings and use them in the code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">mumailer</span> <span class="kn">import</span> <span class="n">Connection</span><span class="p">,</span> <span class="n">ProfileSmtp</span>
+
+<span class="n">profile</span> <span class="o">=</span> <span class="n">ProfileSmtp</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'profile-smtp.yaml'</span><span class="p">)</span>
+
+<span class="n">connection</span> <span class="o">=</span> <span class="n">Connection</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="n">profile</span><span class="p">.</span><span class="n">server</span><span class="p">,</span>
+                        <span class="n">port</span><span class="o">=</span><span class="n">profile</span><span class="p">.</span><span class="n">port</span><span class="p">,</span>
+                        <span class="n">username</span><span class="o">=</span><span class="n">profile</span><span class="p">.</span><span class="n">username</span><span class="p">,</span>
+                        <span class="n">password</span><span class="o">=</span><span class="n">profile</span><span class="p">.</span><span class="n">password</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h1 id="profilemessage-class">ProfileMessage class</h1>
+
+<p>Similarly, a message profile can save the message specifications in separated
+YAML files and use them when you want to send a message.
+For example a periodic report should always be sent to the same recipients, so
+you could avoid to write the addresses in your code, but you can simply
+customize the message specification when you need.</p>
+
+<p>The message settings can be set specified in a profile file like the
+following:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">MESSAGE</span><span class="pi">:</span>
+  <span class="na">SENDER</span><span class="pi">:</span> <span class="s">Muflone muflone@example.com</span>
+  <span class="na">TO</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">Foo foo@example.com</span>
+  <span class="na">CC</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">Bar bar@example.com</span>
+  <span class="na">SUBJECT</span><span class="pi">:</span> <span class="s">Test e-mail</span>
+  <span class="na">BODY</span><span class="pi">:</span> <span class="s">&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</span>
+  <span class="na">HTML</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">ATTACHMENTS</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">README.md</span>
+    <span class="pi">-</span> <span class="s">LICENSE</span>
+  <span class="na">CONTENT_TYPES</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">text/plain</span>
+    <span class="pi">-</span> <span class="s">application/octet-stream</span>
+<span class="pi">-</span> <span class="na">HEADERS</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">X-Mailer=MuMailer</span>
+    <span class="pi">-</span> <span class="s">X-MuMailer-Profile=message.yaml</span>
+</code></pre></div></div>
+
+<p>You can load the <strong>ProfileMessage</strong> file settings and use them in the code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">mumailer</span> <span class="kn">import</span> <span class="n">Header</span><span class="p">,</span> <span class="n">Message</span><span class="p">,</span> <span class="n">ProfileMessage</span><span class="p">,</span> <span class="n">Recipient</span>
+
+<span class="n">profile</span> <span class="o">=</span> <span class="n">ProfileMessage</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'profile-message.yaml'</span><span class="p">)</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="n">Recipient</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">profile</span><span class="p">.</span><span class="n">sender</span><span class="p">),</span>
+                  <span class="n">reply_to</span><span class="o">=</span><span class="n">Recipient</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">profile</span><span class="p">.</span><span class="n">reply_to</span><span class="p">),</span>
+                  <span class="n">to</span><span class="o">=</span><span class="n">Recipient</span><span class="p">.</span><span class="n">parse_as_list</span><span class="p">(</span><span class="n">profile</span><span class="p">.</span><span class="n">to</span><span class="p">),</span>
+                  <span class="n">cc</span><span class="o">=</span><span class="n">Recipient</span><span class="p">.</span><span class="n">parse_as_list</span><span class="p">(</span><span class="n">profile</span><span class="p">.</span><span class="n">cc</span><span class="p">),</span>
+                  <span class="n">bcc</span><span class="o">=</span><span class="n">Recipient</span><span class="p">.</span><span class="n">parse_as_list</span><span class="p">(</span><span class="n">profile</span><span class="p">.</span><span class="n">bcc</span><span class="p">),</span>
+                  <span class="n">subject</span><span class="o">=</span><span class="n">profile</span><span class="p">.</span><span class="n">subject</span><span class="p">,</span>
+                  <span class="n">body</span><span class="o">=</span><span class="n">profile</span><span class="p">.</span><span class="n">body</span><span class="p">,</span>
+                  <span class="n">use_html</span><span class="o">=</span><span class="n">profile</span><span class="p">.</span><span class="n">use_html</span><span class="p">,</span>
+                  <span class="n">headers</span><span class="o">=</span><span class="n">Header</span><span class="p">.</span><span class="n">parse_as_list</span><span class="p">(</span><span class="n">profile</span><span class="p">.</span><span class="n">headers</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h1 id="usage-from-command-line">Usage from command line</h1>
+
+<p>MuMailer can also be used from the command line to send messages, using the
+same arguments for the Python code:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mumailer <span class="se">\</span>
+  <span class="nt">--server</span> <span class="s1">'&lt;server&gt;'</span> <span class="se">\</span>
+  <span class="nt">--port</span> 587 <span class="se">\</span>
+  <span class="nt">--encryption</span> TLS <span class="se">\</span>
+  <span class="nt">--username</span> <span class="s1">'&lt;username&gt;'</span> <span class="se">\</span>
+  <span class="nt">--password</span> <span class="s1">'&lt;smtp password&gt;'</span> <span class="se">\</span>
+  <span class="nt">--sender</span> <span class="s1">'Muflone muflone@example.com'</span> <span class="se">\</span>
+  <span class="nt">--to</span> <span class="s1">'Foo foo@example.com'</span> <span class="se">\</span>
+  <span class="nt">--cc</span> <span class="s1">'Bar bar@example.com'</span> <span class="se">\</span>
+  <span class="nt">--subject</span> <span class="s1">'Test e-mail'</span> <span class="se">\</span>
+  <span class="nt">--body</span> <span class="s1">'&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;'</span> <span class="se">\</span>
+  <span class="nt">--html</span>
+</code></pre></div></div>
+
+<p>The previous example will send a message from <em>Muflone</em> to <em>Foo</em>, adding <em>Bar</em>
+to the CC list, using the subject <em>Test e-mail</em> with the HTML body
+<em>Hello world!</em>.</p>
+
+<p>The SMTP connection will be established to the specified server on the TCP
+port 587 (the server must be running) using username and password authentication
+and encrypted using the TLS protocol.</p>
+
+<p>At the same way you can specify a ProfileSMTP file using the <code class="language-plaintext highlighter-rouge">--profile-smtp</code>
+option and a ProfileMessage file using the <code class="language-plaintext highlighter-rouge">--profile-message</code>
+option.</p>
+
+
+          <!-- End of page content section -->
+
+          <!-- Begin of Installation section -->
+          <h1>Installation</h1>
+          <p>The stable versions released with source code and prebuilt packages are linked in the <a href="download.html">Download page</a>. For information about installation from packages or source code please refer to the <a href="install.html">Installation page</a>.
+</p>
+          <p>The MuMailer development version source code is <a href="https://github.com/muflone/mumailer" target="_blank" class="external">available on GitHub</a>.
+</p>
+          <!-- End of Installation section -->
+
+
+
+          <!-- Begin of License section -->
+
+    
+          <h1>License</h1>
+          <p><strong>MuMailer</strong> is distributed as open source code <a href="https://github.com/muflone/mumailer" target="_blank" class="external">available on GitHub</a> under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" class="external">GNU GPL-3+ license</a> (GNU General Public License version 3 or higher).
+
+            The software is supplied as is and it doesn't offer any warranty. Anyone can fork the project, modify and distribute it under the same GNU GPL-3+ license.
+</p>
+    
+  
+          <!-- End of License section -->
+
+
+        </section>
+        <aside id="sidebar" class="content">
+          <!-- Build sidebar depth 1 -->
+          <ul class="menu1">
+            <li class="menu1"><a href="/mumailer/english/index.html">Introduction</a></li>
+            <li class="menu1"><a href="/mumailer/english/download.html">Download</a></li>
+            <li class="menu1"><a href="/mumailer/english/install.html">Installation</a></li>
+            <li class="menu1"><a href="/mumailer/english/docs/index.html">Documentation</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2-prefix">Classes</li>
+              <li class="menu2"><a href="/mumailer/english/docs/connection.html">Connection</a></li>
+              <li class="menu2"><a href="/mumailer/english/docs/message.html">Message</a></li>
+              <li class="menu2"><a href="/mumailer/english/docs/attachment.html">Attachment</a></li>
+              <li class="menu2"><a href="/mumailer/english/docs/header.html">Header</a></li>
+              <li class="menu2"><a href="/mumailer/english/docs/recipient.html">Recipient</a></li>
+              <li class="menu2"><a href="/mumailer/english/docs/profile_message.html">ProfileMessage</a></li>
+              <li class="menu2"><a href="/mumailer/english/docs/profile_smtp.html">ProfileSMTP</a></li>
+              <li class="menu2"><a href="/mumailer/english/docs/yaml_profile.html">YamlProfile</a></li>
+              <li class="menu2-prefix">Structure</li>
+              <li class="menu2"><a href="/mumailer/english/docs/encryption.html">Encryption</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/mumailer/english/examples/index.html">Usage examples</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2"><a href="/mumailer/english/examples/encryption_none.html">No Encrytion</a></li>
+              <li class="menu2"><a href="/mumailer/english/examples/encryption_ssl.html">SSL Encrytion</a></li>
+              <li class="menu2"><a href="/mumailer/english/examples/encryption_tls.html">TLS Encrytion</a></li>
+              <li class="menu2"><a href="/mumailer/english/examples/profile_message.html">ProfileMessage</a></li>
+              <li class="menu2"><a href="/mumailer/english/examples/profile_smtp.html">ProfileSMTP</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/mumailer/english/changelog.html">Changelog</a></li>
+          </ul>
+          <!-- End of sidebar depth 1 -->
+
+        </aside>
+
+        </div>
+      </div>
+
+      <!-- Begin footer -->
+      <footer class="footer">
+        <div class="footer-main row">
+          <div class="container footer-icons">
+            <a href="/" title="Home">
+              <img src="/resources/home/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/contacts/" title="Muflone">
+              <img src="/resources/contacts/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/articles/" title="Articles">
+              <img src="/resources/articles/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gespeaker/" title="Gespeaker">
+              <img src="/resources/gespeaker/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gwakeonlan/" title="gWakeOnLAN">
+              <img src="/resources/gwakeonlan/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gextractwinicons/" title="gExtractWinIcons">
+              <img src="/resources/gextractwinicons/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/bluewho/" title="BlueWho">
+              <img src="/resources/bluewho/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/cpucompare/" title="CPUCompare">
+              <img src="/resources/cpucompare/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gptrace/" title="gpTrace">
+              <img src="/resources/gptrace/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gnome-appfolders-manager/" title="GNOME AppFolders Manager">
+              <img src="/resources/gnome-appfolders-manager/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gtransmemory/" title="gTransMemory">
+              <img src="/resources/gtransmemory/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-builder/" title="Remmina Plugin Builder">
+              <img src="/resources/remmina-plugin-builder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-exec/" title="Remmina Plugin Exec">
+              <img src="/resources/remmina-plugin-exec/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-folder/" title="Remmina Plugin Folder">
+              <img src="/resources/remmina-plugin-folder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-open/" title="Remmina Plugin Open">
+              <img src="/resources/remmina-plugin-open/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rdesktop/" title="Remmina Plugin RDesktop">
+              <img src="/resources/remmina-plugin-rdesktop/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rustdesk/" title="Remmina Plugin RustDesk">
+              <img src="/resources/remmina-plugin-rustdesk/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-teamviewer/" title="Remmina Plugin TeamViewer">
+              <img src="/resources/remmina-plugin-teamviewer/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-ultravnc/" title="Remmina Plugin UltraVNC">
+              <img src="/resources/remmina-plugin-ultravnc/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-url/" title="Remmina Plugin URL">
+              <img src="/resources/remmina-plugin-url/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-webkit/" title="Remmina Plugin WebKit">
+              <img src="/resources/remmina-plugin-webkit/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/awaitable/" title="Awaitable">
+              <img src="/resources/awaitable/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/pixelcolor/" title="PixelColor">
+              <img src="/resources/pixelcolor/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/django-admin-settings/" title="Django Admin Settings">
+              <img src="/resources/django-admin-settings/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/watchpage/" title="WatchPage">
+              <img src="/resources/watchpage/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/mumailer/" title="MuMailer">
+              <img src="/resources/mumailer/icons/apple-icon-60x60.png">
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom row">
+          <div class="container">
+            <div class="row justify-content-between items">
+              <div class="col-md-auto col-12 item">
+                <nav class="footer-links">
+                  <ul>
+                    <li><a href="/">Home</a></li>
+                      <li><a href="/contacts/" title="Contacts">
+                          Contacts</a></li>
+                    <li><a href="/english/" title="English">
+                        <img src="/theme/images/flag-en-16.png"> English</a></li>
+                    <li><a href="/italian/" title="Italian">
+                        <img src="/theme/images/flag-it-16.png"> Italian</a></li>
+                    <li><a href="//www.iubenda.com/privacy-policy/721463" target="_blank">
+                      Privacy Policy</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-md-auto col-12 item">
+                <div class="copyright">
+                  Last update:&nbsp;2024-06-03&nbsp;-
+                  Copyright &copy; 2013-2023 Fabio Castelli (Muflone)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End footer -->
+    </main>
+    <!-- End main -->
+
+    <script type="text/javascript" src="/theme/js/lozad.min.js"></script>
+    <script type="text/javascript" src="/theme/js/device.js"></script>
+    <script type="text/javascript" src="/theme/js/custom.js"></script>
+
+
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {'message': 'This website uses cookies to make your browsing experience more convenient and personal. Cookies store useful information on your computer to help us improve the efficiency and relevance of our site for you. In some cases, they are essential to making the site work properly. By accessing this site, you consent to the use of cookies.',
+                                        'dismiss': 'Hide',
+                                        'learnMore': 'More info',
+                                        'link': 'https://www.iubenda.com/privacy-policy/721463',
+                                        'theme': 'dark-top'
+                                       };
+    </script>
+    <script type="text/javascript" src="/theme/js/cookieconsent.js"></script>
+    <!-- End Cookie Consent plugin -->
+
+    <!-- Begin of Google Analytics block -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics block -->
+
+  </body>
+</html>
