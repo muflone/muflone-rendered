@@ -68,22 +68,22 @@
         <section id="main-content">
 <h1 id="connessione-utilizzando-la-cifratura-tls">Connessione utilizzando la cifratura TLS</h1>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">mumailer</span> <span class="kn">import</span> <span class="n">Connection</span><span class="p">,</span> <span class="n">Message</span><span class="p">,</span> <span class="n">Recipient</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">mumailer</span> <span class="kn">import</span> <span class="n">Connection</span><span class="p">,</span> <span class="n">Message</span><span class="p">,</span> <span class="n">Recipient</span>
 
-<span class="n">message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Muflone'</span><span class="p">,</span> <span class="s">'muflone@example.com'</span><span class="p">),</span>
-                  <span class="n">to</span><span class="o">=</span><span class="p">[</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Foo'</span><span class="p">,</span> <span class="s">'foo@example.com'</span><span class="p">)],</span>
-                  <span class="n">cc</span><span class="o">=</span><span class="p">[</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Bar'</span><span class="p">,</span> <span class="s">'bar@example.com'</span><span class="p">)],</span>
-                  <span class="n">subject</span><span class="o">=</span><span class="s">'Test e-mail'</span><span class="p">,</span>
-                  <span class="n">body</span><span class="o">=</span><span class="s">'&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;'</span><span class="p">,</span>
+<span class="n">message</span> <span class="o">=</span> <span class="nc">Message</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="nc">Recipient</span><span class="p">(</span><span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">muflone@example.com</span><span class="sh">'</span><span class="p">),</span>
+                  <span class="n">to</span><span class="o">=</span><span class="p">[</span><span class="nc">Recipient</span><span class="p">(</span><span class="sh">'</span><span class="s">Foo</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">foo@example.com</span><span class="sh">'</span><span class="p">)],</span>
+                  <span class="n">cc</span><span class="o">=</span><span class="p">[</span><span class="nc">Recipient</span><span class="p">(</span><span class="sh">'</span><span class="s">Bar</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">bar@example.com</span><span class="sh">'</span><span class="p">)],</span>
+                  <span class="n">subject</span><span class="o">=</span><span class="sh">'</span><span class="s">Test e-mail</span><span class="sh">'</span><span class="p">,</span>
+                  <span class="n">body</span><span class="o">=</span><span class="sh">'</span><span class="s">&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</span><span class="sh">'</span><span class="p">,</span>
                   <span class="n">use_html</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">connection</span> <span class="o">=</span> <span class="n">Connection</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">'&lt;server&gt;'</span><span class="p">,</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="nc">Connection</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="sh">'</span><span class="s">&lt;server&gt;</span><span class="sh">'</span><span class="p">,</span>
                         <span class="n">port</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
-                        <span class="n">username</span><span class="o">=</span><span class="s">'&lt;username&gt;'</span><span class="p">,</span>
-                        <span class="n">password</span><span class="o">=</span><span class="s">'&lt;smtp password&gt;'</span><span class="p">)</span>
-<span class="n">connection</span><span class="p">.</span><span class="n">set_encryption</span><span class="p">(</span><span class="n">encryption</span><span class="o">=</span><span class="s">'TLS'</span><span class="p">)</span>
-<span class="n">connection</span><span class="p">.</span><span class="n">connect</span><span class="p">()</span>
-<span class="n">connection</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-<span class="n">connection</span><span class="p">.</span><span class="n">disconnect</span><span class="p">()</span>
+                        <span class="n">username</span><span class="o">=</span><span class="sh">'</span><span class="s">&lt;username&gt;</span><span class="sh">'</span><span class="p">,</span>
+                        <span class="n">password</span><span class="o">=</span><span class="sh">'</span><span class="s">&lt;smtp password&gt;</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">connection</span><span class="p">.</span><span class="nf">set_encryption</span><span class="p">(</span><span class="n">encryption</span><span class="o">=</span><span class="sh">'</span><span class="s">TLS</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">connection</span><span class="p">.</span><span class="nf">connect</span><span class="p">()</span>
+<span class="n">connection</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">connection</span><span class="p">.</span><span class="nf">disconnect</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Il metodo di cifratura <strong>TLS</strong> stabilirà una connessione usando il protocollo

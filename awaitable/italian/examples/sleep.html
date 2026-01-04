@@ -68,28 +68,28 @@
         <section id="main-content">
 <h1 id="sleep">Sleep</h1>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">typing</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">logging</span>
+<span class="kn">import</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="n">random</span>
+<span class="kn">import</span> <span class="n">typing</span>
 
-<span class="kn">import</span> <span class="nn">awaitable</span>
+<span class="kn">import</span> <span class="n">awaitable</span>
 
 
-<span class="o">@</span><span class="n">awaitable</span><span class="p">.</span><span class="n">awaitable</span>
+<span class="nd">@awaitable.awaitable</span>
 <span class="k">def</span> <span class="nf">do_process</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                <span class="n">t</span><span class="p">:</span> <span class="n">typing</span><span class="p">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Await some time before returning
     :param name: task name
     :param t: time to sleep in seconds
     :return: None
-    """</span>
-    <span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s">'From </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">: awaiting </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s"> seconds...'</span><span class="p">)</span>
-    <span class="n">starting_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-    <span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s">'From </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">: task complete '</span>
-                 <span class="sa">f</span><span class="s">'in </span><span class="si">{</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">starting_time</span><span class="p">:.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> seconds'</span><span class="p">)</span>
+    </span><span class="sh">"""</span>
+    <span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">From </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">: awaiting </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s"> seconds...</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">starting_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
+    <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">From </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">: task complete </span><span class="sh">'</span>
+                 <span class="sa">f</span><span class="sh">'</span><span class="s">in </span><span class="si">{</span><span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">starting_time</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> seconds</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>La funzione <strong><code class="language-plaintext highlighter-rouge">do_process</code></strong> è contrassegnata come awaitable e semplicemente
@@ -97,20 +97,20 @@ registrerà un testo descrittivo e attenderà un numero di secondi passato
 dall’argomento <strong><code class="language-plaintext highlighter-rouge">t</code></strong>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">count</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Run some processes asynchronously
     Each process will await a random number of seconds
 
     :param count: number of tasks to process
     :return: None
-    """</span>
-    <span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s">'Running </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s"> processes'</span><span class="p">)</span>
-    <span class="n">tasks</span> <span class="o">=</span> <span class="n">awaitable</span><span class="p">.</span><span class="n">AsyncioGather</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
-        <span class="n">tasks</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">do_process</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s">'task_</span><span class="si">{</span><span class="n">tasks</span><span class="p">.</span><span class="n">count</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s">'</span><span class="p">,</span>
-                             <span class="n">t</span><span class="o">=</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="p">)))</span>
-    <span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s">'Starting to process </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span><span class="si">}</span><span class="s"> tasks'</span><span class="p">)</span>
-    <span class="k">await</span> <span class="n">tasks</span><span class="p">.</span><span class="n">run</span><span class="p">()</span>
+    </span><span class="sh">"""</span>
+    <span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">Running </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s"> processes</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="n">awaitable</span><span class="p">.</span><span class="nc">AsyncioGather</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+        <span class="n">tasks</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nf">do_process</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="sh">'</span><span class="s">task_</span><span class="si">{</span><span class="n">tasks</span><span class="p">.</span><span class="nf">count</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="sh">'</span><span class="p">,</span>
+                             <span class="n">t</span><span class="o">=</span><span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="p">)))</span>
+    <span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">Starting to process </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span><span class="si">}</span><span class="s"> tasks</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">tasks</span><span class="p">.</span><span class="nf">run</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>La funzione <strong><code class="language-plaintext highlighter-rouge">process</code></strong> è una funzione asincrona che raccoglierà un numero di
@@ -120,19 +120,19 @@ processi prima di elaborarli tutti insieme in maniera asincrona.</p>
 saranno eseguite più o meno allo stesso momento e l’intero processo sarà
 completato quando l’attesa più lunga verrà completata.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
-    <span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">,</span>
-                        <span class="nb">format</span><span class="o">=</span><span class="s">'%(levelname)-8s '</span>
-                               <span class="s">'%(filename)-15s '</span>
-                               <span class="s">'line: %(lineno)-5d '</span>
-                               <span class="s">'%(funcName)-20s '</span>
-                               <span class="s">'%(message)s'</span><span class="p">)</span>
-    <span class="n">starting_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">awaitable</span><span class="p">.</span><span class="n">run_awaitable</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">process</span><span class="p">,</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">,</span>
+                        <span class="nb">format</span><span class="o">=</span><span class="sh">'</span><span class="s">%(levelname)-8s </span><span class="sh">'</span>
+                               <span class="sh">'</span><span class="s">%(filename)-15s </span><span class="sh">'</span>
+                               <span class="sh">'</span><span class="s">line: %(lineno)-5d </span><span class="sh">'</span>
+                               <span class="sh">'</span><span class="s">%(funcName)-20s </span><span class="sh">'</span>
+                               <span class="sh">'</span><span class="s">%(message)s</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">starting_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
+    <span class="n">awaitable</span><span class="p">.</span><span class="nf">run_awaitable</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">process</span><span class="p">,</span>
                             <span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-    <span class="n">ending_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s">'Operation completed in </span><span class="si">{</span><span class="n">ending_time</span> <span class="o">-</span> <span class="n">starting_time</span><span class="p">:.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> '</span>
-                 <span class="s">'seconds'</span><span class="p">)</span>
+    <span class="n">ending_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
+    <span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">Operation completed in </span><span class="si">{</span><span class="n">ending_time</span> <span class="o">-</span> <span class="n">starting_time</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> </span><span class="sh">'</span>
+                 <span class="sh">'</span><span class="s">seconds</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>La chiamata alla funzione <strong><code class="language-plaintext highlighter-rouge">run_awaitable</code></strong> richiamerà la funzione asincrona

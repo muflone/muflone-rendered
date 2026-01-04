@@ -76,9 +76,9 @@ be specified in the matching ModelAdmin <a target="_blank" class="external" href
 <h2 id="exact-match">Exact match</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterExact</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="s">'exact'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="sh">'</span><span class="s">exact</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filters the model records including those whose data1 field <strong>matches the exact</strong> specified value.</p>
@@ -88,17 +88,17 @@ be specified in the matching ModelAdmin <a target="_blank" class="external" href
 <h2 id="partial-match-with-contains">Partial match with contains</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterContains</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="s">'contains'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="sh">'</span><span class="s">contains</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filters the model records including those whose data1 field <strong>contains</strong> the specified value.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterIContains</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="s">'icontains'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="sh">'</span><span class="s">icontains</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filters the model records including those whose data1 field <strong>contains</strong> the specified value, ignoring
@@ -109,9 +109,9 @@ any differences between upper and lower case.</p>
 <h2 id="initial-or-final-match">Initial or final match</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterStarting</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="s">'startswith'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="sh">'</span><span class="s">startswith</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filters the model records including those whose data1 field <strong>begins</strong> with the indicated value.</p>
@@ -119,9 +119,9 @@ any differences between upper and lower case.</p>
 <p class="center"><img src="/resources/django-admin-settings/archive/latest/english/admintextinputfilter_startswith.png" alt="" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterIEnding</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="s">'iendswith'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="sh">'</span><span class="s">iendswith</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filters the model records including those whose data1 field <strong>ends</strong> with the indicated value, ignoring
@@ -132,9 +132,9 @@ any differences between upper and lower case.</p>
 <h2 id="match-with-regular-expression">Match with regular expression</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterRegex</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="s">'regex'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="sh">'</span><span class="s">regex</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filters the model records including those whose data1 field <strong>matches the regular expression</strong>
@@ -148,9 +148,9 @@ field will be found.</p>
 <h2 id="match-with-regular-expression-using-an-advanced-filter">Match with regular expression using an advanced filter</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterData1</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition_advanced</span> <span class="o">=</span> <span class="s">'data1__regex'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition_advanced</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1__regex</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filters the model records including those whose data1 field <strong>matches the regular expression</strong>

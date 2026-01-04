@@ -122,22 +122,22 @@ message headers.</p>
 
 <h4 id="usage-example">Usage example</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">mumailer</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">mumailer</span>
 
-<span class="n">message</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Message</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Muflone'</span><span class="p">,</span> <span class="s">'muflone@example.com'</span><span class="p">),</span>
-                           <span class="n">to</span><span class="o">=</span><span class="p">[</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Foo'</span><span class="p">,</span> <span class="s">'foo@example.com'</span><span class="p">)],</span>
-                           <span class="n">subject</span><span class="o">=</span><span class="s">'Test e-mail'</span><span class="p">,</span>
-                           <span class="n">body</span><span class="o">=</span><span class="s">'&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;'</span><span class="p">,</span>
+<span class="n">message</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="nc">Message</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="nc">Recipient</span><span class="p">(</span><span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">muflone@example.com</span><span class="sh">'</span><span class="p">),</span>
+                           <span class="n">to</span><span class="o">=</span><span class="p">[</span><span class="nc">Recipient</span><span class="p">(</span><span class="sh">'</span><span class="s">Foo</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">foo@example.com</span><span class="sh">'</span><span class="p">)],</span>
+                           <span class="n">subject</span><span class="o">=</span><span class="sh">'</span><span class="s">Test e-mail</span><span class="sh">'</span><span class="p">,</span>
+                           <span class="n">body</span><span class="o">=</span><span class="sh">'</span><span class="s">&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</span><span class="sh">'</span><span class="p">,</span>
                            <span class="n">use_html</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">message</span><span class="p">.</span><span class="n">cc</span> <span class="o">=</span> <span class="p">[</span><span class="n">mumailer</span><span class="p">.</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Bar'</span><span class="p">,</span> <span class="s">'bar@example.com'</span><span class="p">)]</span>
-<span class="n">message</span><span class="p">.</span><span class="n">bcc</span> <span class="o">=</span> <span class="p">[</span><span class="n">mumailer</span><span class="p">.</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Hidden'</span><span class="p">,</span> <span class="s">'me@example.com'</span><span class="p">)]</span>
+<span class="n">message</span><span class="p">.</span><span class="n">cc</span> <span class="o">=</span> <span class="p">[</span><span class="n">mumailer</span><span class="p">.</span><span class="nc">Recipient</span><span class="p">(</span><span class="sh">'</span><span class="s">Bar</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">bar@example.com</span><span class="sh">'</span><span class="p">)]</span>
+<span class="n">message</span><span class="p">.</span><span class="n">bcc</span> <span class="o">=</span> <span class="p">[</span><span class="n">mumailer</span><span class="p">.</span><span class="nc">Recipient</span><span class="p">(</span><span class="sh">'</span><span class="s">Hidden</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">me@example.com</span><span class="sh">'</span><span class="p">)]</span>
 </code></pre></div></div>
 
 <hr />
 
 <h2 id="method-add_attachment">Method add_attachment</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Message</span><span class="p">.</span><span class="n">add_attachment</span><span class="p">(</span><span class="n">attachment</span><span class="p">:</span> <span class="n">Attachment</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Message</span><span class="p">.</span><span class="nf">add_attachment</span><span class="p">(</span><span class="n">attachment</span><span class="p">:</span> <span class="n">Attachment</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The <strong>add_attachment</strong> method is used to add another <a href="/mumailer/english/docs/attachment.html">Attachment</a> object to
@@ -157,16 +157,16 @@ the attachments list.</p>
 
 <h4 id="usage-example-1">Usage example</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">attachment</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Attachment</span><span class="p">.</span><span class="n">load_filename</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myfile.pdf'</span><span class="p">,</span>
-                                               <span class="n">content_type</span><span class="o">=</span><span class="s">'application/pdf'</span><span class="p">)</span>
-<span class="n">message</span><span class="p">.</span><span class="n">add_attachment</span><span class="p">(</span><span class="n">attachment</span><span class="o">=</span><span class="n">attachment</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">attachment</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Attachment</span><span class="p">.</span><span class="nf">load_filename</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sh">'</span><span class="s">myfile.pdf</span><span class="sh">'</span><span class="p">,</span>
+                                               <span class="n">content_type</span><span class="o">=</span><span class="sh">'</span><span class="s">application/pdf</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">message</span><span class="p">.</span><span class="nf">add_attachment</span><span class="p">(</span><span class="n">attachment</span><span class="o">=</span><span class="n">attachment</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
 
 <h2 id="method-add_header">Method add_header</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Message</span><span class="p">.</span><span class="n">add_header</span><span class="p">(</span><span class="n">header</span><span class="p">:</span> <span class="n">Header</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Message</span><span class="p">.</span><span class="nf">add_header</span><span class="p">(</span><span class="n">header</span><span class="p">:</span> <span class="n">Header</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The <strong>add_header</strong> method is used to add another <a href="/mumailer/english/docs/header.html">Header</a> object to
@@ -186,9 +186,9 @@ the headers list.</p>
 
 <h4 id="usage-example-2">Usage example</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">header</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Header</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'X-Mailer'</span><span class="p">,</span>
-                         <span class="n">value</span><span class="o">=</span><span class="s">'MuMailer'</span><span class="p">)</span>
-<span class="n">message</span><span class="p">.</span><span class="n">add_header</span><span class="p">(</span><span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">header</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="nc">Header</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">X-Mailer</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">MuMailer</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">message</span><span class="p">.</span><span class="nf">add_header</span><span class="p">(</span><span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
 </code></pre></div></div>
 
 

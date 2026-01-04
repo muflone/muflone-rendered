@@ -95,12 +95,12 @@ within another synchronous function.</p>
 <p>The function can be used to execute asynchronous code from within another
 synchronous function.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">awaitable</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">awaitable</span>
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">count</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
     <span class="k">pass</span>
 
-<span class="n">awaitable</span><span class="p">.</span><span class="n">run_awaitable</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">process</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">awaitable</span><span class="p">.</span><span class="nf">run_awaitable</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">process</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>This will execute the asynchronous function <strong>process</strong> passing the argument

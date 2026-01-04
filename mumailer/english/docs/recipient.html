@@ -96,10 +96,10 @@ sender, to, cc, bcc or reply-to in the message.</p>
 
 <h4 id="usage-example">Usage example</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">mumailer</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">mumailer</span>
 
-<span class="n">recipient</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Recipient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'Muflone'</span><span class="p">,</span>
-                               <span class="n">address</span><span class="o">=</span><span class="s">'muflone@example.com'</span><span class="p">)</span>
+<span class="n">recipient</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="nc">Recipient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">,</span>
+                               <span class="n">address</span><span class="o">=</span><span class="sh">'</span><span class="s">muflone@example.com</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">message</span><span class="p">.</span><span class="n">sender</span> <span class="o">=</span> <span class="n">recipient</span>
 </code></pre></div></div>
 
@@ -107,7 +107,7 @@ sender, to, cc, bcc or reply-to in the message.</p>
 
 <h2 id="method-parse">Method parse</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Recipient</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Recipient</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The static method <strong>parse</strong> can be used to create a new Recipient object from a
@@ -128,7 +128,7 @@ string representation in the form “Name email@address” or just
 
 <h4 id="usage-example-1">Usage example</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">recipient</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Recipient</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="s">'Muflone Ovinis muflone@example.com'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">recipient</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Recipient</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="sh">'</span><span class="s">Muflone Ovinis muflone@example.com</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">message</span><span class="p">.</span><span class="n">reply_to</span> <span class="o">=</span> <span class="n">recipient</span>
 </code></pre></div></div>
 
@@ -136,7 +136,7 @@ string representation in the form “Name email@address” or just
 
 <h2 id="method-parse_as_list">Method parse_as_list</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Recipient</span><span class="p">.</span><span class="n">parse_as_list</span><span class="p">(</span><span class="n">addresses</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Recipient</span><span class="p">.</span><span class="nf">parse_as_list</span><span class="p">(</span><span class="n">addresses</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span>
 </code></pre></div></div>
 
 <p>The static method <strong>parse_as_list</strong> can be used to get a list of Recipient
@@ -157,9 +157,9 @@ or just “email@address”.</p>
 
 <h4 id="usage-example-2">Usage example</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">recipients</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Recipient</span><span class="p">.</span><span class="n">parse_as_list</span><span class="p">(</span><span class="n">addresses</span><span class="o">=</span><span class="p">[</span>
-    <span class="s">'Muflone Ovinis muflone@example.com'</span><span class="p">,</span>
-    <span class="s">'foo@example.com'</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">recipients</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Recipient</span><span class="p">.</span><span class="nf">parse_as_list</span><span class="p">(</span><span class="n">addresses</span><span class="o">=</span><span class="p">[</span>
+    <span class="sh">'</span><span class="s">Muflone Ovinis muflone@example.com</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">foo@example.com</span><span class="sh">'</span><span class="p">])</span>
 <span class="n">message</span><span class="p">.</span><span class="n">to</span> <span class="o">=</span> <span class="n">recipients</span>
 </code></pre></div></div>
 

@@ -95,11 +95,11 @@ funzione asincrona.</p>
 <p>La funzione può essere usata come decoratore con <strong>@awaitable</strong> prima del nome
 della funzione da decorare.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">awaitable</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">awaitable</span>
 
-<span class="o">@</span><span class="n">awaitable</span><span class="p">.</span><span class="n">awaitable</span>
+<span class="nd">@awaitable.awaitable</span>
 <span class="k">def</span> <span class="nf">do_process</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="p">...</span>
+    <span class="bp">...</span>
 </code></pre></div></div>
 
 <p>Racchiudendo la funzione <strong>do_process</strong> col decoratore <strong>awaitable</strong> si rende

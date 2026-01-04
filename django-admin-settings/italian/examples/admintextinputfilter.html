@@ -76,9 +76,9 @@ essere specificata in <a target="_blank" class="external" href="https://docs.dja
 <h2 id="corrispondenza-esatta">Corrispondenza esatta</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterExact</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="s">'exact'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="sh">'</span><span class="s">exact</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filtra i record del modello riportando quelli il cui campo data1 <strong>corrisponde esattamente</strong> al valore indicato.</p>
@@ -88,17 +88,17 @@ essere specificata in <a target="_blank" class="external" href="https://docs.dja
 <h2 id="corrispondenza-parziale-con-contains">Corrispondenza parziale con contains</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterContains</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="s">'contains'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="sh">'</span><span class="s">contains</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filtra i record del modello riportando quelli il cui campo data1 <strong>contiene</strong> il valore indicato.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterIContains</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="s">'icontains'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="sh">'</span><span class="s">icontains</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filtra i record del modello riportando quelli il cui campo data1 <strong>contiene</strong> il valore indicato, ignorando le
@@ -109,9 +109,9 @@ differenze tra maiuscole e minuscole.</p>
 <h2 id="corrispondenza-iniziale-o-finale">Corrispondenza iniziale o finale</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterStarting</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="s">'startswith'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="sh">'</span><span class="s">startswith</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filtra i record del modello riportando quelli il cui campo data1 <strong>inizia</strong> col valore indicato.</p>
@@ -119,9 +119,9 @@ differenze tra maiuscole e minuscole.</p>
 <p class="center"><img src="/resources/django-admin-settings/archive/latest/italian/admintextinputfilter_startswith.png" alt="" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterIEnding</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="s">'iendswith'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="sh">'</span><span class="s">iendswith</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filtra i record del modello riportando quelli il cui campo data1 <strong>termina</strong> col valore indicato, ignorando le
@@ -132,9 +132,9 @@ differenze tra maiuscole e minuscole.</p>
 <h2 id="corrispondenza-con-espressione-regolare">Corrispondenza con espressione regolare</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterRegex</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="s">'regex'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition</span> <span class="o">=</span> <span class="sh">'</span><span class="s">regex</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filtra i record del modello riportando quelli il cui campo data1 <strong>corrisponde all’espressione regolare</strong>
@@ -148,9 +148,9 @@ esattamente 4 numeri.</p>
 <h2 id="corrispondenza-con-espressione-regolare-usando-un-filtro-avanzato">Corrispondenza con espressione regolare usando un filtro avanzato</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TextInputFilterData1</span><span class="p">(</span><span class="n">AdminTextInputFilter</span><span class="p">):</span>
-    <span class="n">parameter_name</span> <span class="o">=</span> <span class="s">'data1'</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s">'Data 1'</span>
-    <span class="n">lookup_condition_advanced</span> <span class="o">=</span> <span class="s">'data1__regex'</span>
+    <span class="n">parameter_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1</span><span class="sh">'</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Data 1</span><span class="sh">'</span>
+    <span class="n">lookup_condition_advanced</span> <span class="o">=</span> <span class="sh">'</span><span class="s">data1__regex</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Filtra i record del modello riportando quelli il cui campo data1 <strong>corrisponde all’espressione regolare</strong>

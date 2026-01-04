@@ -76,8 +76,8 @@ in the configuration files.</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>For a better understanding you can do the tests using this initial
@@ -96,10 +96,10 @@ used to get or transform the results until you get what you need.</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://github.com/muflone/watchpage/tree/master/'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links starting with
@@ -117,14 +117,14 @@ https://github.com/muflone/watchpage/tree/master/watchpage
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://pypi.org/'</span>
   <span class="pi">-</span> <span class="na">NOT STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://pypi.org/project/PyYAML/'</span>
   <span class="pi">-</span> <span class="na">NOT STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://pypi.org/project/beautifulsoup4/'</span>
   <span class="pi">-</span> <span class="na">NOT STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://pypi.org/project/html5lib/'</span>
   <span class="pi">-</span> <span class="na">NOT STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://pypi.org/project/lxml/'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links starting with https://pypi.org/
@@ -141,10 +141,10 @@ but not starting with the other patterns, with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">ENDS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">.zip'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links ending with .zip
@@ -161,14 +161,14 @@ with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">STARTS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://pypi.org/'</span>
   <span class="pi">-</span> <span class="na">NOT ENDS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/PyYAML/'</span>
   <span class="pi">-</span> <span class="na">NOT ENDS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/beautifulsoup4/'</span>
   <span class="pi">-</span> <span class="na">NOT ENDS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/html5lib/'</span>
   <span class="pi">-</span> <span class="na">NOT ENDS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/lxml/'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links starting with https://pypi.org/
@@ -185,10 +185,10 @@ but not ending with the other patterns, with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpage/tree/master/'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string
@@ -207,11 +207,11 @@ https://github.com/muflone/watchpage/tree/master/watchpage
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpage/'</span>
   <span class="pi">-</span> <span class="na">NOT CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">github.com'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string /watchpage/
@@ -228,10 +228,10 @@ but not those containing the string github.com with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">REGEX</span><span class="pi">:</span> <span class="s1">'</span><span class="s">^(http|https):\/\/github\.com\/.*/watchpage\/tree\/master\/'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links matching the specified regular expression
@@ -250,11 +250,11 @@ https://github.com/muflone/watchpage/tree/master/watchpage
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpage'</span>
   <span class="pi">-</span> <span class="na">NOT REGEX</span><span class="pi">:</span> <span class="s1">'</span><span class="s">(github|circleci)'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string /watchpage but not matching
@@ -271,11 +271,11 @@ the specified regular expression with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">TRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/:.watchpge'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -293,11 +293,11 @@ end, with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">LTRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">:/htp'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -315,11 +315,11 @@ the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">RTRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpge'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -337,12 +337,12 @@ the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">LTRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">:/htp'</span>
   <span class="pi">-</span> <span class="na">PREPEND</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -360,12 +360,12 @@ will add the string https:// at the start with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">RTRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpge'</span>
   <span class="pi">-</span> <span class="na">APPEND</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpage/'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -383,11 +383,11 @@ will add the string /watchpage/ at the end with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">REMOVE</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -404,11 +404,11 @@ one of them will remove the specified string with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">REMOVE LEFT</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -426,11 +426,11 @@ with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">REMOVE RIGHT</span><span class="pi">:</span> <span class="s1">'</span><span class="s">watchpage/'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -448,12 +448,12 @@ with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">REPLACE</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/watchpage/'</span>
     <span class="na">WITH</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/gwakeonlan/'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -471,11 +471,11 @@ with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">REVERSE</span><span class="pi">:</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -492,11 +492,11 @@ one of them will reverse the text with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">pypi.org/project/WatchPage'</span>
   <span class="pi">-</span> <span class="na">UPPER</span><span class="pi">:</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string
@@ -514,11 +514,11 @@ upper case with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">pypi.org/project/WatchPage'</span>
   <span class="pi">-</span> <span class="na">LOWER</span><span class="pi">:</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string
@@ -536,11 +536,11 @@ lower case with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">LEFT</span><span class="pi">:</span> <span class="m">23</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -557,11 +557,11 @@ one of them will return the first 23 characters with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">RIGHT</span><span class="pi">:</span> <span class="m">26</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -578,12 +578,12 @@ one of them will return the latest 26 characters with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">REGEX REPLACE</span><span class="pi">:</span> <span class="s1">'</span><span class="s">[w]{3}\.'</span>
     <span class="na">WITH</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -601,11 +601,11 @@ value with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">REGEX SEARCH</span><span class="pi">:</span> <span class="s1">'</span><span class="s">(http|https):\/\/[w]{3}\.muflone\.com\/'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -623,14 +623,14 @@ with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">PREPEND</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{</span><span class="nv"> </span><span class="s">"name":</span><span class="nv"> </span><span class="s">"Test",</span><span class="nv"> </span><span class="s">"value":</span><span class="nv"> </span><span class="s">"This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">sample</span><span class="nv"> </span><span class="s">dictionary"</span><span class="nv"> </span><span class="s">}'</span>
   <span class="pi">-</span> <span class="na">LEFT</span><span class="pi">:</span> <span class="m">58</span>
   <span class="pi">-</span> <span class="na">JSON DICT</span><span class="pi">:</span> <span class="s1">'</span><span class="s">value'</span>
   <span class="pi">-</span> <span class="na">TRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">"'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each
@@ -649,7 +649,7 @@ with the following results:</p>
 <span class="na">URL</span><span class="pi">:</span> <span class="s">github:muflone/watchpage</span>
 <span class="na">PARSER</span><span class="pi">:</span> <span class="s">html5lib</span>
 <span class="na">TYPE</span><span class="pi">:</span> <span class="s">links</span>
-<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ABSOLUTE_URLS</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">FILTERS</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">CONTAINS</span><span class="pi">:</span> <span class="s1">'</span><span class="s">www.muflone.com'</span>
   <span class="pi">-</span> <span class="na">PREPEND</span><span class="pi">:</span> <span class="s1">'</span><span class="s">[{</span><span class="nv"> </span><span class="s">"name":</span><span class="nv"> </span><span class="s">"Data</span><span class="nv"> </span><span class="s">1"</span><span class="nv"> </span><span class="s">},</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">"name":</span><span class="nv"> </span><span class="s">"Data</span><span class="nv"> </span><span class="s">2"</span><span class="nv"> </span><span class="s">}]'</span>
@@ -657,7 +657,7 @@ with the following results:</p>
   <span class="pi">-</span> <span class="na">JSON LIST</span><span class="pi">:</span> <span class="m">1</span>
   <span class="pi">-</span> <span class="na">JSON DICT</span><span class="pi">:</span> <span class="s1">'</span><span class="s">name'</span>
   <span class="pi">-</span> <span class="na">TRIM</span><span class="pi">:</span> <span class="s1">'</span><span class="s">"'</span>
-<span class="na">STATUS</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">STATUS</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Will return only the links containing the string www.muflone.com and for each

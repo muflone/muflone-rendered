@@ -83,7 +83,7 @@ when the gather is complete to execute them all asynchronously in parallel.</p>
 <hr />
 <h2 id="method-add">Method add</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coroutine</span><span class="p">:</span> <span class="n">typing</span><span class="p">.</span><span class="n">Coroutine</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">coroutine</span><span class="p">:</span> <span class="n">typing</span><span class="p">.</span><span class="n">Coroutine</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
 </code></pre></div></div>
 
 <p>The <strong>add</strong> method adds an asynchronous function (coroutine) to the tasks list
@@ -106,17 +106,17 @@ execute them all in parallel at the end of the collect.</p>
 
 <h4 id="usage-example">Usage example</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">awaitable</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">awaitable</span>
 
-<span class="n">tasks</span> <span class="o">=</span> <span class="n">awaitable</span><span class="p">.</span><span class="n">AsyncioGather</span><span class="p">()</span>
-<span class="n">tasks</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">do_process</span><span class="p">(...))</span>
+<span class="n">tasks</span> <span class="o">=</span> <span class="n">awaitable</span><span class="p">.</span><span class="nc">AsyncioGather</span><span class="p">()</span>
+<span class="n">tasks</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nf">do_process</span><span class="p">(...))</span>
 </code></pre></div></div>
 
 <hr />
 
 <h2 id="method-count">Method count</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
 </code></pre></div></div>
 
 <p>The <strong>count</strong> method returns the number of queued tasks.</p>
@@ -129,18 +129,18 @@ execute them all in parallel at the end of the collect.</p>
 
 <h4 id="usage-example-1">Usage example</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">awaitable</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">awaitable</span>
 
-<span class="n">tasks</span> <span class="o">=</span> <span class="n">awaitable</span><span class="p">.</span><span class="n">AsyncioGather</span><span class="p">()</span>
-<span class="n">tasks</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">do_process</span><span class="p">(...))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">tasks</span><span class="p">.</span><span class="n">count</span><span class="p">())</span>
+<span class="n">tasks</span> <span class="o">=</span> <span class="n">awaitable</span><span class="p">.</span><span class="nc">AsyncioGather</span><span class="p">()</span>
+<span class="n">tasks</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nf">do_process</span><span class="p">(...))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">tasks</span><span class="p">.</span><span class="nf">count</span><span class="p">())</span>
 </code></pre></div></div>
 
 <hr />
 
 <h2 id="method-run">Method run</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span>
 </code></pre></div></div>
 
 <p>The <strong>run</strong> method executes all the queued tasks in parallel.</p>
@@ -156,13 +156,13 @@ or through <strong>run_awaitable</strong>.</p>
 
 <h4 id="usage-example-2">Usage example</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">awaitable</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">awaitable</span>
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">process</span><span class="p">():</span>
-    <span class="n">tasks</span> <span class="o">=</span> <span class="n">awaitable</span><span class="p">.</span><span class="n">AsyncioGather</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-        <span class="n">tasks</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">do_process</span><span class="p">(...))</span>
-    <span class="k">await</span> <span class="n">tasks</span><span class="p">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="n">awaitable</span><span class="p">.</span><span class="nc">AsyncioGather</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">tasks</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nf">do_process</span><span class="p">(...))</span>
+    <span class="k">await</span> <span class="n">tasks</span><span class="p">.</span><span class="nf">run</span><span class="p">()</span>
 </code></pre></div></div>
 
 

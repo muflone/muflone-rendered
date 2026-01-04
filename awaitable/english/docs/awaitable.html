@@ -94,11 +94,11 @@ an awaitable function to be called from another asynchronous function.</p>
 <p>The function can be used as a decorator with <strong>@awaitable</strong> before the function
 to decorate.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">awaitable</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">awaitable</span>
 
-<span class="o">@</span><span class="n">awaitable</span><span class="p">.</span><span class="n">awaitable</span>
+<span class="nd">@awaitable.awaitable</span>
 <span class="k">def</span> <span class="nf">do_process</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="p">...</span>
+    <span class="bp">...</span>
 </code></pre></div></div>
 
 <p>Wrapping the <strong>do_process</strong> function with the <strong>awaitable</strong> decorator makes the

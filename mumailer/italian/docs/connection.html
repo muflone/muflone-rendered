@@ -105,20 +105,20 @@ SMTP sono in ascolto sulle porte 25, 587 per traffico in chiaro o TLS oppure
 
 <h4 id="esempio-di-utilizzo">Esempio di utilizzo</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">mumailer</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">mumailer</span>
 
-<span class="n">connection</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Connection</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">'&lt;server&gt;'</span><span class="p">,</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="nc">Connection</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="sh">'</span><span class="s">&lt;server&gt;</span><span class="sh">'</span><span class="p">,</span>
                                  <span class="n">port</span><span class="o">=</span><span class="mi">587</span><span class="p">,</span>
-                                 <span class="n">username</span><span class="o">=</span><span class="s">'&lt;username&gt;'</span><span class="p">,</span>
-                                 <span class="n">password</span><span class="o">=</span><span class="s">'&lt;smtp password&gt;'</span><span class="p">))</span>
+                                 <span class="n">username</span><span class="o">=</span><span class="sh">'</span><span class="s">&lt;username&gt;</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">password</span><span class="o">=</span><span class="sh">'</span><span class="s">&lt;smtp password&gt;</span><span class="sh">'</span><span class="p">))</span>
 </code></pre></div></div>
 
 <hr />
 
 <h2 id="metodo-set_encryption">Metodo set_encryption</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Connection</span><span class="p">.</span><span class="n">set_encryption</span><span class="p">(</span><span class="n">protocol</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s">''</span><span class="p">,</span>
-                          <span class="n">ciphers</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s">''</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Connection</span><span class="p">.</span><span class="nf">set_encryption</span><span class="p">(</span><span class="n">protocol</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sh">''</span><span class="p">,</span>
+                          <span class="n">ciphers</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sh">''</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Configura il protocollo di cifratura e le cifre.</p>
@@ -138,15 +138,15 @@ SMTP sono in ascolto sulle porte 25, 587 per traffico in chiaro o TLS oppure
 
 <h4 id="esempio-di-utilizzo-1">Esempio di utilizzo</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">connection</span><span class="p">.</span><span class="n">set_encryption</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s">'TLSv1_1'</span><span class="p">,</span>
-                          <span class="n">ciphers</span><span class="o">=</span><span class="s">'ALL:@SECLEVEL=1'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">connection</span><span class="p">.</span><span class="nf">set_encryption</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="sh">'</span><span class="s">TLSv1_1</span><span class="sh">'</span><span class="p">,</span>
+                          <span class="n">ciphers</span><span class="o">=</span><span class="sh">'</span><span class="s">ALL:@SECLEVEL=1</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
 
 <h2 id="metodo-connect">Metodo connect</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Connection</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Connection</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Stabilisce la connessione al server SMTP col metodo di cifratura
@@ -167,14 +167,14 @@ risponde nel numero di secondi specificato, predefinito 30 secondi.</li>
 
 <h4 id="esempio-di-utilizzo-2">Esempio di utilizzo</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">connection</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">connection</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
 
 <h2 id="metodo-disconnect">Metodo disconnect</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Connection</span><span class="p">.</span><span class="n">disconnect</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Connection</span><span class="p">.</span><span class="nf">disconnect</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Disconnette dal server SMTP.</p>
@@ -187,14 +187,14 @@ risponde nel numero di secondi specificato, predefinito 30 secondi.</li>
 
 <h4 id="esempio-di-utilizzo-3">Esempio di utilizzo</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">connection</span><span class="p">.</span><span class="n">disconnect</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">connection</span><span class="p">.</span><span class="nf">disconnect</span><span class="p">()</span>
 </code></pre></div></div>
 
 <hr />
 
 <h2 id="metodo-noop">Metodo noop</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Connection</span><span class="p">.</span><span class="n">noop</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Connection</span><span class="p">.</span><span class="nf">noop</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Non esegue nulla, utilizzato soltanto per tenere la connessione attiva.</p>
@@ -207,14 +207,14 @@ risponde nel numero di secondi specificato, predefinito 30 secondi.</li>
 
 <h4 id="esempio-di-utilizzo-4">Esempio di utilizzo</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">connection</span><span class="p">.</span><span class="n">noop</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">connection</span><span class="p">.</span><span class="nf">noop</span><span class="p">()</span>
 </code></pre></div></div>
 
 <hr />
 
 <h2 id="metodo-send">Metodo send</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Connection</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">Message</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Connection</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">Message</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Invia un messaggio di posta.</p>
@@ -233,13 +233,13 @@ risponde nel numero di secondi specificato, predefinito 30 secondi.</li>
 
 <h4 id="esempio-di-utilizzo-5">Esempio di utilizzo</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">message</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Message</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Muflone'</span><span class="p">,</span> <span class="s">'muflone@example.com'</span><span class="p">),</span>
-                           <span class="n">to</span><span class="o">=</span><span class="p">[</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Foo'</span><span class="p">,</span> <span class="s">'foo@example.com'</span><span class="p">)],</span>
-                           <span class="n">cc</span><span class="o">=</span><span class="p">[</span><span class="n">Recipient</span><span class="p">(</span><span class="s">'Bar'</span><span class="p">,</span> <span class="s">'bar@example.com'</span><span class="p">)],</span>
-                           <span class="n">subject</span><span class="o">=</span><span class="s">'Test e-mail'</span><span class="p">,</span>
-                           <span class="n">body</span><span class="o">=</span><span class="s">'&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;'</span><span class="p">,</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">message</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="nc">Message</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="nc">Recipient</span><span class="p">(</span><span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">muflone@example.com</span><span class="sh">'</span><span class="p">),</span>
+                           <span class="n">to</span><span class="o">=</span><span class="p">[</span><span class="nc">Recipient</span><span class="p">(</span><span class="sh">'</span><span class="s">Foo</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">foo@example.com</span><span class="sh">'</span><span class="p">)],</span>
+                           <span class="n">cc</span><span class="o">=</span><span class="p">[</span><span class="nc">Recipient</span><span class="p">(</span><span class="sh">'</span><span class="s">Bar</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">bar@example.com</span><span class="sh">'</span><span class="p">)],</span>
+                           <span class="n">subject</span><span class="o">=</span><span class="sh">'</span><span class="s">Test e-mail</span><span class="sh">'</span><span class="p">,</span>
+                           <span class="n">body</span><span class="o">=</span><span class="sh">'</span><span class="s">&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</span><span class="sh">'</span><span class="p">,</span>
                            <span class="n">use_html</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">connection</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">)</span>
+<span class="n">connection</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">)</span>
 </code></pre></div></div>
 
 

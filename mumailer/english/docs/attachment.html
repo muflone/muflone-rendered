@@ -96,18 +96,18 @@
 
 <h4 id="usage-example">Usage example</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">mumailer</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">mumailer</span>
 
-<span class="n">attachment</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Attachment</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'hello.html'</span><span class="p">,</span>
-                                 <span class="n">content</span><span class="o">=</span><span class="sa">b</span><span class="s">'&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;'</span><span class="p">,</span>
-                                 <span class="n">content_type</span><span class="o">=</span><span class="s">'text/html'</span><span class="p">)</span>
+<span class="n">attachment</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="nc">Attachment</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sh">'</span><span class="s">hello.html</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">content</span><span class="o">=</span><span class="sa">b</span><span class="sh">'</span><span class="s">&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">content_type</span><span class="o">=</span><span class="sh">'</span><span class="s">text/html</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
 
 <h2 id="method-load_filename">Method load_filename</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Attachment</span><span class="p">.</span><span class="n">load_filename</span><span class="p">(</span><span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Attachment</span><span class="p">.</span><span class="nf">load_filename</span><span class="p">(</span><span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                          <span class="n">content_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -130,9 +130,9 @@ object.</p>
 
 <h4 id="usage-example-1">Usage example</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">attachment</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Attachment</span><span class="p">.</span><span class="n">load_filename</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myfile.pdf'</span><span class="p">,</span>
-                                               <span class="n">content_type</span><span class="o">=</span><span class="s">'application/pdf'</span><span class="p">)</span>
-<span class="n">message</span><span class="p">.</span><span class="n">add_attachment</span><span class="p">(</span><span class="n">attachment</span><span class="o">=</span><span class="n">attachment</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">attachment</span> <span class="o">=</span> <span class="n">mumailer</span><span class="p">.</span><span class="n">Attachment</span><span class="p">.</span><span class="nf">load_filename</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sh">'</span><span class="s">myfile.pdf</span><span class="sh">'</span><span class="p">,</span>
+                                               <span class="n">content_type</span><span class="o">=</span><span class="sh">'</span><span class="s">application/pdf</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">message</span><span class="p">.</span><span class="nf">add_attachment</span><span class="p">(</span><span class="n">attachment</span><span class="o">=</span><span class="n">attachment</span><span class="p">)</span>
 </code></pre></div></div>
 
 
