@@ -154,6 +154,16 @@ div#content {
   margin-bottom: 0;
 }
 
+.content ul li, .content ol li {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.content ul li::before, .content ol li::before {
+  display: unset;
+  position: unset;
+}
+
 .mbrola-voices {
   margin-bottom: 0;
 }
@@ -187,11 +197,6 @@ div#content {
 #main-content div.article_description {
   padding-left: 22px;
   padding-bottom: 10px;
-}
-
-#main-content ol li a,
-#main-content ul li a {
-  margin: 0 5px;
 }
 
 #main-content ul#articles li {
