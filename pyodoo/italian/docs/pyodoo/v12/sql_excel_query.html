@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="italian">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>PyOdoo | SqlExcelQuery</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/pyodoo/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/pyodoo/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/pyodoo/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/pyodoo/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/pyodoo/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/pyodoo/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/pyodoo/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/pyodoo/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/pyodoo/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/pyodoo/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/pyodoo/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/pyodoo/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/pyodoo/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/pyodoo/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/pyodoo/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/libs.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-regular.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-600.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons-outlined.woff2" as="font" crossorigin>
+    <script type="text/javascript" src="/theme/js/jquery-1.10.2.min.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="main-inner">
+        <div class="bff d-md-block">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="bff-container">
+                  <a class="main-logo" href="/pyodoo/italian/">
+                    <img src="/resources/pyodoo/icons/ms-icon-144x144.png"></a>
+                  <div class="main-title">
+                    <h1><a href="/pyodoo/italian/">
+                      <span class="middle">PyOdoo</span></a></h1>
+                    <h2>SqlExcelQuery</h2>
+                  </div>
+                  <div class="float-right gitrepo">
+                    <a href="https://github.com/muflone/pyodoo" target="_blank" class="button">
+                      <small>Vedi il progetto su</small>
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container content" id="content">
+        <section id="main-content">
+<h1 class="no_toc" id="classe-sqlexcelquery">Classe SqlExcelQuery</h1>
+
+<p>La classe <strong>SqlExcelQuery</strong> è utilizzata per eseguire una query SQL utilizzando
+il modello <code class="language-plaintext highlighter-rouge">sql.excel.pdf</code> e questo modello è necessario affinché la
+classe funzioni.</p>
+
+<p>Si tratta di un modulo non standard di Odoo ma fornito da applicazioni di
+terze parti e andrà installato per utilizzare questa classe.</p>
+
+<p>Per osservare qualche esempio di utilizzo fare riferimento alla pagina
+<a href="/pyodoo/italian/examples/index.html">Esempi di utilizzo</a>.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#costruttore" id="markdown-toc-costruttore">Costruttore</a></li>
+  <li><a href="#metodo-statico-is_available" id="markdown-toc-metodo-statico-is_available">Metodo statico is_available</a></li>
+  <li><a href="#proprietà-name" id="markdown-toc-proprietà-name">Proprietà name</a></li>
+  <li><a href="#proprietà-language" id="markdown-toc-proprietà-language">Proprietà language</a></li>
+  <li><a href="#proprietà-id" id="markdown-toc-proprietà-id">Proprietà id</a></li>
+  <li><a href="#metodo-get_sql" id="markdown-toc-metodo-get_sql">Metodo get_sql</a></li>
+  <li><a href="#metodo-set_sql" id="markdown-toc-metodo-set_sql">Metodo set_sql</a></li>
+  <li><a href="#metodo-set_draft" id="markdown-toc-metodo-set_draft">Metodo set_draft</a></li>
+  <li><a href="#metodo-validate" id="markdown-toc-metodo-validate">Metodo validate</a></li>
+  <li><a href="#metodo-get_state" id="markdown-toc-metodo-get_state">Metodo get_state</a></li>
+  <li><a href="#metodo-get_active" id="markdown-toc-metodo-get_active">Metodo get_active</a></li>
+  <li><a href="#metodo-set_active" id="markdown-toc-metodo-set_active">Metodo set_active</a></li>
+  <li><a href="#metodo-execute" id="markdown-toc-metodo-execute">Metodo execute</a></li>
+  <li><a href="#metodo-clear" id="markdown-toc-metodo-clear">Metodo clear</a></li>
+  <li><a href="#metodo-delete" id="markdown-toc-metodo-delete">Metodo delete</a></li>
+  <li><a href="#metodo-get_file" id="markdown-toc-metodo-get_file">Metodo get_file</a></li>
+  <li><a href="#metodo-get_data" id="markdown-toc-metodo-get_data">Metodo get_data</a></li>
+  <li><a href="#metodo-add_tag" id="markdown-toc-metodo-add_tag">Metodo add_tag</a></li>
+  <li><a href="#metodo-get_tags" id="markdown-toc-metodo-get_tags">Metodo get_tags</a></li>
+</ul>
+
+<hr />
+<h2 id="costruttore">Costruttore</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SqlExcelQuery</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                    <span class="n">category</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                    <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                    <span class="n">database</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                    <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                    <span class="n">language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="parametri">Parametri</h4>
+
+<ul>
+  <li><strong>name</strong>: nome della query SQL da creare o utilizzare.</li>
+  <li><strong>category</strong>: nome della categoria della query da creare o utilizzare.</li>
+  <li><strong>endpoint</strong>: URL dell’endpoint di Odoo.</li>
+  <li><strong>database</strong>: nome del database di Odoo da utilizzare.</li>
+  <li><strong>username</strong>: nome dell’utente di Odoo da utilizzare.</li>
+  <li><strong>password</strong>: password dell’utente di Odoo da utilizzare.</li>
+  <li><strong>language</strong>: lingua predefinita da utilizzare per i campi traducibili.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pyodoo.v12</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="n">pyodoo</span><span class="p">.</span><span class="n">v12</span><span class="p">.</span><span class="nc">SqlExcelQuery</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">SQL Excel Query Demo</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">category</span><span class="o">=</span><span class="sh">'</span><span class="s">PyOdoo Demo</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">endpoint</span><span class="o">=</span><span class="sh">'</span><span class="s">https://demo.odoo.com</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">database</span><span class="o">=</span><span class="sh">'</span><span class="s">demo_saas</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">username</span><span class="o">=</span><span class="sh">'</span><span class="s">muflone</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">password</span><span class="o">=</span><span class="sh">'</span><span class="s">mysecret</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">language</span><span class="o">=</span><span class="sh">'</span><span class="s">it_IT</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Accede all’istanza di Odoo all’indirizzo https://demo.odoo.com sul database
+demo_saas, utilizzando le credenziali fornite e la lingua italiana per
+i campi traducibili e richiama o crea la query SQL di nome
+<em>SQL Excel Query Demo</em> nella categoria <code class="language-plaintext highlighter-rouge">PyOdoo Demo</code>.</p>
+
+<hr />
+
+<h2 id="metodo-statico-is_available">Metodo statico is_available</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">is_available</span><span class="p">(</span><span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                           <span class="n">database</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                           <span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                           <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                           <span class="n">language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Il metodo statico <strong>is_available</strong> è statico e può essere richiamato sia su
+oggetti SqlExcelQuery che sulla classe stessa con SqlExcelQuery.is_available e
+si occupa di verificare se il modello <code class="language-plaintext highlighter-rouge">sql.excel.pdf</code> sia disponibile e
+restituirà il valore True se il modello è stato trovato, altrimenti restituirà
+il valore False.</p>
+
+<h4 id="parametri-1">Parametri</h4>
+
+<ul>
+  <li><strong>endpoint</strong>: URL dell’endpoint di Odoo.</li>
+  <li><strong>database</strong>: nome del database di Odoo da utilizzare.</li>
+  <li><strong>username</strong>: nome dell’utente di Odoo da utilizzare.</li>
+  <li><strong>password</strong>: password dell’utente di Odoo da utilizzare.</li>
+  <li><strong>language</strong>: lingua predefinita da utilizzare per i campi traducibili.</li>
+</ul>
+
+<h4 id="restituisce">Restituisce</h4>
+
+<ul>
+  <li>True se il modello <code class="language-plaintext highlighter-rouge">sql.excel.pdf</code> è stato trovato.</li>
+  <li>False se il modello <code class="language-plaintext highlighter-rouge">sql.excel.pdf</code> non risulta disponibile.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-1">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">is_available</span><span class="p">(</span><span class="n">endpoint</span><span class="o">=</span><span class="sh">'</span><span class="s">https://demo.odoo.com</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">database</span><span class="o">=</span><span class="sh">'</span><span class="s">demo_saas</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">username</span><span class="o">=</span><span class="sh">'</span><span class="s">muflone</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">password</span><span class="o">=</span><span class="sh">'</span><span class="s">mysecret</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">language</span><span class="o">=</span><span class="sh">'</span><span class="s">it_IT</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="proprietà-name">Proprietà name</h2>
+
+<p>La proprietà <strong>name</strong> restituisce il nome della query dell’oggetto
+SqlExcelQuery.</p>
+
+<h4 id="restituisce-1">Restituisce</h4>
+
+<ul>
+  <li>Il nome della query usata dall’oggetto SqlExcelQuery.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-2">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="proprietà-language">Proprietà language</h2>
+
+<p>La proprietà <strong>language</strong> restituisce e assegna la lingua per l’oggetto
+SqlExcelQuery.</p>
+
+<h4 id="restituisce-2">Restituisce</h4>
+
+<ul>
+  <li>La lingua attuale dall’oggetto SqlExcelQuery.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-3">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="n">language</span><span class="p">)</span>
+<span class="n">query</span><span class="p">.</span><span class="n">language</span> <span class="o">=</span> <span class="sh">'</span><span class="s">it_IT</span><span class="sh">'</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="proprietà-id">Proprietà id</h2>
+
+<p>La proprietà <strong>id</strong> restituisce l’identificativo univoco della query
+dell’oggetto SqlExcelQuery.</p>
+
+<h4 id="restituisce-3">Restituisce</h4>
+
+<ul>
+  <li>L’identificativo univoco dall’oggetto SqlExcelQuery.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-4">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="nb">id</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-get_sql">Metodo get_sql</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">get_code</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>get_sql</strong> restituisce il codice SQL dell’oggetto SqlExcelQuery.</p>
+
+<h4 id="restituisce-4">Restituisce</h4>
+
+<ul>
+  <li>Il codice SQL della query dell’oggetto SqlExcelQuery.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-5">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="nf">get_sql</span><span class="p">())</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-set_sql">Metodo set_sql</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">set_sql</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>set_sql</strong> imposta il codice SQL per l’oggetto SqlExcelQuery.</p>
+
+<p>Il parametro <em>text</em> corrisponde al codice SQL da salvare.</p>
+
+<h4 id="parametri-2">Parametri</h4>
+
+<ul>
+  <li><strong>text</strong>: codice SQL da impostare.</li>
+</ul>
+
+<h4 id="restituisce-5">Restituisce</h4>
+
+<ul>
+  <li>True se il record è stato aggiornato.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-6">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span><span class="p">.</span><span class="nf">set_sql</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sh">'</span><span class="s">SELECT * FROM res_partner LIMIT 100</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-set_draft">Metodo set_draft</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">set_draft</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>set_draft</strong> imposta il record SqlExcelQuery a bozza per la modifica.</p>
+
+<h4 id="restituisce-6">Restituisce</h4>
+
+<ul>
+  <li>Il metodo non restituisce nulla.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-7">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span><span class="p">.</span><span class="nf">set_draft</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-validate">Metodo validate</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">validate</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>validate</strong> valida il codice SQL dell’oggetto SqlExcelQuery.</p>
+
+<h4 id="restituisce-7">Restituisce</h4>
+
+<ul>
+  <li>Il metodo non restituisce nulla.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-8">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span><span class="p">.</span><span class="nf">validate</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-get_state">Metodo get_state</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">get_state</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>get_state</strong> legge lo stato dell’oggetto SqlExcelQuery.</p>
+
+<h4 id="restituisce-8">Restituisce</h4>
+
+<ul>
+  <li>Lo stato dell’oggetto SqlExcelQuery.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-9">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span><span class="p">.</span><span class="nf">set_draft</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="nf">get_state</span><span class="p">())</span>
+<span class="n">query</span><span class="p">.</span><span class="nf">validate</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="nf">get_state</span><span class="p">())</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-get_active">Metodo get_active</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">get_active</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>get_active</strong> legge lo stato <code class="language-plaintext highlighter-rouge">active</code> dell’oggetto SqlExcelQuery.</p>
+
+<h4 id="restituisce-9">Restituisce</h4>
+
+<ul>
+  <li>Lo stato <code class="language-plaintext highlighter-rouge">active</code> dell’oggetto SqlExcelQuery.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-10">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="nf">get_active</span><span class="p">())</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-set_active">Metodo set_active</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">set_active</span><span class="p">(</span><span class="n">active</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>set_active</strong> imposta lo stato <code class="language-plaintext highlighter-rouge">active</code> dell’oggetto SqlExcelQuery.</p>
+
+<h4 id="restituisce-10">Restituisce</h4>
+
+<ul>
+  <li>True se il record è stato aggiornato.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-11">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="nf">set_active</span><span class="p">(</span><span class="n">active</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="nf">set_active</span><span class="p">(</span><span class="n">active</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-execute">Metodo execute</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>execute</strong> esegue la query SQL dell’oggetto SqlExcelQuery.</p>
+
+<h4 id="restituisce-11">Restituisce</h4>
+
+<ul>
+  <li>Il metodo non restituisce nulla.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-12">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span><span class="p">.</span><span class="nf">set_sql</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sh">'</span><span class="s">SELECT</span><span class="se">\n</span><span class="s">  *</span><span class="se">\n</span><span class="s">FROM res_partner</span><span class="se">\n</span><span class="s">LIMIT 100</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">query</span><span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-clear">Metodo clear</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">clear</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>clear</strong> pulisce il risultato delle precedenti esecuzioni
+dell’oggetto SqlExcelQuery.</p>
+
+<h4 id="restituisce-12">Restituisce</h4>
+
+<ul>
+  <li>True se il record è stato aggiornato.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-13">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span><span class="p">.</span><span class="nf">clear</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-delete">Metodo delete</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">delete</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>delete</strong> elimina il record dell’oggetto SqlExcelQuery.</p>
+
+<h4 id="restituisce-13">Restituisce</h4>
+
+<ul>
+  <li>True se il record è stato eliminato.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-14">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span><span class="p">.</span><span class="nf">delete</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-get_file">Metodo get_file</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">get_file</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>get_file</strong> recupera il file Excel dell’ultima esecuzione della
+query SQL dell’oggetto SqlExcelQuery.</p>
+
+<h4 id="restituisce-14">Restituisce</h4>
+
+<ul>
+  <li>Il contenuto binario del file Excel ottenuto.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-15">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span><span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="nf">get_file</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-get_data">Metodo get_data</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">get_data</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>get_data</strong> estrae i dati dal file Excel dell’ultima esecuzione della
+query SQL dell’oggetto SqlExcelQuery.</p>
+
+<h4 id="restituisce-15">Restituisce</h4>
+
+<ul>
+  <li>Una lista di dizionari con i dati estratti dal file Excel ottenuto.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-16">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span><span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="nf">get_data</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-add_tag">Metodo add_tag</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">add_tag</span><span class="p">(</span><span class="n">tag_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>add_tag</strong> aggiunge il tag identificato da <code class="language-plaintext highlighter-rouge">tag_id</code> all’oggetto
+SqlExcelQuery.</p>
+
+<h4 id="restituisce-16">Restituisce</h4>
+
+<ul>
+  <li>True se il record è stato aggiornato.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-17">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span><span class="p">.</span><span class="nf">add_tag</span><span class="p">(</span><span class="n">tag_id</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-get_tags">Metodo get_tags</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlExcelQuery</span><span class="p">.</span><span class="nf">get_tags</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>get_tags</strong> recupera tutti i tag dal modello <code class="language-plaintext highlighter-rouge">sql.tags</code> da associare
+all’oggetto SqlExcelQuery mediante il metodo <strong>add_tag</strong>.</p>
+
+<h4 id="restituisce-17">Restituisce</h4>
+
+<ul>
+  <li>Una lista di dizionari con i dati sui tag.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-18">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="nf">get_tags</span><span class="p">())</span>
+</code></pre></div></div>
+
+<hr />
+
+
+
+        </section>
+        <aside id="sidebar" class="content">
+          <!-- Build sidebar depth 1 -->
+          <ul class="menu1">
+            <li class="menu1"><a href="/pyodoo/italian/index.html">Introduzione</a></li>
+            <li class="menu1"><a href="/pyodoo/italian/download.html">Scarica</a></li>
+            <li class="menu1"><a href="/pyodoo/italian/install.html">Installazione</a></li>
+            <li class="menu1"><a href="/pyodoo/italian/docs/index.html">Documentazione</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2"><a href="/pyodoo/italian/docs/authentication.html">Autenticazione</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/filters.html">Filtri</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/active.html">Record attivi</a></li>
+              <li class="menu2-prefix">Package pyodoo</li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/active_status_choice.html">ActiveStatusChoice</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/boolean_operator.html">BooleanOperator</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/compare_type.html">CompareType</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/filter.html">Filter</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/message_subtype.html">MessageSubType</a></li>
+              <li class="menu2-prefix">Package pyodoo.v12</li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/v12/api.html">Api</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/v12/python_code.html">PythonCode</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/v12/sql_excel_query.html">SqlExcelQuery</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/pyodoo/italian/examples/index.html">Esempi di utilizzo</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2"><a href="/pyodoo/italian/examples/basic_usage.html">Utilizzo di base</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/examples/read_data.html">Lettura dei dati</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/pyodoo/italian/changelog.html">Cambiamenti</a></li>
+          </ul>
+          <!-- End of sidebar depth 1 -->
+
+        </aside>
+
+        </div>
+      </div>
+
+      <!-- Begin footer -->
+      <footer class="footer">
+        <div class="footer-main row">
+          <div class="container footer-icons">
+            <a href="/" title="Home">
+              <img src="/resources/home/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/contacts/" title="Muflone">
+              <img src="/resources/contacts/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/articles/" title="Articles">
+              <img src="/resources/articles/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gespeaker/" title="Gespeaker">
+              <img src="/resources/gespeaker/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gwakeonlan/" title="gWakeOnLAN">
+              <img src="/resources/gwakeonlan/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gextractwinicons/" title="gExtractWinIcons">
+              <img src="/resources/gextractwinicons/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/bluewho/" title="BlueWho">
+              <img src="/resources/bluewho/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/cpucompare/" title="CPUCompare">
+              <img src="/resources/cpucompare/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gptrace/" title="gpTrace">
+              <img src="/resources/gptrace/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gnome-appfolders-manager/" title="GNOME AppFolders Manager">
+              <img src="/resources/gnome-appfolders-manager/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gtransmemory/" title="gTransMemory">
+              <img src="/resources/gtransmemory/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-builder/" title="Remmina Plugin Builder">
+              <img src="/resources/remmina-plugin-builder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-exec/" title="Remmina Plugin Exec">
+              <img src="/resources/remmina-plugin-exec/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-folder/" title="Remmina Plugin Folder">
+              <img src="/resources/remmina-plugin-folder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-open/" title="Remmina Plugin Open">
+              <img src="/resources/remmina-plugin-open/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rdesktop/" title="Remmina Plugin RDesktop">
+              <img src="/resources/remmina-plugin-rdesktop/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rustdesk/" title="Remmina Plugin RustDesk">
+              <img src="/resources/remmina-plugin-rustdesk/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-teamviewer/" title="Remmina Plugin TeamViewer">
+              <img src="/resources/remmina-plugin-teamviewer/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-ultravnc/" title="Remmina Plugin UltraVNC">
+              <img src="/resources/remmina-plugin-ultravnc/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-url/" title="Remmina Plugin URL">
+              <img src="/resources/remmina-plugin-url/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-webkit/" title="Remmina Plugin WebKit">
+              <img src="/resources/remmina-plugin-webkit/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/awaitable/" title="Awaitable">
+              <img src="/resources/awaitable/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/pixelcolor/" title="PixelColor">
+              <img src="/resources/pixelcolor/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/django-admin-settings/" title="Django Admin Settings">
+              <img src="/resources/django-admin-settings/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/watchpage/" title="WatchPage">
+              <img src="/resources/watchpage/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/mumailer/" title="MuMailer">
+              <img src="/resources/mumailer/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/pyodoo/" title="PyOdoo">
+              <img src="/resources/pyodoo/icons/apple-icon-60x60.png">
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom row">
+          <div class="container">
+            <div class="row justify-content-between items">
+              <div class="col-md-auto col-12 item">
+                <nav class="footer-links">
+                  <ul>
+                    <li><a href="/">Home</a></li>
+                      <li><a href="/contacts/" title="Contatti">
+                          Contatti</a></li>
+                    <li><a href="/english/" title="Inglese">
+                        <img src="/theme/images/flag-en-16.png"> Inglese</a></li>
+                    <li><a href="/italian/" title="Italiano">
+                        <img src="/theme/images/flag-it-16.png"> Italiano</a></li>
+                    <li><a href="//www.iubenda.com/privacy-policy/939201" target="_blank">
+                      Privacy Policy</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-md-auto col-12 item">
+                <div class="copyright">
+                  Ultimo aggiornamento:&nbsp;2026-01-10&nbsp;-
+                  Copyright &copy; 2013-2026 Fabio Castelli (Muflone)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End footer -->
+    </main>
+    <!-- End main -->
+
+    <script type="text/javascript" src="/theme/js/lozad.min.js"></script>
+    <script type="text/javascript" src="/theme/js/device.js"></script>
+    <script type="text/javascript" src="/theme/js/custom.js"></script>
+
+
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {'message': 'Questo sito web utilizza i cookie per semplificare e personalizzare l\'esperienza di navigazione. I cookie memorizzano informazioni utili sul computer per aiutarci a migliorare l\'efficienza e la rilevanza del nostro sito. In alcuni casi sono essenziali per il corretto funzionamento del sito. L\'accesso a questo sito implica il consenso all\'utilizzo dei cookie.',
+                                        'dismiss': 'Nascondi',
+                                        'learnMore': 'Leggi l\'informativa completa',
+                                        'link': 'https://www.iubenda.com/privacy-policy/939201',
+                                        'theme': 'dark-top'
+                                       };
+    </script>
+    <script type="text/javascript" src="/theme/js/cookieconsent.js"></script>
+    <!-- End Cookie Consent plugin -->
+
+    <!-- Begin of Google Analytics block -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics block -->
+
+  </body>
+</html>

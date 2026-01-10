@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>PyOdoo | Changelog</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/pyodoo/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/pyodoo/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/pyodoo/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/pyodoo/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/pyodoo/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/pyodoo/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/pyodoo/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/pyodoo/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/pyodoo/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/pyodoo/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/pyodoo/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/pyodoo/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/pyodoo/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/pyodoo/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/pyodoo/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/libs.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-english.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-regular.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-600.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons-outlined.woff2" as="font" crossorigin>
+    <script type="text/javascript" src="/theme/js/jquery-1.10.2.min.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="main-inner">
+        <div class="bff d-md-block">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="bff-container">
+                  <a class="main-logo" href="/pyodoo/english/">
+                    <img src="/resources/pyodoo/icons/ms-icon-144x144.png"></a>
+                  <div class="main-title">
+                    <h1><a href="/pyodoo/english/">
+                      <span class="middle">PyOdoo</span></a></h1>
+                    <h2>Changelog</h2>
+                  </div>
+                  <div class="float-right gitrepo">
+                    <a href="https://github.com/muflone/pyodoo" target="_blank" class="button">
+                      <small>View project on</small>
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container content" id="content">
+        <section id="main-content">
+<h1 id="version-072-aug-19-2025">Version 0.7.2 (Aug 19, 2025)</h1>
+
+<ul>
+  <li>Handle authentication unsuccessful</li>
+  <li>Applied less strict requirements</li>
+  <li>Added decorator _ignore_none_errors for many Model methods</li>
+  <li>Disable tests as demo.odoo.com XML-RPC seems unavailable</li>
+  <li>Added supported Python version 3.13</li>
+  <li>Added Model properties uid, partner_id, partner_name</li>
+</ul>
+
+<h1 id="version-071-jun-20-2024">Version 0.7.1 (Jun 20, 2024)</h1>
+
+<ul>
+  <li>Bumped dependencies</li>
+  <li>Fixed tests data as the database demo has changed</li>
+  <li>Added extra Python versions for TravisCI</li>
+</ul>
+
+<h1 id="version-070-oct-7-2023">Version 0.7.0 (Oct 7, 2023)</h1>
+
+<ul>
+  <li>Added PythonCode class to execute a Python code</li>
+  <li>Added sample for PythonCode</li>
+  <li>Added tests for PythonCode</li>
+</ul>
+
+<h1 id="version-060-jun-26-2023">Version 0.6.0 (Jun 26, 2023)</h1>
+
+<ul>
+  <li>Aggiunta dipendenza xlrd</li>
+  <li>Aggiunta dipendenza requests</li>
+  <li>Aggiunto il supporto a SqlExcelQuery</li>
+  <li>Ottenute le credenziali demo seguendo i redirect di https://demo.odoo.com/</li>
+</ul>
+
+<h1 id="version-0510-jun-3-2023">Version 0.5.10 (Jun 3, 2023)</h1>
+
+<ul>
+  <li>Use the existing UID if not authenticated in Model.get_model</li>
+</ul>
+
+<h1 id="version-059-may-17-2023">Version 0.5.9 (May 17, 2023)</h1>
+
+<ul>
+  <li>Removed limit, offset and order arguments from Model.get and Model.get_many</li>
+</ul>
+
+<h1 id="version-058-may-16-2023">Version 0.5.8 (May 16, 2023)</h1>
+
+<ul>
+  <li>Added some tests for filter with CompareType</li>
+  <li>Added CompareType.NOT_CONTAINS</li>
+  <li>Added CompareType.LIKE</li>
+  <li>Added CompareType.NOT_LIKE</li>
+  <li>Added CompareType.ILIKE</li>
+  <li>Added CompareType.NOT_ILIKE</li>
+  <li>Added CompareType.RAW_LIKE</li>
+  <li>Added CompareType.RAW_ILIKE</li>
+  <li>Added CompareType.UNSET_OR_EQUAL</li>
+  <li>Added CompareType.CHILD_OF</li>
+  <li>Added CompareType.PARENT_OF</li>
+  <li>Added compatibility with Python 3.11</li>
+</ul>
+
+<h1 id="version-057-mar-19-2023">Version 0.5.7 (Mar 19, 2023)</h1>
+
+<ul>
+  <li>Added Model method first to get the first result from filter</li>
+</ul>
+
+<h1 id="version-056-feb-12-2023">Version 0.5.6 (Feb 12, 2023)</h1>
+
+<ul>
+  <li>Added argument ignore_none_errors to Model to ignore errors about None values</li>
+</ul>
+
+<h1 id="version-055-feb-5-2023">Version 0.5.5 (Feb 5, 2023)</h1>
+
+<ul>
+  <li>Added authenticate argument to Model init</li>
+  <li>Added Api method do_read_many to get multiple records by ID</li>
+  <li>Added Model method get_many to get multiple records at once</li>
+  <li>Changed the Model update method to update multiple records at once</li>
+  <li>Renamed Model method set_order_by to _set_order_by</li>
+  <li>Renamed Model method set_pagination to _set_pagination</li>
+  <li>Renamed Model method set_options_language to _set_options_language</li>
+  <li>Added is_active filter Model methods</li>
+</ul>
+
+<h1 id="version-054-feb-5-2023">Version 0.5.4 (Feb 5, 2023)</h1>
+
+<ul>
+  <li>Allowed multiple records for the Model method delete</li>
+</ul>
+
+<h1 id="version-053-sep-24-2022">Version 0.5.3 (Sep 24, 2022)</h1>
+
+<ul>
+  <li>Fixed CI checks</li>
+</ul>
+
+<h1 id="version-052-sep-24-2022">Version 0.5.2 (Sep 24, 2022)</h1>
+
+<ul>
+  <li>Added icons</li>
+  <li>Added missing pyodoo.v12 package</li>
+  <li>Moved samples under the package dir</li>
+</ul>
+
+<h1 id="version-051-sep-22-2022">Version 0.5.1 (Sep 22, 2022)</h1>
+
+<ul>
+  <li>Moved from setuptools to build</li>
+</ul>
+
+<h1 id="version-050-sep-11-2022">Version 0.5.0 (Sep 11, 2022)</h1>
+
+<ul>
+  <li>Added class MessageSubType</li>
+  <li>Added Api method do_post_message</li>
+  <li>Added Model method post_message</li>
+  <li>Added Model method post_message_as_note</li>
+  <li>Added Model method post_message_as_comment</li>
+  <li>Added Model method post_message_as_activity</li>
+  <li>Added Model method get_model</li>
+  <li>Added Model method get_model_data_reference</li>
+  <li>Added Model method get_message_subtype_id</li>
+</ul>
+
+<h1 id="version-043-sep-10-2022">Version 0.4.3 (Sep 10, 2022)</h1>
+
+<ul>
+  <li>Added Model method execute</li>
+</ul>
+
+<h1 id="version-042-aug-25-2022">Version 0.4.2 (Aug 25, 2022)</h1>
+
+<ul>
+  <li>Added order argument to Model</li>
+</ul>
+
+<h1 id="version-041-jun-12-2022">Version 0.4.1 (Jun 12, 2022)</h1>
+
+<ul>
+  <li>Catch errors during contacts deletion</li>
+  <li>Added Python 3.10 to supported versions</li>
+</ul>
+
+<h1 id="version-040-jun-12-2022">Version 0.4.0 (Jun 12, 2022)</h1>
+
+<ul>
+  <li>Added boolean results for Api and Model methods for update and delete</li>
+  <li>Added method many_to_many_add to Model</li>
+  <li>Added method many_to_many_create to Model</li>
+  <li>Added method many_to_many_update to Model</li>
+  <li>Added method many_to_many_delete to Model</li>
+  <li>Added method many_to_many_remove to Model</li>
+  <li>Added method many_to_many_clear to Model</li>
+  <li>Added method many_to_many_replace to Model</li>
+</ul>
+
+<h1 id="version-030-jun-7-2022">Version 0.3.0 (Jun 7, 2022)</h1>
+
+<ul>
+  <li>Changed upstream URL to https</li>
+  <li>Replaced nose with pytest</li>
+  <li>Moved all the Model methods from Api to Model</li>
+  <li>Added Model method count</li>
+  <li>Added options to Api method do_delete</li>
+  <li>Added options to every Model method</li>
+  <li>Added pagination’s limit and offset arguments to every Model method</li>
+  <li>Added Model method get_fields</li>
+</ul>
+
+<h1 id="version-023-jul-21-2021">Version 0.2.3 (Jul 21, 2021)</h1>
+
+<ul>
+  <li>Added some samples for async usages using awaitable</li>
+</ul>
+
+<h1 id="version-022-jun-8-2021">Version 0.2.2 (Jun 8, 2021)</h1>
+
+<ul>
+  <li>Added method all which returns all the rows in the model</li>
+  <li>Added properties for get and set the default language</li>
+  <li>Added version member with the version number</li>
+</ul>
+
+<h1 id="version-021-jun-6-2021">Version 0.2.1 (Jun 6, 2021)</h1>
+
+<ul>
+  <li>Added authenticate method to authenticate model objects</li>
+  <li>Added ActiveStatusChoice to method find to get also active or inactive rows during the selection</li>
+  <li>The method get always returns a single row or None</li>
+  <li>Added nose tests</li>
+</ul>
+
+<h1 id="version-020-jun-6-2021">Version 0.2.0 (Jun 6, 2021)</h1>
+
+<ul>
+  <li>Added the model name to the Model class and passed to the Api objects</li>
+  <li>Everything will be managed by the Model class</li>
+</ul>
+
+<h1 id="version-011-jun-6-2021">Version 0.1.1 (Jun 6, 2021)</h1>
+
+<ul>
+  <li>Added support for Travis CI and Circle CI</li>
+</ul>
+
+<h1 id="version-010-jun-6-2021">Version 0.1.0 (Jun 6, 2021)</h1>
+
+<ul>
+  <li>Added Contacts API</li>
+  <li>Added BooleanOperator class for boolean operations in Odoo</li>
+  <li>Added CompareType class for comparing values in Odoo filters</li>
+  <li>Added Filter class for Odoo filters</li>
+  <li>Rewrote the API adding more general methods</li>
+  <li>New ObjectModel class for generic API for model objects</li>
+  <li>New method filter for ObjectModel</li>
+</ul>
+
+<h1 id="version-001-jun-4-2021">Version 0.0.1 (Jun 4, 2021)</h1>
+
+<ul>
+  <li>Initial release</li>
+</ul>
+
+
+        </section>
+        <aside id="sidebar" class="content">
+          <!-- Build sidebar depth 1 -->
+          <ul class="menu1">
+            <li class="menu1"><a href="/pyodoo/english/index.html">Introduction</a></li>
+            <li class="menu1"><a href="/pyodoo/english/download.html">Download</a></li>
+            <li class="menu1"><a href="/pyodoo/english/install.html">Installation</a></li>
+            <li class="menu1"><a href="/pyodoo/english/docs/index.html">Documentation</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2"><a href="/pyodoo/english/docs/authentication.html">Authentication</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/filters.html">Filters</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/active.html">Active records</a></li>
+              <li class="menu2-prefix">Package pyodoo</li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/active_status_choice.html">ActiveStatusChoice</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/boolean_operator.html">BooleanOperator</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/compare_type.html">CompareType</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/filter.html">Filter</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/message_subtype.html">MessageSubType</a></li>
+              <li class="menu2-prefix">Package pyodoo.v12</li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/v12/api.html">Api</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/v12/model.html">Model</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/v12/python_code.html">PythonCode</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/v12/sql_excel_query.html">SqlExcelQuery</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/pyodoo/english/examples/index.html">Usage examples</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2"><a href="/pyodoo/english/examples/basic_usage.html">Basic usage</a></li>
+              <li class="menu2"><a href="/pyodoo/english/examples/read_data.html">Read data</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/pyodoo/english/changelog.html">Changelog</a></li>
+          </ul>
+          <!-- End of sidebar depth 1 -->
+
+        </aside>
+
+        </div>
+      </div>
+
+      <!-- Begin footer -->
+      <footer class="footer">
+        <div class="footer-main row">
+          <div class="container footer-icons">
+            <a href="/" title="Home">
+              <img src="/resources/home/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/contacts/" title="Muflone">
+              <img src="/resources/contacts/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/articles/" title="Articles">
+              <img src="/resources/articles/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gespeaker/" title="Gespeaker">
+              <img src="/resources/gespeaker/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gwakeonlan/" title="gWakeOnLAN">
+              <img src="/resources/gwakeonlan/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gextractwinicons/" title="gExtractWinIcons">
+              <img src="/resources/gextractwinicons/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/bluewho/" title="BlueWho">
+              <img src="/resources/bluewho/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/cpucompare/" title="CPUCompare">
+              <img src="/resources/cpucompare/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gptrace/" title="gpTrace">
+              <img src="/resources/gptrace/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gnome-appfolders-manager/" title="GNOME AppFolders Manager">
+              <img src="/resources/gnome-appfolders-manager/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gtransmemory/" title="gTransMemory">
+              <img src="/resources/gtransmemory/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-builder/" title="Remmina Plugin Builder">
+              <img src="/resources/remmina-plugin-builder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-exec/" title="Remmina Plugin Exec">
+              <img src="/resources/remmina-plugin-exec/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-folder/" title="Remmina Plugin Folder">
+              <img src="/resources/remmina-plugin-folder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-open/" title="Remmina Plugin Open">
+              <img src="/resources/remmina-plugin-open/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rdesktop/" title="Remmina Plugin RDesktop">
+              <img src="/resources/remmina-plugin-rdesktop/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rustdesk/" title="Remmina Plugin RustDesk">
+              <img src="/resources/remmina-plugin-rustdesk/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-teamviewer/" title="Remmina Plugin TeamViewer">
+              <img src="/resources/remmina-plugin-teamviewer/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-ultravnc/" title="Remmina Plugin UltraVNC">
+              <img src="/resources/remmina-plugin-ultravnc/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-url/" title="Remmina Plugin URL">
+              <img src="/resources/remmina-plugin-url/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-webkit/" title="Remmina Plugin WebKit">
+              <img src="/resources/remmina-plugin-webkit/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/awaitable/" title="Awaitable">
+              <img src="/resources/awaitable/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/pixelcolor/" title="PixelColor">
+              <img src="/resources/pixelcolor/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/django-admin-settings/" title="Django Admin Settings">
+              <img src="/resources/django-admin-settings/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/watchpage/" title="WatchPage">
+              <img src="/resources/watchpage/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/mumailer/" title="MuMailer">
+              <img src="/resources/mumailer/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/pyodoo/" title="PyOdoo">
+              <img src="/resources/pyodoo/icons/apple-icon-60x60.png">
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom row">
+          <div class="container">
+            <div class="row justify-content-between items">
+              <div class="col-md-auto col-12 item">
+                <nav class="footer-links">
+                  <ul>
+                    <li><a href="/">Home</a></li>
+                      <li><a href="/contacts/" title="Contacts">
+                          Contacts</a></li>
+                    <li><a href="/english/" title="English">
+                        <img src="/theme/images/flag-en-16.png"> English</a></li>
+                    <li><a href="/italian/" title="Italian">
+                        <img src="/theme/images/flag-it-16.png"> Italian</a></li>
+                    <li><a href="//www.iubenda.com/privacy-policy/721463" target="_blank">
+                      Privacy Policy</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-md-auto col-12 item">
+                <div class="copyright">
+                  Last update:&nbsp;2026-01-10&nbsp;-
+                  Copyright &copy; 2013-2026 Fabio Castelli (Muflone)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End footer -->
+    </main>
+    <!-- End main -->
+
+    <script type="text/javascript" src="/theme/js/lozad.min.js"></script>
+    <script type="text/javascript" src="/theme/js/device.js"></script>
+    <script type="text/javascript" src="/theme/js/custom.js"></script>
+
+
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {'message': 'This website uses cookies to make your browsing experience more convenient and personal. Cookies store useful information on your computer to help us improve the efficiency and relevance of our site for you. In some cases, they are essential to making the site work properly. By accessing this site, you consent to the use of cookies.',
+                                        'dismiss': 'Hide',
+                                        'learnMore': 'More info',
+                                        'link': 'https://www.iubenda.com/privacy-policy/721463',
+                                        'theme': 'dark-top'
+                                       };
+    </script>
+    <script type="text/javascript" src="/theme/js/cookieconsent.js"></script>
+    <!-- End Cookie Consent plugin -->
+
+    <!-- Begin of Google Analytics block -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics block -->
+
+  </body>
+</html>

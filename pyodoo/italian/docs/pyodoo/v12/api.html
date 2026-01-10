@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="italian">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>PyOdoo | Api</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/pyodoo/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/pyodoo/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/pyodoo/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/pyodoo/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/pyodoo/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/pyodoo/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/pyodoo/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/pyodoo/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/pyodoo/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/pyodoo/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/pyodoo/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/pyodoo/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/pyodoo/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/pyodoo/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/pyodoo/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/libs.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-regular.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-600.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons-outlined.woff2" as="font" crossorigin>
+    <script type="text/javascript" src="/theme/js/jquery-1.10.2.min.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="main-inner">
+        <div class="bff d-md-block">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="bff-container">
+                  <a class="main-logo" href="/pyodoo/italian/">
+                    <img src="/resources/pyodoo/icons/ms-icon-144x144.png"></a>
+                  <div class="main-title">
+                    <h1><a href="/pyodoo/italian/">
+                      <span class="middle">PyOdoo</span></a></h1>
+                    <h2>Api</h2>
+                  </div>
+                  <div class="float-right gitrepo">
+                    <a href="https://github.com/muflone/pyodoo" target="_blank" class="button">
+                      <small>Vedi il progetto su</small>
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container content" id="content">
+        <section id="main-content">
+<h1 class="no_toc" id="classe-api">Classe Api</h1>
+
+<p>La classe <strong>Api</strong> è utilizzata per interfacciarsi con Odoo e si occupa di
+eseguire i metodi attraverso l’interfaccia XML-RPC.</p>
+
+<p>Molti dei metodi della classe <a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a> utilizzano altri metodi della classe Api.</p>
+
+<p>Per osservare qualche esempio di utilizzo fare riferimento alla pagina
+<a href="/pyodoo/italian/examples/index.html">Esempi di utilizzo</a>.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#costruttore" id="markdown-toc-costruttore">Costruttore</a></li>
+  <li><a href="#metodo-authenticate" id="markdown-toc-metodo-authenticate">Metodo authenticate</a></li>
+  <li><a href="#metodo-build_endpoint" id="markdown-toc-metodo-build_endpoint">Metodo build_endpoint</a></li>
+  <li><a href="#metodo-get_proxy" id="markdown-toc-metodo-get_proxy">Metodo get_proxy</a></li>
+  <li><a href="#metodo-get_proxy_object" id="markdown-toc-metodo-get_proxy_object">Metodo get_proxy_object</a></li>
+  <li><a href="#metodo-statico-explode_filter" id="markdown-toc-metodo-statico-explode_filter">Metodo statico explode_filter</a></li>
+  <li><a href="#metodo-do_execute" id="markdown-toc-metodo-do_execute">Metodo do_execute</a></li>
+  <li><a href="#metodo-do_read" id="markdown-toc-metodo-do_read">Metodo do_read</a></li>
+  <li><a href="#metodo-do_read_many" id="markdown-toc-metodo-do_read_many">Metodo do_read_many</a></li>
+  <li><a href="#metodo-do_fields_get" id="markdown-toc-metodo-do_fields_get">Metodo do_fields_get</a></li>
+  <li><a href="#metodo-do_search" id="markdown-toc-metodo-do_search">Metodo do_search</a></li>
+  <li><a href="#metodo-do_search_count" id="markdown-toc-metodo-do_search_count">Metodo do_search_count</a></li>
+  <li><a href="#metodo-do_search_read" id="markdown-toc-metodo-do_search_read">Metodo do_search_read</a></li>
+  <li><a href="#metodo-do_create" id="markdown-toc-metodo-do_create">Metodo do_create</a></li>
+  <li><a href="#metodo-do_update" id="markdown-toc-metodo-do_update">Metodo do_update</a></li>
+  <li><a href="#metodo-do_delete" id="markdown-toc-metodo-do_delete">Metodo do_delete</a></li>
+  <li><a href="#metodo-do_post_message" id="markdown-toc-metodo-do_post_message">Metodo do_post_message</a></li>
+</ul>
+
+<hr />
+<h2 id="costruttore">Costruttore</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Api</span><span class="p">(</span><span class="n">model_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+          <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+          <span class="n">database</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+          <span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+          <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+          <span class="n">language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="parametri">Parametri</h4>
+
+<ul>
+  <li><strong>model_name</strong>: nome del modello a cui accedere.</li>
+  <li><strong>endpoint</strong>: URL dell’endpoint di Odoo.</li>
+  <li><strong>database</strong>: nome del database di Odoo da utilizzare.</li>
+  <li><strong>username</strong>: nome dell’utente di Odoo da utilizzare.</li>
+  <li><strong>password</strong>: password dell’utente di Odoo da utilizzare.</li>
+  <li><strong>language</strong>: lingua predefinita da utilizzare per i campi traducibili.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pyodoo.v12</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">pyodoo</span><span class="p">.</span><span class="n">v12</span><span class="p">.</span><span class="nc">Api</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="sh">'</span><span class="s">res.partner</span><span class="sh">'</span><span class="p">,</span>
+                     <span class="n">endpoint</span><span class="o">=</span><span class="sh">'</span><span class="s">https://demo.odoo.com</span><span class="sh">'</span><span class="p">,</span>
+                     <span class="n">database</span><span class="o">=</span><span class="sh">'</span><span class="s">demo_saas</span><span class="sh">'</span><span class="p">,</span>
+                     <span class="n">username</span><span class="o">=</span><span class="sh">'</span><span class="s">muflone</span><span class="sh">'</span><span class="p">,</span>
+                     <span class="n">password</span><span class="o">=</span><span class="sh">'</span><span class="s">mysecret</span><span class="sh">'</span><span class="p">,</span>
+                     <span class="n">language</span><span class="o">=</span><span class="sh">'</span><span class="s">it_IT</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Definisce l’accesso all’istanza di Odoo all’indirizzo https://demo.odoo.com sul
+database demo_saas, utilizzando le credenziali fornite e la lingua italiana per
+i campi traducibili.</p>
+
+<p>Il modello res.partner sarà utilizzato per le operazioni di lettura, scrittura,
+creazione e modifica dei dati.</p>
+
+<hr />
+
+<h2 id="metodo-authenticate">Metodo authenticate</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">authenticate</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>authenticate</strong> esegue l’autenticazione della sessione usando
+database, utente and password.</p>
+
+<h4 id="restituisce">Restituisce</h4>
+
+<ul>
+  <li>In caso di avvenuta autenticazione restituisce l’identificativo numerico
+dell’utente autenticato.</li>
+  <li>In caso di mancata autenticazione restituisce il valore False.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-1">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">uid</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">authenticate</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-build_endpoint">Metodo build_endpoint</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">build_endpoint</span><span class="p">(</span><span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>build_endpoint</strong> restituisce l’URL dell’endpoint per il metodo
+richiesto.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo utilizzato dal metodo
+<em>get_proxy</em>.</p>
+
+<h4 id="parametri-1">Parametri</h4>
+
+<ul>
+  <li><strong>method</strong>: metodo remoto da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-1">Restituisce</h4>
+
+<ul>
+  <li>L’URL completo dell’endpoint e del metodo richiesti.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-2">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">build_endpoint</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="sh">'</span><span class="s">xmlrpc/2/object</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-get_proxy">Metodo get_proxy</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">get_proxy</span><span class="p">(</span><span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>get_proxy</strong> restituisce un oggetto ServerProxy per eseguire comandi
+attraverso XML-RPC.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo utilizzato dal metodo
+<em>get_proxy_object</em>.</p>
+
+<h4 id="parametri-2">Parametri</h4>
+
+<ul>
+  <li><strong>method</strong>: metodo remoto da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-2">Restituisce</h4>
+
+<ul>
+  <li>Un oggetto ServerProxy che punta all’endpoint per il metodo richiesto.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-3">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">proxy</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">get_proxy</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="sh">'</span><span class="s">xmlrpc/2/object</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-get_proxy_object">Metodo get_proxy_object</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">get_proxy_object</span><span class="p">(</span><span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>get_proxy_object</strong> restituisce un oggetto ServerProxy per l’endpoint
+standard <em>xmlrpc/2/object</em> di Odoo.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo, utilizzato dal metodo
+<em>execute</em>.</p>
+
+<h4 id="parametri-3">Parametri</h4>
+
+<ul>
+  <li><strong>method</strong>: metodo remoto da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-3">Restituisce</h4>
+
+<ul>
+  <li>Un oggetto ServerProxy che punta all’endpoint standard XML-RPC di Odoo.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-4">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">proxy</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">get_proxy</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="sh">'</span><span class="s">xmlrpc/2/object</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-statico-explode_filter">Metodo statico explode_filter</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">explode_filter</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BooleanOperator</span><span class="p">,</span> <span class="n">Filter</span><span class="p">,</span> <span class="nb">str</span><span class="p">]])</span>
+</code></pre></div></div>
+
+<p>Il metodo statico <strong>explode_filter</strong> è statico e può essere richiamato sia su
+oggetti Api che sulla classe stessa con Api.explode_filter e si occupa di
+convertire una lista di oggetti <em>Filter</em> e i valori <em>BooleanOperator</em> in una
+lista di liste con i filtri esplosi, nel formato utilizzando da Odoo per la
+selezione dei domini.</p>
+
+<h4 id="parametri-4">Parametri</h4>
+
+<ul>
+  <li><strong>filters</strong>: lista di oggetti <em>Filter</em> o <em>BooleanOperator</em> da combinare</li>
+</ul>
+
+<h4 id="restituisce-4">Restituisce</h4>
+
+<ul>
+  <li>Una lista di liste contententi stringhe o liste prodotta dal metodo explode
+di <em><a href="/pyodoo/italian/docs/pyodoo/filter.html">Filter</a></em>.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-5">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">explode_filter</span><span class="p">(</span>
+  <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">BooleanOperator</span><span class="p">.</span><span class="n">AND</span><span class="p">,</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">),</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Ovinis</span><span class="sh">'</span><span class="p">),</span>
+<span class="p">]))</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-do_execute">Metodo do_execute</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">do_execute</span><span class="p">(</span><span class="n">method_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+               <span class="n">args</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
+               <span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>do_execute</strong> richiama il metodo scelto con la lista di argomenti,
+per eseguire il comando remoto sul server XML-RPC.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo, utilizzato dai metodi
+<em>do_read</em>, <em>do_create</em> e altri.</p>
+
+<h4 id="parametri-5">Parametri</h4>
+
+<ul>
+  <li><strong>method</strong>: metodo remoto da utilizzare</li>
+  <li><strong>args</strong>: lista di argomenti da passare al metodo per valore</li>
+  <li><strong>kwargs</strong>: lista di argomenti da passare al metodo con nome e valore</li>
+</ul>
+
+<h4 id="restituisce-5">Restituisce</h4>
+
+<ul>
+  <li>Il risultato della chiamata al metodo remoto XML-RPC.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-6">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">do_execute</span><span class="p">(</span><span class="n">method_name</span><span class="o">=</span><span class="sh">'</span><span class="s">read</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">entity_ids</span><span class="p">],</span>
+                         <span class="n">kwargs</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-do_read">Metodo do_read</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">do_read</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+            <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>do_read</strong> esegue la lettura di un record specifico identificato dal
+suo <em>entity_id</em>, con le opzioni indicate e restituisce il risultato della
+lettura.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo, utilizzato dal metodo
+<em>get</em> della classe <a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a>.</p>
+
+<h4 id="parametri-6">Parametri</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: identificativo univoco dell’elemento da leggere</li>
+  <li><strong>options</strong>: dizionario con le opzioni da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-6">Restituisce</h4>
+
+<ul>
+  <li>Il risultato della lettura del record indicato.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-7">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">do_read</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-do_read_many">Metodo do_read_many</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">do_read_many</span><span class="p">(</span><span class="n">entity_ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+                 <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>do_read_many</strong> esegue la lettura dei record specifici identificati
+dai loro <em>entity_ids</em>, con le opzioni indicate e restituisce il risultato della
+lettura.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo, utilizzato dal metodo
+<em>get_many</em> della classe <a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a>.</p>
+
+<h4 id="parametri-7">Parametri</h4>
+
+<ul>
+  <li><strong>entity_ids</strong>: lista degli identificativi degli elementi da leggere</li>
+  <li><strong>options</strong>: dizionario con le opzioni da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-7">Restituisce</h4>
+
+<ul>
+  <li>Il risultato della lettura dei record indicati.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-8">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">do_read_many</span><span class="p">(</span><span class="n">entity_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-do_fields_get">Metodo do_fields_get</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">do_fields_get</span><span class="p">(</span><span class="n">fields</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+                  <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>do_fields_get</strong> ottiene l’elenco dei campi presenti nel modello e
+filtrati dalla lista <em>fields</em> per limitare il risultato.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo, utilizzato dal metodo
+<em>get_fields</em> della classe <a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a>.</p>
+
+<h4 id="parametri-8">Parametri</h4>
+
+<ul>
+  <li><strong>fields</strong>: lista dei campi da includere</li>
+  <li><strong>options</strong>: dizionario con le opzioni da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-8">Restituisce</h4>
+
+<ul>
+  <li>Un dizionario con tutti i campi presenti o indicati, con i loro tipi e
+specifiche del modello.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-9">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">get_fields</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">id</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-do_search">Metodo do_search</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">do_search</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BooleanOperator</span><span class="p">,</span> <span class="n">Filter</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+              <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>do_search</strong> esegue la ricerca dei record utilizzando la lista dei
+filtri specificata in <em>filters</em>, con le opzioni indicate e restituisce il
+risultato della ricerca.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo, utilizzato dal metodo
+<em>find</em> della classe <a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a>.</p>
+
+<h4 id="parametri-9">Parametri</h4>
+
+<ul>
+  <li><strong>filters</strong>: lista di oggetti <em>Filter</em> o <em>BooleanOperator</em> per eseguire la
+ricerca</li>
+  <li><strong>options</strong>: dizionario con le opzioni da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-9">Restituisce</h4>
+
+<ul>
+  <li>Una lista di interi identificativi i record trovati dalla ricerca.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-10">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">do_search</span><span class="p">(</span>
+  <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">BooleanOperator</span><span class="p">.</span><span class="n">AND</span><span class="p">,</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">),</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Ovinis</span><span class="sh">'</span><span class="p">),</span>
+          <span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-do_search_count">Metodo do_search_count</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">do_search_count</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BooleanOperator</span><span class="p">,</span> <span class="n">Filter</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+                    <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>do_search_count</strong> esegue la ricerca dei record utilizzando la lista
+dei filtri specificata in <em>filters</em>, con le opzioni indicate e restituisce il
+numero di record trovati dalla ricerca.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo, utilizzato dal metodo
+<em>count</em> della classe <a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a>.</p>
+
+<h4 id="parametri-10">Parametri</h4>
+
+<ul>
+  <li><strong>filters</strong>: lista di oggetti <em>Filter</em> o <em>BooleanOperator</em> per eseguire la
+ricerca</li>
+  <li><strong>options</strong>: dizionario con le opzioni da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-10">Restituisce</h4>
+
+<ul>
+  <li>Il conteggio dei record trovati dalla ricerca.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-11">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">do_search_count</span><span class="p">(</span>
+  <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">BooleanOperator</span><span class="p">.</span><span class="n">AND</span><span class="p">,</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">),</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Ovinis</span><span class="sh">'</span><span class="p">),</span>
+          <span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-do_search_read">Metodo do_search_read</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">do_search_read</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BooleanOperator</span><span class="p">,</span> <span class="n">Filter</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+                   <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>do_search_read</strong> esegue la ricerca dei record utilizzando la lista
+dei filtri specificata in <em>filters</em>, con le opzioni indicate e restituisce i
+record trovati dalla ricerca.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo, utilizzato dal metodo
+<em>filter</em> della classe <a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a>.</p>
+
+<h4 id="parametri-11">Parametri</h4>
+
+<ul>
+  <li><strong>filters</strong>: lista di oggetti <em>Filter</em> o <em>BooleanOperator</em> per eseguire la
+ricerca</li>
+  <li><strong>options</strong>: dizionario con le opzioni da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-11">Restituisce</h4>
+
+<ul>
+  <li>Una lista di record trovati, con un dizionario per record trovato.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-12">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">do_search_read</span><span class="p">(</span>
+  <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">BooleanOperator</span><span class="p">.</span><span class="n">AND</span><span class="p">,</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">),</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Ovinis</span><span class="sh">'</span><span class="p">),</span>
+          <span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-do_create">Metodo do_create</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">do_create</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+              <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>do_create</strong> è utilizzato per creare un nuovo record nel modello
+utilizzando i valori specificati in <em>values</em>, con le opzioni indicate e
+restituisce i record trovati dalla ricerca.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo, utilizzato dal metodo
+<em>create</em> della classe <a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a>.</p>
+
+<h4 id="parametri-12">Parametri</h4>
+
+<ul>
+  <li><strong>values</strong>: dizionario con nomi e valori dei campi per creare il record</li>
+  <li><strong>options</strong>: dizionario con le opzioni da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-12">Restituisce</h4>
+
+<ul>
+  <li>L’identificativo intero del nuovo record creato.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-13">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entity_id</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">do_create</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">,</span>
+                                  <span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Ovinis})
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-do_update">Metodo do_update</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">do_update</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
+              <span class="n">values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+              <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>do_update</strong> è utilizzato per aggiornare uno o più record indicati
+da <em>entity_id</em> (può essere un unico record come numero intero oppure una lista
+di identificativi in una lista di interi) utilizzando i valori specificati in
+<em>values</em>, con le opzioni indicate e restituisce True se l’aggiornamento è
+stato eseguito.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo, utilizzato dal metodo
+<em>update</em> della classe <a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a>.</p>
+
+<h4 id="parametri-13">Parametri</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: identificativi univoci degli elementi da aggiornare</li>
+  <li><strong>values</strong>: dizionario con nomi e valori dei campi per aggiornare il record</li>
+  <li><strong>options</strong>: dizionario con le opzioni da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-13">Restituisce</h4>
+
+<ul>
+  <li>True se i record indicati sono stati aggiornati.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-14">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entity_id</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">do_update</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                          <span class="n">values</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">,</span>
+                                  <span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Ovinis})
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-do_delete">Metodo do_delete</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">do_delete</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
+              <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>do_delete</strong> è utilizzato per eliminare uno o più record indicati
+da <em>entity_id</em> (può essere un unico record come numero intero oppure una lista
+di identificativi in una lista di interi), con le opzioni indicate e restituisce
+True se la cancellazione è stato eseguita.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo, utilizzato dal metodo
+<em>delete</em> della classe <a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a>.</p>
+
+<h4 id="parametri-14">Parametri</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: identificativi univoci degli elementi da eliminare</li>
+  <li><strong>options</strong>: dizionario con le opzioni da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-14">Restituisce</h4>
+
+<ul>
+  <li>True se i record indicati sono stati eliminati.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-15">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entity_id</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">do_delete</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="metodo-do_post_message">Metodo do_post_message</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Api</span><span class="p">.</span><span class="nf">do_post_message</span><span class="p">(</span><span class="n">subtype</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+                    <span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                    <span class="n">author_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                    <span class="n">subject</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">],</span>
+                    <span class="n">body</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                    <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Il metodo <strong>do_post_message</strong> è utilizzato per inviare un messaggio del tipo
+<a href="/pyodoo/italian/docs/pyodoo/message_subtype.html">MessageSubType</a> indicato in <em>subtype</em> e legato al record identificato da
+<em>entity_id</em>, con l’autore indicato da <em>author_id</em>, l’oggetto specificato in
+<em>subject</em> e il messaggio contenuto in <em>body</em>, con le opzioni indicate e
+restituisce l’identificativo del nuovo messaggio creato.</p>
+
+<p>Generalmente non è necessario richiamare questo metodo, utilizzato dal metodo
+<em>post_message</em> della classe <a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a>.</p>
+
+<h4 id="parametri-15">Parametri</h4>
+
+<ul>
+  <li><strong>subtype</strong>: tipologia di messaggio della classe <a href="/pyodoo/italian/docs/pyodoo/message_subtype.html">MessageSubType</a></li>
+  <li><strong>entity_id</strong>: identificativo univoco dell’elemento a cui inviare il
+messaggio</li>
+  <li><strong>author_id</strong>: identificativo univoco dell’utente che invia il messaggio</li>
+  <li><strong>subject</strong>: oggetto del messaggio da inviare</li>
+  <li><strong>body</strong>: corpo del messaggio da inviare</li>
+  <li><strong>options</strong>: dizionario con le opzioni da utilizzare</li>
+</ul>
+
+<h4 id="restituisce-15">Restituisce</h4>
+
+<ul>
+  <li>L’identificativo intero del nuovo messaggio creato.</li>
+</ul>
+
+<h4 id="esempio-di-utilizzo-16">Esempio di utilizzo</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entity_id</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="nf">do_post_message</span><span class="p">(</span><span class="n">subtype</span><span class="o">=</span><span class="n">MessageSubType</span><span class="p">.</span><span class="n">NOTE</span><span class="p">,</span>
+                                <span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                <span class="n">author_id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                <span class="n">subject</span><span class="o">=</span><span class="sh">'</span><span class="s">Prova</span><span class="sh">'</span><span class="p">,</span>
+                                <span class="n">body</span><span class="o">=</span><span class="sh">'</span><span class="s">Messaggio per il record 123</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+
+
+        </section>
+        <aside id="sidebar" class="content">
+          <!-- Build sidebar depth 1 -->
+          <ul class="menu1">
+            <li class="menu1"><a href="/pyodoo/italian/index.html">Introduzione</a></li>
+            <li class="menu1"><a href="/pyodoo/italian/download.html">Scarica</a></li>
+            <li class="menu1"><a href="/pyodoo/italian/install.html">Installazione</a></li>
+            <li class="menu1"><a href="/pyodoo/italian/docs/index.html">Documentazione</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2"><a href="/pyodoo/italian/docs/authentication.html">Autenticazione</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/filters.html">Filtri</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/active.html">Record attivi</a></li>
+              <li class="menu2-prefix">Package pyodoo</li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/active_status_choice.html">ActiveStatusChoice</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/boolean_operator.html">BooleanOperator</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/compare_type.html">CompareType</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/filter.html">Filter</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/message_subtype.html">MessageSubType</a></li>
+              <li class="menu2-prefix">Package pyodoo.v12</li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/v12/api.html">Api</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/v12/python_code.html">PythonCode</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/v12/sql_excel_query.html">SqlExcelQuery</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/pyodoo/italian/examples/index.html">Esempi di utilizzo</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2"><a href="/pyodoo/italian/examples/basic_usage.html">Utilizzo di base</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/examples/read_data.html">Lettura dei dati</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/pyodoo/italian/changelog.html">Cambiamenti</a></li>
+          </ul>
+          <!-- End of sidebar depth 1 -->
+
+        </aside>
+
+        </div>
+      </div>
+
+      <!-- Begin footer -->
+      <footer class="footer">
+        <div class="footer-main row">
+          <div class="container footer-icons">
+            <a href="/" title="Home">
+              <img src="/resources/home/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/contacts/" title="Muflone">
+              <img src="/resources/contacts/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/articles/" title="Articles">
+              <img src="/resources/articles/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gespeaker/" title="Gespeaker">
+              <img src="/resources/gespeaker/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gwakeonlan/" title="gWakeOnLAN">
+              <img src="/resources/gwakeonlan/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gextractwinicons/" title="gExtractWinIcons">
+              <img src="/resources/gextractwinicons/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/bluewho/" title="BlueWho">
+              <img src="/resources/bluewho/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/cpucompare/" title="CPUCompare">
+              <img src="/resources/cpucompare/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gptrace/" title="gpTrace">
+              <img src="/resources/gptrace/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gnome-appfolders-manager/" title="GNOME AppFolders Manager">
+              <img src="/resources/gnome-appfolders-manager/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gtransmemory/" title="gTransMemory">
+              <img src="/resources/gtransmemory/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-builder/" title="Remmina Plugin Builder">
+              <img src="/resources/remmina-plugin-builder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-exec/" title="Remmina Plugin Exec">
+              <img src="/resources/remmina-plugin-exec/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-folder/" title="Remmina Plugin Folder">
+              <img src="/resources/remmina-plugin-folder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-open/" title="Remmina Plugin Open">
+              <img src="/resources/remmina-plugin-open/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rdesktop/" title="Remmina Plugin RDesktop">
+              <img src="/resources/remmina-plugin-rdesktop/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rustdesk/" title="Remmina Plugin RustDesk">
+              <img src="/resources/remmina-plugin-rustdesk/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-teamviewer/" title="Remmina Plugin TeamViewer">
+              <img src="/resources/remmina-plugin-teamviewer/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-ultravnc/" title="Remmina Plugin UltraVNC">
+              <img src="/resources/remmina-plugin-ultravnc/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-url/" title="Remmina Plugin URL">
+              <img src="/resources/remmina-plugin-url/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-webkit/" title="Remmina Plugin WebKit">
+              <img src="/resources/remmina-plugin-webkit/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/awaitable/" title="Awaitable">
+              <img src="/resources/awaitable/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/pixelcolor/" title="PixelColor">
+              <img src="/resources/pixelcolor/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/django-admin-settings/" title="Django Admin Settings">
+              <img src="/resources/django-admin-settings/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/watchpage/" title="WatchPage">
+              <img src="/resources/watchpage/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/mumailer/" title="MuMailer">
+              <img src="/resources/mumailer/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/pyodoo/" title="PyOdoo">
+              <img src="/resources/pyodoo/icons/apple-icon-60x60.png">
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom row">
+          <div class="container">
+            <div class="row justify-content-between items">
+              <div class="col-md-auto col-12 item">
+                <nav class="footer-links">
+                  <ul>
+                    <li><a href="/">Home</a></li>
+                      <li><a href="/contacts/" title="Contatti">
+                          Contatti</a></li>
+                    <li><a href="/english/" title="Inglese">
+                        <img src="/theme/images/flag-en-16.png"> Inglese</a></li>
+                    <li><a href="/italian/" title="Italiano">
+                        <img src="/theme/images/flag-it-16.png"> Italiano</a></li>
+                    <li><a href="//www.iubenda.com/privacy-policy/939201" target="_blank">
+                      Privacy Policy</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-md-auto col-12 item">
+                <div class="copyright">
+                  Ultimo aggiornamento:&nbsp;2026-01-10&nbsp;-
+                  Copyright &copy; 2013-2026 Fabio Castelli (Muflone)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End footer -->
+    </main>
+    <!-- End main -->
+
+    <script type="text/javascript" src="/theme/js/lozad.min.js"></script>
+    <script type="text/javascript" src="/theme/js/device.js"></script>
+    <script type="text/javascript" src="/theme/js/custom.js"></script>
+
+
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {'message': 'Questo sito web utilizza i cookie per semplificare e personalizzare l\'esperienza di navigazione. I cookie memorizzano informazioni utili sul computer per aiutarci a migliorare l\'efficienza e la rilevanza del nostro sito. In alcuni casi sono essenziali per il corretto funzionamento del sito. L\'accesso a questo sito implica il consenso all\'utilizzo dei cookie.',
+                                        'dismiss': 'Nascondi',
+                                        'learnMore': 'Leggi l\'informativa completa',
+                                        'link': 'https://www.iubenda.com/privacy-policy/939201',
+                                        'theme': 'dark-top'
+                                       };
+    </script>
+    <script type="text/javascript" src="/theme/js/cookieconsent.js"></script>
+    <!-- End Cookie Consent plugin -->
+
+    <!-- Begin of Google Analytics block -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics block -->
+
+  </body>
+</html>

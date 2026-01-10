@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="italian">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>PyOdoo | Record attivi</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/pyodoo/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/pyodoo/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/pyodoo/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/pyodoo/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/pyodoo/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/pyodoo/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/pyodoo/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/pyodoo/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/pyodoo/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/pyodoo/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/pyodoo/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/pyodoo/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/pyodoo/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/pyodoo/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/pyodoo/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/libs.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-italian.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-regular.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-600.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons-outlined.woff2" as="font" crossorigin>
+    <script type="text/javascript" src="/theme/js/jquery-1.10.2.min.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="main-inner">
+        <div class="bff d-md-block">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="bff-container">
+                  <a class="main-logo" href="/pyodoo/italian/">
+                    <img src="/resources/pyodoo/icons/ms-icon-144x144.png"></a>
+                  <div class="main-title">
+                    <h1><a href="/pyodoo/italian/">
+                      <span class="middle">PyOdoo</span></a></h1>
+                    <h2>Record attivi</h2>
+                  </div>
+                  <div class="float-right gitrepo">
+                    <a href="https://github.com/muflone/pyodoo" target="_blank" class="button">
+                      <small>Vedi il progetto su</small>
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container content" id="content">
+        <section id="main-content">
+<h1 id="record-attivi">Record attivi</h1>
+
+<p>Alcuni modelli Odoo possono utilizzare un campo <code class="language-plaintext highlighter-rouge">active</code> per specificare se un
+record è attivo o è stato archiviato, ancora presente ma contrassegnato come
+nascosto.</p>
+
+<p>I record con il campo <code class="language-plaintext highlighter-rouge">active</code> impostato sono considerati archiviati e
+automaticamente nascosti da qualsiasi elenco e non vengono più visualizzati
+nell’interfaccia utente di Odoo fino a quando non viene richiesto esplicitamente
+(utilizzando <code class="language-plaintext highlighter-rouge">active=False</code> o utilizzando <code class="language-plaintext highlighter-rouge">active_test</code> contesto speciale).</p>
+
+<p>Alcuni metodi di <a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a> (come <a href="/pyodoo/italian/docs/pyodoo/v12/model.html#method-all">all</a>, <a href="/pyodoo/italian/docs/pyodoo/v12/model.html#method-find">find</a>, <a href="/pyodoo/italian/docs/pyodoo/v12/model.html#method-filter">filter</a> e altri) includono un
+parametro <a href="/pyodoo/italian/docs/pyodoo/active_status_choice.html">ActiveStatusChoice</a> denominato <code class="language-plaintext highlighter-rouge">is_active</code> che viene utilizzato per
+specificare se includere o escludere i record archiviati.</p>
+
+<ul>
+  <li>Il valore predefinito per il parametro is_active è
+<strong>ActiveStatusChoice.NOT_SET</strong> che utilizza il valore predefinito di Odoo,
+solitamente per nascondere i record archiviati.</li>
+  <li>Per includere solo i record attivi è possibile specificare il valore
+<strong>ActiveStatusChoice.ACTIVE</strong> che nasconde esplicitamente i record archiviati.</li>
+  <li>Al contrario, per includere solo i record archiviati e nascondere quelli
+attivi è possibile specificare il valore <strong>ActiveStatusChoice.INACTIVE</strong>.</li>
+  <li>Per includere sia i record attivi che quelli archiviati è possibile
+specificare il valore <strong>ActiveStatusChoice.BOTH</strong>.</li>
+</ul>
+
+
+
+        </section>
+        <aside id="sidebar" class="content">
+          <!-- Build sidebar depth 1 -->
+          <ul class="menu1">
+            <li class="menu1"><a href="/pyodoo/italian/index.html">Introduzione</a></li>
+            <li class="menu1"><a href="/pyodoo/italian/download.html">Scarica</a></li>
+            <li class="menu1"><a href="/pyodoo/italian/install.html">Installazione</a></li>
+            <li class="menu1"><a href="/pyodoo/italian/docs/index.html">Documentazione</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2"><a href="/pyodoo/italian/docs/authentication.html">Autenticazione</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/filters.html">Filtri</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/active.html">Record attivi</a></li>
+              <li class="menu2-prefix">Package pyodoo</li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/active_status_choice.html">ActiveStatusChoice</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/boolean_operator.html">BooleanOperator</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/compare_type.html">CompareType</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/filter.html">Filter</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/message_subtype.html">MessageSubType</a></li>
+              <li class="menu2-prefix">Package pyodoo.v12</li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/v12/api.html">Api</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/v12/model.html">Model</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/v12/python_code.html">PythonCode</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/docs/pyodoo/v12/sql_excel_query.html">SqlExcelQuery</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/pyodoo/italian/examples/index.html">Esempi di utilizzo</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2"><a href="/pyodoo/italian/examples/basic_usage.html">Utilizzo di base</a></li>
+              <li class="menu2"><a href="/pyodoo/italian/examples/read_data.html">Lettura dei dati</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/pyodoo/italian/changelog.html">Cambiamenti</a></li>
+          </ul>
+          <!-- End of sidebar depth 1 -->
+
+        </aside>
+
+        </div>
+      </div>
+
+      <!-- Begin footer -->
+      <footer class="footer">
+        <div class="footer-main row">
+          <div class="container footer-icons">
+            <a href="/" title="Home">
+              <img src="/resources/home/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/contacts/" title="Muflone">
+              <img src="/resources/contacts/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/articles/" title="Articles">
+              <img src="/resources/articles/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gespeaker/" title="Gespeaker">
+              <img src="/resources/gespeaker/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gwakeonlan/" title="gWakeOnLAN">
+              <img src="/resources/gwakeonlan/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gextractwinicons/" title="gExtractWinIcons">
+              <img src="/resources/gextractwinicons/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/bluewho/" title="BlueWho">
+              <img src="/resources/bluewho/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/cpucompare/" title="CPUCompare">
+              <img src="/resources/cpucompare/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gptrace/" title="gpTrace">
+              <img src="/resources/gptrace/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gnome-appfolders-manager/" title="GNOME AppFolders Manager">
+              <img src="/resources/gnome-appfolders-manager/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gtransmemory/" title="gTransMemory">
+              <img src="/resources/gtransmemory/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-builder/" title="Remmina Plugin Builder">
+              <img src="/resources/remmina-plugin-builder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-exec/" title="Remmina Plugin Exec">
+              <img src="/resources/remmina-plugin-exec/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-folder/" title="Remmina Plugin Folder">
+              <img src="/resources/remmina-plugin-folder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-open/" title="Remmina Plugin Open">
+              <img src="/resources/remmina-plugin-open/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rdesktop/" title="Remmina Plugin RDesktop">
+              <img src="/resources/remmina-plugin-rdesktop/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rustdesk/" title="Remmina Plugin RustDesk">
+              <img src="/resources/remmina-plugin-rustdesk/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-teamviewer/" title="Remmina Plugin TeamViewer">
+              <img src="/resources/remmina-plugin-teamviewer/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-ultravnc/" title="Remmina Plugin UltraVNC">
+              <img src="/resources/remmina-plugin-ultravnc/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-url/" title="Remmina Plugin URL">
+              <img src="/resources/remmina-plugin-url/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-webkit/" title="Remmina Plugin WebKit">
+              <img src="/resources/remmina-plugin-webkit/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/awaitable/" title="Awaitable">
+              <img src="/resources/awaitable/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/pixelcolor/" title="PixelColor">
+              <img src="/resources/pixelcolor/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/django-admin-settings/" title="Django Admin Settings">
+              <img src="/resources/django-admin-settings/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/watchpage/" title="WatchPage">
+              <img src="/resources/watchpage/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/mumailer/" title="MuMailer">
+              <img src="/resources/mumailer/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/pyodoo/" title="PyOdoo">
+              <img src="/resources/pyodoo/icons/apple-icon-60x60.png">
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom row">
+          <div class="container">
+            <div class="row justify-content-between items">
+              <div class="col-md-auto col-12 item">
+                <nav class="footer-links">
+                  <ul>
+                    <li><a href="/">Home</a></li>
+                      <li><a href="/contacts/" title="Contatti">
+                          Contatti</a></li>
+                    <li><a href="/english/" title="Inglese">
+                        <img src="/theme/images/flag-en-16.png"> Inglese</a></li>
+                    <li><a href="/italian/" title="Italiano">
+                        <img src="/theme/images/flag-it-16.png"> Italiano</a></li>
+                    <li><a href="//www.iubenda.com/privacy-policy/939201" target="_blank">
+                      Privacy Policy</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-md-auto col-12 item">
+                <div class="copyright">
+                  Ultimo aggiornamento:&nbsp;2026-01-10&nbsp;-
+                  Copyright &copy; 2013-2026 Fabio Castelli (Muflone)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End footer -->
+    </main>
+    <!-- End main -->
+
+    <script type="text/javascript" src="/theme/js/lozad.min.js"></script>
+    <script type="text/javascript" src="/theme/js/device.js"></script>
+    <script type="text/javascript" src="/theme/js/custom.js"></script>
+
+
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {'message': 'Questo sito web utilizza i cookie per semplificare e personalizzare l\'esperienza di navigazione. I cookie memorizzano informazioni utili sul computer per aiutarci a migliorare l\'efficienza e la rilevanza del nostro sito. In alcuni casi sono essenziali per il corretto funzionamento del sito. L\'accesso a questo sito implica il consenso all\'utilizzo dei cookie.',
+                                        'dismiss': 'Nascondi',
+                                        'learnMore': 'Leggi l\'informativa completa',
+                                        'link': 'https://www.iubenda.com/privacy-policy/939201',
+                                        'theme': 'dark-top'
+                                       };
+    </script>
+    <script type="text/javascript" src="/theme/js/cookieconsent.js"></script>
+    <!-- End Cookie Consent plugin -->
+
+    <!-- Begin of Google Analytics block -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics block -->
+
+  </body>
+</html>

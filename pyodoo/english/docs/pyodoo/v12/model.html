@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>PyOdoo | Model</title>
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/resources/pyodoo/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/resources/pyodoo/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/resources/pyodoo/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/resources/pyodoo/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/resources/pyodoo/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/resources/pyodoo/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/resources/pyodoo/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/resources/pyodoo/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/resources/pyodoo/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/resources/pyodoo/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/resources/pyodoo/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/resources/pyodoo/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/resources/pyodoo/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon"              href="/resources/pyodoo/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"     href="/resources/pyodoo/icons/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/theme/css/libs.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/sidebar.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/blockquotes-english.css">
+    <link type="text/css" rel="stylesheet" href="/theme/css/external-links.css">
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-regular.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/istok-web-v15-latin/istok-web-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-700.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/montserrat-v15-latin/montserrat-v15-latin-600.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons.woff2" as="font" crossorigin>
+    <link type="font/woff2" rel="preload" href="/theme/fonts/material-icons/material-icons-outlined.woff2" as="font" crossorigin>
+    <script type="text/javascript" src="/theme/js/jquery-1.10.2.min.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="main-inner">
+        <div class="bff d-md-block">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="bff-container">
+                  <a class="main-logo" href="/pyodoo/english/">
+                    <img src="/resources/pyodoo/icons/ms-icon-144x144.png"></a>
+                  <div class="main-title">
+                    <h1><a href="/pyodoo/english/">
+                      <span class="middle">PyOdoo</span></a></h1>
+                    <h2>Model</h2>
+                  </div>
+                  <div class="float-right gitrepo">
+                    <a href="https://github.com/muflone/pyodoo" target="_blank" class="button">
+                      <small>View project on</small>
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container content" id="content">
+        <section id="main-content">
+<h1 class="no_toc" id="class-model">Class Model</h1>
+
+<p>The <strong>Model</strong> class is used to interface with an Odoo model and
+is responsible for executing methods through the XML-RPC interface.</p>
+
+<p>To see some usage examples you can look at the page
+<a href="/pyodoo/english/examples/index.html">Usage examples</a>.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#constructor" id="markdown-toc-constructor">Constructor</a></li>
+  <li><a href="#property-model_name" id="markdown-toc-property-model_name">Property model_name</a></li>
+  <li><a href="#property-language" id="markdown-toc-property-language">Property language</a></li>
+  <li><a href="#property-partner_id" id="markdown-toc-property-partner_id">Property partner_id</a></li>
+  <li><a href="#property-partner_name" id="markdown-toc-property-partner_name">Property partner_name</a></li>
+  <li><a href="#property-uid" id="markdown-toc-property-uid">Property uid</a></li>
+  <li><a href="#method-authenticate" id="markdown-toc-method-authenticate">Method authenticate</a></li>
+  <li><a href="#method-get_model" id="markdown-toc-method-get_model">Method get_model</a></li>
+  <li><a href="#method-get_model_data_reference" id="markdown-toc-method-get_model_data_reference">Method get_model_data_reference</a></li>
+  <li><a href="#method-get" id="markdown-toc-method-get">Method get</a></li>
+  <li><a href="#method-get_many" id="markdown-toc-method-get_many">Method get_many</a></li>
+  <li><a href="#method-all" id="markdown-toc-method-all">Method all</a></li>
+  <li><a href="#method-find" id="markdown-toc-method-find">Method find</a></li>
+  <li><a href="#method-filter" id="markdown-toc-method-filter">Method filter</a></li>
+  <li><a href="#method-first" id="markdown-toc-method-first">Method first</a></li>
+  <li><a href="#method-count" id="markdown-toc-method-count">Method count</a></li>
+  <li><a href="#method-search" id="markdown-toc-method-search">Method search</a></li>
+  <li><a href="#method-create" id="markdown-toc-method-create">Method create</a></li>
+  <li><a href="#method-update" id="markdown-toc-method-update">Method update</a></li>
+  <li><a href="#method-delete" id="markdown-toc-method-delete">Method delete</a></li>
+  <li><a href="#method-get_fields" id="markdown-toc-method-get_fields">Method get_fields</a></li>
+  <li><a href="#method-many_to_many_create" id="markdown-toc-method-many_to_many_create">Method many_to_many_create</a></li>
+  <li><a href="#method-many_to_many_add" id="markdown-toc-method-many_to_many_add">Method many_to_many_add</a></li>
+  <li><a href="#method-many_to_many_update" id="markdown-toc-method-many_to_many_update">Method many_to_many_update</a></li>
+  <li><a href="#method-many_to_many_delete" id="markdown-toc-method-many_to_many_delete">Method many_to_many_delete</a></li>
+  <li><a href="#method-many_to_many_remove" id="markdown-toc-method-many_to_many_remove">Method many_to_many_remove</a></li>
+  <li><a href="#method-many_to_many_clear" id="markdown-toc-method-many_to_many_clear">Method many_to_many_clear</a></li>
+  <li><a href="#method-many_to_many_replace" id="markdown-toc-method-many_to_many_replace">Method many_to_many_replace</a></li>
+  <li><a href="#method-execute" id="markdown-toc-method-execute">Method execute</a></li>
+  <li><a href="#method-get_message_subtype_id" id="markdown-toc-method-get_message_subtype_id">Method get_message_subtype_id</a></li>
+  <li><a href="#method-post_message" id="markdown-toc-method-post_message">Method post_message</a></li>
+  <li><a href="#method-post_message_as_activity" id="markdown-toc-method-post_message_as_activity">Method post_message_as_activity</a></li>
+  <li><a href="#method-post_message_as_comment" id="markdown-toc-method-post_message_as_comment">Method post_message_as_comment</a></li>
+  <li><a href="#method-post_message_as_note" id="markdown-toc-method-post_message_as_note">Method post_message_as_note</a></li>
+</ul>
+
+<hr />
+<h2 id="constructor">Constructor</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Model</span><span class="p">(</span><span class="n">model_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">database</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="n">authenticate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+  <li><strong>model_name</strong>: name of the model to access.</li>
+  <li><strong>endpoint</strong>: URL of the Odoo endpoint.</li>
+  <li><strong>database</strong>: name of the Odoo database to use.</li>
+  <li><strong>username</strong>: name of the Odoo user to use.</li>
+  <li><strong>password</strong>: password of the Odoo user to use.</li>
+  <li><strong>language</strong>: default language to use for translatable fields.</li>
+  <li><strong>authenticate</strong>: determines whether to authenticate the user automatically.</li>
+</ul>
+
+<h4 id="usage-example">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pyodoo.v12</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">pyodoo</span><span class="p">.</span><span class="n">v12</span><span class="p">.</span><span class="nc">Model</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="sh">'</span><span class="s">res.partner</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">endpoint</span><span class="o">=</span><span class="sh">'</span><span class="s">https://demo.odoo.com</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">database</span><span class="o">=</span><span class="sh">'</span><span class="s">demo_saas</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">username</span><span class="o">=</span><span class="sh">'</span><span class="s">muflone</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">password</span><span class="o">=</span><span class="sh">'</span><span class="s">mysecret</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">language</span><span class="o">=</span><span class="sh">'</span><span class="s">en_GB</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">authenticate</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Defines access to the Odoo instance at https://demo.odoo.com on the
+demo_saas database, using the credentials provided and the English language for
+translatable fields.</p>
+
+<p>The res.partner model will be used for reading, writing,
+creating, and modifying data.</p>
+
+<hr />
+
+<h2 id="property-model_name">Property model_name</h2>
+
+<p>The <strong>model_name</strong> property returns the name of the Model object’s model.</p>
+
+<h4 id="returns">Returns</h4>
+
+<ul>
+  <li>The name of the model used by the Model object.</li>
+</ul>
+
+<h4 id="usage-example-1">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">model_name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="property-language">Property language</h2>
+
+<p>The <strong>language</strong> property sets and returns the language used by the
+Model object for reading and writing translatable fields.</p>
+
+<h4 id="returns-1">Returns</h4>
+
+<ul>
+  <li>The language used by the Model object.</li>
+</ul>
+
+<h4 id="usage-example-2">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">language</span><span class="p">)</span>
+<span class="n">model</span><span class="p">.</span><span class="n">language</span> <span class="o">=</span> <span class="sh">'</span><span class="s">it_IT</span><span class="sh">'</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="property-partner_id">Property partner_id</h2>
+
+<p>The <strong>partner_id</strong> property returns the related partner ID for the
+authenticated user.</p>
+
+<h4 id="returns-2">Returns</h4>
+
+<ul>
+  <li>The partner identifier of the authenticated user.</li>
+</ul>
+
+<h4 id="usage-example-3">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">partner_id</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="property-partner_name">Property partner_name</h2>
+
+<p>The <strong>partner_name</strong> property returns the related partner name for the
+authenticated user.</p>
+
+<h4 id="returns-3">Returns</h4>
+
+<ul>
+  <li>The partner name of the authenticated user.</li>
+</ul>
+
+<h4 id="usage-example-4">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">partner_name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="property-uid">Property uid</h2>
+
+<p>The <strong>uid</strong> property returns the authenticated user unique ID.</p>
+
+<h4 id="returns-4">Returns</h4>
+
+<ul>
+  <li>The unique identifier of the authenticated user.</li>
+</ul>
+
+<h4 id="usage-example-5">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">uid</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-authenticate">Method authenticate</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">authenticate</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>The <strong>authenticate</strong> method performs session authentication using
+database, user, and password.</p>
+
+<h4 id="returns-5">Returns</h4>
+
+<ul>
+  <li>If authentication is successful, it returns the numerical identifier
+of the authenticated user.</li>
+  <li>If authentication fails, it returns the value False.</li>
+</ul>
+
+<h4 id="usage-example-6">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">uid</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">authenticate</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-get_model">Method get_model</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">get_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                <span class="n">authenticate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span>
+                <span class="n">use_existing_uid</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>get_model</strong> method returns a new Model object to the model
+specified by <em>model_name</em>.</p>
+
+<p>If the <em>authenticate</em> parameter is set to True, it performs authentication again
+on the new Model object.</p>
+
+<p>The <em>use_existing_uid</em> parameter, in the event of failed authentication by
+setting the <em>authenticate</em> parameter to False, skips authentication and uses
+the same User ID used by the Model object.</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<ul>
+  <li><strong>model_name</strong>: name of the model to access.</li>
+  <li><strong>authenticate</strong>: if set to True, performs authentication.</li>
+  <li><strong>use_existing_uid</strong>: if set to True, uses the previous User ID.</li>
+</ul>
+
+<h4 id="returns-6">Returns</h4>
+
+<ul>
+  <li>A new Model object that points to the model specified by <em>model_name</em>.</li>
+</ul>
+
+<h4 id="usage-example-7">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model_products</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">get_model</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="sh">'</span><span class="s">product.product</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">authenticate</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                 <span class="n">use_existing_uid</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-get_model_data_reference">Method get_model_data_reference</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">get_model_data_reference</span><span class="p">(</span><span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                               <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                               <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>get_model_data_reference</strong> method returns a row from the <em>ir.model.data</em>
+model identified by its external ID specified by the <em>value</em> parameter.</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<ul>
+  <li><strong>module_name</strong>: name of the module from which to obtain the reference</li>
+  <li><strong>value</strong>: name of the external ID being searched for</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-7">Returns</h4>
+
+<ul>
+  <li>A dictionary with the attributes of the row found.</li>
+</ul>
+
+<h4 id="usage-example-8">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">get_model_data_reference</span><span class="p">(</span><span class="n">module_name</span><span class="o">=</span><span class="sh">'</span><span class="s">mail</span><span class="sh">'</span><span class="p">,</span>
+                                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">mt_comment</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-get">Method get</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+          <span class="n">fields</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="p">...]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+          <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+          <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>get</strong> method reads a specific record identified by its
+<em>entity_id</em>, with the specified options, and returns the result of the
+read.</p>
+
+<p>All fields of the record will be returned, or only those specified by the
+<em>fields</em> parameter.</p>
+
+<h4 id="parameters-3">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifier of the element to be read</li>
+  <li><strong>fields</strong>: tuple with the names of the fields to be returned</li>
+  <li><strong>options</strong>: dictionary with the options to be used</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-8">Returns</h4>
+
+<ul>
+  <li>The result of reading the specified record.</li>
+</ul>
+
+<h4 id="usage-example-9">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                    <span class="n">fields</span><span class="o">=</span><span class="p">(</span><span class="sh">'</span><span class="s">id</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-get_many">Method get_many</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">get_many</span><span class="p">(</span><span class="n">entity_ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+               <span class="n">fields</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="p">...]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+               <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+               <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>get_many</strong> method reads the specific records identified
+by their <em>entity_ids</em>, with the options indicated, and returns the result of the
+read.</p>
+
+<p>All fields of the record will be returned, or only those indicated by the
+<em>fields</em> parameter.</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<ul>
+  <li><strong>entity_ids</strong>: list of identifiers of the elements to be read</li>
+  <li><strong>fields</strong>: tuple with the names of the fields to be returned</li>
+  <li><strong>options</strong>: dictionary with the options to be used</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-9">Returns</h4>
+
+<ul>
+  <li>The result of reading the specified records.</li>
+</ul>
+
+<h4 id="usage-example-10">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">get_many</span><span class="p">(</span><span class="n">entity_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                         <span class="n">fields</span><span class="o">=</span><span class="p">(</span><span class="sh">'</span><span class="s">id</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-all">Method all</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">all</span><span class="p">(</span><span class="n">is_active</span><span class="p">:</span> <span class="n">ActiveStatusChoice</span> <span class="o">=</span> <span class="n">ActiveStatusChoice</span><span class="p">.</span><span class="n">NOT_SET</span><span class="p">,</span>
+          <span class="n">fields</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+          <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+          <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+          <span class="n">offset</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+          <span class="n">order</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+          <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>all</strong> method reads all records in the model,
+including or excluding archived ones (active=False) based on the value of the
+<em>is_active</em> parameter.</p>
+
+<p>All fields in the record will be returned, or only those indicated by the
+<em>fields</em> parameter.</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<ul>
+  <li><strong>is_active</strong>: filter on archived records</li>
+  <li><strong>fields</strong>: tuple with the names of the fields to include</li>
+  <li><strong>options</strong>: dictionary with the options to use</li>
+  <li><strong>limit</strong>: maximum number of records to return</li>
+  <li><strong>offset</strong>: initial record from which to read</li>
+  <li><strong>order</strong>: sorting clause, as used in SQL, a string of field names
+followed by the clause <em>asc</em> or <em>desc</em> to identify the type of
+sorting</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-10">Returns</h4>
+
+<ul>
+  <li>The result of reading the specified records.</li>
+</ul>
+
+<h4 id="usage-example-11">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">all</span><span class="p">(</span><span class="n">is_active</span><span class="o">=</span><span class="n">ActiveStatusChoice</span><span class="p">.</span><span class="n">ACTIVE</span><span class="p">,</span>
+                    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">id</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">],</span>
+                    <span class="n">options</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                    <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                    <span class="n">offset</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                    <span class="n">order</span><span class="o">=</span><span class="sh">'</span><span class="s">firstname asc, lastname asc</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-find">Method find</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">entity_ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+           <span class="n">is_active</span><span class="p">:</span> <span class="n">ActiveStatusChoice</span> <span class="o">=</span> <span class="n">ActiveStatusChoice</span><span class="p">.</span><span class="n">NOT_SET</span><span class="p">,</span>
+           <span class="n">fields</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+           <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+           <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+           <span class="n">offset</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+           <span class="n">order</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+           <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>find</strong> method reads the records indicated by the <em>entity_ids</em> parameter,
+including or excluding archived records (active=False) based on
+the value of the <em>is_active</em> parameter.</p>
+
+<p>All fields of the record will be returned, or only those indicated by the
+<em>fields</em> parameter.</p>
+
+<h4 id="parameters-6">Parameters</h4>
+
+<ul>
+  <li><strong>entity_ids</strong>: list of identifiers of the elements to be read</li>
+  <li><strong>is_active</strong>: filter on archived records</li>
+  <li><strong>fields</strong>: tuple with the names of the fields to include</li>
+  <li><strong>options</strong>: dictionary with the options to use</li>
+  <li><strong>limit</strong>: maximum number of records to return</li>
+  <li><strong>offset</strong>: initial record from which to read</li>
+  <li><strong>order</strong>: sorting clause, as used in SQL, a string of field names
+followed by the clause <em>asc</em> or <em>desc</em> to identify the type of
+sorting</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-11">Returns</h4>
+
+<ul>
+  <li>The result of reading the specified records.</li>
+</ul>
+
+<h4 id="usage-example-12">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">is_active</span><span class="o">=</span><span class="n">ActiveStatusChoice</span><span class="p">.</span><span class="n">ACTIVE</span><span class="p">,</span>
+                     <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">id</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">],</span>
+                     <span class="n">options</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                     <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                     <span class="n">offset</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                     <span class="n">order</span><span class="o">=</span><span class="sh">'</span><span class="s">firstname asc, lastname asc</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-filter">Method filter</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BooleanOperator</span><span class="p">,</span> <span class="n">Filter</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+             <span class="n">is_active</span><span class="p">:</span> <span class="n">ActiveStatusChoice</span> <span class="o">=</span> <span class="n">ActiveStatusChoice</span><span class="p">.</span><span class="n">NOT_SET</span><span class="p">,</span>
+             <span class="n">fields</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">offset</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">order</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>filter</strong> method searches for records using the list of
+filters specified in <em>filters</em>, including or excluding archived records
+(active=False) based on the value of the <em>is_active</em> parameter, with the options
+indicated, and returns the search results.</p>
+
+<p>All fields of the record will be returned, or only those indicated by the
+<em>fields</em> parameter.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<ul>
+  <li><strong>filters</strong>: list of <em>Filter</em> or <em>BooleanOperator</em> objects to perform the
+search</li>
+  <li><strong>is_active</strong>: filter on archived records</li>
+  <li><strong>fields</strong>: tuple with the names of the fields to include</li>
+  <li><strong>options</strong>: dictionary with the options to use</li>
+  <li><strong>limit</strong>: maximum number of records to return</li>
+  <li><strong>offset</strong>: initial record from which to read</li>
+  <li><strong>order</strong>: sorting clause, as used in SQL, a string of field names
+followed by the clause <em>asc</em> or <em>desc</em> to identify the type of
+sorting</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-12">Returns</h4>
+
+<ul>
+  <li>A list of integers identifying the records found by the search.</li>
+</ul>
+
+<h4 id="usage-example-13">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span>
+  <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">BooleanOperator</span><span class="p">.</span><span class="n">AND</span><span class="p">,</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">),</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Ovinis</span><span class="sh">'</span><span class="p">),</span>
+          <span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-first">Method first</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">first</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BooleanOperator</span><span class="p">,</span> <span class="n">Filter</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+            <span class="n">is_active</span><span class="p">:</span> <span class="n">ActiveStatusChoice</span> <span class="o">=</span> <span class="n">ActiveStatusChoice</span><span class="p">.</span><span class="n">NOT_SET</span><span class="p">,</span>
+            <span class="n">fields</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="n">offset</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="n">order</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>first</strong> method searches for records using the list of
+filters specified in <em>filters</em>, including or excluding archived records
+(active=False) based on the value of the <em>is_active</em> parameter, with the options
+indicated, and returns the first record as the search result.</p>
+
+<p>All fields of the record will be returned, or only those indicated by the
+<em>fields</em> parameter.</p>
+
+<h4 id="parameters-8">Parameters</h4>
+
+<ul>
+  <li><strong>filters</strong>: list of <em>Filter</em> or <em>BooleanOperator</em> objects to perform the
+search</li>
+  <li><strong>is_active</strong>: filter on archived records</li>
+  <li><strong>fields</strong>: tuple with the names of the fields to include</li>
+  <li><strong>options</strong>: dictionary with the options to use</li>
+  <li><strong>limit</strong>: maximum number of records to return</li>
+  <li><strong>offset</strong>: initial record from which to read</li>
+  <li><strong>order</strong>: sorting clause, as used in SQL, a string of field names
+followed by the clause <em>asc</em> or <em>desc</em> to identify the type of
+sorting</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-13">Returns</h4>
+
+<ul>
+  <li>A list of integers identifying the records found by the search.</li>
+</ul>
+
+<h4 id="usage-example-14">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">first</span><span class="p">(</span>
+  <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">BooleanOperator</span><span class="p">.</span><span class="n">AND</span><span class="p">,</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">),</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Ovinis</span><span class="sh">'</span><span class="p">),</span>
+          <span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-count">Method count</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BooleanOperator</span><span class="p">,</span> <span class="n">Filter</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+            <span class="n">is_active</span><span class="p">:</span> <span class="n">ActiveStatusChoice</span> <span class="o">=</span> <span class="n">ActiveStatusChoice</span><span class="p">.</span><span class="n">NOT_SET</span><span class="p">,</span>
+            <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>count</strong> method searches for records using the list
+of filters specified in <em>filters</em>, including or excluding archived records
+(active=False) based on the value of the <em>is_active</em> parameter, with the options
+indicated, and returns the number of records found by the search.</p>
+
+<h4 id="parameters-9">Parameters</h4>
+
+<ul>
+  <li><strong>filters</strong>: list of <em>Filter</em> or <em>BooleanOperator</em> objects to perform the
+search</li>
+  <li><strong>is_active</strong>: filter on archived records</li>
+  <li><strong>options</strong>: dictionary with the options to use</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-14">Returns</h4>
+
+<ul>
+  <li>The number of records found by the search.</li>
+</ul>
+
+<h4 id="usage-example-15">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span>
+  <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">BooleanOperator</span><span class="p">.</span><span class="n">AND</span><span class="p">,</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">),</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Ovinis</span><span class="sh">'</span><span class="p">),</span>
+          <span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-search">Method search</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BooleanOperator</span><span class="p">,</span> <span class="n">Filter</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+             <span class="n">is_active</span><span class="p">:</span> <span class="n">ActiveStatusChoice</span> <span class="o">=</span> <span class="n">ActiveStatusChoice</span><span class="p">.</span><span class="n">NOT_SET</span><span class="p">,</span>
+             <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">offset</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">order</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>search</strong> method searches for records using the list
+of filters specified in <em>filters</em>, including or excluding archived ones
+(active=False) based on the value of the <em>is_active</em> parameter, with the options
+indicated, and returns the records found by the search.</p>
+
+<p>Compared to the <em>filter</em> method, the search method only returns the
+identifiers of the records found, not the data itself.</p>
+
+<h4 id="parameters-10">Parameters</h4>
+
+<ul>
+  <li><strong>filters</strong>: list of <em>Filter</em> or <em>BooleanOperator</em> objects to perform the
+search</li>
+  <li><strong>is_active</strong>: filter on archived records</li>
+  <li><strong>fields</strong>: tuple with the names of the fields to include</li>
+  <li><strong>options</strong>: dictionary with the options to use</li>
+  <li><strong>limit</strong>: maximum number of records to return</li>
+  <li><strong>offset</strong>: initial record from which to read</li>
+  <li><strong>order</strong>: sorting clause, as used in SQL, a string of field names
+followed by the clause <em>asc</em> or <em>desc</em> to identify the type of
+sorting</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-15">Returns</h4>
+
+<ul>
+  <li>A list of integers identifying the records found by the search.</li>
+</ul>
+
+<h4 id="usage-example-16">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span>
+  <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">BooleanOperator</span><span class="p">.</span><span class="n">AND</span><span class="p">,</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">),</span>
+           <span class="n">pyodoo</span><span class="p">.</span><span class="nc">Filter</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">,</span>
+                         <span class="n">compare_type</span><span class="o">=</span><span class="n">pyodoo</span><span class="p">.</span><span class="n">CompareType</span><span class="p">.</span><span class="n">EQUAL</span><span class="p">,</span>
+                         <span class="n">value</span><span class="o">=</span><span class="sh">'</span><span class="s">Ovinis</span><span class="sh">'</span><span class="p">),</span>
+          <span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-create">Method create</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+             <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>create</strong> method is used to create a new record in the model
+using the values specified in <em>values</em>, with the options indicated, and
+returns the identifier for record created.</p>
+
+<h4 id="parameters-11">Parameters</h4>
+
+<ul>
+  <li><strong>values</strong>: dictionary with field names and values to create the record</li>
+  <li><strong>options</strong>: dictionary with options to use</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-16">Returns</h4>
+
+<ul>
+  <li>The integer identifier of the newly created record.</li>
+</ul>
+
+<h4 id="usage-example-17">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entity_id</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Ovinis})
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="method-update">Method update</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
+             <span class="n">values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+             <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>update</strong> method is used to update one or more records indicated
+by <em>entity_id</em> (this can be a single record as an integer or a list
+of identifiers in a list of integers) using the values specified in
+<em>values</em>, with the options indicated, and returns True if the update
+was successful.</p>
+
+<h4 id="parameters-12">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifiers of the elements to be updated</li>
+  <li><strong>values</strong>: dictionary with field names and values to create the record</li>
+  <li><strong>options</strong>: dictionary with options to use</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-17">Returns</h4>
+
+<ul>
+  <li>True if the specified records have been updated.</li>
+</ul>
+
+<h4 id="usage-example-18">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entity_id</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                         <span class="n">values</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Ovinis})
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="method-delete">Method delete</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
+             <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>delete</strong> method is used to delete one or more records indicated
+by <em>entity_id</em> (this can be a single record as an integer or a list
+of identifiers in a list of integers), with the options indicated, and returns
+True if the deletion was successful.</p>
+
+<h4 id="parameters-13">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifiers of the elements to be deleted</li>
+  <li><strong>options</strong>: dictionary with options to use</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-18">Returns</h4>
+
+<ul>
+  <li>True if the specified records have been deleted.</li>
+</ul>
+
+<h4 id="usage-example-19">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entity_id</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-get_fields">Method get_fields</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">get_fields</span><span class="p">(</span><span class="n">fields</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+                 <span class="n">attributes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+                 <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+                 <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>get_fields</strong> method is used to obtain the fields present in the model,
+filtered based on the <em>fields</em> and <em>attributes</em> parameters, with the options
+indicated.</p>
+
+<h4 id="parameters-14">Parameters</h4>
+
+<ul>
+  <li><strong>fields</strong>: list with the names of the fields to include</li>
+  <li><strong>attributes</strong>: list with the names of the attributes to include</li>
+  <li><strong>options</strong>: dictionary with the options to use</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-19">Returns</h4>
+
+<ul>
+  <li>A dictionary containing all the fields identified for the model.</li>
+</ul>
+
+<h4 id="usage-example-20">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fields</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">get_fields</span><span class="p">(</span><span class="n">attributes</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">string</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">type</span><span class="sh">'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-many_to_many_create">Method many_to_many_create</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">many_to_many_create</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                          <span class="n">field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                          <span class="n">values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+                          <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+                          <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>many_to_many_create</strong> method creates a new record with the values
+specified by the <em>values</em> parameter and associates it with the relationship
+indicated by the <em>field</em> field for the record identified by <em>entity_id</em>,
+with the options indicated.</p>
+
+<p>The method is used to create a new value in a
+Many-to-Many relationship.</p>
+
+<h4 id="parameters-15">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifier of the element to be updated</li>
+  <li><strong>field</strong>: name of the field that identifies the Many-to-Many relationship</li>
+  <li><strong>values</strong>: dictionary with names and values of the fields of the record to be created</li>
+  <li><strong>options</strong>: dictionary with the options to be used</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-20">Returns</h4>
+
+<ul>
+  <li>True if the record has been updated.</li>
+</ul>
+
+<h4 id="usage-example-21">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">many_to_many_create</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                    <span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">child_ids</span><span class="sh">'</span><span class="p">,</span>
+                                    <span class="n">values</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">,</span>
+                                            <span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Ovinis</span><span class="sh">'</span><span class="p">})</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-many_to_many_add">Method many_to_many_add</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">many_to_many_add</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                       <span class="n">field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                       <span class="n">related_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                       <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+                       <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>many_to_many_add</strong> method adds an existing record identified by
+<em>related_id</em> to the relationship indicated by the <em>field</em> field for the record
+identified by <em>entity_id</em>, with the options indicated.</p>
+
+<p>The method is used to add an existing value in a
+Many-to-Many relationship.</p>
+
+<h4 id="parameters-16">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifier of the element to be updated</li>
+  <li><strong>field</strong>: name of the field that identifies the Many-to-Many relationship</li>
+  <li><strong>related_id</strong>: unique identifier of the element to be added</li>
+  <li><strong>options</strong>: dictionary with the options to be used</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-21">Returns</h4>
+
+<ul>
+  <li>True if the record has been updated.</li>
+</ul>
+
+<h4 id="usage-example-22">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">many_to_many_add</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                 <span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">child_ids</span><span class="sh">'</span><span class="p">,</span>
+                                 <span class="n">related_id</span><span class="o">=</span><span class="mi">321</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-many_to_many_update">Method many_to_many_update</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">many_to_many_update</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                          <span class="n">field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                          <span class="n">related_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                          <span class="n">values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+                          <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+                          <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>many_to_many_update</strong> method updates an existing record identified by
+<em>related_id</em> in the relationship indicated by the <em>field</em> field for the record
+identified by <em>entity_id</em>, with the options indicated.</p>
+
+<p>The method is used to update an existing value in a
+Many-to-Many relationship.</p>
+
+<h4 id="parameters-17">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifier of the element to be updated</li>
+  <li><strong>field</strong>: name of the field that identifies the Many-to-Many relationship</li>
+  <li><strong>related_id</strong>: unique identifier of the element to be updated</li>
+  <li><strong>values</strong>: dictionary with names and values of the fields of the record to be updated</li>
+  <li><strong>options</strong>: dictionary with the options to be used</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-22">Returns</h4>
+
+<ul>
+  <li>True if the record has been updated.</li>
+</ul>
+
+<h4 id="usage-example-23">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">many_to_many_update</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                    <span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">child_ids</span><span class="sh">'</span><span class="p">,</span>
+                                    <span class="n">related_id</span><span class="o">=</span><span class="mi">321</span><span class="p">,</span>
+                                    <span class="n">values</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">firstname</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Muflone</span><span class="sh">'</span><span class="p">,</span>
+                                            <span class="sh">'</span><span class="s">lastname</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Ovinis</span><span class="sh">'</span><span class="p">})</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-many_to_many_delete">Method many_to_many_delete</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">many_to_many_delete</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                          <span class="n">field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                          <span class="n">related_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                          <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+                          <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>many_to_many_delete</strong> method deletes an existing record identified by
+<em>related_id</em> in the relationship indicated by the <em>field</em> field for the record
+identified by <em>entity_id</em>, with the options indicated.</p>
+
+<p>The method is used to delete an existing value in a
+Many-to-Many relationship and also delete the related record.</p>
+
+<h4 id="parameters-18">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifier of the element to be updated</li>
+  <li><strong>field</strong>: name of the field that identifies the Many-to-Many relationship</li>
+  <li><strong>related_id</strong>: unique identifier of the element to be deleted</li>
+  <li><strong>options</strong>: dictionary with the options to be used</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-23">Returns</h4>
+
+<ul>
+  <li>True if the record has been updated.</li>
+</ul>
+
+<h4 id="usage-example-24">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">many_to_many_delete</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                    <span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">child_ids</span><span class="sh">'</span><span class="p">,</span>
+                                    <span class="n">related_id</span><span class="o">=</span><span class="mi">321</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-many_to_many_remove">Method many_to_many_remove</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">many_to_many_remove</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                          <span class="n">field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                          <span class="n">related_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                          <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+                          <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>many_to_many_remove</strong> method removes an existing record identified by
+<em>related_id</em> in the relationship indicated by the <em>field</em> field for the record
+identified by <em>entity_id</em>, with the options indicated.</p>
+
+<p>The method is used to remove an existing value in a
+Many-to-Many relationship but without also deleting the related record, which
+will continue to exist in the related model and can be added again later.</p>
+
+<h4 id="parameters-19">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifier of the element to be updated</li>
+  <li><strong>field</strong>: name of the field that identifies the Many-to-Many relationship</li>
+  <li><strong>related_id</strong>: unique identifier of the element to be removed</li>
+  <li><strong>options</strong>: dictionary with the options to be used</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-24">Returns</h4>
+
+<ul>
+  <li>True if the record has been updated.</li>
+</ul>
+
+<h4 id="usage-example-25">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">many_to_many_remove</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                    <span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">child_ids</span><span class="sh">'</span><span class="p">,</span>
+                                    <span class="n">related_id</span><span class="o">=</span><span class="mi">321</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-many_to_many_clear">Method many_to_many_clear</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">many_to_many_clear</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                         <span class="n">field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                         <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+                         <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>many_to_many_clear</strong> method removes all records from the relationship
+indicated by the <em>field</em> field for the record identified by <em>entity_id</em>, with
+the options indicated.</p>
+
+<p>The method is used to remove all existing values in a
+Many-to-Many relationship but without also deleting the related records, which
+will continue to exist in the related model and can be added
+again later.</p>
+
+<h4 id="parameters-20">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifier of the element to be updated</li>
+  <li><strong>field</strong>: name of the field that identifies the Many-to-Many relationship</li>
+  <li><strong>options</strong>: dictionary with the options to be used</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-25">Returns</h4>
+
+<ul>
+  <li>True if the record has been updated.</li>
+</ul>
+
+<h4 id="usage-example-26">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">many_to_many_clear</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                   <span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">child_ids</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-many_to_many_replace">Method many_to_many_replace</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">many_to_many_replace</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                           <span class="n">field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                           <span class="n">related_ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+                           <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+                           <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>many_to_many_replace</strong> method replaces all existing records in the
+relationship indicated by the <em>field</em> field with the records identified by
+<em>related_ids</em> for the record identified by <em>entity_id</em>, with the options indicated.</p>
+
+<p>The method is used to remove all existing values in a
+Many-to-Many relationship and replace them with other values, but without also
+deleting the related records, which will continue to exist in the related model
+and can be added again later.</p>
+
+<h4 id="parameters-21">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifier of the element to be updated</li>
+  <li><strong>field</strong>: name of the field that identifies the Many-to-Many relationship</li>
+  <li><strong>related_ids</strong>: unique identifiers of the elements to be inserted</li>
+  <li><strong>options</strong>: dictionary with the options to be used</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-26">Returns</h4>
+
+<ul>
+  <li>True if the record has been updated.</li>
+</ul>
+
+<h4 id="usage-example-27">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">many_to_many_replace</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                     <span class="n">field</span><span class="o">=</span><span class="sh">'</span><span class="s">child_ids</span><span class="sh">'</span><span class="p">,</span>
+                                     <span class="n">related_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">321</span><span class="p">,</span> <span class="mi">322</span><span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-execute">Method execute</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">method_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+              <span class="n">args</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
+              <span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+              <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>execute</strong> method calls a model method, passing positional arguments
+<em>args</em> and named and value arguments <em>kwargs</em>.</p>
+
+<h4 id="parameters-22">Parameters</h4>
+
+<ul>
+  <li><strong>method</strong>: remote method to use</li>
+  <li><strong>args</strong>: list of arguments to pass to the method by value</li>
+  <li><strong>kwargs</strong>: list of arguments to pass to the method by name and value</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-27">Returns</h4>
+
+<ul>
+  <li>The result of the remote method call.</li>
+</ul>
+
+<h4 id="usage-example-28">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">method_name</span><span class="o">=</span><span class="sh">'</span><span class="s">message_post</span><span class="sh">'</span><span class="p">,</span>
+                        <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="mi">123</span><span class="p">],</span>
+                        <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span>
+                            <span class="sh">'</span><span class="s">message_type</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">comment</span><span class="sh">'</span><span class="p">,</span>
+                            <span class="sh">'</span><span class="s">subtype_id</span><span class="sh">'</span><span class="p">:</span> <span class="n">model</span><span class="p">.</span><span class="nf">get_message_subtype_id</span><span class="p">(</span>
+                                <span class="n">subtype</span><span class="o">=</span><span class="n">MessageSubType</span><span class="p">.</span><span class="n">COMMENT</span><span class="p">),</span>
+                            <span class="sh">'</span><span class="s">subject</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Some comment</span><span class="sh">'</span><span class="p">,</span>
+                            <span class="sh">'</span><span class="s">body</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Comment content</span><span class="sh">'</span>
+                        <span class="p">})</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-get_message_subtype_id">Method get_message_subtype_id</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">get_message_subtype_id</span><span class="p">(</span><span class="n">subtype</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                             <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>get_message_subtype_id</strong> method obtains the reference to the <em>subtype</em> for
+the <em>mail</em> module, i.e. a value used by the <em>post_message</em> method.</p>
+
+<p>The purpose of this method is to keep a cache of these values and not have to
+retrieve them every time, so after the first request the value will be
+stored and it will not be necessary to request the value again from the remote
+model.</p>
+
+<h4 id="parameters-23">Parameters</h4>
+
+<ul>
+  <li><strong>subtype</strong>: name of the <em>subtype</em> to request</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-28">Returns</h4>
+
+<ul>
+  <li>The value of the subtype from the <em>mail</em> module.</li>
+</ul>
+
+<h4 id="usage-example-29">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">get_message_subtype_id</span><span class="p">(</span><span class="n">subtype</span><span class="o">=</span><span class="n">MessageSubType</span><span class="p">.</span><span class="n">COMMENT</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-post_message">Method post_message</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">post_message</span><span class="p">(</span><span class="n">subtype</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+                   <span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                   <span class="n">author_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                   <span class="n">subject</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">],</span>
+                   <span class="n">body</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                   <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+                   <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>post_message</strong> method is used to send a message of the type
+<a href="/pyodoo/english/docs/pyodoo/message_subtype.html">MessageSubType</a> indicated in <em>subtype</em> and linked to the record identified by
+<em>entity_id</em>, with the author indicated by <em>author_id</em>, the subject specified in
+<em>subject</em> and the message contained in <em>body</em>, with the options indicated, and
+returns the identifier of the new message created.</p>
+
+<h4 id="parameters-24">Parameters</h4>
+
+<ul>
+  <li><strong>subtype</strong>: message type of the <a href="/pyodoo/english/docs/pyodoo/message_subtype.html">MessageSubType</a> class</li>
+  <li><strong>entity_id</strong>: unique identifier of the element to which the
+message is to be sent</li>
+  <li><strong>author_id</strong>: unique identifier of the user sending the message</li>
+  <li><strong>subject</strong>: subject of the message to be sent</li>
+  <li><strong>body</strong>: body of the message to be sent</li>
+  <li><strong>options</strong>: dictionary with the options to be used</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-29">Returns</h4>
+
+<ul>
+  <li>The integer identifier of the new message created.</li>
+</ul>
+
+<h4 id="usage-example-30">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entity_id</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">do_post_message</span><span class="p">(</span><span class="n">subtype</span><span class="o">=</span><span class="n">MessageSubType</span><span class="p">.</span><span class="n">NOTE</span><span class="p">,</span>
+                                  <span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                  <span class="n">author_id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                  <span class="n">subject</span><span class="o">=</span><span class="sh">'</span><span class="s">Prova</span><span class="sh">'</span><span class="p">,</span>
+                                  <span class="n">body</span><span class="o">=</span><span class="sh">'</span><span class="s">Messaggio per il record 123</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-post_message_as_activity">Method post_message_as_activity</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">post_message_as_activity</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                               <span class="n">body</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                               <span class="n">author_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                               <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>post_message_as_activity</strong> method is used to send a message
+of type <em>Activity</em> to the record identified by <em>entity_id</em>.</p>
+
+<p>The method simply calls the <em>post_message</em> method, providing the
+<em>subtype</em> as <em>MessageSubType.ACTIVITY</em>.</p>
+
+<h4 id="parameters-25">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifier of the element to which the
+message is to be sent</li>
+  <li><strong>body</strong>: body of the message to be sent</li>
+  <li><strong>author_id</strong>: unique identifier of the user sending the message</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-30">Returns</h4>
+
+<ul>
+  <li>The integer identifier of the new message created.</li>
+</ul>
+
+<h4 id="usage-example-31">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entity_id</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">post_message_as_activity</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                           <span class="n">body</span><span class="o">=</span><span class="sh">'</span><span class="s">Activity per il record 123</span><span class="sh">'</span><span class="p">,</span>
+                                           <span class="n">author_id</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-post_message_as_comment">Method post_message_as_comment</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">post_message_as_comment</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                              <span class="n">body</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                              <span class="n">author_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                              <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>post_message_as_comment</strong> method is used to send a message
+of type <em>Comment</em> to the record identified by <em>entity_id</em>.</p>
+
+<p>The method simply calls the <em>post_message</em> method, providing the
+<em>subtype</em> as <em>MessageSubType.COMMENT</em>.</p>
+
+<h4 id="parameters-26">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifier of the element to which the
+message is to be sent</li>
+  <li><strong>body</strong>: body of the message to be sent</li>
+  <li><strong>author_id</strong>: unique identifier of the user sending the message</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-31">Returns</h4>
+
+<ul>
+  <li>The integer identifier of the new message created.</li>
+</ul>
+
+<h4 id="usage-example-32">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entity_id</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">post_message_as_comment</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                          <span class="n">body</span><span class="o">=</span><span class="sh">'</span><span class="s">Commento per il record 123</span><span class="sh">'</span><span class="p">,</span>
+                                          <span class="n">author_id</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="method-post_message_as_note">Method post_message_as_note</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="nf">post_message_as_note</span><span class="p">(</span><span class="n">entity_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                           <span class="n">body</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                           <span class="n">author_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                           <span class="n">ignore_none_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <strong>post_message_as_note</strong> method is used to send a message
+of type <em>Note</em> to the record identified by <em>entity_id</em>.</p>
+
+<p>The method simply calls the <em>post_message</em> method, providing the
+<em>subtype</em> as <em>MessageSubType.NOTE</em>.</p>
+
+<h4 id="parameters-27">Parameters</h4>
+
+<ul>
+  <li><strong>entity_id</strong>: unique identifier of the element to which the
+message is to be sent</li>
+  <li><strong>body</strong>: body of the message to be sent</li>
+  <li><strong>author_id</strong>: unique identifier of the user sending the message</li>
+  <li><strong>ignore_none_errors</strong>: if set to True, ignores the None value error</li>
+</ul>
+
+<h4 id="returns-32">Returns</h4>
+
+<ul>
+  <li>The integer identifier of the new message created.</li>
+</ul>
+
+<h4 id="usage-example-33">Usage example</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entity_id</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">post_message_as_note</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                       <span class="n">body</span><span class="o">=</span><span class="sh">'</span><span class="s">Nota per il record 123</span><span class="sh">'</span><span class="p">,</span>
+                                       <span class="n">author_id</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+
+
+        </section>
+        <aside id="sidebar" class="content">
+          <!-- Build sidebar depth 1 -->
+          <ul class="menu1">
+            <li class="menu1"><a href="/pyodoo/english/index.html">Introduction</a></li>
+            <li class="menu1"><a href="/pyodoo/english/download.html">Download</a></li>
+            <li class="menu1"><a href="/pyodoo/english/install.html">Installation</a></li>
+            <li class="menu1"><a href="/pyodoo/english/docs/index.html">Documentation</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2"><a href="/pyodoo/english/docs/authentication.html">Authentication</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/filters.html">Filters</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/active.html">Active records</a></li>
+              <li class="menu2-prefix">Package pyodoo</li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/active_status_choice.html">ActiveStatusChoice</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/boolean_operator.html">BooleanOperator</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/compare_type.html">CompareType</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/filter.html">Filter</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/message_subtype.html">MessageSubType</a></li>
+              <li class="menu2-prefix">Package pyodoo.v12</li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/v12/api.html">Api</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/v12/model.html">Model</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/v12/python_code.html">PythonCode</a></li>
+              <li class="menu2"><a href="/pyodoo/english/docs/pyodoo/v12/sql_excel_query.html">SqlExcelQuery</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/pyodoo/english/examples/index.html">Usage examples</a></li>
+            <!-- Begin of sidebar depth 2 -->
+            <ul class="menu2">
+              <li class="menu2"><a href="/pyodoo/english/examples/basic_usage.html">Basic usage</a></li>
+              <li class="menu2"><a href="/pyodoo/english/examples/read_data.html">Read data</a></li>
+            </ul>
+            <!-- End of sidebar depth 2 -->
+            <li class="menu1"><a href="/pyodoo/english/changelog.html">Changelog</a></li>
+          </ul>
+          <!-- End of sidebar depth 1 -->
+
+        </aside>
+
+        </div>
+      </div>
+
+      <!-- Begin footer -->
+      <footer class="footer">
+        <div class="footer-main row">
+          <div class="container footer-icons">
+            <a href="/" title="Home">
+              <img src="/resources/home/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/contacts/" title="Muflone">
+              <img src="/resources/contacts/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/articles/" title="Articles">
+              <img src="/resources/articles/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gespeaker/" title="Gespeaker">
+              <img src="/resources/gespeaker/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gwakeonlan/" title="gWakeOnLAN">
+              <img src="/resources/gwakeonlan/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gextractwinicons/" title="gExtractWinIcons">
+              <img src="/resources/gextractwinicons/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/bluewho/" title="BlueWho">
+              <img src="/resources/bluewho/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/cpucompare/" title="CPUCompare">
+              <img src="/resources/cpucompare/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gptrace/" title="gpTrace">
+              <img src="/resources/gptrace/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gnome-appfolders-manager/" title="GNOME AppFolders Manager">
+              <img src="/resources/gnome-appfolders-manager/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/gtransmemory/" title="gTransMemory">
+              <img src="/resources/gtransmemory/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-builder/" title="Remmina Plugin Builder">
+              <img src="/resources/remmina-plugin-builder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-exec/" title="Remmina Plugin Exec">
+              <img src="/resources/remmina-plugin-exec/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-folder/" title="Remmina Plugin Folder">
+              <img src="/resources/remmina-plugin-folder/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-open/" title="Remmina Plugin Open">
+              <img src="/resources/remmina-plugin-open/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rdesktop/" title="Remmina Plugin RDesktop">
+              <img src="/resources/remmina-plugin-rdesktop/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-rustdesk/" title="Remmina Plugin RustDesk">
+              <img src="/resources/remmina-plugin-rustdesk/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-teamviewer/" title="Remmina Plugin TeamViewer">
+              <img src="/resources/remmina-plugin-teamviewer/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-ultravnc/" title="Remmina Plugin UltraVNC">
+              <img src="/resources/remmina-plugin-ultravnc/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-url/" title="Remmina Plugin URL">
+              <img src="/resources/remmina-plugin-url/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/remmina-plugin-webkit/" title="Remmina Plugin WebKit">
+              <img src="/resources/remmina-plugin-webkit/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/awaitable/" title="Awaitable">
+              <img src="/resources/awaitable/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/pixelcolor/" title="PixelColor">
+              <img src="/resources/pixelcolor/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/django-admin-settings/" title="Django Admin Settings">
+              <img src="/resources/django-admin-settings/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/watchpage/" title="WatchPage">
+              <img src="/resources/watchpage/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/mumailer/" title="MuMailer">
+              <img src="/resources/mumailer/icons/apple-icon-60x60.png">
+            </a>
+            <a href="/pyodoo/" title="PyOdoo">
+              <img src="/resources/pyodoo/icons/apple-icon-60x60.png">
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom row">
+          <div class="container">
+            <div class="row justify-content-between items">
+              <div class="col-md-auto col-12 item">
+                <nav class="footer-links">
+                  <ul>
+                    <li><a href="/">Home</a></li>
+                      <li><a href="/contacts/" title="Contacts">
+                          Contacts</a></li>
+                    <li><a href="/english/" title="English">
+                        <img src="/theme/images/flag-en-16.png"> English</a></li>
+                    <li><a href="/italian/" title="Italian">
+                        <img src="/theme/images/flag-it-16.png"> Italian</a></li>
+                    <li><a href="//www.iubenda.com/privacy-policy/721463" target="_blank">
+                      Privacy Policy</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-md-auto col-12 item">
+                <div class="copyright">
+                  Last update:&nbsp;2026-01-10&nbsp;-
+                  Copyright &copy; 2013-2026 Fabio Castelli (Muflone)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End footer -->
+    </main>
+    <!-- End main -->
+
+    <script type="text/javascript" src="/theme/js/lozad.min.js"></script>
+    <script type="text/javascript" src="/theme/js/device.js"></script>
+    <script type="text/javascript" src="/theme/js/custom.js"></script>
+
+
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {'message': 'This website uses cookies to make your browsing experience more convenient and personal. Cookies store useful information on your computer to help us improve the efficiency and relevance of our site for you. In some cases, they are essential to making the site work properly. By accessing this site, you consent to the use of cookies.',
+                                        'dismiss': 'Hide',
+                                        'learnMore': 'More info',
+                                        'link': 'https://www.iubenda.com/privacy-policy/721463',
+                                        'theme': 'dark-top'
+                                       };
+    </script>
+    <script type="text/javascript" src="/theme/js/cookieconsent.js"></script>
+    <!-- End Cookie Consent plugin -->
+
+    <!-- Begin of Google Analytics block -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44039396-3', 'muflone.com');
+      ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics block -->
+
+  </body>
+</html>
